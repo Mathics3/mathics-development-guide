@@ -87,7 +87,7 @@ Peter!"``, while ``Pymathics`Hello["Peter", English]`` and
 
 We may also want to use different definitions according to the types of the
 arguments passed to a builtin. We can do so by specifying type-constraints in
-the definitions's pattern, such as in the following example:
+the definition's pattern, such as in the following example:
 
 .. code-block:: python
 
@@ -151,7 +151,7 @@ expression, such as in the following example:
         return String(f"Hello, {person.get_string_value()}!")
 
 In this example, the first entry in ``rules`` tells Mathics that
-``Hello[person]`` is just sintactic suger for ``Hello[person, English]``.
+``Hello[person]`` is just syntactic sugar for ``Hello[person, English]``.
 
 Special attributes
 ++++++++++++++++++
@@ -227,7 +227,7 @@ In this case, calling ``Hello[45]`` will emit the warning ``nstr: 45
 is not a string``.
 
 .. TODO: Document Operator and SympyFunction
-.. TODO: Document interupts
+.. TODO: Document interrupts
 
 Documentation markup
 ====================

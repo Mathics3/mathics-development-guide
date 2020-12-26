@@ -13,8 +13,8 @@ Calling Mathics library from within Python code
 Mathics is also a Python library implementing a parser and a interpreter
 for WL.
 
-For single line code, one stright forward way to interpret, evaluate a
-WL expression, and obtaint a simple (text) formatted output is by means
+For single line code, one straight forward way to interpret, evaluate a
+WL expression, and obtain a simple (text) formatted output is by means
 of a system call
 
 .. code:: py

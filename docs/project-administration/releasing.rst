@@ -65,7 +65,7 @@ See also [[Documentation and tests]].
 Check package from github
 =========================
 
-Todo: turn this into a script in ``admin-tools``
+TODO: turn this into a script in ``admin-tools``
 
 ::
 
@@ -89,7 +89,7 @@ Make packages and check
 Release on Github
 =================
 
-Goto https://github.com/mathics/Mathics/releases/new
+Go to https://github.com/mathics/Mathics/releases/new
 
 https://cloudconvert.com/rst-to-md can be used to change the CHANGES.rst
 section to markdown.
@@ -97,7 +97,7 @@ section to markdown.
 Now check the *tagged* release. (Checking the untagged release was
 previously done).
 
-Todo: turn this into a script in ``admin-tools``
+TODO: turn this into a script in ``admin-tools``
 
 ::
 
