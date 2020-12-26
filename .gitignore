@@ -1,0 +1,9 @@
+tmp
+.coverage
+.idea/
+.mypy_cache
+.project
+.vscode
+/.cache
+/.python-version
+ChangeLog
