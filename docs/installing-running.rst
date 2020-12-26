@@ -111,8 +111,8 @@ On Mac OS X
 On FreeBSD:
 
 ::
-
     $ sudo pkg install math/py-mathics
+
 
 Running Mathics
 ---------------
