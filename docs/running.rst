@@ -25,7 +25,7 @@ the above is the same thing as running:
 
 .. code:: bash
 
-    $ python mathic/main.py
+    $ python mathics/main.py
 
 To get a list of options run:
 
@@ -33,7 +33,7 @@ To get a list of options run:
 
     $ mathics --help
 
-However note that the above CLI is pretty minimal and is likley to stay
+However note that the above CLI is pretty minimal and is likely to stay
 that way.
 
 For a more full-featured CLI see
@@ -149,11 +149,11 @@ See that for more details on how this works.
 Running Mathics on your server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here we descrbes how to setup Mathics on a local network. There are
-additional (security) considerations for running Mathics on a publically
+Here we describes how to setup Mathics on a local network. There are
+additional (security) considerations for running Mathics on a publicly
 facing webserver.
 
-Best practises for a local network
+Best practices for a local network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Install PyPy

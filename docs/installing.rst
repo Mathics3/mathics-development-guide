@@ -26,12 +26,12 @@ Mathics, you may no more than this.
 
 Although we provide documentation `on-line
 <https://mathics.org/docs/mathics-latest.pdf>`_, should you want to
-build your own PDF, you'll need to have varous TeX packages installed.
+build your own PDF, you'll need to have various TeX packages installed.
 
 mathicsscript
 +++++++++++++
 
-Tthe Mathics core comes with a very rudimentary command-line
+The Mathics core comes with a very rudimentary command-line
 shell called ``mathics``. However, if you want fancier shell features such as:
 
 * GNU Readline terminal interaction. This includes
@@ -47,7 +47,7 @@ there is a separately-installable PyPI package called `mathicsscript <https://py
 Django-based GUI
 ++++++++++++++++
 
-If you prefer, as many do, browser-based interaction with nicly formatted graphics and MathML-formatted output,
+If you prefer, as many do, browser-based interaction with nicely formatted graphics and MathML-formatted output,
 right now there is a Django-based PyPI package `Mathics-Django <https://pypi.org/project/Mathics-Django>`_.
 
 Some of its features:
@@ -56,7 +56,7 @@ Some of its features:
 * Integrated graphics and MathML mathematics output via MathJax
 * Notebook-like sessions
 
-To use this, you will need Django installed, and a browser with Javascript enabled.
+To use this, you will need Django installed, and a browser with JavaScript enabled.
 
 Note: in the future we intend to also proved a Jupyter-like interface.
 
