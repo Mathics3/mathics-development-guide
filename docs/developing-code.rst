@@ -11,3 +11,4 @@ extend its primitives.
    developing-code/calling-mathics-library-from-within-python-code
    developing-code/contributing-developing
    developing-code/builtins
+   developing-code/uml
