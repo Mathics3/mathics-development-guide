@@ -3,19 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Mathics's developer documentation!
-=============================================
+Mathics's developer documentation
+=================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   builtins
-   calling-mathics-library-from-within-python-code
-   contributing-developing
-   installing-running
-   running-mathics-on-your-server
-   releasing
+   installing
+   running
+   developing-code
+   project-administration
 
 
 

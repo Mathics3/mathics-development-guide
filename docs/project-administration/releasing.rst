@@ -1,6 +1,12 @@
-=========
-Releasing
-=========
+========================
+Making a Mathics Release
+========================
+
+This information is for Project administrators. It is likely to be of
+little interest for most.
+
+To perform these steps, this you'll need a project administrator
+accounts and access on github, PyPI and dockerhub.
 
 
 Announce

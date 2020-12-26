@@ -1,121 +1,11 @@
-Installing & Running
-====================
-
-Requirements
-------------
-
-Mathics runs on Python 3.6 or later. We also support PyPy 3.6 or later.
-Underneath Mathics relies on
-`sympy <https://www.sympy.org/en/index.html>`__ which relies on
-`numpy <https://numpy.org>`__. These and the other requirements will be
-installed automatically if you use the standard Python installer
-```pip`` <https://pip.pypa.io/en/stable/>`__. They are also listed in
-`setup.py <https://github.com/mathics/Mathics/blob/master/setup.py>`__.
-
-Installing
-----------
-
-Although getting the base Mathics packages is pretty simple, to get the
-full installation with mathics script and the various add-on packages.
-The docker method right now is the most complete.
-
-Install from PyPI
-~~~~~~~~~~~~~~~~~
-
-::
-
-       $ pip install Mathics3
-
-Note the name is "Mathics3" for the most recent release. "Mathics" has
-pre-Python 3 code.
-
-Install from Conda-Forge
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-See https://github.com/conda-forge/mathics3-feedstock
-
-From docker (dockerhub)
-~~~~~~~~~~~~~~~~~~~~~~~
-
-As an alternative to building from source or installing a Python
-package, you can run pre-built code via
-`docker <https://www.docker.com>`__. To download a copy of the docker
-image run:
-
-::
-
-    $ docker pull mathicsorg/mathics
-
-However you this step is also done implicitly if you just issue the
-command to run the code. That invocation is given in the next section.
-
-From an OS-specific Repository
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Click on the link below from `Repology.org <https://repology.org>`__ for
-details for a specific OS and distribution:
-
-|Packaging status|
-
-Install from git from github
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Several additional dependencies over what is described above if you want
-to:
-
--  build the documentation (which needs ``xetex``, etc.)
--  do full testing (which needs pytest, etc.)
--  run the command-line interface
--  run the Django 3.1 webserver (which needs SQLite, etc.) \`
-
-Below we give command-line instructions. There is also GitHub's git
-client for your operating system (`Mac <http://mac.github.com/>`__;
-`Windows <http://windows.github.com/>`__). For that, clone
-mathics/Mathics (there is a button at the top of
-https://github.com/mathics/Mathics that says "Clone in Mac" or "Clone in
-Windows" depending on your platform).
-
-.. code:: bash
-
-    $ git clone https://github.com/mathics/Mathics.git
-    $ cd Mathics
-    $ make install
-
-Alternatively use ``make develop`` or ``pip install -e`` to run the code
-installed from where the source-code is checked out. In doing this, code
-changes in the source tree are reflected immediately when you rerun.
-
-Of course, you may not want this, but instead want to run from a copy of
-the last stable code, so that's what ``make install`` does.
-
-OS-dependent packages
-~~~~~~~~~~~~~~~~~~~~~
-
-For the installation above you may need OS-specific packages.
-
-For Debian/Ubuntu based systems:
-
-::
-
-    $ apt-get install python-dev libsqlite3-devp python-setuptools
-
-as super-user, i.e. either after having issued ``su`` or by preceding
-the command with ``sudo``).
-
-On Mac OS X
-
-::
-
-    $ brew install sqlite3
-
-On FreeBSD:
-
-::
-    $ sudo pkg install math/py-mathics
-
+.. index:: running
+.. _running:
 
 Running Mathics
----------------
+===============
+
+Here we describe the ways Mathics can be run.
+
 
 Running natively
 ~~~~~~~~~~~~~~~~
@@ -255,6 +145,62 @@ Also see the previous section on security limitations.
 This dockerization was modified from
 ```sealemar/mathics-dockerized`` <https://github.com/sealemar/mathics-dockerized>`__.
 See that for more details on how this works.
+
+Running Mathics on your server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Here we descrbes how to setup Mathics on a local network. There are
+additional (security) considerations for running Mathics on a publically
+facing webserver.
+
+Best practises for a local network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+-  Install PyPy
+
+   ::
+
+       sudo apt-get install pypy
+
+-  Install Setuptools
+
+   ::
+
+       curl -O http://peak.telecommunity.com/dist/ez_setup.py
+       pypy ez_setup.py
+
+-  Download and Install Mathics
+
+   ::
+
+       curl -L  -O https://github.com/mathics/Mathics/releases/download/v0.8/mathics-0.8.tar.gz`
+       tar xzf mathics-0.8.tar.gz
+       cd mathics-0.8/
+       sudo pypy setup.py install
+
+You can now run the web server with ``mathicsserver -e`` but you
+probably want to make some changes first. - disable the files module by
+setting ``ENABLE_FILES_MODULE = False`` in ``mathics/settings.py``
+(otherwise remote users will be able to read and write local files). -
+set an execution timeout in ``mathics/setttings.py``, e.g.
+``TIMEOUT = 10`` for a 10s limit. - Various other changes in the
+``settings.py`` file like email addresses.
+
+You probably also want to run the server as a restricted user within a
+jail shell
+
+Running Mathics on a public webserver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Warning:** You should be very careful running Mathics publicly, there
+are some potentially large security implications to be aware of!
+
+The setup is similar but you can use ngnix to cache the static content.
+Mathics runs as a wsgi app so you can use uwsgi. The `Django
+docs <https://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html>`__
+are a good reference.
+
+
 
 .. |Packaging status| image:: https://repology.org/badge/vertical-allrepos/mathics.svg
    :target: https://repology.org/project/mathics/versions
