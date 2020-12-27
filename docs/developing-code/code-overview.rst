@@ -75,7 +75,10 @@ Some things to notice:
 * Parsing removes parenthesis used for grouping capturing this
   instead by the function nesting order
 
-Inside Python here is how you parse a string:
+Python Code for Parsing an String
+---------------------------------
+
+Inside Python, here is how you parse a string:
 
 .. code-block:: python
 
@@ -104,12 +107,12 @@ Evaluation of an Expression
 
 Evaluation of the S-expression created by the parser is a bit more
 complicated than some programming languages because method lookup uses
-the functions signature using pattern matching. Also, there can be
+the function's signature using pattern matching. Also, there can be
 rule-based term-rewriting which goes on in conjunction with method
 lookup.
 
-If have programmed in WL, a lot of this may seem familiar, other than
-the Python-syntax and conventions used here.
+If you have programmed in WL, aside from the the Python-syntax and
+conventions used here, a lot of this should seem familiar,
 
 If however you are not familiar with WL, but very familiar with Python
 or similar languages, a lot of this can seem very mysterious at first
@@ -118,27 +121,33 @@ create an object like ``Number()`` and then instantiate a method on
 that, like ``+``, ``__plus__()``, or even ``Times()``.
 
 Of course, since the underlying interpreter language *is* Python, this
-does happen, but in a much more complicated way.
+does happen, but in a much more roundabout way.
 
 The first thing to understand is that finding which Python method in
-an Object requires a bit of work, much like in Python when you write
-``a.b()`` there is a method lookup in the ``a`` object for method
+an Mathics ``System`List`` requires a bit of work, much like in Python when you write
+``a.b()``: there is a method lookup in the ``a`` object for method
 ``b`` and that might come from a super class of ``a``.
 
 Mathics and WL are not Object Oriented so there is no such class-hierarchy lookup.
 However as mentioned above there is pattern matching going on.
 
-A function in Mathics is a list. The first leaf (or ``Head[]``) is the name of a
-function to call. The remaining leaves are the parameters to give to that first leaf.
-The combination is pattern matched.
+The entire function invocation in Mathics comes from a ``System`List``. The first leaf
+(or ``Head[]``) is the name of a function to call. The remaining
+leaves are the parameters to give to that first leaf.  The combination
+of function name and remaining leaves is pattern matched.
 
-Inside an builtin which is represented as a Python class there are a
-number of conventions used. To provide a method to implement a
-function such as the function used when ``System.Times`` is called,
-you define a method that starts out with ``apply``.
+Inside a Mathics builtin function, represented as a Python object the
+appropriate class, there are a number of conventions used. Python
+objects are instrospected for properties that they have. In particular a function's
+docstring, and methods, and class variables all influence invocation.
 
-The docstring of that method gives the function signature that has to
-apply in the list leaves for it to be used.
+In particular the object instance method to that is called when the
+Mathics function such as ``System.Times`` is a method name that starts
+out with ``apply``.
+
+The docstring of that method gives the function signature (or
+"pattern" in WL terminology) that has to match in the list leaves for
+it to be called.
 
 Here is an example for the `Environment <https://reference.wolfram.com/language/ref/Environment.html>`_ primitive taken from the code
 
@@ -146,9 +155,81 @@ Here is an example for the `Environment <https://reference.wolfram.com/language/
 
    class Environment(Builtin):
 
-    def apply(self, var, evaluation):
-        "Environment[var_?StringQ]"
+   def apply(self, var, evaluation):
+       "Environment[var_?StringQ]"
    ...
+
+The ``apply()`` function above will get called when a ``System`List`` expression where its "head" value is "Environment" and
+it has one parameter ``var`` which is a ``String`` object.
+
+For more information functions with patterns see `Functions and
+Programs
+<https://reference.wolfram.com/language/tutorial/FunctionsAndPrograms.html>`_
+and `Patterns <https://reference.wolfram.com/language/tutorial/Patterns.html>`_.
+
+Online and printed documentation for builtin Environment comes from the docstring for ``class Environment`` if that exists.
+In the example above, it was omitted. Here is what it looks like in the actual code.
+
+.. code-block:: python
+
+    class Environment(Builtin):
+        """
+        <dl>
+          <dt>'Environment[$var$]'
+          <dd>gives the value of an operating system environment variable.
+        </dl>
+        X> Environment["HOME"]
+         = ...
+        """
+
+        def apply(self, var, evaluation):
+        <dl>
+          <dt>'Environment[$var$]'
+          <dd>gives the value of an operating system environment variable.
+        </dl>
+        X> Environment["HOME"]
+         = ...
+	""""
+
+The XML/HTML markup is used to format help nicely. "Documentation markup" elsewhere describes this markup.
+
+
+Python Code for Evaluating an Expression
+----------------------------------------
+
+Building on the code shown above for parsing an expression,
+here is code to evaluate an expression from a string:
+
+.. code-block:: python
+
+   # The below is a repeat of the parsing code...
+
+   from mathics.core.parser import parse, SingleLineFeeder
+   from mathics.core.definitions import Definitions
+
+   definitions = Definitions(add_builtin=True)
+   str_expression = "1 + 2 / 3"
+   expr = parse(self.definitions, SingleLineFeeder(str_expression))
+
+   # This code is new...
+
+   evaluation = Evaluation(definitions=definitions, catch_interrupt=False)
+   last_result = expr.evaluate(evaluation)
+
+   print("type", type(last_result))
+   print("expr: ", last_result)
+
+All of the above is wrapped nicely in the module ``mathics.session`` which
+performs the above. So here is an equivalent program:
+
+.. code-block:: python
+
+    from mathics.session import session
+    result = session.evaluate(str_expression)
+
+
+Object Classes
+==============
 
 To be continued...
 
@@ -156,3 +237,18 @@ Atom Class Attributes
 ---------------------
 
 To be continued...
+
+SympyFunction and _MPMathFunction
+---------------------------------
+
+Builtin and Predefined
+----------------------
+
+PrefixOperator and PostFixOperator
+----------------------------------
+
+BinaryOperator and UnaryOperator
+--------------------------------
+
+Operator
+--------
