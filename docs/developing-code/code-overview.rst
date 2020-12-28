@@ -13,28 +13,30 @@ When you enter a string to Mathics there is a 3-step process:
 * the string is parsed to FullForm
 * The full form S-expression is interpreted
 * The result, also an S-expression, is formatted to the kind of
-  output desired
+  output desired.
 
 However each of the above steps can be involved, so we break these
-down below
+down below.
 
 Scanning and Parsing
 ====================
 
-All parsing routines are located in `mathics-core-parser <https://github.com/mathics/Mathics/tree/master/mathics/core/parser>`_.
+All parsing routines are located in `mathics.core.parser <https://github.com/mathics/Mathics/tree/master/mathics/core/parser>`_.
 
 See the ``README.md`` that appears in that directory for detailed information on how scanning and parsing works.
 
-You won't find much on the scanner there. There are two passes made in
-the scanner, a "pre-scan" in found in
-`mathics-core-parser-prescanner
+You won't find much on the scanner there, so we'll describe a little
+bit here.  There are two passes made in the scanner, a "pre-scan" in
+found in `mathics.core.parser.prescanner
 <https://github.com/mathics/Mathics/blob/master/mathics/core/parser/prescanner.py>`_
 which converts some WL-specific character codes to character or long
-names and the tokenizer after that which breaks up a string into
-*tokens*, classifications of a sequence of characters, which is then
-as the atoms on which the parser pattern matches on.
+names and the `mathics.core.parser.tokeniser
+<https://github.com/mathics/Mathics/blob/master/mathics/core/parser/tokeniser.py>`_
+which runs after that. The tokenizer breaks up a string into *tokens*,
+classifications of a sequence of characters, which is then as the
+atoms on which the parser pattern matches on.
 
-There is a bit written in ``README.md`` on parsing so we won't
+There is a bit written in ``README.md`` on parsing, so we won't
 describe that, but the main points are:
 
 * The parser is recursive descent
@@ -102,72 +104,127 @@ The function ``SingleLineFeeder`` should be supplied by the front-end.
 It reads input a line and a time and returns that back to the parser.
 
 
+AST, S-Expression, General List: same thing
+============================================
+
+The end-result of scanning and parsing is an S-expression, which is a
+Python object of type ``Expression``. In compiler terminology the
+S-expression is also called an *abstract syntax tree* or AST. For
+Mathics, there are only very few different kinds of nodes or atoms in this
+tree or list:
+
+* ``Number``
+* ``String``
+* ``Symbol``
+* ``Filename``
+
+With the exception of the addition of ``Filename`` these are
+almost the same atoms described in `Basic Internal Architecture
+<https://reference.wolfram.com/language/tutorial/TheInternalsOfTheWolframSystem.html#6608>`_
+for WL.
+
+Not listed above but found in the link is "general expressions": the
+thing that glues everything together. In Mathics, I imagine this
+corresponds to ``Expression``.
+
+The class definitions for these are given in `mathics.core.parser.ast
+<https://github.com/mathics/Mathics/tree/master/mathics/core/parser.ast>`_.
+
+If you compare the above four AST types with other languages, you'll
+find this is pretty sparse. For example, `Python's AST
+<https://docs.python.org/3/library/ast.html>`_ has well over 30
+different types.
+
+So what's the difference? Python specializes AST types for different
+kinds of programming language constructs, such as for loops,
+conditional statements, exception blocks, different kinds of
+expressions, and so on. In WL and Mathics, these are all simply
+functions.
+
 Evaluation of an Expression
 ===========================
 
-Evaluation of the S-expression created by the parser is a bit more
-complicated than some programming languages because method lookup uses
-the function's signature using pattern matching. Also, there can be
-rule-based term-rewriting which goes on in conjunction with method
-lookup.
+In contrast to the simplicity and regularity for representing the data
+for ``Expression``, evaluation of this data or expresion is a bit more
+involved than conventional programming languages. I suppose this is to
+be expected.
+
+Part of the complexity revolves around the fact that the way function
+method lookup works is by pattern matching the expression. Also, there
+can be rule-based term-rewriting which goes on in conjunction with
+method lookup.
 
 If you have programmed in WL, aside from the the Python-syntax and
 conventions used here, a lot of this should seem familiar,
 
 If however you are not familiar with WL, but very familiar with Python
-or similar languages, a lot of this can seem very mysterious at first
-because functions don't get called using a traditional way where you
-create an object like ``Number()`` and then instantiate a method on
-that, like ``+``, ``__plus__()``, or even ``Times()``.
+or similar languages, a lot of this can seem very mysterious at first:
+functions don't get called using a traditional way where you create an
+object like ``Number()`` and then instantiate a method on that, like
+``+``, ``__plus__()``, or even ``Times()``.
 
-Of course, since the underlying interpreter language *is* Python, this
-does happen, but in a much more roundabout way.
+Of course, since the underlying interpreter language *is* Python,
+Python object creation and method lookup on that does happen. But it
+happens in a much more roundabout way.
 
-The first thing to understand is that finding which Python method in
-an Mathics ``System`List`` requires a bit of work, much like in Python when you write
-``a.b()``: there is a method lookup in the ``a`` object for method
-``b`` and that might come from a super class of ``a``.
+For Python and Object-Oriented programmers, you can find some of the
+indirectness in OO's "method dispatch". In Python or any
+Object-Oriented programming language, when you write ``a.b()``: there
+is a method lookup in the ``a`` object for method ``b`` and that might
+come from one of the super classes of ``a``.
 
-Mathics and WL are not Object Oriented so there is no such class-hierarchy lookup.
-However as mentioned above there is pattern matching going on.
+Mathics and WL are not Object Oriented so there is no such
+class-hierarchy lookup.  However, as mentioned above, pattern matching
+is used to decide which method in an object to call.
 
-The entire function invocation in Mathics comes from a ``System`List``. The first leaf
-(or ``Head[]``) is the name of a function to call. The remaining
-leaves are the parameters to give to that first leaf.  The combination
-of function name and remaining leaves is pattern matched.
+Function Name to Python method lookup
+--------------------------------------
 
-Inside a Mathics builtin function, represented as a Python object the
-appropriate class, there are a number of conventions used. Python
-objects are instrospected for properties that they have. In particular a function's
-docstring, and methods, and class variables all influence invocation.
+When an ``Expression`` has not been rewritten, entire function
+invocation in Mathics comes from the first leaf (or ``Head[]``) which
+should be a ``Symbol``. In Python this will be a class some sort, such
+as ``Builtin`` or ``Predefined`` or ``SympyFunction``. These classes
+are described in a later section.
 
-In particular the object instance method to that is called when the
-Mathics function such as ``System.Times`` is a method name that starts
-out with ``apply``.
+The remaining leaves of the ``Expression`` are the parameters to give
+to an ``apply`` method.
 
-The docstring of that method gives the function signature (or
-"pattern" in WL terminology) that has to match in the list leaves for
-it to be called.
+To figure out which ``apply`` method in the class object to call, each
+method's document string (or docstring) is consulted.
 
-Here is an example for the `Environment <https://reference.wolfram.com/language/ref/Environment.html>`_ primitive taken from the code
+As we go along we'll describe other conventions that are used that are
+crucial in getting the interpreter work properly. But for now, just
+remember that there is a method name in a Mathics function class that
+begins with ``apply``, and its docstring is used to figure out whether
+the leaves of the list are applicable to that function.
+
+Here is an example for the `Environment
+<https://reference.wolfram.com/language/ref/Environment.html>`_
+primitive taken from the code
 
 .. code-block:: python
 
    class Environment(Builtin):
 
    def apply(self, var, evaluation):
-       "Environment[var_?StringQ]"
+       """Environment[var_?StringQ]"""
    ...
 
-The ``apply()`` function above will get called when a ``System`List`` expression where its "head" value is "Environment" and
-it has one parameter ``var`` which is a ``String`` object.
+The ``apply()`` function above will get called when finding a
+``Expression`` whose ``Head`` value is ``Environment`` and it has one
+leaf or parameter which which we will call ``var``.  That leaf or
+parameter should also much be a ``String`` object.
 
-For more information functions with patterns see `Functions and
-Programs
+For more information describing Mathics function signatures that are
+used in the ``apply`` method's docstring , see `Functions and Programs
 <https://reference.wolfram.com/language/tutorial/FunctionsAndPrograms.html>`_
-and `Patterns <https://reference.wolfram.com/language/tutorial/Patterns.html>`_.
+and `Patterns
+<https://reference.wolfram.com/language/tutorial/Patterns.html>`_.
 
-Online and printed documentation for builtin Environment comes from the docstring for ``class Environment`` if that exists.
+Function Name Descriptions
+--------------------------
+
+Online and printed documentation for builtin ``Environment`` comes from the docstring for ``class Environment`` if that exists.
 In the example above, it was omitted. Here is what it looks like in the actual code.
 
 .. code-block:: python
@@ -209,15 +266,23 @@ here is code to evaluate an expression from a string:
 
    definitions = Definitions(add_builtin=True)
    str_expression = "1 + 2 / 3"
-   expr = parse(self.definitions, SingleLineFeeder(str_expression))
+   expr = parse(definitions, SingleLineFeeder(str_expression))
 
    # This code is new...
 
+   from mathics.core.evaluation import Evaluation
    evaluation = Evaluation(definitions=definitions, catch_interrupt=False)
    last_result = expr.evaluate(evaluation)
 
    print("type", type(last_result))
    print("expr: ", last_result)
+
+Running the above produces:
+
+::
+
+   type <class 'mathics.core.expression.Rational'>
+   expr:  5/3
 
 All of the above is wrapped nicely in the module ``mathics.session`` which
 performs the above. So here is an equivalent program:
@@ -225,6 +290,7 @@ performs the above. So here is an equivalent program:
 .. code-block:: python
 
     from mathics.session import session
+    str_expression = "1 + 2 / 3"
     result = session.evaluate(str_expression)
 
 
