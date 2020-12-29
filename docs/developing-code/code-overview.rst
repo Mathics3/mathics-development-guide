@@ -15,6 +15,10 @@ When you enter a string to Mathics there is a 3-step process:
 * The result, also an S-expression, is formatted to the kind of
   output desired.
 
+This is mentioned from the user perspective in the Figure `"Steps in
+the operation of Wolfram Language"
+<https://reference.wolfram.com/language/tutorial/TextualInputAndOutput.html#8971>`_
+
 However each of the above steps can be involved, so we break these
 down below.
 
@@ -72,8 +76,8 @@ Note that this is different from formatting the *output*:
 
 Some things to notice:
 
-* Parsing fully-qualifies names. So we have ``System`Times`` instead of
-  ``Times``, even the FullForm output shows the simple name.
+* Parsing fully-qualifies names. So we have ``System`Times`` instead
+  of ``Times``, even though the FullForm output shows the simple name.
 * Parsing removes parenthesis used for grouping capturing this
   instead by the function nesting order
 
@@ -167,20 +171,22 @@ Of course, since the underlying interpreter language *is* Python,
 Python object creation and method lookup on that does happen. But it
 happens in a much more roundabout way.
 
-For Python and Object-Oriented programmers, you can find some of the
-indirectness in OO's "method dispatch". In Python or any
-Object-Oriented programming language, when you write ``a.b()``: there
-is a method lookup in the ``a`` object for method ``b`` and that might
-come from one of the super classes of ``a``.
+For Python and Object-Oriented programmers, as an analogy for the
+complexity and indirectness, an Object-Oriented "method dispatch" is
+analogous. In Python or any Object-Oriented programming language, when
+you write ``a.b()``: there is a method lookup in the ``a`` object, so
+*at runtime* the type of ``a`` has to be inspected. And after having
+that, the method handle ``b`` needs to be computed. And this comes
+from a class heirarchy.
 
-Mathics and WL are not Object Oriented so there is no such
+Mathics and WL are not Object Oriented, so there is no such
 class-hierarchy lookup.  However, as mentioned above, pattern matching
-is used to decide which method in an object to call.
+is used to decide which method of the object to call.
 
 Function Name to Python method lookup
---------------------------------------
+-------------------------------------
 
-When an ``Expression`` has not been rewritten, entire function
+When an ``Expression`` has not been rewritten, the entire function
 invocation in Mathics comes from the first leaf (or ``Head[]``) which
 should be a ``Symbol``. In Python this will be a class some sort, such
 as ``Builtin`` or ``Predefined`` or ``SympyFunction``. These classes
@@ -189,14 +195,27 @@ are described in a later section.
 The remaining leaves of the ``Expression`` are the parameters to give
 to an ``apply`` method.
 
-To figure out which ``apply`` method in the class object to call, each
-method's document string (or docstring) is consulted.
+In the simplest case, the ``evaluate()`` method is called. This is
+used when a function has no parameters or arguments. In other words,
+it looks like a constant or variable name, and usually is prefaced
+with a ``$`. Examples here are ``$VersionNumber`` or ``$MachineName``.
 
-As we go along we'll describe other conventions that are used that are
-crucial in getting the interpreter work properly. But for now, just
-remember that there is a method name in a Mathics function class that
-begins with ``apply``, and its docstring is used to figure out whether
-the leaves of the list are applicable to that function.
+Functions which take no parameters are generally subclassed off of the
+``Builtin`` class.
+
+However when a function takes parameters it method's Object class is
+derived either directly indirectly from the ``Predefined`` class
+rather than the ``Builtin``. To figure out which ``apply`` method in
+the class object to call, each method's document string (or docstring)
+is consulted. The lookup process is kicked off using the
+``evaluate()`` method found in the ``Predefined`` class.
+
+As we go along, we'll describe other conventions that are used that
+are crucial in getting the interpreter work properly. But for now,
+just remember that unless there is an ``evaluate()`` method, there is
+a method name in a Mathics function class that begins with ``apply``,
+and its docstring is used to figure out whether the leaves of the list
+are applicable to that function.
 
 Here is an example for the `Environment
 <https://reference.wolfram.com/language/ref/Environment.html>`_
@@ -297,18 +316,44 @@ performs the above. So here is an equivalent program:
 Object Classes
 ==============
 
-To be continued...
+The fundamental classes that functions are built up from are described
+below. Most of these classes are defined in `mathics.builtin.base
+<https://github.com/mathics/Mathics/tree/master/mathics/builtin/base>`_.
 
 Atom Class Attributes
 ---------------------
 
-To be continued...
+Recall that an Expression to be evaluated is kind of S-expression
+called and ``ExpressionList``, where each list item is either itself
+an ``ExpressionList`` or an object in a class derived from ``Atom``.
 
-SympyFunction and _MPMathFunction
----------------------------------
+The ``Atom`` class we encountered earlier when describing the nodes
+that get created intially from a parse. However there are a few other
+kinds of Atoms or fundamention objects that can appear in an
+Evaluation list. These are
+
+* ``CompiledCode``
+* ``Image``
+
 
 Builtin and Predefined
 ----------------------
+
+Most of the functions loaded when Mathics starts up and before any
+packages are loaded are either ``Builtin`` or ``Predefined``
+
+``Predefined`` is a subclass of ``Builtin``.
+
+A feature of the ``Predefined`` class class is the convention that its
+``evaluation()`` method looks at the docstring of methods that start
+out with ``applied`` in order to figure out which method to call
+
+
+To be continued...
+
+
+Operator
+--------
 
 PrefixOperator and PostFixOperator
 ----------------------------------
@@ -316,5 +361,5 @@ PrefixOperator and PostFixOperator
 BinaryOperator and UnaryOperator
 --------------------------------
 
-Operator
---------
+SympyFunction and _MPMathFunction
+---------------------------------
