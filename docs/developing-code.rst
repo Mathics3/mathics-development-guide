@@ -1,5 +1,5 @@
-Using Mathics at the Python Level
-=================================
+Mathics from Python
+===================
 
 Inside a Python program you may want to call Mathics, or
 extend its primitives.
@@ -11,5 +11,6 @@ extend its primitives.
    developing-code/calling-mathics-library-from-within-python-code
    developing-code/contributing-developing
    developing-code/code-overview
-   developing-code/builtins
+   developing-code/extending
    developing-code/uml
+   developing-code/misc
