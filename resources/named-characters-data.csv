@@ -1,4 +1,4 @@
-Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gliph code-points,ESC sequence alias,ESC sequence alias_re,ESC sequence alias
+Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gliph code-points,ESC sequence alias
 \[AAcute],á,á,U+000E1,U+000E1,a'
 \[ABar],ā,ā,U+00101,U+00101,a-
 \[ACup],ă,ă,U+00103,U+00103,au
