@@ -149,7 +149,7 @@ Evaluation of an Expression
 ===========================
 
 In contrast to the simplicity and regularity for representing the data
-for ``Expression``, evaluation of this data or expresion is a bit more
+for ``Expression``, evaluation of this data or expression is a bit more
 involved than conventional programming languages. I suppose this is to
 be expected.
 
@@ -177,7 +177,7 @@ analogous. In Python or any Object-Oriented programming language, when
 you write ``a.b()``: there is a method lookup in the ``a`` object, so
 *at runtime* the type of ``a`` has to be inspected. And after having
 that, the method handle ``b`` needs to be computed. And this comes
-from a class heirarchy.
+from a class hierarchy.
 
 Mathics and WL are not Object Oriented, so there is no such
 class-hierarchy lookup.  However, as mentioned above, pattern matching
@@ -328,8 +328,8 @@ called and ``ExpressionList``, where each list item is either itself
 an ``ExpressionList`` or an object in a class derived from ``Atom``.
 
 The ``Atom`` class we encountered earlier when describing the nodes
-that get created intially from a parse. However there are a few other
-kinds of Atoms or fundamention objects that can appear in an
+that get created initially from a parse. However there are a few other
+kinds of Atoms or fundamental objects that can appear in an
 Evaluation list. These are
 
 * ``CompiledCode``
@@ -346,20 +346,35 @@ packages are loaded are either ``Builtin`` or ``Predefined``
 
 A feature of the ``Predefined`` class class is the convention that its
 ``evaluation()`` method looks at the docstring of methods that start
-out with ``applied`` in order to figure out which method to call
+out with ``applied`` in order to figure out which method to call.
 
-
-To be continued...
+A ``Builtin'' roughly corresponds to a ``Built-in Symbol'' in WL.
 
 
 Operator
 --------
 
+As mentioned in the Scanning and Parsing section above, there are a
+*lot* of operators in Mathics. Over 100 of them. (And I used to think
+that C and APL had a lot of operators).
+
+So you will find a large number of the Builtin-in Symbol definitions
+in the Mathics core also happen to be operators and are distributed
+pretty evenly in the modules of `mathics.builtin
+<https://github.com/mathics/Mathics/tree/master/mathics/builtin>`_.
+
+Some additional fields that the operator class adds is the precedence
+of the operator, and its string representation if it has one,
+e.g. ``+`` for ``System`Times``.
+
+The large collection of operators are future broken down into a few
+categories listed next.
+
 PrefixOperator and PostFixOperator
-----------------------------------
+++++++++++++++++++++++++++++++++++
 
 BinaryOperator and UnaryOperator
---------------------------------
+++++++++++++++++++++++++++++++++
 
 SympyFunction and _MPMathFunction
 ---------------------------------
