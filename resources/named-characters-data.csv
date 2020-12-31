@@ -1,4 +1,4 @@
-Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gliph code-points,ESC sequence alias
+Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gliph code-points,ESC sequence alias,ESC sequence alias_re,ESC sequence alias
 \[AAcute],á,á,U+000E1,U+000E1,a'
 \[ABar],ā,ā,U+00101,U+00101,a-
 \[ACup],ă,ă,U+00103,U+00103,au
@@ -167,7 +167,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Dalet],ℸ,ℸ,U+02138,U+02138,da
 \[Dash],–,–,U+02013,U+02013,-
 \[Degree],°,°,U+000B0,U+000B0,deg
-\[DeleteKey],,,U+0F7D0,U+0F7D0,␣del
+\[DeleteKey],,,U+0F7D0,U+0F7D0, del
 \[Del],∇,∇,U+02207,U+02207,del
 \[Delta],δ,δ,U+003B4,U+003B4,d
 \[DescendingEllipsis],⋱,⋱,U+022F1,U+022F1,
@@ -199,14 +199,14 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[DoubleDot],¨,¨,U+000A8,U+000A8,
 \[DoubleDownArrow],⇓,⇓,U+021D3,U+021D3,
 \[DoubledPi],ℼ,,U+0213C,U+0F749,pp
-\[DoubleLeftArrow],⇐,⇐,U+021D0,U+021D0,␣<=
+\[DoubleLeftArrow],⇐,⇐,U+021D0,U+021D0, <=
 \[DoubleLeftRightArrow],⇔,⇔,U+021D4,U+021D4,<=>
 \[DoubleLeftTee],⫤,⫤,U+02AE4,U+02AE4,
 \[DoubleLongLeftArrow],⟸,⟸,U+027F8,U+027F8,<==
 \[DoubleLongLeftRightArrow],⟺,⟺,U+027FA,U+027FA,<==>
 \[DoubleLongRightArrow],⟹,⟹,U+027F9,U+027F9,Err:510
 \[DoublePrime],″,″,U+02033,U+02033,''
-\[DoubleRightArrow],⇒,⇒,U+021D2,U+021D2,␣=>
+\[DoubleRightArrow],⇒,⇒,U+021D2,U+021D2, =>
 \[DoubleRightTee],⊨,⊨,U+022A8,U+022A8,
 \[DoubleStruckA],𝕒,,U+1D552,U+0F6E6,dsa
 \[DoubleStruckB],𝕓,,U+1D553,U+0F6E7,dsb
@@ -272,7 +272,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[DoubleStruckZero],𝟘,,U+1D7D8,U+0F7DB,ds0
 \[DoubleUpArrow],⇑,⇑,U+021D1,U+021D1,
 \[DoubleUpDownArrow],⇕,⇕,U+021D5,U+021D5,
-\[DoubleVerticalBar],∥,∥,U+02225,U+02225,|␣|||||
+\[DoubleVerticalBar],∥,∥,U+02225,U+02225,| |||||
 \[DownArrowBar],⤓,⤓,U+02913,U+02913,
 \[DownArrow],↓,↓,U+02193,U+02193,
 \[DownArrowUpArrow],⇵,⇵,U+021F5,U+021F5,
@@ -319,7 +319,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Equilibrium],⇌,⇌,U+021CC,U+021CC,equi
 \[Equivalent],⇔,⧦,U+021D4,U+029E6,equiv
 \[ErrorIndicator],,,,U+0F767,
-\[EscapeKey],,,,U+0F769,␣esc
+\[EscapeKey],,,,U+0F769, esc
 \[Eta],η,η,U+003B7,U+003B7,et
 \[Eth],ð,ð,U+000F0,U+000F0,d-
 \[Euro],€,€,U+020AC,U+020AC,
@@ -623,7 +623,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Mars],♂,♂,U+02642,U+02642,
 \[MathematicaIcon],,,,U+0F757,math
 \[MeasuredAngle],∡,∡,U+02221,U+02221,
-\[MediumSpace],, ,,U+0205F,␣␣␣
+\[MediumSpace],, ,,U+0205F,   
 \[Mercury],☿,☿,U+0263F,U+0263F,
 \[Mho],℧,℧,U+02127,U+02127,mho
 \[Micro],µ,µ,U+000B5,U+000B5,mi
@@ -631,10 +631,10 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Mu],μ,μ,U+003BC,U+003BC,m
 \[Nand],⊼,⊼,U+022BC,U+022BC,nand
 \[Natural],♮,♮,U+0266E,U+0266E,
-\[NegativeMediumSpace],,,,U+0F383,-␣␣␣
-\[NegativeThickSpace],,,,U+0F384,-␣␣␣␣
-\[NegativeThinSpace],,,,U+0F382,-␣␣
-\[NegativeVeryThinSpace],,,,U+0F380,-␣
+\[NegativeMediumSpace],,,,U+0F383,-   
+\[NegativeThickSpace],,,,U+0F384,-    
+\[NegativeThinSpace],,,,U+0F382,-  
+\[NegativeVeryThinSpace],,,,U+0F380,- 
 \[Neptune],♆,♆,U+02646,U+02646,
 \[NestedGreaterGreater],⪢,⪢,U+02AA2,U+02AA2,
 \[NestedLessLess],⪡,⪡,U+02AA1,U+02AA1,
@@ -767,7 +767,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[RawRightParenthesis],),),U+00029,U+00029,
 \[RawSemicolon],,;,,U+0003B,
 \[RawSlash],/,/,U+0002F,U+0002F,
-\[RawSpace],,,,U+00020,
+\[RawSpace],,U+00020,
 \[RawStar],*,*,U+0002A,U+0002A,
 \[RawTab],,	,,U+00009,
 \[RawTilde],~,~,U+0007E,U+0007E,
@@ -776,7 +776,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[RawWedge],^,^,U+0005E,U+0005E,
 \[RegisteredTrademark],®,®,U+000AE,U+000AE,rtm
 \[ReturnIndicator],↵,↵,U+021B5,U+021B5,ret
-\[ReturnKey],,,U+0F766,U+0F766,␣ret
+\[ReturnKey],,,U+0F766,U+0F766, ret
 \[ReverseDoublePrime],‶,‶,U+02036,U+02036,``
 \[ReverseElement],∋,∋,U+0220B,U+0220B,mem
 \[ReverseEquilibrium],⇋,⇋,U+021CB,U+021CB,
@@ -786,7 +786,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Rho],ρ,ρ,U+003C1,U+003C1,r
 \[RightAngle],∟,∟,U+0221F,U+0221F,
 \[RightAngleBracket],〉,〉,U+0232A,U+0232A,>
-\[RightArrow],→,→,U+02192,U+02192,␣->
+\[RightArrow],→,→,U+02192,U+02192, ->
 \[RightArrowBar],⇥,⇥,U+021E5,U+021E5,
 \[RightArrowLeftArrow],⇄,⇄,U+021C4,U+021C4,
 \[RightAssociation],,,,U+0F114,|||>|
@@ -938,8 +938,8 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[THacek],ť,ť,U+00165,U+00165,tv
 \[Therefore],∴,∴,U+02234,U+02234,tf
 \[Theta],θ,θ,U+003B8,U+003B8,th
-\[ThickSpace], , ,U+02005,U+02005,␣␣␣␣
-\[ThinSpace],, ,,U+02009,␣␣
+\[ThickSpace], , ,U+02005,U+02005,    
+\[ThinSpace],, ,,U+02009,  
 \[Thorn],þ,þ,U+000FE,U+000FE,thn
 \[Tilde],∼,∼,U+0223C,U+0223C,~
 \[TildeEqual],≃,≃,U+02243,U+02243,~=
@@ -975,12 +975,12 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[URing],ů,ů,U+0016F,U+0016F,uo
 \[Vee],⋁,⋁,U+022C1,U+022C1,v
 \[Venus],♀,♀,U+02640,U+02640,
-\[VerticalBar],|,,U+0007C,U+0F3D0,|␣|||
+\[VerticalBar],|,,U+0007C,U+0F3D0,| |||
 \[VerticalEllipsis],⋮,⋮,U+022EE,U+022EE,
 \[VerticalLine],│,│,U+02502,U+02502,vline
 \[VerticalSeparator],,,,U+0F432,||||
 \[VerticalTilde],≀,≀,U+02240,U+02240,
-\[VeryThinSpace], , ,U+0200A,U+0200A,␣
+\[VeryThinSpace], , ,U+0200A,U+0200A, 
 \[VirgoSign],♍,♍,U+0264D,U+0264D,
 \[WarningSign],,,U+0F725,U+0F725,
 \[WatchIcon],⌚,⌚,U+0231A,U+0231A,
