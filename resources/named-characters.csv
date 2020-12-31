@@ -1,0 +1,1005 @@
+Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gliph code-points,ESC sequence alias
+\[AAcute],á,á,U+000E1,U+000E1,a'
+\[ABar],ā,ā,U+00101,U+00101,a-
+\[ACup],ă,ă,U+00103,U+00103,au
+\[ADoubleDot],ä,ä,U+000E4,U+000E4,a
+\[AE],æ,æ,U+000E6,U+000E6,ae
+\[AGrave],à,à,U+000E0,U+000E0,a`
+\[AHat],â,â,U+000E2,U+000E2,a^
+\[Aleph],ℵ,ℵ,U+02135,U+02135,al
+\[AliasDelimiter],,,,U+0F764,
+\[AliasIndicator],,,,U+0F768,esc
+\[AlignmentMarker],,,,U+0F760,am
+\[Alpha],α,α,U+003B1,U+003B1,a
+\[AltKey],,,,U+0F7D1,alt
+\[And],∧,∧,U+02227,U+02227,&&
+\[Angle],∠,∠,U+02220,U+02220,
+\[Angstrom],Å,Å,U+0212B,U+0212B,Ang
+\[AquariusSign],♒,♒,U+02652,U+02652,
+\[AriesSign],♈,♈,U+02648,U+02648,
+\[ARing],å,å,U+000E5,U+000E5,ao
+\[AscendingEllipsis],⋰,⋰,U+022F0,U+022F0,
+\[ATilde],ã,ã,U+000E3,U+000E3,a~
+\[AutoLeftMatch],,,,U+0F3A8,
+\[AutoOperand],,,,U+0F3AE,
+\[AutoPlaceholder],,,,U+0F3A4,
+\[AutoRightMatch],,,,U+0F3A9,
+\[AutoSpace],,,,U+0F3AD,
+\[Backslash],∖,∖,U+02216,U+02216,\
+\[BeamedEighthNote],♫,♫,U+0266B,U+0266B,
+\[BeamedSixteenthNote],♬,♬,U+0266C,U+0266C,
+\[Because],∵,∵,U+02235,U+02235,
+\[Bet],ℶ,ℶ,U+02136,U+02136,be
+\[Beta],β,β,U+003B2,U+003B2,b
+\[BlackBishop],♝,♝,U+0265D,U+0265D,
+\[BlackKing],♚,♚,U+0265A,U+0265A,
+\[BlackKnight],♞,♞,U+0265E,U+0265E,
+\[BlackPawn],♟,♟,U+0265F,U+0265F,
+\[BlackQueen],♛,♛,U+0265B,U+0265B,
+\[BlackRook],♜,♜,U+0265C,U+0265C,
+\[Breve],˘,˘,U+002D8,U+002D8,bv
+\[Bullet],•,•,U+02022,U+02022,bu
+\[CAcute],ć,ć,U+00107,U+00107,c'
+\[CancerSign],♋,♋,U+0264B,U+0264B,
+\[Cap],⌢,⌢,U+02322,U+02322,
+\[CapitalAAcute],Á,Á,U+000C1,U+000C1,A'
+\[CapitalABar],Ā,Ā,U+00100,U+00100,A-
+\[CapitalACup],Ă,Ă,U+00102,U+00102,Au
+\[CapitalADoubleDot],Ä,Ä,U+000C4,U+000C4,A
+\[CapitalAE],Æ,Æ,U+000C6,U+000C6,AE
+\[CapitalAGrave],À,À,U+000C0,U+000C0,A`
+\[CapitalAHat],Â,Â,U+000C2,U+000C2,A^
+\[CapitalAlpha],Α,Α,U+00391,U+00391,A
+\[CapitalARing],Å,Å,U+000C5,U+000C5,Ao
+\[CapitalATilde],Ã,Ã,U+000C3,U+000C3,A~
+\[CapitalBeta],Ꞵ,Β,U+0A7B4,U+00392,B
+\[CapitalCAcute],Ć,Ć,U+00106,U+00106,C'
+\[CapitalCCedilla],Ç,Ç,U+000C7,U+000C7,C
+\[CapitalCHacek],Č,Č,U+0010C,U+0010C,Cv
+\[CapitalChi],Χ,Χ,U+0039E,U+003A7,Ch
+\[CapitalDelta],Δ,Δ,U+00394,U+00394,D
+\[CapitalDHacek],Ď,Ď,U+0010E,U+0010E,Dv
+\[CapitalDifferentialD],𝐷,,U+1D437,U+0F74B,DD
+\[CapitalDigamma],Ϝ,Ϝ,U+003DC,U+003DC,Di
+\[CapitalEAcute],É,É,U+000C9,U+000C9,E'
+\[CapitalEBar],Ē,Ē,U+00112,U+00112,E-
+\[CapitalECup],Ĕ,Ĕ,U+00114,U+00114,Eu
+\[CapitalEDoubleDot],Ë,Ë,U+000CB,U+000CB,E
+\[CapitalEGrave],È,È,U+000C8,U+000C8,E`
+\[CapitalEHacek],Ě,Ě,U+0011A,U+0011A,Ev
+\[CapitalEHat],Ê,Ê,U+000CA,U+000CA,E^
+\[CapitalEpsilon],Ε,Ε,U+00395,U+00395,E
+\[CapitalEta],Η,Η,U+00397,U+00397,Et
+\[CapitalEth],Ð,Ð,U+000D0,U+000D0,D-
+\[CapitalGamma],Γ,Γ,U+00393,U+00393,G
+\[CapitalIAcute],Í,Í,U+000CD,U+000CD,I'
+\[CapitalICup],Ĭ,Ĭ,U+0012C,U+0012C,Iu
+\[CapitalIDoubleDot],Ï,Ï,U+000CF,U+000CF,I
+\[CapitalIGrave],Ì,Ì,U+000CC,U+000CC,I`
+\[CapitalIHat],Î,Î,U+000CE,U+000CE,I^
+\[CapitalIota],Ι,Ι,U+00399,U+00399,I
+\[CapitalKappa],Κ,Κ,U+0039A,U+0039A,K
+\[CapitalKoppa],Ϟ,Ϟ,U+003DE,U+003DE,Ko
+\[CapitalLambda],Λ,Λ,U+0039B,U+0039B,L
+\[CapitalLSlash],Ł,Ł,U+00141,U+00141,L/
+\[CapitalMu],Μ,Μ,U+0039C,U+0039C,M
+\[CapitalNHacek],Ň,Ň,U+00147,U+00147,Nv
+\[CapitalNTilde],Ñ,Ñ,U+000D1,U+000D1,N~
+\[CapitalNu],Ν,Ν,U+0039D,U+0039D,N
+\[CapitalOAcute],Ó,Ó,U+000D3,U+000D3,O'
+\[CapitalODoubleAcute],Ő,Ő,U+00150,U+00150,O''
+\[CapitalODoubleDot],Ö,Ö,U+000D6,U+000D6,O
+\[CapitalOE],Œ,Œ,U+00152,U+00152,OE
+\[CapitalOGrave],Ò,Ò,U+000D2,U+000D2,O`
+\[CapitalOHat],Ô,Ô,U+000D4,U+000D4,O^
+\[CapitalOmega],Ω,Ω,U+003A9,U+003A9,O
+\[CapitalOmicron],Ο,Ο,U+0039F,U+0039F,Om
+\[CapitalOSlash],Ø,Ø,U+000D8,U+000D8,O/
+\[CapitalOTilde],Õ,Õ,U+000D5,U+000D5,O~
+\[CapitalPhi],Φ,Φ,U+003A6,U+003A6,Ph
+\[CapitalPi],Π,Π,U+003A0,U+003A0,P
+\[CapitalPsi],Ψ,Ψ,U+003A8,U+003A8,Ps
+\[CapitalRHacek],Ř,Ř,U+00158,U+00158,Rv
+\[CapitalRho],Ρ,Ρ,U+003A1,U+003A1,R
+\[CapitalSampi],Ϡ,Ϡ,U+003E0,U+003E0,Sa
+\[CapitalSHacek],Š,Š,U+00160,U+00160,Sv
+\[CapitalSigma],Σ,Σ,U+003A3,U+003A3,S
+\[CapitalStigma],Ϛ,Ϛ,U+003DA,U+003DA,Sti
+\[CapitalTau],Τ,Τ,U+003A4,U+003A4,T
+\[CapitalTHacek],Ť,Ť,U+00164,U+00164,Tv
+\[CapitalTheta],Θ,Θ,U+00398,U+00398,Th
+\[CapitalThorn],Þ,Þ,U+000DE,U+000DE,Thn
+\[CapitalUAcute],Ú,Ú,U+000DA,U+000DA,U'
+\[CapitalUDoubleAcute],Ű,Ű,U+00170,U+00170,U''
+\[CapitalUDoubleDot],Ü,Ü,U+000DC,U+000DC,U
+\[CapitalUGrave],Ù,Ù,U+000D9,U+000D9,U`
+\[CapitalUHat],Û,Û,U+000DB,U+000DB,U^
+\[CapitalUpsilon],Υ,Υ,U+003A5,U+003A5,U
+\[CapitalURing],Ů,Ů,U+0016E,U+0016E,Uo
+\[CapitalXi],Ξ,Ξ,U+0039E,U+0039E,X
+\[CapitalYAcute],Ý,Ý,U+000DD,U+000DD,Y'
+\[CapitalZeta],Ζ,Ζ,U+00396,U+00396,Z
+\[CapitalZHacek],Ž,Ž,U+0017D,U+0017D,Zv
+\[CapricornSign],♑,♑,U+02651,U+02651,
+\[CCedilla],ç,ç,U+000E7,U+000E7,c
+\[Cedilla],¸,¸,U+000B8,U+000B8,cd
+\[CenterDot],·,·,U+000B7,U+000B7,.
+\[CenterEllipsis],⋯,⋯,U+022EF,U+022EF,
+\[Cent],¢,¢,U+000A2,U+000A2,cent
+\[CHacek],č,č,U+0010D,U+0010D,cv
+\[CheckedBox],☒,☒,U+02612,U+02612,
+\[Checkmark],✓,✓,U+02713,U+02713,
+\[Chi],χ,χ,U+003C7,U+003C7,ch
+\[CircleDot],⊙,⊙,U+02299,U+02299,c.
+\[CircleMinus],⊖,⊖,U+02296,U+02296,c-
+\[CirclePlus],⊕,⊕,U+02295,U+02295,c+
+\[CircleTimes],⊗,⊗,U+02297,U+02297,c*
+\[ClockwiseContourIntegral],∲,∲,U+02232,U+02232,ccint
+\[CloseCurlyDoubleQuote],”,”,U+0201D,U+0201D,]
+\[CloseCurlyQuote],’,’,U+02019,U+02019,]'
+\[CloverLeaf],⌘,⌘,U+02318,U+02318,cl
+\[ClubSuit],♣,♣,U+02663,U+02663,
+\[Colon],∶,∶,U+02236,U+02236,:
+\[CommandKey],⌘,,U+02318,U+0F76A,cmd
+\[Conditioned],,,,U+0F3D3,
+\[Congruent],≡,≡,U+02261,U+02261,Err:510
+\[Conjugate],,,,U+0F3C8,co
+\[ConjugateTranspose],,,,U+0F3C9,ct
+\[ConstantC],𝕔,,U+1D554,U+0F7DA,cc
+\[Continuation],⋱,,U+022F1,U+0F3B1,cont
+\[ContourIntegral],∮,∮,U+0222E,U+0222E,cint
+\[ControlKey],,,,U+0F763,ctrl
+\[Coproduct],∐,∐,U+02210,U+02210,coprod
+\[Copyright],©,©,U+000A9,U+000A9,
+\[CounterClockwiseContourIntegral],∳,∳,U+02233,U+02233,cccint
+\[Cross],⨯,,U+02A2F,U+0F4A0,cross
+\[CupCap],≍,≍,U+0224D,U+0224D,
+\[Cup],⌣,⌣,U+02323,U+02323,
+\[CurlyCapitalUpsilon],ϒ,ϒ,U+003D2,U+003D2,cU
+\[CurlyEpsilon],ε,ε,U+003B5,U+003B5,ce
+\[CurlyKappa],ϰ,ϰ,U+003F0,U+003F0,ck
+\[CurlyPhi],φ,φ,U+003C6,U+003C6,j
+\[CurlyPi],ϖ,ϖ,U+003D6,U+003D6,cp
+\[CurlyRho],ϱ,ϱ,U+003F1,U+003F1,cr
+\[CurlyTheta],ϑ,ϑ,U+003D1,U+003D1,cq
+\[Currency],¤,¤,U+000A4,U+000A4,
+\[Dagger],†,†,U+02020,U+02020,dg
+\[Dalet],ℸ,ℸ,U+02138,U+02138,da
+\[Dash],–,–,U+02013,U+02013,-
+\[Degree],°,°,U+000B0,U+000B0,deg
+\[DeleteKey],,,U+0F7D0,U+0F7D0,␣del
+\[Del],∇,∇,U+02207,U+02207,del
+\[Delta],δ,δ,U+003B4,U+003B4,d
+\[DescendingEllipsis],⋱,⋱,U+022F1,U+022F1,
+\[DHacek],ď,ď,U+0010F,U+0010F,dv
+\[Diameter],⌀,⌀,U+02300,U+02300,
+\[Diamond],⋄,⋄,U+022C4,U+022C4,dia
+\[DiamondSuit],♢,♢,U+02662,U+02662,
+\[DifferenceDelta],Δ,∆,U+00394,U+02206,diffd
+\[DifferentialD],𝑑,,U+1D451,U+0F74C,dd
+\[Digamma],ϝ,ϝ,U+003DD,U+003DD,di
+\[DirectedEdge],→,,U+02192,U+0F3D5,de
+\[DiscreteRatio],ϴ,,U+003F4,U+0F4A4,dratio
+\[DiscreteShift],,,,U+0F4A3,shift
+\[DiscretionaryHyphen],,­,,U+000AD,dhy
+\[DiscretionaryLineSeparator],,,,U+0F76E,dlsep
+\[DiscretionaryPageBreakAbove],,,,U+0F3BF,dpba
+\[DiscretionaryPageBreakBelow],,,,U+0F3C6,dpbb
+\[DiscretionaryParagraphSeparator],,,,U+0F76F,dpsep
+\[Distributed],,,,U+0F3D2,
+\[Divides],∣,∣,U+02223,U+02223,divides
+\[Divide],÷,÷,U+000F7,U+000F7,div
+\[DotEqual],≐,≐,U+02250,U+02250,.=
+\[DotlessI],I,ı,U+00049,U+00131,
+\[DotlessJ],J,,U+0004A,U+0F700,
+\[DottedSquare],⛶,,U+026F6,U+0F751,
+\[DoubleContourIntegral],∯,∯,U+0222F,U+0222F,
+\[DoubleDagger],‡,‡,U+02021,U+02021,ddg
+\[DoubledGamma],ℽ,,U+0213D,U+0F74A,gg
+\[DoubleDot],¨,¨,U+000A8,U+000A8,
+\[DoubleDownArrow],⇓,⇓,U+021D3,U+021D3,
+\[DoubledPi],ℼ,,U+0213C,U+0F749,pp
+\[DoubleLeftArrow],⇐,⇐,U+021D0,U+021D0,␣<=
+\[DoubleLeftRightArrow],⇔,⇔,U+021D4,U+021D4,<=>
+\[DoubleLeftTee],⫤,⫤,U+02AE4,U+02AE4,
+\[DoubleLongLeftArrow],⟸,⟸,U+027F8,U+027F8,<==
+\[DoubleLongLeftRightArrow],⟺,⟺,U+027FA,U+027FA,<==>
+\[DoubleLongRightArrow],⟹,⟹,U+027F9,U+027F9,Err:510
+\[DoublePrime],″,″,U+02033,U+02033,''
+\[DoubleRightArrow],⇒,⇒,U+021D2,U+021D2,␣=>
+\[DoubleRightTee],⊨,⊨,U+022A8,U+022A8,
+\[DoubleStruckA],𝕒,,U+1D552,U+0F6E6,dsa
+\[DoubleStruckB],𝕓,,U+1D553,U+0F6E7,dsb
+\[DoubleStruckC],𝕔,,U+1D554,U+0F6E8,dsc
+\[DoubleStruckCapitalA],𝔸,,U+1D538,U+0F7A4,dsA
+\[DoubleStruckCapitalB],𝔹,,U+1D539,U+0F7A5,dsB
+\[DoubleStruckCapitalC],ℂ,,U+02102,U+0F7A6,dsC
+\[DoubleStruckCapitalD],𝔻,,U+1D53B,U+0F7A7,dsD
+\[DoubleStruckCapitalE],𝔼,,U+1D53C,U+0F7A8,dsE
+\[DoubleStruckCapitalF],𝔽,,U+1D53D,U+0F7A9,dsF
+\[DoubleStruckCapitalG],𝔾,,U+1D53E,U+0F7AA,dsG
+\[DoubleStruckCapitalH],ℍ,,U+0210D,U+0F7AB,dsH
+\[DoubleStruckCapitalI],𝕀,,U+1D540,U+0F7AC,dsI
+\[DoubleStruckCapitalJ],𝕁,,U+1D541,U+0F7AD,dsJ
+\[DoubleStruckCapitalK],𝕂,,U+1D542,U+0F7AE,dsK
+\[DoubleStruckCapitalL],𝕃,,U+1D543,U+0F7AF,dsL
+\[DoubleStruckCapitalM],𝕄,,U+1D544,U+0F7B0,dsM
+\[DoubleStruckCapitalN],ℕ,,U+02115,U+0F7B1,dsN
+\[DoubleStruckCapitalO],𝕆,,U+1D546,U+0F7B2,dsO
+\[DoubleStruckCapitalP],ℙ,,U+02119,U+0F7B3,dsP
+\[DoubleStruckCapitalQ],ℚ,,U+0211A,U+0F7B4,dsQ
+\[DoubleStruckCapitalR],ℝ,,U+0211D,U+0F7B5,dsR
+\[DoubleStruckCapitalS],𝕊,,U+1D54A,U+0F7B6,dsS
+\[DoubleStruckCapitalT],𝕋,,U+1D54B,U+0F7B7,dsT
+\[DoubleStruckCapitalU],𝕌,,U+1D54C,U+0F7B8,dsU
+\[DoubleStruckCapitalV],𝕍,,U+1D54D,U+0F7B9,dsV
+\[DoubleStruckCapitalW],𝕎,,U+1D54E,U+0F7BA,dsW
+\[DoubleStruckCapitalX],𝕏,,U+1D54F,U+0F7BB,dsX
+\[DoubleStruckCapitalY],𝕐,,U+1D550,U+0F7BC,dsY
+\[DoubleStruckCapitalZ],ℤ,,U+02124,U+0F7BD,dsZ
+\[DoubleStruckD],𝕕,,U+1D555,U+0F6E9,dsd
+\[DoubleStruckE],𝕖,,U+1D556,U+0F6EA,dse
+\[DoubleStruckEight],𝟠,,U+1D7E0,U+0F7E3,ds8
+\[DoubleStruckF],𝕗,,U+1D557,U+0F6EB,dsf
+\[DoubleStruckFive],𝟝,,U+1D7DD,U+0F7E0,ds5
+\[DoubleStruckFour],𝟜,,U+1D7DC,U+0F7DF,ds4
+\[DoubleStruckG],𝕘,,U+1D558,U+0F6EC,dsg
+\[DoubleStruckH],𝕙,,U+1D559,U+0F6ED,dsh
+\[DoubleStruckI],𝕚,,U+1D55A,U+0F6EE,dsi
+\[DoubleStruckJ],𝕛,,U+1D55B,U+0F6EF,dsj
+\[DoubleStruckK],𝕜,,U+1D55C,U+0F6F0,dsk
+\[DoubleStruckL],𝕝,,U+1D55D,U+0F6F1,dsl
+\[DoubleStruckM],𝕞,,U+1D55E,U+0F6F2,dsm
+\[DoubleStruckN],𝕟,,U+1D55F,U+0F6F3,dsn
+\[DoubleStruckNine],𝟡,,U+1D7E1,U+0F7E4,ds9
+\[DoubleStruckO],𝕠,,U+1D560,U+0F6F4,dso
+\[DoubleStruckOne],𝟙,,U+1D7D9,U+0F7DC,ds1
+\[DoubleStruckP],𝕡,,U+1D561,U+0F6F5,dsp
+\[DoubleStruckQ],𝕢,,U+1D562,U+0F6F6,dsq
+\[DoubleStruckR],𝕣,,U+1D563,U+0F6F7,dsr
+\[DoubleStruckS],𝕤,,U+1D564,U+0F6F8,dss
+\[DoubleStruckSeven],𝟟,,U+1D7DF,U+0F7E2,ds7
+\[DoubleStruckSix],𝟞,,U+1D7DE,U+0F7E1,ds6
+\[DoubleStruckT],𝕥,,U+1D565,U+0F6F9,dst
+\[DoubleStruckThree],𝟛,,U+1D7DB,U+0F7DE,ds3
+\[DoubleStruckTwo],𝟚,,U+1D7DA,U+0F7DD,ds2
+\[DoubleStruckU],𝕦,,U+1D566,U+0F6FA,dsu
+\[DoubleStruckV],𝕧,,U+1D567,U+0F6FB,dsv
+\[DoubleStruckW],𝕨,,U+1D568,U+0F6FC,dsw
+\[DoubleStruckX],𝕩,,U+1D569,U+0F6FD,dsx
+\[DoubleStruckY],𝕪,,U+1D56A,U+0F6FE,dsy
+\[DoubleStruckZ],𝕫,,U+1D56B,U+0F6FF,dsz
+\[DoubleStruckZero],𝟘,,U+1D7D8,U+0F7DB,ds0
+\[DoubleUpArrow],⇑,⇑,U+021D1,U+021D1,
+\[DoubleUpDownArrow],⇕,⇕,U+021D5,U+021D5,
+\[DoubleVerticalBar],∥,∥,U+02225,U+02225,|␣|||||
+\[DownArrowBar],⤓,⤓,U+02913,U+02913,
+\[DownArrow],↓,↓,U+02193,U+02193,
+\[DownArrowUpArrow],⇵,⇵,U+021F5,U+021F5,
+\[DownBreve],̑,,U+00311,U+0F755,dbv
+\[DownExclamation],¡,¡,U+000A1,U+000A1,d!
+\[DownLeftRightVector],⥐,⥐,U+02950,U+02950,
+\[DownLeftTeeVector],⥞,⥞,U+0295E,U+0295E,
+\[DownLeftVector],↽,↽,U+021BD,U+021BD,
+\[DownLeftVectorBar],⥖,⥖,U+02956,U+02956,
+\[DownPointer],▾,▾,U+025BE,U+025BE,
+\[DownQuestion],¿,¿,U+000BF,U+000BF,d?
+\[DownRightTeeVector],⥟,⥟,U+0295F,U+0295F,
+\[DownRightVector],⇁,⇁,U+021C1,U+021C1,
+\[DownRightVectorBar],⥗,⥗,U+02957,U+02957,
+\[DownTeeArrow],↧,↧,U+021A7,U+021A7,
+\[DownTee],⊤,⊤,U+022A4,U+022A4,dT
+\[EAcute],é,é,U+000E9,U+000E9,e'
+\[Earth],⊕,♁,U+02295,U+02641,
+\[EBar],ē,ē,U+00113,U+00113,e-
+\[ECup],ĕ,ĕ,U+00115,U+00115,eu
+\[EDoubleDot],ë,ë,U+000EB,U+000EB,e
+\[EGrave],è,è,U+000E8,U+000E8,e`
+\[EHacek],ě,ě,U+0011B,U+0011B,ev
+\[EHat],ê,ê,U+000EA,U+000EA,e^
+\[EighthNote],♪,♪,U+0266A,U+0266A,
+\[Element],∈,∈,U+02208,U+02208,el
+\[Ellipsis],…,…,U+02026,U+02026,...
+\[EmptyCircle],○,○,U+025CB,U+025CB,eci
+\[EmptyDiamond],◇,◇,U+025C7,U+025C7,
+\[EmptyDownTriangle],▽,▽,U+025BD,U+025BD,
+\[EmptyRectangle],▯,▯,U+025AF,U+025AF,
+\[EmptySet],∅,∅,U+02205,U+02205,es
+\[EmptySmallCircle],◦,◦,U+025E6,U+025E6,esci
+\[EmptySmallSquare],◻,◻,U+025FB,U+025FB,essq
+\[EmptySquare],□,□,U+025A1,U+025A1,esq
+\[EmptyUpTriangle],△,△,U+025B3,U+025B3,
+\[EmptyVerySmallSquare],▫,▫,U+025AB,U+025AB,evssq
+\[EnterKey],,,,U+0F7D4,ent
+\[EntityEnd],,,,U+0F3B9,
+\[EntityStart],,,,U+0F3B8,
+\[Epsilon],ϵ,ϵ,U+003F5,U+003F5,e
+\[Equal],⩵,,U+02A75,U+0F431,Err:520
+\[EqualTilde],≂,≂,U+02242,U+02242,Err:510
+\[Equilibrium],⇌,⇌,U+021CC,U+021CC,equi
+\[Equivalent],⇔,⧦,U+021D4,U+029E6,equiv
+\[ErrorIndicator],,,,U+0F767,
+\[EscapeKey],,,,U+0F769,␣esc
+\[Eta],η,η,U+003B7,U+003B7,et
+\[Eth],ð,ð,U+000F0,U+000F0,d-
+\[Euro],€,€,U+020AC,U+020AC,
+\[Exists],∃,∃,U+02203,U+02203,ex
+\[ExponentialE],ⅇ,,U+02147,U+0F74D,ee
+\[FiLigature],ﬁ,ﬁ,U+0FB01,U+0FB01,
+\[FilledCircle],●,●,U+025CF,U+025CF,fci
+\[FilledDiamond],◆,◆,U+025C6,U+025C6,
+\[FilledDownTriangle],▼,▼,U+025BC,U+025BC,
+\[FilledLeftTriangle],◀,◀,U+025C0,U+025C0,
+\[FilledRectangle],▮,▮,U+025AE,U+025AE,
+\[FilledRightTriangle],▶,▶,U+025B6,U+025B6,
+\[FilledSmallCircle],•,,U+02022,U+0F750,fsci
+\[FilledSmallSquare],■,◼,U+025A0,U+025FC,fssq
+\[FilledSquare],■,■,U+025A0,U+025A0,fsq
+\[FilledUpTriangle],▲,▲,U+025B2,U+025B2,
+\[FilledVerySmallSquare],▪,▪,U+025AA,U+025AA,fvssq
+\[FinalSigma],ς,ς,U+003C2,U+003C2,fs
+\[FirstPage],,,,U+0F7FA,
+\[FivePointedStar],★,★,U+02605,U+02605,*5
+\[Flat],♭,♭,U+0266D,U+0266D,
+\[FlLigature],ﬂ,ﬂ,U+0FB02,U+0FB02,
+\[Florin],ƒ,ƒ,U+00192,U+00192,
+\[ForAll],∀,∀,U+02200,U+02200,fa
+\[FormalA],ạ,,U+01EA1,U+0F800,.a
+\[FormalAlpha],α̣,,U+003B1 U+00323,U+0F854,.Alpha
+\[FormalB],ḅ,,U+01E05,U+0F801,.b
+\[FormalBeta],β̣,,U+003B2 U+00323,U+0F855,.Beta
+\[FormalC],c̣,,U+00063 U+00323,U+0F802,.c
+\[FormalCapitalA],Ạ,,U+01EA0,U+0F81A,.A
+\[FormalCapitalAlpha],Α̣,,U+00391 U+00323,U+0F834,.CapitalAlpha
+\[FormalCapitalB],Ḅ,,U+01E04,U+0F81B,.B
+\[FormalCapitalBeta],Β̣,,U+00392 U+00323,U+0F835,.CapitalBeta
+\[FormalCapitalC],C̣,,U+00043 U+00323,U+0F81C,.C
+\[FormalCapitalChi],Χ̣,,U+003A7 U+00323,U+0F84A,.CapitalChi
+\[FormalCapitalD],Ḍ,,U+01E0C,U+0F81D,.D
+\[FormalCapitalDelta],Δ̣,,U+00394 U+00323,U+0F837,.CapitalDelta
+\[FormalCapitalDigamma],Ϝ̣,,U+003DC U+00323,U+0F87F,.CapitalDigamma
+\[FormalCapitalE],Ẹ,,U+01EB8,U+0F81E,.E
+\[FormalCapitalEpsilon],Ε̣,,U+00395 U+00323,U+0F838,.CapitalEpsilon
+\[FormalCapitalEta],Η̣,,U+00397 U+00323,U+0F83A,.CapitalEta
+\[FormalCapitalF],F̣,,U+00046 U+00323,U+0F81F,.F
+\[FormalCapitalG],G̣,,U+00047 U+00323,U+0F820,.G
+\[FormalCapitalGamma],Γ,,U+00393,U+0F836,.CapitalGamma
+\[FormalCapitalH],Ḥ,,U+01E24,U+0F821,.H
+\[FormalCapitalI],Ị,,U+01ECA,U+0F822,.I
+\[FormalCapitalIota],Ι̣̣,,U+00399 U+00323,U+0F83C,.CapitalIota
+\[FormalCapitalJ],J̣,,U+0004A U+00323,U+0F823,.J
+\[FormalCapitalK],Ḳ,,U+01E32,U+0F824,.K
+\[FormalCapitalKappa],Κ̣,,U+0039A U+00323,U+0F83D,.CapitalKappa
+\[FormalCapitalKoppa],Ϟ̣,,U+003DE U+00323,U+0F881,.CapitalKoppa
+\[FormalCapitalL],Ḷ,,U+01E36,U+0F825,.L
+\[FormalCapitalLambda],Λ̣,,U+0039B U+00323,U+0F83E,.CapitalLambda
+\[FormalCapitalM],Ṃ,,U+01E42,U+0F826,.M
+\[FormalCapitalMu],Μ̣,,U+0039C U+00323,U+0F83F,.CapitalMu
+\[FormalCapitalN],Ṇ,,U+01E46,U+0F827,.N
+\[FormalCapitalNu],Ν̣,,U+0039D U+00323,U+0F840,.CapitalNu
+\[FormalCapitalO],Ọ,,U+01ECC,U+0F828,.O
+\[FormalCapitalOmega],Ω̣,,U+003A9 U+00323,U+0F84C,.CapitalOmega
+\[FormalCapitalOmicron],Ο̣,,U+0039F U+00323,U+0F842,.CapitalOmicron
+\[FormalCapitalP],P̣,,U+00050 U+00323,U+0F829,.P
+\[FormalCapitalPhi],Φ̣,,U+003A6 U+00323,U+0F849,.CapitalPhi
+\[FormalCapitalPi],Π̣,,U+003A0 U+00323,U+0F843,.CapitalPi
+\[FormalCapitalPsi],Ψ̣,,U+003A8 U+00323,U+0F84B,.CapitalPsi
+\[FormalCapitalQ],Q̣,,U+00051 U+00323,U+0F82A,.Q
+\[FormalCapitalR],Ṛ,,U+01E5A,U+0F82B,.R
+\[FormalCapitalRho],Ρ̣,,U+003A1 U+00323,U+0F844,.CapitalRho
+\[FormalCapitalS],Ṣ,,U+01E62,U+0F82C,.S
+\[FormalCapitalSampi],Ϡ̣,,U+003E0 U+00323,U+0F883,.CapitalSampi
+\[FormalCapitalSigma],Σ̣,,U+003A3 U+00323,U+0F846,.CapitalSigma
+\[FormalCapitalStigma],Ϛ̣,,U+003DA U+00323,U+0F87D,.CapitalStigma
+\[FormalCapitalT],Ṭ,,U+01E6C,U+0F82D,.T
+\[FormalCapitalTau],Τ̣,,U+003A4 U+00323,U+0F847,.CapitalTau
+\[FormalCapitalTheta],Θ,,U+00398,U+0F83B,.CapitalTheta
+\[FormalCapitalU],Ụ,,U+01EE4,U+0F82E,.U
+\[FormalCapitalUpsilon],Υ̣,,U+003A5 U+00323,U+0F848,.CapitalUpsilon
+\[FormalCapitalV],Ṿ,,U+01E7E,U+0F82F,.V
+\[FormalCapitalW],Ẉ,,U+01E88,U+0F830,.W
+\[FormalCapitalX],X̣,,U+00058 U+00323,U+0F831,.X
+\[FormalCapitalXi],Ξ̣,,U+0039E U+00323,U+0F841,.CapitalXi
+\[FormalCapitalY],Ỵ,,U+01EF4,U+0F832,.Y
+\[FormalCapitalZ],Ẓ,,U+01E92,U+0F833,.Z
+\[FormalCapitalZeta],Ζ̣,,U+00396 U+00323,U+0F839,.CapitalZeta
+\[FormalChi],χ̣,,U+003C7 U+00323,U+0F86A,.Chi
+\[FormalCurlyCapitalUpsilon],ϒ̣,,U+003D2 U+00323,U+0F875,.CurlyCapitalUpsilon
+\[FormalCurlyEpsilon],ε̣,,U+003B5 U+00323,U+0F858,.CurlyEpsilon
+\[FormalCurlyKappa],ϰ̣,,U+003F0 U+00323,U+0F885,.CurlyKappa
+\[FormalCurlyPhi],φ̣,,U+003C6 U+00323,U+0F869,.CurlyPhi
+\[FormalCurlyPi],ϖ̣,,U+003D6 U+00323,U+0F879,.CurlyPi
+\[FormalCurlyRho],ϱ̣,,U+003F1 U+00323,U+0F886,.CurlyRho
+\[FormalCurlyTheta],ϑ̣,,U+003D1 U+00323,U+0F874,.CurlyTheta
+\[FormalD],ḍ,,U+01E0D,U+0F803,.d
+\[FormalDelta],δ̣,,U+003B4 U+00323,U+0F857,.Delta
+\[FormalDigamma],ϝ,,U+003DD,U+0F880,.Digamma
+\[FormalE],ẹ,,U+01EB9,U+0F804,.e
+\[FormalEpsilon],ϵ̣,,U+003F5 U+00323,U+0F88A,.Epsilon
+\[FormalEta],η̣,,U+003B7 U+00323,U+0F85A,.Eta
+\[FormalF],f̣,,U+00066 U+00323,U+0F805,.f
+\[FormalFinalSigma],ς̣,,U+003C2 U+00323,U+0F865,.FinalSigma
+\[FormalG],g̣,,U+00067 U+00323,U+0F806,.g
+\[FormalGamma],γ̣,,U+003B3 U+00323,U+0F856,.Gamma
+\[FormalH],ḥ,,U+01E25,U+0F807,.h
+\[FormalI],ị,,U+01ECB,U+0F808,.i
+\[FormalIota],Ι̣̣,,U+00399 U+00323,U+0F85C,.Iota
+\[FormalJ],j̣,,U+0006A U+00323,U+0F809,.j
+\[FormalK],ḳ,,U+01E33,U+0F80A,.k
+\[FormalKappa],κ̣,,U+003BA U+00323,U+0F85D,.Kappa
+\[FormalKoppa],ϟ̣,,U+003DF U+00323,U+0F882,.Koppa
+\[FormalL],ḷ,,U+01E37,U+0F80B,.l
+\[FormalLambda],λ̣,,U+003BB U+00323,U+0F85E,.Lambda
+\[FormalM],ṃ,,U+0006D U+00323,U+0F80C,.m
+\[FormalMu],μ̣,,U+003BC U+00323,U+0F85F,.Mu
+\[FormalN],ṇ,,U+0006E U+00323,U+0F80D,.n
+\[FormalNu],ν̣,,U+003BD U+00323,U+0F860,.Nu
+\[FormalO],ọ,,U+0006F U+00323,U+0F80E,.o
+\[FormalOmega],ω̣,,U+003C9 U+00323,U+0F86C,.Omega
+\[FormalOmicron],ο̣,,U+003BF U+00323,U+0F862,.Omicron
+\[FormalP],p̣,,U+00070 U+00323,U+0F80F,.p
+\[FormalPhi],ϕ̣,,U+003D5 U+00323,U+0F878,.Phi
+\[FormalPi],π̣,,U+003C0 U+00323,U+0F863,.Pi
+\[FormalPsi],ψ̣,,U+003C8 U+00323,U+0F86B,.Psi
+\[FormalQ],q̣,,U+00071 U+00323,U+0F810,.q
+\[FormalR],ṛ,,U+01E5B,U+0F811,.r
+\[FormalRho],ρ̣,,U+003C1 U+00323,U+0F864,.Rho
+\[FormalS],ṣ,,U+01E63,U+0F812,.s
+\[FormalSampi],ϡ̣,,U+003E1 U+00323,U+0F884,.Sampi
+\[FormalSigma],σ̣,,U+003C3 U+00323,U+0F866,.Sigma
+\[FormalStigma],ϛ,,U+003DB,U+0F87E,.Stigma
+\[FormalT],ṭ,,U+01E6D,U+0F813,.t
+\[FormalTau],τ̣,,U+003C4 U+00323,U+0F867,.Tau
+\[FormalTheta],θ̣,,U+003B8 U+00323,U+0F85B,.Theta
+\[FormalU],ụ,,U+01EE5,U+0F814,.u
+\[FormalUpsilon],υ̣,,U+003C5 U+00323,U+0F868,.Upsilon
+\[FormalV],ṿ,,U+01E7F,U+0F815,.v
+\[FormalW],ẉ,,U+01E89,U+0F816,.w
+\[FormalX],x̣,,U+00078 U+00323,U+0F817,.x
+\[FormalXi],ξ̣,,U+003BE U+00323,U+0F861,.Xi
+\[FormalY],ỵ,,U+01EF5,U+0F818,.y
+\[FormalZ],ẓ,,U+01E93,U+0F819,.z
+\[FormalZeta],ζ̣,,U+003B6 U+00323,U+0F859,.Zeta
+\[FreakedSmiley],,,,U+0F721,:-@
+\[Function],↦,,U+021A6,U+0F4A1,|||->|
+\[Gamma],γ,γ,U+003B3,U+003B3,g
+\[GeminiSign],♊,♊,U+0264A,U+0264A,
+\[Gimel],ℷ,ℷ,U+02137,U+02137,gi
+\[GothicA],𝔞,,U+1D51E,U+0F6CC,goa
+\[GothicB],𝔟,,U+1D51F,U+0F6CD,gob
+\[GothicC],𝔠,,U+1D520,U+0F6CE,goc
+\[GothicCapitalA],𝔄,,U+1D504,U+0F78A,goA
+\[GothicCapitalB],𝔅,,U+1D505,U+0F78B,goB
+\[GothicCapitalC],ℭ,ℭ,U+0212D,U+0212D,goC
+\[GothicCapitalD],𝔇,,U+1D507,U+0F78D,goD
+\[GothicCapitalE],𝔈,,U+1D508,U+0F78E,goE
+\[GothicCapitalF],𝔉,,U+1D509,U+0F78F,goF
+\[GothicCapitalG],𝔊,,U+1D50A,U+0F790,goG
+\[GothicCapitalH],ℌ,ℌ,U+0210C,U+0210C,goH
+\[GothicCapitalI],ℑ,ℑ,U+02111,U+02111,goI
+\[GothicCapitalJ],𝔍,,U+1D50D,U+0F793,goJ
+\[GothicCapitalK],𝔎,,U+1D50E,U+0F794,goK
+\[GothicCapitalL],𝔏,,U+1D50F,U+0F795,goL
+\[GothicCapitalM],𝔐,,U+1D510,U+0F796,goM
+\[GothicCapitalN],𝔑,,U+1D511,U+0F797,goN
+\[GothicCapitalO],𝔒,,U+1D512,U+0F798,goO
+\[GothicCapitalP],𝔓,,U+1D513,U+0F799,goP
+\[GothicCapitalQ],𝔔,,U+1D514,U+0F79A,goQ
+\[GothicCapitalR],ℜ,ℜ,U+0211C,U+0211C,goR
+\[GothicCapitalS],𝔖,,U+1D516,U+0F79C,goS
+\[GothicCapitalT],𝔗,,U+1D517,U+0F79D,goT
+\[GothicCapitalU],𝔘,,U+1D518,U+0F79E,goU
+\[GothicCapitalV],𝔙,,U+1D519,U+0F79F,goV
+\[GothicCapitalW],𝔚,,U+1D51A,U+0F7A0,goW
+\[GothicCapitalX],𝔛,,U+1D51B,U+0F7A1,goX
+\[GothicCapitalY],𝔜,,U+1D51C,U+0F7A2,goY
+\[GothicCapitalZ],ℨ,ℨ,U+02128,U+02128,goZ
+\[GothicD],𝔡,,U+1D521,U+0F6CF,god
+\[GothicE],𝔢,,U+1D522,U+0F6D0,goe
+\[GothicEight],,,,U+0F7ED,go8
+\[GothicF],𝔣,,U+1D523,U+0F6D1,gof
+\[GothicFive],,,,U+0F7EA,go5
+\[GothicFour],,,,U+0F7E9,go4
+\[GothicG],𝔤,,U+1D524,U+0F6D2,gog
+\[GothicH],𝔥,,U+1D525,U+0F6D3,goh
+\[GothicI],𝔦,,U+1D526,U+0F6D4,goi
+\[GothicJ],𝔧,,U+1D527,U+0F6D5,goj
+\[GothicK],𝔨,,U+1D528,U+0F6D6,gok
+\[GothicL],𝔩,,U+1D529,U+0F6D7,gol
+\[GothicM],𝔪,,U+1D52A,U+0F6D8,gom
+\[GothicN],𝔫,,U+1D52B,U+0F6D9,gon
+\[GothicNine],,,,U+0F7EF,go9
+\[GothicO],𝔬,,U+1D52C,U+0F6DA,goo
+\[GothicOne],,,,U+0F7E6,go1
+\[GothicP],𝔭,,U+1D52D,U+0F6DB,gop
+\[GothicQ],𝔮,,U+1D52E,U+0F6DC,goq
+\[GothicR],𝔯,,U+1D52F,U+0F6DD,gor
+\[GothicS],𝔰,,U+1D530,U+0F6DE,gos
+\[GothicSeven],,,,U+0F7EC,go7
+\[GothicSix],,,,U+0F7EB,go6
+\[GothicT],𝔱,,U+1D531,U+0F6DF,got
+\[GothicThree],,,,U+0F7E8,go3
+\[GothicTwo],,,,U+0F7E7,go2
+\[GothicU],𝔲,,U+1D532,U+0F6E0,gou
+\[GothicV],𝔳,,U+1D533,U+0F6E1,gov
+\[GothicW],𝔴,,U+1D534,U+0F6E2,gow
+\[GothicX],𝔵,,U+1D535,U+0F6E3,gox
+\[GothicY],𝔶,,U+1D536,U+0F6E4,goy
+\[GothicZ],𝔷,,U+1D537,U+0F6E5,goz
+\[GothicZero],,,,U+0F7E5,go0
+\[GrayCircle],●,,U+025CF,U+0F753,gci
+\[GraySquare],■,,U+025A0,U+0F752,gsq
+\[GreaterEqualLess],⋛,⋛,U+022DB,U+022DB,
+\[GreaterEqual],≥,≥,U+02265,U+02265,>=
+\[GreaterFullEqual],≧,≧,U+02267,U+02267,
+\[GreaterGreater],≫,≫,U+0226B,U+0226B,
+\[GreaterLess],≷,≷,U+02277,U+02277,
+\[GreaterSlantEqual],⩾,⩾,U+02A7E,U+02A7E,>/
+\[GreaterTilde],≳,≳,U+02273,U+02273,>~
+\[Hacek],ˇ,ˇ,U+002C7,U+002C7,hck
+\[HappySmiley],☺,☺,U+0263A,U+0263A,:)
+\[HBar],ℏ,ℏ,U+0210F,U+0210F,hb
+\[HeartSuit],♡,♡,U+02661,U+02661,
+\[HermitianConjugate],,,U+0F3CE,U+0F3CE,hc
+\[HorizontalLine],─,─,U+02500,U+02500,hline
+\[HumpDownHump],≎,≎,U+0224E,U+0224E,
+\[HumpEqual],≏,≏,U+0224F,U+0224F,h=
+\[Hyphen],‐,‐,U+02010,U+02010,hy
+\[IAcute],í,í,U+000ED,U+000ED,i'
+\[ICup],ĭ,ĭ,U+0012D,U+0012D,iu
+\[IDoubleDot],ï,ï,U+000EF,U+000EF,i
+\[IGrave],ì,ì,U+000EC,U+000EC,i`
+\[IHat],î,î,U+000EE,U+000EE,i^
+\[ImaginaryI],ⅈ,,U+02148,U+0F74E,ii
+\[ImaginaryJ],ⅉ,,U+02149,U+0F74F,jj
+\[ImplicitPlus],,,,U+0F39E,+
+\[Implies],⟹,,U+027F9,U+0F523,Err:510
+\[Infinity],∞,∞,U+0221E,U+0221E,inf
+\[Integral],∫,∫,U+0222B,U+0222B,int
+\[Intersection],⋂,⋂,U+022C2,U+022C2,inter
+\[InvisibleApplication],,,,U+0F76D,@
+\[InvisibleComma],,,,U+0F765,
+\[InvisiblePostfixScriptBase],,,,U+0F3B4,-i
+\[InvisiblePrefixScriptBase],,,,U+0F3B3,i-
+\[InvisibleSpace],,,,U+0F360,is
+\[InvisibleTimes],,⁢,,U+02062,
+\[Iota],ι,ι,U+003B9,U+003B9,i
+\[Jupiter],♃,♃,U+02643,U+02643,
+\[Kappa],κ,κ,U+003BA,U+003BA,k
+\[KernelIcon],,,,U+0F756,
+\[Koppa],ϟ,ϟ,U+003DF,U+003DF,ko
+\[Lambda],λ,λ,U+003BB,U+003BB,l
+\[LastPage],,,,U+0F7FB,
+\[LeftAngleBracket],〈,〈,U+02329,U+02329,<
+\[LeftArrowBar],⇤,⇤,U+021E4,U+021E4,
+\[LeftArrow],←,←,U+02190,U+02190,<-
+\[LeftArrowRightArrow],⇆,⇆,U+021C6,U+021C6,
+\[LeftAssociation],,,,U+0F113,|<|||
+\[LeftBracketingBar],||||,,U+0007C,U+0F603,|l|||
+\[LeftCeiling],⌈,⌈,U+02308,U+02308,lc
+\[LeftDoubleBracket],〚,〚,U+0301A,U+0301A,[[
+\[LeftDoubleBracketingBar],‖,,U+02016,U+0F605,|l|||||
+\[LeftDownTeeVector],⥡,⥡,U+02961,U+02961,
+\[LeftDownVectorBar],⥙,⥙,U+02959,U+02959,
+\[LeftDownVector],⇃,⇃,U+021C3,U+021C3,
+\[LeftFloor],⌊,⌊,U+0230A,U+0230A,lf
+\[LeftGuillemet],«,«,U+000AB,U+000AB,g<<
+\[LeftModified],,,,U+0F76B,[
+\[LeftPointer],◂,◂,U+025C2,U+025C2,
+\[LeftRightArrow],↔,↔,U+02194,U+02194,<->
+\[LeftRightVector],⥎,⥎,U+0294E,U+0294E,
+\[LeftSkeleton],«,,U+000AB,U+0F761,
+\[LeftTee],⊣,⊣,U+022A3,U+022A3,lT
+\[LeftTeeArrow],↤,↤,U+021A4,U+021A4,
+\[LeftTeeVector],⥚,⥚,U+0295A,U+0295A,
+\[LeftTriangle],⊲,⊲,U+022B2,U+022B2,
+\[LeftTriangleBar],⧏,⧏,U+029CF,U+029CF,
+\[LeftTriangleEqual],⊴,⊴,U+022B4,U+022B4,
+\[LeftUpDownVector],⥑,⥑,U+02951,U+02951,
+\[LeftUpTeeVector],⥠,⥠,U+02960,U+02960,
+\[LeftUpVector],↿,↿,U+021BF,U+021BF,
+\[LeftUpVectorBar],⥘,⥘,U+02958,U+02958,
+\[LeftVector],↼,↼,U+021BC,U+021BC,
+\[LeftVectorBar],⥒,⥒,U+02952,U+02952,
+\[LeoSign],♌,♌,U+0264C,U+0264C,
+\[LessEqual],≤,≤,U+02264,U+02264,<=
+\[LessEqualGreater],⋚,⋚,U+022DA,U+022DA,
+\[LessFullEqual],≦,≦,U+02266,U+02266,
+\[LessGreater],≶,≶,U+02276,U+02276,
+\[LessLess],≪,≪,U+0226A,U+0226A,
+\[LessSlantEqual],⩽,⩽,U+02A7D,U+02A7D,</
+\[LessTilde],≲,≲,U+02272,U+02272,<~
+\[LetterSpace],,,,U+0F754,_
+\[LibraSign],♎,♎,U+0264E,U+0264E,
+\[LightBulb],,,,U+0F723,
+\[LongDash],—,—,U+02014,U+02014,--
+\[LongEqual],=,,U+0003D,U+0F7D9,l=
+\[LongLeftArrow],⟵,⟵,U+027F5,U+027F5,<--
+\[LongLeftRightArrow],⟷,⟷,U+027F7,U+027F7,<-->
+\[LongRightArrow],⟶,⟶,U+027F6,U+027F6,-->
+\[LowerLeftArrow],↙,↙,U+02199,U+02199,
+\[LowerRightArrow],↘,↘,U+02198,U+02198,
+\[LSlash],ł,ł,U+00142,U+00142,l/
+\[Mars],♂,♂,U+02642,U+02642,
+\[MathematicaIcon],,,,U+0F757,math
+\[MeasuredAngle],∡,∡,U+02221,U+02221,
+\[MediumSpace],, ,,U+0205F,␣␣␣
+\[Mercury],☿,☿,U+0263F,U+0263F,
+\[Mho],℧,℧,U+02127,U+02127,mho
+\[Micro],µ,µ,U+000B5,U+000B5,mi
+\[MinusPlus],∓,∓,U+02213,U+02213,-+
+\[Mu],μ,μ,U+003BC,U+003BC,m
+\[Nand],⊼,⊼,U+022BC,U+022BC,nand
+\[Natural],♮,♮,U+0266E,U+0266E,
+\[NegativeMediumSpace],,,,U+0F383,-␣␣␣
+\[NegativeThickSpace],,,,U+0F384,-␣␣␣␣
+\[NegativeThinSpace],,,,U+0F382,-␣␣
+\[NegativeVeryThinSpace],,,,U+0F380,-␣
+\[Neptune],♆,♆,U+02646,U+02646,
+\[NestedGreaterGreater],⪢,⪢,U+02AA2,U+02AA2,
+\[NestedLessLess],⪡,⪡,U+02AA1,U+02AA1,
+\[NeutralSmiley],,,,U+0F722,|:-|||
+\[NHacek],ň,ň,U+00148,U+00148,nv
+\[NoBreak],,⁠,,U+02060,nb
+\[NonBreakingSpace],, ,,U+000A0,nbs
+\[Nor],⊽,⊽,U+022BD,U+022BD,nor
+\[NotCongruent],≢,≢,U+02262,U+02262,!===
+\[NotCupCap],≭,≭,U+0226D,U+0226D,
+\[NotDoubleVerticalBar],∦,∦,U+02226,U+02226,|!|||||
+\[NotElement],∉,∉,U+02209,U+02209,!el
+\[NotEqual],≠,≠,U+02260,U+02260,!=
+\[NotEqualTilde],,,,U+0F400,!=~
+\[NotExists],∄,∄,U+02204,U+02204,!ex
+\[NotGreater],≯,≯,U+0226F,U+0226F,!>
+\[NotGreaterEqual],≱,≱,U+02271,U+02271,!>=
+\[NotGreaterFullEqual],≩,≩,U+02269,U+02269,
+\[NotGreaterGreater],,,,U+0F427,
+\[NotGreaterLess],≹,≹,U+02279,U+02279,
+\[NotGreaterSlantEqual],,,,U+0F429,!>/
+\[NotGreaterTilde],≵,≵,U+02275,U+02275,!>~
+\[NotHumpDownHump],,,,U+0F402,
+\[NotHumpEqual],,,,U+0F401,!h=
+\[NotLeftTriangle],⋪,⋪,U+022EA,U+022EA,
+\[NotLeftTriangleBar],,,,U+0F412,
+\[NotLeftTriangleEqual],⋬,⋬,U+022EC,U+022EC,
+\[NotLessEqual],≰,≰,U+02270,U+02270,!<=
+\[NotLessFullEqual],≨,≨,U+02268,U+02268,
+\[NotLessGreater],≸,≸,U+02278,U+02278,
+\[NotLess],≮,≮,U+0226E,U+0226E,!<
+\[NotLessLess],,,,U+0F422,
+\[NotLessSlantEqual],,,,U+0F424,!</
+\[NotLessTilde],≴,≴,U+02274,U+02274,!<~
+\[Not],,¬,,U+000AC,!
+\[NotNestedGreaterGreater],,,,U+0F428,
+\[NotNestedLessLess],,,,U+0F423,
+\[NotPrecedes],⊀,⊀,U+02280,U+02280,
+\[NotPrecedesEqual],,,,U+0F42B,
+\[NotPrecedesSlantEqual],⋠,⋠,U+022E0,U+022E0,
+\[NotPrecedesTilde],⋨,⋨,U+022E8,U+022E8,
+\[NotReverseElement],∌,∌,U+0220C,U+0220C,!mem
+\[NotRightTriangle],⋫,⋫,U+022EB,U+022EB,
+\[NotRightTriangleBar],,,,U+0F413,
+\[NotRightTriangleEqual],⋭,⋭,U+022ED,U+022ED,
+\[NotSquareSubset],,,,U+0F42E,
+\[NotSquareSubsetEqual],⋢,⋢,U+022E2,U+022E2,
+\[NotSquareSuperset],,,,U+0F42F,
+\[NotSquareSupersetEqual],⋣,⋣,U+022E3,U+022E3,
+\[NotSubset],⊄,⊄,U+02284,U+02284,!sub
+\[NotSubsetEqual],⊈,⊈,U+02288,U+02288,!sub=
+\[NotSucceeds],⊁,⊁,U+02281,U+02281,
+\[NotSucceedsEqual],,,,U+0F42D,
+\[NotSucceedsSlantEqual],⋡,⋡,U+022E1,U+022E1,
+\[NotSucceedsTilde],⋩,⋩,U+022E9,U+022E9,
+\[NotSuperset],⊅,⊅,U+02285,U+02285,!sup
+\[NotSupersetEqual],⊉,⊉,U+02289,U+02289,!sup=
+\[NotTilde],≁,≁,U+02241,U+02241,!~
+\[NotTildeEqual],≄,≄,U+02244,U+02244,!~=
+\[NotTildeFullEqual],≇,≇,U+02247,U+02247,!~==
+\[NotTildeTilde],≉,≉,U+02249,U+02249,!~~
+\[NotVerticalBar],∤,,,U+0F3D1,|!|||
+\[NTilde],ñ,ñ,U+000F1,U+000F1,n~
+\[Nu],ν,ν,U+003BD,U+003BD,n
+\[Null],,,,U+0F3A0,null
+\[NumberSign],#,,U+00023,U+0F724,#
+\[OAcute],ó,ó,U+000F3,U+000F3,o'
+\[ODoubleAcute],ő,ő,U+00151,U+00151,o''
+\[ODoubleDot],ö,ö,U+000F6,U+000F6,o
+\[OE],œ,œ,U+00153,U+00153,oe
+\[OGrave],ò,ò,U+000F2,U+000F2,o`
+\[OHat],ô,ô,U+000F4,U+000F4,o^
+\[Omega],ω,ω,U+003C9,U+003C9,o
+\[Omicron],ο,ο,U+003BF,U+003BF,om
+\[OpenCurlyDoubleQuote],“,“,U+0201C,U+0201C,[
+\[OpenCurlyQuote],‘,‘,U+02018,U+02018,['
+\[OptionKey],,,,U+0F7D2,opt
+\[Or],∨,∨,U+02228,U+02228,||||||
+\[OSlash],ø,ø,U+000F8,U+000F8,o/
+\[OTilde],õ,õ,U+000F5,U+000F5,o~
+\[OverBrace],︷,︷,U+0FE37,U+0FE37,o{
+\[OverBracket],⎴,⎴,U+023B4,U+023B4,o[
+\[OverParenthesis],︵,︵,U+0FE35,U+0FE35,o(
+\[Paragraph],¶,¶,U+000B6,U+000B6,
+\[PartialD],∂,∂,U+02202,U+02202,pd
+\[PermutationProduct],⊙,,U+02299,U+0F3DE,
+\[Perpendicular],⟂,⟂,U+027C2,U+027C2,
+\[Phi],ϕ,ϕ,U+003D5,U+003D5,ph
+\[Pi],π,π,U+003C0,U+003C0,p
+\[Piecewise],,,,U+0F361,pw
+\[PiscesSign],♓,♓,U+02653,U+02653,
+\[Placeholder],⎕,,U+02395,U+0F528,pl
+\[PlusMinus],±,±,U+000B1,U+000B1,+-
+\[Pluto],♇,♇,U+02647,U+02647,
+\[Precedes],≺,≺,U+0227A,U+0227A,
+\[PrecedesEqual],⪯,⪯,U+02AAF,U+02AAF,
+\[PrecedesSlantEqual],≼,≼,U+0227C,U+0227C,
+\[PrecedesTilde],≾,≾,U+0227E,U+0227E,
+\[Prime],′,′,U+02032,U+02032,'
+\[Product],∏,∏,U+0220F,U+0220F,prod
+\[Proportion],∷,∷,U+02237,U+02237,
+\[Proportional],∝,∝,U+0221D,U+0221D,prop
+\[Psi],ψ,ψ,U+003C8,U+003C8,ps
+\[QuarterNote],♩,♩,U+02669,U+02669,
+\[RawAmpersand],&,&,U+00026,U+00026,
+\[RawAt],@,@,U+00040,U+00040,
+\[RawBackquote],`,`,U+00060,U+00060,
+\[RawBackslash],\,\,U+0005C,U+0005C,
+\[RawColon],:,:,U+0003A,U+0003A,
+\[RawComma],,",",,U+0002C,
+\[RawDash],-,-,U+0002D,U+0002D,
+\[RawDollar],$,$,U+00024,U+00024,
+\[RawDot],.,.,U+0002E,U+0002E,
+\[RawDoubleQuote],,"""",,U+00022,
+\[RawEqual],=,=,U+0003D,U+0003D,
+\[RawEscape],,,,U+0001B,
+\[RawExclamation],!,!,U+00021,U+00021,
+\[RawGreater],>,>,U+0003E,U+0003E,
+\[RawLeftBrace],{,{,U+0007B,U+0007B,
+\[RawLeftBracket],[,[,U+0005B,U+0005B,
+\[RawLeftParenthesis],(,(,U+00028,U+00028,
+\[RawLess],<,<,U+0003C,U+0003C,
+\[RawNumberSign],#,#,U+00023,U+00023,
+\[RawPercent],%,%,U+00025,U+00025,
+\[RawPlus],+,+,U+0002B,U+0002B,
+\[RawQuestion],?,?,U+0003F,U+0003F,
+\[RawQuote],',',U+00027,U+00027,
+\[RawRightBrace],},},U+0007D,U+0007D,
+\[RawRightBracket],],],U+0005D,U+0005D,
+\[RawRightParenthesis],),),U+00029,U+00029,
+\[RawSemicolon],,;,,U+0003B,
+\[RawSlash],/,/,U+0002F,U+0002F,
+\[RawSpace],,,,U+00020,
+\[RawStar],*,*,U+0002A,U+0002A,
+\[RawTab],,	,,U+00009,
+\[RawTilde],~,~,U+0007E,U+0007E,
+\[RawUnderscore],_,_,U+0005F,U+0005F,
+\[RawVerticalBar],|,|,U+0007C,U+0007C,
+\[RawWedge],^,^,U+0005E,U+0005E,
+\[RegisteredTrademark],®,®,U+000AE,U+000AE,rtm
+\[ReturnIndicator],↵,↵,U+021B5,U+021B5,ret
+\[ReturnKey],,,U+0F766,U+0F766,␣ret
+\[ReverseDoublePrime],‶,‶,U+02036,U+02036,``
+\[ReverseElement],∋,∋,U+0220B,U+0220B,mem
+\[ReverseEquilibrium],⇋,⇋,U+021CB,U+021CB,
+\[ReversePrime],‵,‵,U+02035,U+02035,`
+\[ReverseUpEquilibrium],⥯,⥯,U+0296F,U+0296F,
+\[RHacek],ř,ř,U+00159,U+00159,rv
+\[Rho],ρ,ρ,U+003C1,U+003C1,r
+\[RightAngle],∟,∟,U+0221F,U+0221F,
+\[RightAngleBracket],〉,〉,U+0232A,U+0232A,>
+\[RightArrow],→,→,U+02192,U+02192,␣->
+\[RightArrowBar],⇥,⇥,U+021E5,U+021E5,
+\[RightArrowLeftArrow],⇄,⇄,U+021C4,U+021C4,
+\[RightAssociation],,,,U+0F114,|||>|
+\[RightBracketingBar],||||,,U+0007C,U+0F604,|r|||
+\[RightCeiling],⌉,⌉,U+02309,U+02309,rc
+\[RightDoubleBracket],〛,〛,U+0301B,U+0301B,]]
+\[RightDoubleBracketingBar],‖,,U+02016,U+0F606,|r|||||
+\[RightDownTeeVector],⥝,⥝,U+0295D,U+0295D,
+\[RightDownVector],⇂,⇂,U+021C2,U+021C2,
+\[RightDownVectorBar],⥕,⥕,U+02955,U+02955,
+\[RightFloor],⌋,⌋,U+0230B,U+0230B,rf
+\[RightGuillemet],»,»,U+000BB,U+000BB,g>>
+\[RightModified],,,,U+0F76C,]
+\[RightPointer],▸,▸,U+025B8,U+025B8,
+\[RightSkeleton],»,,U+000BB,U+0F762,
+\[RightTee],⊢,⊢,U+022A2,U+022A2,rT
+\[RightTeeArrow],↦,↦,U+021A6,U+021A6,
+\[RightTeeVector],⥛,⥛,U+0295B,U+0295B,
+\[RightTriangle],⊳,⊳,U+022B3,U+022B3,
+\[RightTriangleBar],⧐,⧐,U+029D0,U+029D0,
+\[RightTriangleEqual],⊵,⊵,U+022B5,U+022B5,
+\[RightUpDownVector],⥏,⥏,U+0294F,U+0294F,
+\[RightUpTeeVector],⥜,⥜,U+0295C,U+0295C,
+\[RightUpVector],↾,↾,U+021BE,U+021BE,
+\[RightUpVectorBar],⥔,⥔,U+02954,U+02954,
+\[RightVector],⇀,⇀,U+021C0,U+021C0,vec
+\[RightVectorBar],⥓,⥓,U+02953,U+02953,
+\[RoundImplies],⥰,⥰,U+02970,U+02970,
+\[RoundSpaceIndicator],,,,U+0F3B2,
+\[Rule],→,,U+02192,U+0F522,->
+\[RuleDelayed],⧴,,U+029F4,U+0F51F,:>
+\[SadSmiley],☹,☹,U+02639,U+02639,:-(
+\[SagittariusSign],♐,♐,U+02650,U+02650,
+\[Sampi],ϡ,Ϡ,U+003E1,U+003E0,sa
+\[Saturn],♄,♄,U+02644,U+02644,
+\[ScorpioSign],♏,♏,U+0264F,U+0264F,
+\[ScriptA],𝒶,,U+1D4B6,U+0F6B2,sca
+\[ScriptB],𝒷,,U+1D4B7,U+0F6B3,scb
+\[ScriptC],𝒸,,U+1D4B8,U+0F6B4,scc
+\[ScriptCapitalA],𝒜,,U+1D49C,U+0F770,scA
+\[ScriptCapitalB],ℬ,ℬ,U+0212C,U+0212C,scB
+\[ScriptCapitalC],𝒞,,U+1D49E,U+0F772,scC
+\[ScriptCapitalD],𝒟,,U+1D49F,U+0F773,scD
+\[ScriptCapitalE],ℰ,ℰ,U+02130,U+02130,scE
+\[ScriptCapitalF],ℱ,ℱ,U+02131,U+02131,scF
+\[ScriptCapitalG],𝒢,,U+1D4A2,U+0F776,scG
+\[ScriptCapitalH],ℋ,ℋ,U+0210B,U+0210B,scH
+\[ScriptCapitalI],ℐ,ℐ,U+02110,U+02110,scI
+\[ScriptCapitalJ],𝒥,,U+1D4A5,U+0F779,scJ
+\[ScriptCapitalK],𝒦,,U+1D4A6,U+0F77A,scK
+\[ScriptCapitalL],ℒ,ℒ,U+02112,U+02112,scL
+\[ScriptCapitalM],ℳ,ℳ,U+02133,U+02133,scM
+\[ScriptCapitalN],𝒩,,U+1D4A9,U+0F77D,scN
+\[ScriptCapitalO],𝒪,,U+1D4AA,U+0F77E,scO
+\[ScriptCapitalP],𝒫,℘,U+1D4AB,U+02118,scP
+\[ScriptCapitalQ],𝒬,,U+1D4AC,U+0F780,scQ
+\[ScriptCapitalR],ℛ,ℛ,U+0211B,U+0211B,scR
+\[ScriptCapitalS],𝒮,,U+1D4AE,U+0F782,scS
+\[ScriptCapitalT],𝒯,,U+1D4AF,U+0F783,scT
+\[ScriptCapitalU],𝒰,,U+1D4B0,U+0F784,scU
+\[ScriptCapitalV],𝒱,,U+1D4B1,U+0F785,scV
+\[ScriptCapitalW],𝒲,,U+1D4B2,U+0F786,scW
+\[ScriptCapitalX],𝒳,,U+1D4B3,U+0F787,scX
+\[ScriptCapitalY],𝒴,,U+1D4B4,U+0F788,scY
+\[ScriptCapitalZ],𝒵,,U+1D4B5,U+0F789,scZ
+\[ScriptD],𝒹,,U+1D4B9,U+0F6B5,scd
+\[ScriptDotlessI],𝒾,,U+1D4BE,U+0F730,
+\[ScriptDotlessJ],𝒿,,U+1D4BF,U+0F731,
+\[ScriptE],ℯ,ℯ,U+0212F,U+0212F,sce
+\[ScriptEight],,,,U+0F7F8,sc8
+\[ScriptF],𝒻,,U+1D4BB,U+0F6B7,scf
+\[ScriptFive],,,,U+0F7F5,sc5
+\[ScriptFour],,,,U+0F7F4,sc4
+\[ScriptG],ℊ,ℊ,U+0210A,U+0210A,scg
+\[ScriptH],𝒽,,U+1D4BD,U+0F6B9,sch
+\[ScriptI],𝒾,,U+1D4BE,U+0F6BA,sci
+\[ScriptJ],𝒿,,U+1D4BF,U+0F6BB,scj
+\[ScriptK],𝓀,,U+1D4C0,U+0F6BC,sck
+\[ScriptL],ℓ,ℓ,U+02113,U+02113,scl
+\[ScriptM],𝓂,,U+1D4C2,U+0F6BE,scm
+\[ScriptN],𝓃,,U+1D4C3,U+0F6BF,scn
+\[ScriptNine],,,,U+0F7F9,sc9
+\[ScriptO],ℴ,ℴ,U+02134,U+02134,sco
+\[ScriptOne],,,,U+0F7F1,sc1
+\[ScriptP],𝓅,,U+1D4C5,U+0F6C1,scp
+\[ScriptQ],𝓆,,U+1D4C6,U+0F6C2,scq
+\[ScriptR],𝓇,,U+1D4C7,U+0F6C3,scr
+\[ScriptS],𝓈,,U+1D4C8,U+0F6C4,scs
+\[ScriptSeven],,,,U+0F7F7,sc7
+\[ScriptSix],,,,U+0F7F6,sc6
+\[ScriptT],𝓉,,U+1D4C9,U+0F6C5,sct
+\[ScriptThree],,,,U+0F7F3,sc3
+\[ScriptTwo],,,,U+0F7F2,sc2
+\[ScriptU],𝓊,,U+1D4CA,U+0F6C6,scu
+\[ScriptV],𝓋,,U+1D4CB,U+0F6C7,scv
+\[ScriptW],𝓌,,U+1D4CC,U+0F6C8,scw
+\[ScriptX],𝓍,,U+1D4CD,U+0F6C9,scx
+\[ScriptY],𝓎,,U+1D4CE,U+0F6CA,scy
+\[ScriptZ],𝓏,,U+1D4CF,U+0F6CB,scz
+\[ScriptZero],,,,U+0F7F0,sc0
+\[Section],§,§,U+000A7,U+000A7,
+\[SelectionPlaceholder],,,,U+0F527,spl
+\[SHacek],š,š,U+00161,U+00161,sv
+\[Sharp],♯,♯,U+0266F,U+0266F,
+\[ShortDownArrow],↓,,U+02193,U+0F52B,
+\[ShortLeftArrow],←,,U+02190,U+0F526,
+\[ShortRightArrow],→,,U+02192,U+0F525,
+\[ShortUpArrow],↑,,U+02191,U+0F52A,
+\[Sigma],σ,σ,U+003C3,U+003C3,s
+\[SixPointedStar],✶,✶,U+02736,U+02736,*6
+\[SkeletonIndicator],⁃,⁃,U+02043,U+02043,
+\[SmallCircle],∘,∘,U+02218,U+02218,sc
+\[SpaceIndicator],␣,␣,U+02423,U+02423,space
+\[SpaceKey],,,,U+0F7BF,spc
+\[SpadeSuit],♠,♠,U+02660,U+02660,
+\[SpanFromAbove],⋮,,U+022EE,U+0F3BB,sfa
+\[SpanFromBoth],⋱,,U+022F1,U+0F3BC,sfb
+\[SpanFromLeft],⋯,,U+022EF,U+0F3BA,sfl
+\[SphericalAngle],∢,∢,U+02222,U+02222,
+\[Sqrt],√,√,U+0221A,U+0221A,sqrt
+\[Square],▫,,U+025AB,U+0F520,sq
+\[SquareIntersection],⊓,⊓,U+02293,U+02293,
+\[SquareSubset],⊏,⊏,U+0228F,U+0228F,
+\[SquareSubsetEqual],⊑,⊑,U+02291,U+02291,
+\[SquareSuperset],⊐,⊐,U+02290,U+02290,
+\[SquareSupersetEqual],⊒,⊒,U+02292,U+02292,
+\[SquareUnion],⊔,⊔,U+02294,U+02294,
+\[Star],⋆,⋆,U+022C6,U+022C6,star
+\[Sterling],£,£,U+000A3,U+000A3,
+\[Stigma],ϛ,ϛ,U+003DB,U+003DB,sti
+\[Subset],⊂,⊂,U+02282,U+02282,sub
+\[SubsetEqual],⊆,⊆,U+02286,U+02286,sub=
+\[Succeeds],≻,≻,U+0227B,U+0227B,
+\[SucceedsEqual],⪰,⪰,U+02AB0,U+02AB0,
+\[SucceedsSlantEqual],≽,≽,U+0227D,U+0227D,
+\[SucceedsTilde],≿,≿,U+0227F,U+0227F,
+\[SuchThat],∍,∍,U+0220D,U+0220D,st
+\[Sum],∑,∑,U+02211,U+02211,sum
+\[Superset],⊃,⊃,U+02283,U+02283,sup
+\[SupersetEqual],⊇,⊇,U+02287,U+02287,sup=
+\[SystemEnterKey],,,,U+0F75F,
+\[SystemsModelDelay],,,,U+0F3AF,
+\[SZ],ß,ß,U+000DF,U+000DF,sz
+\[TabKey],,,,U+0F7BE,tab
+\[Tau],τ,τ,U+003C4,U+003C4,t
+\[TaurusSign],♉,♉,U+02649,U+02649,
+\[TensorProduct],⊗,,U+02297,U+0F3DA,
+\[TensorWedge],,,,U+0F3DB,
+\[THacek],ť,ť,U+00165,U+00165,tv
+\[Therefore],∴,∴,U+02234,U+02234,tf
+\[Theta],θ,θ,U+003B8,U+003B8,th
+\[ThickSpace], , ,U+02005,U+02005,␣␣␣␣
+\[ThinSpace],, ,,U+02009,␣␣
+\[Thorn],þ,þ,U+000FE,U+000FE,thn
+\[Tilde],∼,∼,U+0223C,U+0223C,~
+\[TildeEqual],≃,≃,U+02243,U+02243,~=
+\[TildeFullEqual],≅,≅,U+02245,U+02245,~==
+\[TildeTilde],≈,≈,U+02248,U+02248,~~
+\[Times],×,×,U+000D7,U+000D7,*
+\[Trademark],™,™,U+02122,U+02122,tm
+\[Transpose],ᵀ,,U+01D40,U+0F3C7,tr
+\[TripleDot],⋯,,U+022EF,U+0F758,
+\[UAcute],ú,ú,U+000FA,U+000FA,u'
+\[UDoubleAcute],ű,ű,U+00171,U+00171,u''
+\[UDoubleDot],ü,ü,U+000FC,U+000FC,u
+\[UGrave],ù,ù,U+000F9,U+000F9,u`
+\[UHat],û,û,U+000FB,U+000FB,u^
+\[UnderBrace],︸,︸,U+0FE38,U+0FE38,u{
+\[UnderBracket],⎵,⎵,U+023B5,U+023B5,u[
+\[UnderParenthesis],︶,︶,U+0FE36,U+0FE36,u(
+\[UndirectedEdge],↔,,U+02194,U+0F3D4,ue
+\[Union],⋃,⋃,U+022C3,U+022C3,un
+\[UnionPlus],⊎,⊎,U+0228E,U+0228E,
+\[UpArrow],↑,↑,U+02191,U+02191,
+\[UpArrowBar],⤒,⤒,U+02912,U+02912,
+\[UpArrowDownArrow],⇅,⇅,U+021C5,U+021C5,
+\[UpDownArrow],↕,↕,U+02195,U+02195,
+\[UpEquilibrium],⥮,⥮,U+0296E,U+0296E,
+\[UpperLeftArrow],↖,↖,U+02196,U+02196,
+\[UpperRightArrow],↗,↗,U+02197,U+02197,
+\[UpPointer],▴,▴,U+025B4,U+025B4,
+\[Upsilon],υ,υ,U+003C5,U+003C5,u
+\[UpTee],⊥,⊥,U+022A5,U+022A5,uT
+\[UpTeeArrow],↥,↥,U+021A5,U+021A5,
+\[Uranus],⛢,♅,U+026E2,U+02645,
+\[URing],ů,ů,U+0016F,U+0016F,uo
+\[Vee],⋁,⋁,U+022C1,U+022C1,v
+\[Venus],♀,♀,U+02640,U+02640,
+\[VerticalBar],|,,U+0007C,U+0F3D0,|␣|||
+\[VerticalEllipsis],⋮,⋮,U+022EE,U+022EE,
+\[VerticalLine],│,│,U+02502,U+02502,vline
+\[VerticalSeparator],,,,U+0F432,||||
+\[VerticalTilde],≀,≀,U+02240,U+02240,
+\[VeryThinSpace], , ,U+0200A,U+0200A,␣
+\[VirgoSign],♍,♍,U+0264D,U+0264D,
+\[WarningSign],,,U+0F725,U+0F725,
+\[WatchIcon],⌚,⌚,U+0231A,U+0231A,
+\[Wedge],⋀,⋀,U+022C0,U+022C0,^
+\[WeierstrassP],℘,℘,U+02118,U+02118,wp
+\[WhiteBishop],♗,♗,U+02657,U+02657,
+\[WhiteKing],♔,♔,U+02654,U+02654,
+\[WhiteKnight],♘,♘,U+02658,U+02658,
+\[WhitePawn],♙,♙,U+02659,U+02659,
+\[WhiteQueen],♕,♕,U+02655,U+02655,
+\[WhiteRook],♖,♖,U+02656,U+02656,
+\[Wolf],,,,U+0F720,wf
+\[WolframLanguageLogo],,,,U+0F11E,
+\[WolframLanguageLogoCircle],,,,U+0F11F,
+\[Xi],ξ,ξ,U+003BE,U+003BE,x
+\[Xnor],,,,U+0F4A2,xnor
+\[Xor],⊻,⊻,U+022BB,U+022BB,xor
+\[YAcute],ý,ý,U+000FD,U+000FD,y'
+\[YDoubleDot],ÿ,ÿ,U+000FF,U+000FF,y
+\[Yen],¥,¥,U+000A5,U+000A5,
+\[Zeta],ζ,ζ,U+003B6,U+003B6,z
+\[ZHacek],ž,ž,U+0017E,U+0017E,zv
