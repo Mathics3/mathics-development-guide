@@ -10,34 +10,105 @@
 Extending Mathics Tutorial
 ==========================
 
-In this guide we will show how to Extend Mathics.
+In this guide we will show how to Extend Mathics with Python code.
 
 We'll start out with a simple "Hello, World" function and modify that.
 
-Adding new built-in symbols to Mathics is very easy. Either place a new module
-in the builtin directory and add it to the list of modules in
-``builtin/__init__.py`` or use an existing module. Create a new class derived
-from ``Builtin``.
+Hello World - Version 0, Predefined
+-----------------------------------
 
-To get an idea of how a built-in class can look like, consider the following
-implementation of ``Hello``:
+.. code-block:: python
+
+  from mathics.builtin.base import Predefined
+
+  class Hello(Predefined):
+    def evaluate(self, evaluation):
+      return String(f"Hello, World!")
+
+Add the above at the end to a file in `mathics.builtin
+<https://github.com/mathics/Mathics/tree/master/mathics/builtin.ast>`_
+like ``system.py``,
+
+Later on, we will show how to add code without modify the Mathics core, but
+for now we'll start simple.
+
+Now start mathics from the Mathics source tree:
+
+::
+
+   $ python mathics/main.py
+   Mathics 2.0.0dev
+   ...
+   In[1]:= Hello  # FIXME: Not sure what's wrong here.
+   In[1]:= Hello
+   Out[1]= Hello, World!
+
+
+Now let's go over the code. For a Symbol ``Hello`` we
+define a Python ``Class`` of type ``Predefined``. ``Predifined`` is prehaps the
+most primitive class that is used for adding Variables and Functions.
+
+In that class you define a method ``evaluate(self, evaluation)`` which
+is what will get called when the Symbol is evaluated. The
+``evaluation`` parameter contains the evaluation environment that can
+be used to get definitions of variables and other things that may be
+neede to peform the function.
+
+However here all we do is return a Mathics string, so we don't need to
+use what is in evalutation.
+
+The last thing to note is that we needed to define the class variable
+``name`` so that this name gets added to the list of "builtin" definitions.
+
+
+Hello1 - Builtin
+----------------
+
+Most of the time you'll probably need to pass information into the Function you
+want to add. For this, use the ``Builtin`` class. This adds what in WL is called
+a "Built-in Symbol".
+
+The method that you should define in ``Builtin'' class will get
+invoked needs to start off with the name ``apply``. As before, this
+method has an ``evaluation`` parameter at the end. Other parameters
+that are appropriate for the Function can be added. However those parameters
+must also be listed suffixed with a `_` in the Python method's docstring in a special way.
+
+The docstring is used by ``Builtin`` when trying to resolve what
+Python method to call. The docstring looks pretty much the same as it
+would look if you were defining this in Mathmatica.
+
+For example, let's add a string parameter. In Mathics the function might look like this
+
+
+.. code-block:: mathematica
+
+
+  Hello[s_String] := Print["Hello, " <> s <> "!"]
+
+In Python then the apply method looks like this:
+
+.. code-block:: python
+
+  def apply(s, evaluation):
+    "Hello[s_String]"
+        return f"Hello, {String(s)}!"
+
+Here is the complete code:
 
 .. code-block:: python
 
   from mathics.builtin.base import Builtin
 
-  class Hello(Builtin):
-    """
-    <dl>
-      <dt>Hello[$person$]
-      <dd>An example function in a Python-importable Mathics module.
-    </dl>
-    >> Hello["World"]
-     = Hello, World!
-    """
-    def apply(self, person, evaluation):
-      "Hello[person_]"
-      return String(f"Hello, {person.get_string_value()}!")
+  class Hello1(Builtin):
+    name = "Hello1"
+    def apply(s, evaluation):
+      "Hello1[s_String]"
+          return f"Hello, {String(s)}!"
+
+To be continued....
+
+
 
 The class starts with a Python docstring that specifies the
 documentation and tests for the symbol.  Please refer to
