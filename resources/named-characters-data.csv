@@ -314,8 +314,8 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[EntityEnd],,,,U+0F3B9,
 \[EntityStart],,,,U+0F3B8,
 \[Epsilon],ϵ,ϵ,U+003F5,U+003F5,e
-\[Equal],⩵,,U+02A75,U+0F431,Err:520
-\[EqualTilde],≂,≂,U+02242,U+02242,Err:510
+\[Equal],⩵,,U+02A75,U+0F431,==
+\[EqualTilde],≂,≂,U+02242,U+02242,=~
 \[Equilibrium],⇌,⇌,U+021CC,U+021CC,equi
 \[Equivalent],⇔,⧦,U+021D4,U+029E6,equiv
 \[ErrorIndicator],,,,U+0F767,
