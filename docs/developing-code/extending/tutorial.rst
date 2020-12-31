@@ -3,10 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 Extending Mathics Tutorial
 ==========================
 
@@ -20,6 +16,7 @@ We'll start out with a simple "Hello, World" function and modify that.
    tutorial/hello0
    tutorial/hello1
    tutorial/hello2
+   tutorial/hello3
 
 To be continued....
 

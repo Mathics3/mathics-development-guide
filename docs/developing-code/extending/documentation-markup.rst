@@ -9,45 +9,27 @@ and custom markup.
 
 *In the future, we plan to use more Sphinx-based documentation.*
 
-The following commands can be used to specify test cases.
-
-+------------------------+-----------------------------------------------------------+
-| Markup                 | Meaning                                                   |
-+========================+===========================================================+
-| ``>>`` *Mathics code*  | Some Mathics code to run and to appear in documentation.  |
-+------------------------+-----------------------------------------------------------+
-| ``#>`` *Mathics code*  | Some Mathics code torun but not appearin documentation.   |
-+------------------------+-----------------------------------------------------------+
-| ``X>`` *Mathics code*  | Mathics code shown in the documentation but not run.      |
-+------------------------+-----------------------------------------------------------+
-| ``S>``                 | a test query that is shown in the documentation and run   |
-|                        | if the ``SANDBOX`` environment variable is not set.       |
-+------------------------+-----------------------------------------------------------+
-| ``=`` *output*         | expected output produced by the Mathics code.             |
-+------------------------+-----------------------------------------------------------+
-| ``...``                | matches any output; used when output can vary.            |
-+------------------------+-----------------------------------------------------------+
-| ``.``                  | a newline which is expected to appear in test ouput.      |
-+------------------------+-----------------------------------------------------------+
-| ``$`` *name* ``$``     +  variable identifier in Mathics code or in text.          |
-+------------------------+-----------------------------------------------------------+
-| ``-Graphics-``         | graphics in the test result.                              |
-+------------------------+-----------------------------------------------------------+
-| ``:`` *message*        | a message in the result of the test query.                |
-+------------------------+-----------------------------------------------------------+
-| ``\|`` *print*         | a printed line in the result of the test query.           |
-+------------------------+-----------------------------------------------------------+
-
-*Todo: give examples of each of these.*
-
 The following commands can be used to markup documentation text:
+
+For Help Text
+-------------
+
+.. _doc_help_markup:
+
+.. index:: <dl>
+.. index:: <dt>
+.. index:: <dd>
+.. index:: <ul>
+.. index:: <li>
+.. index:: <console>
+.. index:: <con>
+.. index:: <img>
+.. index:: <imgng>
+.. index:: <i>
 
 +----------------------------------+-----------------------------------------+
 | Syntax                           | Explanation                             |
 +==================================+=========================================+
-| ``## $comment$``                 | a comment line that is not shown in the |
-|                                  | documentation.                          |
-+----------------------------------+-----------------------------------------+
 |  <dl> *dl-list* </dl>            | a definition list with ``<dt>`` and     |
 |                                  | ``<dd>`` entries.                       |
 +----------------------------------+-----------------------------------------+
@@ -93,7 +75,54 @@ The following commands can be used to markup documentation text:
 +----------------------------------+-----------------------------------------+
 | ``\'``                           | a single ``'``.                         |
 +----------------------------------+-----------------------------------------+
+| ``## $comment$``                 | a comment line that is not shown in the |
+|                                  | documentation.                          |
++----------------------------------+-----------------------------------------+
 
 To include images in the documentation, use the ``img`` tag, place an
 EPS file *src* ``.eps`` in `mathics.doc.documentation.images <https://github.com/mathics/Mathics/tree/master/mathics/doc/documentation/images>`_ and run ``images.sh``
 in the `mathics.doc <https://github.com/mathics/Mathics/tree/master/mathics/doc>`_ directory.
+
+For Testing
+-----------
+
+.. _doc_test_markup:
+
+.. index:: >>
+.. index:: #>
+.. index:: X>
+.. index:: S>
+.. index:: ...
+.. index:: \|
+.. index:: =
+
+The following commands can be used to specify test cases.
+
++------------------------+-----------------------------------------------------------+
+| Markup                 | Meaning                                                   |
++========================+===========================================================+
+| ``>>`` *Mathics code*  | Some Mathics code to run and to appear in documentation.  |
++------------------------+-----------------------------------------------------------+
+| ``#>`` *Mathics code*  | Some Mathics code torun but not appearin documentation.   |
++------------------------+-----------------------------------------------------------+
+| ``X>`` *Mathics code*  | Mathics code shown in the documentation but not run.      |
++------------------------+-----------------------------------------------------------+
+| ``S>``                 | a test query that is shown in the documentation and run   |
+|                        | if the ``SANDBOX`` environment variable is not set.       |
++------------------------+-----------------------------------------------------------+
+| ``=`` *output*         | expected output produced by the Mathics code.             |
++------------------------+-----------------------------------------------------------+
+| ``...``                | matches any output; used when output can vary.            |
++------------------------+-----------------------------------------------------------+
+| ``.``                  | a newline which is expected to appear in test ouput.      |
++------------------------+-----------------------------------------------------------+
+| ``$`` *name* ``$``     +  variable identifier in Mathics code or in text.          |
++------------------------+-----------------------------------------------------------+
+| ``-Graphics-``         | graphics in the test result.                              |
++------------------------+-----------------------------------------------------------+
+| ``:`` *message*        | a message in the result of the test query.                |
++------------------------+-----------------------------------------------------------+
+| ``\|`` *print*         | a printed line in the result of the test query.           |
++------------------------+-----------------------------------------------------------+
+
+*Todo: give examples of each of these.*
