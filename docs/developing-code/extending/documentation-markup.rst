@@ -7,6 +7,8 @@ There is a lot of special markup syntax you can use in the
 documentation. It is kind of a mixture of XML, LaTeX, Python doctest,
 and custom markup.
 
+*In the future, we plan to use more Sphinx-based documentation.*
+
 The following commands can be used to specify test cases.
 
 +------------------------+-----------------------------------------------------------+
@@ -93,5 +95,5 @@ The following commands can be used to markup documentation text:
 +----------------------------------+-----------------------------------------+
 
 To include images in the documentation, use the ``img`` tag, place an
-EPS file ``$sc$.eps`` in ``documentation/images`` and run ``images.sh``
-in the ``doc`` directory.
+EPS file *src* ``.eps`` in `mathics.doc.documentation.images <https://github.com/mathics/Mathics/tree/master/mathics/doc/documentation/images>`_ and run ``images.sh``
+in the `mathics.doc <https://github.com/mathics/Mathics/tree/master/mathics/doc>`_ directory.

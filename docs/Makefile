@@ -12,6 +12,10 @@ BUILDDIR      = _build
 all:
 	$(MAKE) html
 
+#: Wipe and rebuild the html documentation
+rebuild:
+	$(MAKE) clean && $(MAKE)
+
 #: Show help
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

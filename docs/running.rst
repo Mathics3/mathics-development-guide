@@ -13,8 +13,8 @@ Running natively
 Command-line interface
 ^^^^^^^^^^^^^^^^^^^^^^
 
-After installing, you can run your a local Mathics command-line
-interface with:
+If you have installed the Mathics core only you can start the
+rudimentary command-line shell with:
 
 .. code:: bash
 
@@ -33,13 +33,32 @@ To get a list of options run:
 
     $ mathics --help
 
-However note that the above CLI is pretty minimal and is likely to stay
+However note that the above CLI is pretty minimal and will stay
 that way.
 
-For a more full-featured CLI see
-`mathicsscript <https://github.com/Mathics3/mathicsscript>`__.
+Full Command-line Shell
+^^^^^^^^^^^^^^^^^^^^^^^
 
-In the future, ``mathicsscript`` this may support graphics output.
+The more complete command-line shell is
+`mathicsscript <https://github.com/Mathics3/mathicsscript>`_.
+
+After installing, run:
+
+.. code:: bash
+
+    $ mathicsscript
+
+To get a list of options run:
+
+::
+
+    $ mathicsscript --help
+
+
+Currently, ``mathicsscript`` requires networkx to support matplotlib
+graphics for the add-on package `pymathics-natlang <https://github.com/Mathics3/pymathics_natlang>`_.
+
+This may be unbundled in the future In the future.
 
 Django-based-line interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -200,6 +219,8 @@ Mathics runs as a wsgi app so you can use uwsgi. The `Django
 docs <https://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html>`__
 are a good reference.
 
+.. toctree::
+   :maxdepth: 2
 
 
 .. |Packaging status| image:: https://repology.org/badge/vertical-allrepos/mathics.svg

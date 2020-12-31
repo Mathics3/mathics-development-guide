@@ -6,8 +6,12 @@ Installing Mathics
 
 Here we describe the various ways to get Mathics installed.
 
-What makes up the full Mathics Suite?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. toctree::
+   :maxdepth: 2
+
+
+What makes up Mathics?
+~~~~~~~~~~~~~~~~~~~~~~
 
 Mathics is broken up into a number of pieces in order to facilitate
 using the parts of you desire. This can also reduce the vast number of
@@ -19,7 +23,14 @@ dependencies.
 Mathics Core
 ++++++++++++
 
-The Mathics core is required for any work with Mathics.
+The Mathics core contains a scanner and parser, and evaluator, and
+some formatting routines. Over time, formatting routines may be
+packaged separately
+
+There is also a very rudimentary command-line shell called ``mathics``.
+
+
+The Mathics core required for any work with Mathics.
 
 If you are developing a non-interactive application written in
 Mathics, you may no more than this.
@@ -32,7 +43,7 @@ mathicsscript
 +++++++++++++
 
 The Mathics core comes with a very rudimentary command-line
-shell called ``mathics``. However, if you want fancier shell features such as:
+shell, if you want fancier shell features such as:
 
 * GNU Readline terminal interaction. This includes
    - saving command history between sessions.
@@ -47,8 +58,10 @@ there is a separately-installable PyPI package called `mathicsscript <https://py
 Django-based GUI
 ++++++++++++++++
 
-If you prefer, as many do, browser-based interaction with nicely formatted graphics and MathML-formatted output,
-right now there is a Django-based PyPI package `Mathics-Django <https://pypi.org/project/Mathics-Django>`_.
+If you prefer, as many do, browser-based interaction with nicely
+formatted graphics and MathML-formatted output, right now there is a
+Django-based PyPI package `Mathics-Django
+<https://pypi.org/project/Mathics-Django>`_.
 
 Some of its features:
 
@@ -56,21 +69,28 @@ Some of its features:
 * Integrated graphics and MathML mathematics output via MathJax
 * Notebook-like sessions
 
-To use this, you will need Django installed, and a browser with JavaScript enabled.
+To use this, you will need Django 3.12 or later installed, and a
+browser with JavaScript enabled.
 
 Note: in the future we intend to also proved a Jupyter-like interface.
 
 Natural Language Python Module add-on
 +++++++++++++++++++++++++++++++++++++
 
-If you want Natural-Language processing, there is an additional PyPI package called `pymathics-natlang <https://pypi.org/project/pymathics-natlang/>`_.
+If you want Natural-Language processing, there is an additional PyPI
+package called `pymathics-natlang
+<https://pypi.org/project/pymathics-natlang/>`_.
 
-To use this, you will need to have `nltk <https://pypi.org/project/nltk>`_ and `spacy <https://pypi.org/project/spacy>`_ installed.
+To use this, you will need to have `nltk
+<https://pypi.org/project/nltk>`_ and `spacy
+<https://pypi.org/project/spacy>`_ installed.
 
 Graph Python Module add-on
 +++++++++++++++++++++++++++
 
-If you need to do work with Graph Theory or Networks you may want the Graph Python module called `pymathics-graph <https://pypi.org/project/pymathics-graph/>`_.
+If you need to do work with Graph Theory or Networks you may want the
+Graph Python module called `pymathics-graph
+<https://pypi.org/project/pymathics-graph/>`_.
 
 To use this you will need to have `networkx <https://pypi.org/project/networkx>`_ and `matplotlib <https://pypi.org/project/matplotlib>`_ installed.
 
@@ -114,8 +134,11 @@ image run:
 
     $ docker pull mathicsorg/mathics
 
-However you this step is also done implicitly if you just issue the
-command to run the code. That invocation is given in the :ref:next section.
+This will pull the latest development release that has a docker
+tagname ``#latest`` if you want a stable release, give the version in
+the pull command. For example
+
+    $ docker pull mathicsorg/mathics#1.1.1
 
 From an OS-specific Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,6 +184,17 @@ Windows" depending on your platform).
     $ git clone https://github.com/mathics/Mathics.git
     $ cd Mathics
     $ make install
+
+    $ cd ..
+    $ git clone https://github.com/Mathics3/mathics-django.git
+    $ cd mathics3-django
+    $ make install
+
+    $ cd ..
+    $ git clone https://github.com/Mathics3/mathicsscript.git
+    $ cd mathicsscript
+    $ make install
+
 
 Alternatively use ``make develop`` or ``pip install -e`` to run the code
 installed from where the source-code is checked out. In doing this, code

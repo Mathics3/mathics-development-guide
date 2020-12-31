@@ -14,3 +14,7 @@ developer-docs:
 #: Install necessary Python modules
 setup:
 	pip install -r requirements.txt
+
+#: Rebuild docs from scratch
+rebuild:
+	$(MAKE) -C rebuild
