@@ -8,7 +8,7 @@ Extending Mathics Tutorial
 
 In this guide we will show how to Extend Mathics with Python code.
 
-We'll start out with a simple "Hello, World" function and modify that.
+We'll start out with a simple "Hello, World!" function and modify that.
 
 .. toctree::
    :maxdepth: 2
@@ -22,20 +22,10 @@ To be continued....
 
 
 
-The class starts with a Python docstring that specifies the
-documentation and tests for the symbol.  Please refer to
-:ref:`Documentation markup <doc_markup>` for more details on how to
-write the documentation.
-
-Python functions starting with "apply" are converted to built-in rules. Their
-docstring is compiled to the corresponding Mathics pattern. Pattern variables
-used in the pattern are passed to the Python function by their same name, plus
-an additional evaluation object. This object is needed to evaluate further
-expressions, print messages in the Python code, etc. Unsurprisingly, the return
-value of the Python function is the expression that is replaced for the matched
-pattern. If the function does not return any value, the Mathics expression is
-left unchanged. Note that you have to return ``Symbol["Null"]`` explicitly if
-you want that.
+If a function does not return any value, the Mathics expression is
+left unchanged. Note that you have to explicitly return
+``Symbol["Null"]`` (which we have a defined for you in ``SymbolNull``)
+if you want that to return a Null instead.
 
 Working with multiple patterns
 ++++++++++++++++++++++++++++++

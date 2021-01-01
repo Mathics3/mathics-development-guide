@@ -1,5 +1,5 @@
-Hello World - Version 2 - Help text
------------------------------------
+Hello, World! -- Version 2 with Help Text
+-----------------------------------------
 
 Now let us add some help to the *Hello* function so that World will
 know about it. This is done in the docstring

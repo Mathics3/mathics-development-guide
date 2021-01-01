@@ -1,5 +1,5 @@
-Hello World - Version 3 - Testing
----------------------------------
+Hello, World! -- Version 3 with Testing
+---------------------------------------
 
 In addition to the help text given before, we can also provide
 examples that are shown in the documentation, can be run interactively

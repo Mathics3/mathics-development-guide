@@ -7,7 +7,7 @@ Mathics's Developer Reference
 =============================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    installing

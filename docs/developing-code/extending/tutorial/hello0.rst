@@ -1,5 +1,5 @@
-Hello World - Version 0, Predefined
------------------------------------
+Hello, World! -- Version 0 using Predefined
+-------------------------------------------
 
 .. code-block:: python
 

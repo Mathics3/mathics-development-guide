@@ -1,13 +1,13 @@
-Hello, World -- Version 1 with Builtin
---------------------------------------
+Hello, World! -- Version 1 with Builtin
+---------------------------------------
 
-Most of the time you'll probably need to pass information into the Function you
-want to add. For this, use the ``Builtin`` class. This adds what in WL is called
-a "Built-in Symbol".
+Most of the time you'll probably need to pass information into the
+Function you want to add. For this, use the ``Builtin`` class. This
+adds what in WL is called a "Built-in Symbol".
 
-The method that you should define in the ``Builtin`` class will get
-invoked needs to start off with the name ``apply``. As before, this
-method has an ``evaluation`` parameter at the end.
+The method that you should define in the ``Builtin`` class that hsould
+should get invoked needs to start off with the name ``apply``. As
+before, this method has an ``evaluation`` parameter at the end.
 
 Other parameters that are appropriate for the function can be
 added. However those parameters must also be listed suffixed with a
@@ -17,7 +17,8 @@ The docstring is used by ``Builtin`` when trying to resolve what
 Python method to call. The docstring looks pretty much the same as it
 would look if you were defining this in Mathmatica.
 
-For example, let's add a string parameter. In Mathics the function might look like this
+For example, let's add a string parameter. In Mathics the function
+might look like this:
 
 
 .. code-block:: mathematica
@@ -44,3 +45,8 @@ Here is the complete code:
     def apply(self, person, evaluation):
       "Hello[person_String]"
           return String(f"Hello, {person.get_string_value()}!")
+
+See `Patterns
+<https://reference.wolfram.com/language/tutorial/Patterns.html>`_ for
+more information about how to specify expressions with patterns in
+them that you might use in an apply docstring.
