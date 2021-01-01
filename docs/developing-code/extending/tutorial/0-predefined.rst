@@ -8,7 +8,6 @@ Here is a simple "Hello, World!" Mathics function.
   from mathics.builtin.base import Predefined
 
   class Hello(Predefined):
-    name = "Hello"
     def evaluate(self, evaluation):
       return String(f"Hello, World!")
 
@@ -26,7 +25,6 @@ Now start mathics from the Mathics source tree:
    $ python mathics/main.py
    Mathics 2.0.0dev
    ...
-   In[1]:= Hello  # FIXME: Not sure what's wrong here.
    In[1]:= Hello
    Out[1]= Hello, World!
 
@@ -43,6 +41,3 @@ neede to peform the function.
 
 However here all we do is return a Mathics string, so we don't need to
 use what is in evalutation.
-
-The last thing to note is that we needed to define the class variable
-``name`` so that this name gets added to the list of "builtin" definitions.

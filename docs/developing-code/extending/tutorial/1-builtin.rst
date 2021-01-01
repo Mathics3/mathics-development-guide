@@ -41,7 +41,6 @@ Here is the complete code:
   from mathics.builtin.base import Builtin
 
   class Hello(Builtin):
-    name = "Hello1"
     def apply(self, person, evaluation):
       "Hello[person_String]"
           return String(f"Hello, {person.get_string_value()}!")
