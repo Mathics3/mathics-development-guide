@@ -1,11 +1,11 @@
-Hello, World! -- Version 1 with Builtin
----------------------------------------
+Introducing the Builtin Class
+-----------------------------
 
 Most of the time you'll probably need to pass information into the
 Function you want to add. For this, use the ``Builtin`` class. This
 adds what in WL is called a "Built-in Symbol".
 
-The method that you should define in the ``Builtin`` class that hsould
+The method that you should define in the ``Builtin`` class that should
 should get invoked needs to start off with the name ``apply``. As
 before, this method has an ``evaluation`` parameter at the end.
 

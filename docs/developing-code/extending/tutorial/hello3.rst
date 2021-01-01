@@ -1,5 +1,5 @@
-Hello, World! -- Version 3 with Testing
----------------------------------------
+Writing Document Tests
+----------------------
 
 In addition to the help text given before, we can also provide
 examples that are shown in the documentation, can be run interactively
@@ -10,7 +10,7 @@ Here is the docstring from the last section expanded with a couple of tests.
 
 .. code-block:: python
 
-  from mathics.builtin.base import Builtin
+  from mathics.builtin.base import Builtin, String
 
   class Hello(Builtin):
     """
@@ -25,6 +25,9 @@ Here is the docstring from the last section expanded with a couple of tests.
     >> Hello["Rocky"]
      = Hello, Rocky!
     """
+    def apply(person, evaluation):
+      "Hello[person_String]"
+          return String(f"Hello, {person.get_string_value()})!"
 
 Here is how to run the "Hello" tests from the command line:
 

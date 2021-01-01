@@ -1,5 +1,7 @@
-Hello, World! -- Version 0 using Predefined
--------------------------------------------
+Hello, World! -- using Predefined
+---------------------------------
+
+Here is a simple "Hello, World!" Mathics function.
 
 .. code-block:: python
 
