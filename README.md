@@ -3,6 +3,8 @@
 
 This repository contains information for developing [Mathics](https://mathics.org)
 
+You can view this document at the [readthedocs site](https://mathics-development-guide.readthedocs.io/en/latest/).
+
 To build:
 
 ```
