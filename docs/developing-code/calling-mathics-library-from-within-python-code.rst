@@ -20,6 +20,8 @@ If you have a number of mathics commands in string from that you would
 like evaluated, a simple way to do this is to set up a Mathics session
 and call the sessions *evaluate()* function:
 
+..index:: MathicsSession
+
 .. code:: py
 
     from mathics.session import MathicsSession
@@ -31,8 +33,8 @@ and call the sessions *evaluate()* function:
     session.evaluation.format_output(result)
 
 
-As a subprocess
----------------
+As a Python Subprocess
+----------------------
 
 Another way to run mathics and get output is to invoke the
 ``mathics`` command-line script. Although this may be more suitable

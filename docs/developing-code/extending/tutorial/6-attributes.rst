@@ -13,7 +13,7 @@ Suppose you want to create a Mathics variable that starts with a
 dollar sign (``$``) in accordance to the naming convention for many
 system variables.
 
-To accomplish this you assign to the desired string name to class
+To accomplish this you assign the desired string name to class
 variable ``name``, and that will override the default name.
 
 Similarly, setting a variable's or function's attributes can be done

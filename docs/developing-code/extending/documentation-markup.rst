@@ -16,16 +16,7 @@ For Help Text
 
 .. _doc_help_markup:
 
-.. index:: <dl>
-.. index:: <dt>
-.. index:: <dd>
-.. index:: <ul>
-.. index:: <li>
-.. index:: <console>
-.. index:: <con>
-.. index:: <img>
-.. index:: <imgng>
-.. index:: <i>
+.. index:: <dl>, <dt>, <dd>, <ul>, <ol>, <li>, <console>, <con>, <img>, <imgng>, <i>
 
 +----------------------------------+-----------------------------------------+
 | Syntax                           | Explanation                             |
@@ -88,13 +79,7 @@ For Testing
 
 .. _doc_test_markup:
 
-.. index:: >>
-.. index:: #>
-.. index:: X>
-.. index:: S>
-.. index:: ...
-.. index:: \|
-.. index:: =
+.. index:: >>, #>, X>, S>, ..., \|, =
 
 The following commands can be used to specify test cases.
 
@@ -103,7 +88,7 @@ The following commands can be used to specify test cases.
 +========================+===========================================================+
 | ``>>`` *Mathics code*  | Some Mathics code to run and to appear in documentation.  |
 +------------------------+-----------------------------------------------------------+
-| ``#>`` *Mathics code*  | Some Mathics code torun but not appearin documentation.   |
+| ``#>`` *Mathics code*  | Some Mathics code to run but not appearing documentation. |
 +------------------------+-----------------------------------------------------------+
 | ``X>`` *Mathics code*  | Mathics code shown in the documentation but not run.      |
 +------------------------+-----------------------------------------------------------+
@@ -114,7 +99,7 @@ The following commands can be used to specify test cases.
 +------------------------+-----------------------------------------------------------+
 | ``...``                | matches any output; used when output can vary.            |
 +------------------------+-----------------------------------------------------------+
-| ``.``                  | a newline which is expected to appear in test ouput.      |
+| ``.``                  | a newline which is expected to appear in test output.     |
 +------------------------+-----------------------------------------------------------+
 | ``$`` *name* ``$``     +  variable identifier in Mathics code or in text.          |
 +------------------------+-----------------------------------------------------------+

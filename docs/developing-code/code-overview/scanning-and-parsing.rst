@@ -69,7 +69,7 @@ Some things to notice:
 * Parsing removes parenthesis used for grouping capturing this
   instead by the function nesting order
 
-.. index:: parsing, example
+.. index:: parsing
 
 Python Code for Parsing an String
 ---------------------------------

@@ -1,5 +1,4 @@
-.. index:: S-expression
-.. index:: AST
+.. index:: S-expression, AST
 .. _ast:
 
 AST, S-Expression, General List: same thing
@@ -10,6 +9,8 @@ Python object of type ``Expression``. In compiler terminology the
 S-expression is also called an *abstract syntax tree* or AST. For
 Mathics, there are only very few different kinds of nodes or atoms in this
 tree or list:
+
+.. index:: Number, String, Symbol, Filename
 
 * ``Number``
 * ``String``

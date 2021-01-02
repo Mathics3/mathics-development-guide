@@ -42,6 +42,8 @@ is used to decide which method of the object to call.
 Function Name to Python method lookup
 -------------------------------------
 
+.. index:: Symbol, Predefined, Builtin, Expression
+
 When an ``Expression`` has not been rewritten, the entire function
 invocation in Mathics comes from the first leaf (or ``Head[]``) which
 should be a ``Symbol``. In Python this will be a class some sort, such
@@ -193,8 +195,7 @@ Evaluation list. These are
 * ``CompiledCode``
 * ``Image``
 
-.. index:: Builtin
-.. index:: Predefined
+.. index:: Builtin, Predefined
 
 Builtin and Predefined
 ----------------------

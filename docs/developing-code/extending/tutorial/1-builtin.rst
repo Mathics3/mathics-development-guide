@@ -1,6 +1,8 @@
 Introducing the Builtin Class
 -----------------------------
 
+..index:: Builtin
+
 Most of the time you'll probably need to pass information into the
 Function you want to add. For this, use the ``Builtin`` class.  In WL
 these things functions and variables defined this way are tagged as a
