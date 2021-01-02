@@ -30,14 +30,14 @@ Now start mathics from the Mathics source tree:
 
 
 Now let's go over the code. For a Symbol ``Hello`` we
-define a Python ``Class`` of type ``Predefined``. ``Predifined`` is prehaps the
+define a Python ``Class`` of type ``Predefined``. ``Predifined`` is perhaps the
 most primitive class that is used for adding Mathics Symbols.
 
 In that class you define a method *evaluate(self, evaluation)* which
 is what will get called when the Symbol is evaluated. The
 ``evaluation`` parameter contains the evaluation environment that can
 be used to get definitions of variables and other things that may be
-neede to peform the function.
+needed to perform the function.
 
 However here all we do is return a Mathics string, so we don't need to
-use what is in evalutation.
+use what is in evaluation.
