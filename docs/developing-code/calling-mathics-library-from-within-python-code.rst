@@ -13,9 +13,30 @@ Calling Mathics library from within Python code
 Mathics is also a Python library implementing a parser and a interpreter
 for WL.
 
-For single line code, one straight forward way to interpret, evaluate a
-WL expression, and obtain a simple (text) formatted output is by means
-of a system call
+Using MathicsSession
+--------------------
+
+If you have a number of mathics commands in string from that you would
+like evaluated, a simple way to do this is to set up a Mathics session
+and call the sessions *evaluate()* function:
+
+.. code:: py
+
+    from mathics.session import MathicsSession
+    session = MathicsSession(add_builtin=True, catch_interrupt)
+
+
+    expression = "Integrate[Sin[x]/x,x]"
+    result = session.evaluate(expression)
+    session.evaluation.format_output(result)
+
+
+As a subprocess
+---------------
+
+Another way to run mathics and get output is to invoke the
+``mathics`` command-line script. Although this may be more suitable
+for POSIX shell appliations, here is how to do this in Python:
 
 .. code:: py
 
@@ -31,16 +52,4 @@ This code runs the Mathics interpreter as a subprocess, sending a the
 expression as an input parameter, and extracts from the output the
 result.
 
-On the other hand, we can do this best by calling directly to the
-library:
-
-.. code:: py
-
-    from mathics.session import MathicsSession
-    session = MathicsSession(add_builtin=True, catch_interrupt)
-
-
-    expression = 'Integrate[Sin[x]/x,x]'
-    result = session.evaluate(expression)
-    session.evaluation.format_output(result)
-
+.. TODO: Show Expression tree evaluation

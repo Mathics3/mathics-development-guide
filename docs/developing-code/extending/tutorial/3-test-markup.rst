@@ -25,7 +25,7 @@ Here is the docstring from the last section expanded with a couple of tests.
     >> Hello["Rocky"]
      = Hello, Rocky!
     """
-    def apply(person, evaluation):
+    def apply(person: String, evaluation) -> String:
       "Hello[person_String]"
           return String(f"Hello, {person.get_string_value()})!"
 

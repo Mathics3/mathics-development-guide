@@ -9,8 +9,8 @@ extend its primitives.
    :maxdepth: 1
 
    developing-code/calling-mathics-library-from-within-python-code
-   developing-code/code-overview
    developing-code/extending
-   developing-code/uml
+   developing-code/code-overview
    developing-code/contributing-developing
+   developing-code/uml
    developing-code/misc

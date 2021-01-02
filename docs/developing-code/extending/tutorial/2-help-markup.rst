@@ -20,21 +20,9 @@ for the *Hello* class and the markup is largely XML/HTML.
     </dl>
     """
 
-    def apply(person, evaluation):
+    def apply(person: String, evaluation) -> String:
       "Hello[person_String]"
           return String(f"Hello, {person.get_string_value()})!"
-
-The return value is a bit more complicated here, so let us explain
-that.
-
-The parameter *person* has type Mathics *String*. Therefore, to
-use that we need to convert it to a Python value. This is done with
-*person.get_string_value()*. And the the return value needs to be a
-Mathics *String* so we need to convert the expanded Python string to a
-Mathics *String*.
-
-Previously, since we weren't modifying the Mathics String, we no
-conversions to Python and from Python were needed.
 
 The XML tagging that gets created from the above renders in the Django
 interface like this:

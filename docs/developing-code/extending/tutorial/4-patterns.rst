@@ -9,7 +9,7 @@ Mathics calls the a signature a "Form".
 
 One way to implement this in Python code is to have two different
 Python methods that start with the name ``apply``, one will
-handle one kind of From, say of the kind we saw previously,
+handle one kind of Form, say of the kind we saw previously,
 a person name is given. The other *apply* method will handle
 another kind of Form, such as one where there is an
 additional parameter, a string language value.
@@ -22,41 +22,48 @@ Here is some code for this..
   from mathics.builtin.base import Builtin, String
 
   class Hello(Builtin):
-    """
-    <dl>
-      <dt>Hello[$person$]
-      <dd>Print a "Hello" message customized for $person$.
-
-    This is an example of how Python Builtin-Symbol documentation works.
-    </dl>
-
-    Here is our test:
-    >> Hello["Rocky"]
-     = Hello, Rocky!
-    """
-
-    def apply(self, person, language, evaluation):
+    def apply(self, person: String, language: String, evaluation) -> String:
       """Hello[person_String, language_String]"""
 
-      greeting = "Bonjuor" if language.has_form("French") else "Hello"
+      greeting = "Bonjour" if language.get_string_value() == "French" else "Hello"
       return String(f"{greeting}, {person.get_string_value()}!")
 
-    def apply_english(self, person, evaluation):
+    def apply_english(self, person: String, evaluation) -> String:
       """Hello[person_]"""
 
       return self.apply(person, Expression("English"), evaluation)
 
-In this case, ``Hello["Peter", French]`` will resolve to ``"Bonjour,
-Peter!"``, while ``Pymathics`Hello["Peter", English]`` and
-``Pymathics`Hello["Peter"]`` will both resolve to ``"Hello, Peter!"``.
+Here is a session showing how this works:
 
-When evaluating a call to a builtin, Mathics will pattern-match on the inputs.
+::
+
+   $ mathics
+
+   In[1]:= Hello["Rocky"]
+   Out[1]= Hello, Rocky!
+
+   In[2]:= Hello["Rocky", "French"]
+   Out[2]= Bonjour, Rocky!
+
+   In[3]:= Hello["Rocky", "English"]
+   Out[3]= Hello, Rocky!
+
+   In[4]:= Hello[45]
+   Out[4]= Hello[45]
+
+   In[5]:= Hello["Rocky", "French" , c]
+   Out[5]= Hello["Rocky", French, c]
+
+
+As shown above, in order to evaluate a function call, Mathics
+pattern matches on the inputs.
 
 If the inputs don't match any of the patterns of the existing
-definitions then the entire expression is returned unchanged. For
-example, given the above definitions, ``Hello[45]`` would resolve to
-``Hello[45]``, because 45 doesn't match the ``String`` type check part
-of ``person_String``; 45 is not a string.
+definitions then the entire expression is returned unchanged. This is
+seen in ``In[4]``; 45 doesn't match the ``String`` type check part of
+``person_String``; 45 is not a string, so ``Hello[45]`` is returned.
+
+Similarly in ``In[5]`` three parameters are given rather than one or two.
 
 If a function does not return any value, the Mathics expression is
 left unchanged. Note that you have to explicitly return
