@@ -190,8 +190,8 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Divides],∣,∣,U+02223,U+02223,divides
 \[Divide],÷,÷,U+000F7,U+000F7,div
 \[DotEqual],≐,≐,U+02250,U+02250,.=
-\[DotlessI],I,ı,U+00049,U+00131,
-\[DotlessJ],J,,U+0004A,U+0F700,
+\[DotlessI],ı,ı,U+00131,U+00131,
+\[DotlessJ],ȷ,,U+00237,U+0F700,
 \[DottedSquare],⛶,,U+026F6,U+0F751,
 \[DoubleContourIntegral],∯,∯,U+0222F,U+0222F,
 \[DoubleDagger],‡,‡,U+02021,U+02021,ddg
@@ -276,7 +276,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[DownArrowBar],⤓,⤓,U+02913,U+02913,
 \[DownArrow],↓,↓,U+02193,U+02193,
 \[DownArrowUpArrow],⇵,⇵,U+021F5,U+021F5,
-\[DownBreve], ̑,,U+00020 U+00311,U+0F755,dbv
+\[DownBreve],̑,,U+00020 U+00311,U+0F755,dbv
 \[DownExclamation],¡,¡,U+000A1,U+000A1,d!
 \[DownLeftRightVector],⥐,⥐,U+02950,U+02950,
 \[DownLeftTeeVector],⥞,⥞,U+0295E,U+0295E,
@@ -333,7 +333,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[FilledRectangle],▮,▮,U+025AE,U+025AE,
 \[FilledRightTriangle],▶,▶,U+025B6,U+025B6,
 \[FilledSmallCircle],•,,U+02022,U+0F750,fsci
-\[FilledSmallSquare],■,◼,U+025A0,U+025FC,fssq
+\[FilledSmallSquare],◼,◼,U+025FC,U+025FC,fssq
 \[FilledSquare],■,■,U+025A0,U+025A0,fsq
 \[FilledUpTriangle],▲,▲,U+025B2,U+025B2,
 \[FilledVerySmallSquare],▪,▪,U+025AA,U+025AA,fvssq
