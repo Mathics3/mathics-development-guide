@@ -1,4 +1,4 @@
-WL named character, WL named character (Unicode representation), Unicode equivalent, Unicode equivalent name
+WL named character,WL named character (Unicode representation),Unicode equivalent,Unicode equivalent name
 \[CapitalBeta],U+00392,U+0A7B4,LATIN CAPITAL LETTER BETA
 \[CapitalChi],U+003A7,U+0039E,GREEK CAPITAL LETTER XI
 \[CapitalDifferentialD],U+0F74B,U+1D437,MATHEMATICAL ITALIC CAPITAL D
@@ -77,7 +77,7 @@ WL named character, WL named character (Unicode representation), Unicode equival
 \[DoubleStruckY],U+0F6FE,U+1D56A,MATHEMATICAL DOUBLE-STRUCK SMALL Y
 \[DoubleStruckZ],U+0F6FF,U+1D56B,MATHEMATICAL DOUBLE-STRUCK SMALL Z
 \[DoubleStruckZero],U+0F7DB,U+1D7D8,MATHEMATICAL DOUBLE-STRUCK DIGIT ZERO
-\[DownBreve],U+0F755,U+00311,COMBINING INVERTED BREVE
+\[DownBreve],U+0F755,U+00020 U+00311,SPACE + COMBINING INVERTED BREVE
 \[Earth],U+02641,U+02295,CIRCLED PLUS
 \[Equal],U+0F431,U+02A75,TWO CONSECUTIVE EQUALS SIGNS
 \[Equivalent],U+029E6,U+021D4,LEFT RIGHT DOUBLE ARROW
