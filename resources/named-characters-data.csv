@@ -52,11 +52,11 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[CapitalAlpha],Α,Α,U+00391,U+00391,A
 \[CapitalARing],Å,Å,U+000C5,U+000C5,Ao
 \[CapitalATilde],Ã,Ã,U+000C3,U+000C3,A~
-\[CapitalBeta],Ꞵ,Β,U+0A7B4,U+00392,B
+\[CapitalBeta],Β,Β,U+00392,U+00392,B
 \[CapitalCAcute],Ć,Ć,U+00106,U+00106,C'
 \[CapitalCCedilla],Ç,Ç,U+000C7,U+000C7,C
 \[CapitalCHacek],Č,Č,U+0010C,U+0010C,Cv
-\[CapitalChi],Χ,Χ,U+0039E,U+003A7,Ch
+\[CapitalChi],Χ,Χ,U+003A7,U+003A7,Ch
 \[CapitalDelta],Δ,Δ,U+00394,U+00394,D
 \[CapitalDHacek],Ď,Ď,U+0010E,U+0010E,Dv
 \[CapitalDifferentialD],𝐷,,U+1D437,U+0F74B,DD
@@ -175,7 +175,7 @@ Named character,Unicode equivalent,WL gliph,Unicode equivalent code-points,WL gl
 \[Diameter],⌀,⌀,U+02300,U+02300,
 \[Diamond],⋄,⋄,U+022C4,U+022C4,dia
 \[DiamondSuit],♢,♢,U+02662,U+02662,
-\[DifferenceDelta],Δ,∆,U+00394,U+02206,diffd
+\[DifferenceDelta],∆,∆,U+02206,U+02206,diffd
 \[DifferentialD],𝑑,,U+1D451,U+0F74C,dd
 \[Digamma],ϝ,ϝ,U+003DD,U+003DD,di
 \[DirectedEdge],→,,U+02192,U+0F3D5,de
