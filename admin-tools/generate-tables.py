@@ -10,10 +10,10 @@ def unicode_url_from_code(code):
 
 with open("resources/named-characters-data.csv", "r") as f:
     reader = csv.reader(f, delimiter=",", quotechar="|")
-    next(reader) # Skip the header
+    header = next(reader)
 
     # The rows formatted in RST
-    rst_rows = []
+    rst_rows = ["   * - " +  "\n     - ".join(header)]
 
     for row in reader:
         named, uni_name, wl_name, uni_code, wl_code, esc = row
