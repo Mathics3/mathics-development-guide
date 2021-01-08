@@ -6,7 +6,6 @@ All parsing routines are located in `mathics.core.parser <https://github.com/mat
 See the ``README.md`` that appears in that directory for detailed information on how scanning and parsing works.
 
 .. index:: tokeniser
-.. _tokeniser:
 
 Tokeniser
 ---------
