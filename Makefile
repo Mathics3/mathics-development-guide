@@ -8,6 +8,7 @@ all: developer-docs
 
 #: Build developer guide
 developer-docs:
+	admin-tools/generate-tables.py
 	$(MAKE) -C docs html
 
 

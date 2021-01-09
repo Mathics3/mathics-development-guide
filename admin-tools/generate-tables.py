@@ -8,8 +8,8 @@ def string_from_codes(codes):
 def unicode_url_from_code(code):
     return "https://www.compart.com/en/unicode/U+" + f"{int(wl_code[2:], 16):X}".zfill(4)
 
-with open("resources/named-characters-data.csv", "r") as f:
-    reader = csv.reader(f, delimiter=",", quotechar="|")
+with open("resources/named-characters-data.csv", "r") as i, open("docs/translation-tables/full-unicode-conversion-table.rst", "w") as o:
+    reader = csv.reader(i, delimiter=",", quotechar="|")
     header = next(reader)
 
     # The rows formatted in RST
@@ -19,8 +19,7 @@ with open("resources/named-characters-data.csv", "r") as f:
         named, uni_name, wl_name, uni_code, wl_code, esc = row
 
         uni_code, wl_code = uni_code.strip(), wl_code.strip()
-        print(named)
-        esc = "".join("\\" + c for c in esc.replace(" ", "␣"))
+        esc = esc.replace("`", "\\`")
 
         named_url = f"https://reference.wolfram.com/language/ref/{named[2:-1]}.html"
         named = named.replace("\\", "\\\\")
@@ -37,7 +36,11 @@ with open("resources/named-characters-data.csv", "r") as f:
         rst_row = "\n     - ".join(parts)
         rst_rows.append(rst_row)
 
-    print("\n".join(rst_rows))
+    o.write(".. list-table Title\n")
+    o.write("   :widths 20, 25, 25, 10, 10, 10\n")
+    o.write("   :header-rows 1\n")
+    o.write("\n\n\n")
+    o.write("\n".join(rst_rows))
 
 
 

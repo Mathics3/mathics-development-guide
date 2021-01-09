@@ -13,7 +13,5 @@ For partial lists which list entries only where there is a difference, see:
 * :ref:`Standard Unicode to WL Conversion Table`., or
 * :ref:`WL Unicode and Name to Standard Unicode Table`.
 
-.. csv-table:: Unicode to WL conversions
-   :file: ../../resources/named-characters-data.csv
-   :widths: 5, 30, 30, 10, 10, 5
-   :header-rows: 1
+.. include:: full-unicode-conversion-table.rst
+
