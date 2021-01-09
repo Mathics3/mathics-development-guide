@@ -7,51 +7,170 @@
    :maxdepth: 2
    :caption: Contents:
 
-Calling Mathics library from within Python code
-===============================================
+Using Mathics from your code
+============================
 
-Mathics is also a Python library implementing a parser and a interpreter
-for WL.
+There a various ways you make use of Mathics ability to
+solve equations, or run code which we describe here.
+
+From a shell
+------------
+
+Perhaps the least-tightly coupled way is to just call the command-line
+interpreter in a shell and process its output.
+
+Here is some POSIX shell code that does this:
+
+.. code:: bash
+
+   $ mathicsscript -e '3! + E^(Pi I)'
+   5
+   $ seq $(mathicsscript -e 'Integrate[x^2, {x, 0, 3}])'
+   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+
+The above code runs the Mathics interpreter in a subshell and then uses the
+number returned in a call another command, ``seq`` which uses that number.
+
+
+To call Mathics as a subshell this inside Python, the `subprocess
+module <https://docs.python.org/3/library/subprocess.html>`_ might be
+used like this:
+
+.. code:: py
+
+    from subprocess import run, PIPE
+
+    expression = "Integrate[x^2, {x, 0, 3}]"
+    cmd = ["mathicsscript", "--execute", expression]
+    result = run(cmd, stdout=PIPE)
+    if result.returncode == 0:
+        print(int(result.stdout) + 5)
+
+This code runs the Mathics interpreter as a subprocess, capturing the
+output and if the execution was successful converts the result
+from its string output to an Python ``int`` and adds 5.
 
 Using MathicsSession
 --------------------
 
-If you have a number of mathics commands in string from that you would
-like evaluated, a simple way to do this is to set up a Mathics session
-and call the sessions *evaluate()* function:
 
-..index:: MathicsSession
+
+While the above is fine for running an isolated expression or two, it
+is pretty inefficent: Python has to be loaded every time along with
+the huge Mathics program; all of the built-in functions need to be set
+up, and some of terminal interaction needs set up as well.
+
+If you have a sequence of Mathics expressions, or need to get results
+from Mathics a number of times inside your Python code, it is faster
+to just import `mathics` and set up and environment for running code
+once.
+
+Here is an example of that:
 
 .. code:: py
 
     from mathics.session import MathicsSession
-    session = MathicsSession(add_builtin=True, catch_interrupt)
+    session = MathicsSession(add_builtin=True, catch_interrupt=True)
+
+    # Compute 20!
+    result = session.evaluate("20!").to_python()
+    print(result)
+
+In the above code, ``session`` is the scratchpad area that contains results
+of the evaluations. Creating this using ``add_builtin=True`` stores
+all of the builtin deinitions. These include things like ``Factorial``
+which is used later.
 
 
-    expression = "Integrate[Sin[x]/x,x]"
-    result = session.evaluate(expression)
-    session.evaluation.format_output(result)
+Mathics Results as Python Objects
+---------------------------------
 
+In the last section we passed a string to *session.evaluate()* we
+passed a string. That string was scanned and parsed, before it was
+evaluated. (See the section below for what goes on in scanning and
+parsing.)
 
-As a Python Subprocess
-----------------------
+A more flexible way to use Mathics is to skip the scanning and
+parsing and call the same functions that Mathics calls underneath to
+evaluation expressions. In this section we will do just that.
 
-Another way to run mathics and get output is to invoke the
-``mathics`` command-line script. Although this may be more suitable
-for POSIX shell appliations, here is how to do this in Python:
+As before, we need a ``MathicsSession`` as a scratchpad area to
+save results, and to lookup previous definitions and results.
+
 
 .. code:: py
 
-    import subprocess
+   # This is the same as before
+   from mathics.session import MathicsSession
+   session = MathicsSession(add_builtin=True, catch_interrupt=True)
 
-    expression = "Integrate[Sin[x]/x,x]"
-    cmd = ["mathics", "--no-completion", "-q", "--colors", "NOCOLOR"]
-    result = subprocess.run(cmd.append(f"\"{expression}\"" )], stdout=subprocess.PIPE).stdout
-    result = result.split("\n")[-1]
-    result = result[result.find("=")+1:]
+   # These are Mathics classes we are going to use.
+   from mathics.core.expression import Expression, Integer
 
-This code runs the Mathics interpreter as a subprocess, sending a the
-expression as an input parameter, and extracts from the output the
-result.
+   # Compute 20!
+   x = Expression("Factorial", Integer(10)
+                 ).evaluate(session.evaluation).to_python()
+   print(x) # 2432902008176640000
 
-.. TODO: Show Expression tree evaluation
+The above code computes the same value as in the last section. However we are
+doing this by interacting with the Mathics classes now.
+
+In this example shown above, we convert from Python's literal 10 to
+Mathics' representation of for 10 using ``Integer(10)``. This value
+is needed as a parameter to the ``Factorial`` function .
+
+Notice how to evaluate a general Mathics expression in Python using
+*Expression()*: the first parameter is the Full-Form name of the
+function to get called. Here that is ``Factorial``. the parameters
+after the first one are the parameters to the function specified in
+the first parameter. Here it is that parameter ``Integer(10)``.
+Each of the parameters should have type Mathics Expression.
+
+The returned value of *Expression()* is Python object and data
+structure that Mathics uses to evaluation expressions. However that
+object isn't evaluated until you invoke its *evaluate()* method.
+Aside from evaluating the expression, other things you might do are
+format the expression so that it can be displayed nicely, or inspect
+the expression in the same way you might inspect a lambda function in
+Lisp.
+
+When the *evaluate()* method is called, the function is evaluated but
+the return value is still a Mathics *Expression*, even if it is the
+computed value rather than its more symbolic form. So if Python is
+going to use the value, it needs to call *to_python()* to convert
+the value into a Python integer value.
+
+Just as Python expressions can be composed from other Python
+expressions, the same is true in Mathics: an *Expression()* parameter
+can be another expression.
+
+Here is an example of that:
+
+.. code:: py
+
+   # This is the same as before
+   from mathics.session import MathicsSession
+   session = MathicsSession(add_builtin=True, catch_interrupt=True)
+
+   # These are Mathics classes we are going to use.
+   from mathics.core.expression import Expression, Integer
+
+   # Compute 5 * (6 + 3)
+   x = Expression("Plus", Integer(5),
+         Expression("Times", Integer(6), Integer(3))
+	 ).evaluate(session.evalutation).to_python()
+   print(x) # 45
+
+Notice that precedence between operations, like *Plus()* and
+*Times()* is handled simply in the order in which these functions are
+called, so no parenthesis is used in the functional way.
+
+.. TODO: Break out evaluate example to show scanning and parsing
