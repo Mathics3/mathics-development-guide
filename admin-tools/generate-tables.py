@@ -9,7 +9,8 @@ def unicode_url_from_code(code):
     return "https://www.compart.com/en/unicode/U+" + f"{int(wl_code[2:], 16):X}".zfill(4)
 
 with open("resources/named-characters-data.csv", "r") as i, open("docs/translation-tables/full-unicode-conversion-table.rst", "w") as o:
-    reader = csv.reader(i, delimiter=",", quotechar="|")
+    reader = csv.reader(i, delimiter=",", quotechar="|",
+                        quoting=csv.QUOTE_MINIMAL)
     next(reader) # Skip the header
 
     # The rows formatted in RST
@@ -18,11 +19,9 @@ with open("resources/named-characters-data.csv", "r") as i, open("docs/translati
 
     for row in reader:
         named, uni_name, wl_name, uni_code, wl_code, esc = row
-
         uni_code, wl_code = uni_code.strip(), wl_code.strip()
-        esc = esc.replace("`", "\\`")
 
-        named_url = f"https://reference.wolfram.com/language/ref/{named[2:-1]}.html"
+        named_url = f"https://reference.wolfram.com/language/ref/character/{named[2:-1]}.html"
         named = named.replace("\\", "\\\\")
 
         if uni_code:
