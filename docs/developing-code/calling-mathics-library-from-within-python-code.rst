@@ -84,10 +84,14 @@ Here is an example of that:
     result = session.evaluate("20!").to_python()
     print(result)
 
-In the above code, ``session`` is the scratchpad area that contains results
-of the evaluations. Creating this using ``add_builtin=True`` stores
-all of the builtin deinitions. These include things like ``Factorial``
-which is used later.
+In the above code, ``session`` is the scratchpad area that contains
+results of the evaluations. Creating this stores all of the builtin
+deinitions. We explicitly set the parameter ``add_builtin=True`` to
+include things like ``Factorial`` which is used later.
+
+Although we set ``add_builtin`` explicitly for pedagodical purpose,
+``True`` is the default, adding this paraemter wasn't necessary. We'll
+leave it off in future examples.
 
 
 Mathics Results as Python Objects
@@ -102,15 +106,15 @@ A more flexible way to use Mathics is to skip the scanning and
 parsing and call the same functions that Mathics calls underneath to
 evaluation expressions. In this section we will do just that.
 
-As before, we need a ``MathicsSession`` as a scratchpad area to
-save results, and to lookup previous definitions and results.
+As before, we need a ``MathicsSession`` session object as a scratchpad
+area to save results, and to lookup previous definitions and results.
 
 
 .. code:: py
 
    # This is the same as before
    from mathics.session import MathicsSession
-   session = MathicsSession(add_builtin=True, catch_interrupt=True)
+   session = MathicsSession(catch_interrupt=True)
 
    # These are Mathics classes we are going to use.
    from mathics.core.expression import Expression, Integer
@@ -124,8 +128,11 @@ The above code computes the same value as in the last section. However we are
 doing this by interacting with the Mathics classes now.
 
 In this example shown above, we convert from Python's literal 10 to
-Mathics' representation of for 10 using ``Integer(10)``. This value
-is needed as a parameter to the ``Factorial`` function .
+Mathics' representation of for 10 using ``Integer(10)``. This value is
+needed as a parameter to the ``Factorial`` function . Stricly speaking
+the full name of the factorial function is ``System`Factorial``, but
+we can leave off the context name, ``System``, and Mathics will look
+that up.
 
 Notice how to evaluate a general Mathics expression in Python using
 *Expression()*: the first parameter is the Full-Form name of the
@@ -158,7 +165,7 @@ Here is an example of that:
 
    # This is the same as before
    from mathics.session import MathicsSession
-   session = MathicsSession(add_builtin=True, catch_interrupt=True)
+   session = MathicsSession(catch_interrupt=True)
 
    # These are Mathics classes we are going to use.
    from mathics.core.expression import Expression, Integer
