@@ -7,4 +7,5 @@ tmp
 .vscode
 /.cache
 /.python-version
+/docs/translation-tables/*-table.rst
 ChangeLog

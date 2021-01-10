@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 import csv
+import os
+import os.path as osp
+
+def get_srcdir():
+    filename = osp.normcase(osp.dirname(osp.abspath(__file__)))
+    return osp.realpath(filename)
+
+os.chdir(get_srcdir() + "/../")
 
 def format_code_points(codes: str, show_gliphs=False) -> str:
     codes = codes.strip()
@@ -66,15 +74,15 @@ with open("resources/named-characters-data.csv", "r") as i, open("docs/translati
     next(reader) # Skip the header
 
     header = ["Named character", "Unicode", "WL", "ESC sequence alias"]
-    writer = TableWriter(o, "Named characters data", header, 
+    writer = TableWriter(o, "Named characters data", header,
                         [25, 35, 35, 15])
 
     for row in reader:
         named_char, _, _, uni, wl, esc = row
 
-        writer.writerow([format_named_char(named_char), 
-                        format_code_points(uni, show_gliphs=True), 
-                        format_code_points(wl), 
+        writer.writerow([format_named_char(named_char),
+                        format_code_points(uni, show_gliphs=True),
+                        format_code_points(wl),
                         format_esc_sequence(esc)])
 
 
@@ -83,15 +91,15 @@ with open("resources/unicode-to-wl-conversion.csv", "r") as i, open("docs/transl
     reader = csv.reader(i, delimiter=",", quotechar="|",
                         quoting=csv.QUOTE_MINIMAL)
 
-    writer = TableWriter(o, "Unicode to WL conversions", next(reader), 
+    writer = TableWriter(o, "Unicode to WL conversions", next(reader),
                         [15, 35, 35, 25])
 
     for row in reader:
         uni_name, uni, wl, named_char = row
 
         writer.writerow([uni_name,
-                        format_code_points(uni, show_gliphs=True), 
-                        format_code_points(wl), 
+                        format_code_points(uni, show_gliphs=True),
+                        format_code_points(wl),
                         format_named_char(named_char)])
 
 # Generate the WL to Unicode table
@@ -99,14 +107,13 @@ with open("resources/wl-to-unicode-conversion.csv", "r") as i, open("docs/transl
     reader = csv.reader(i, delimiter=",", quotechar="|",
                         quoting=csv.QUOTE_MINIMAL)
 
-    writer = TableWriter(o, "WL to Unicode conversion", next(reader), 
+    writer = TableWriter(o, "WL to Unicode conversion", next(reader),
                         [25, 35, 35, 15])
 
     for row in reader:
         named_char, wl, uni, uni_name = row
 
         writer.writerow([format_named_char(named_char),
-                        format_code_points(wl), 
-                        format_code_points(uni, show_gliphs=True), 
+                        format_code_points(wl),
+                        format_code_points(uni, show_gliphs=True),
                         uni_name])
-
