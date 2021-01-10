@@ -10,8 +10,5 @@ unicode values differ.
 For a listing going the other way see :ref:`WL Unicode and Name to Standard Unicode Table`.
 or :ref:`Full WL Unicode and Name to Standard Unicode Table` for a full list of Unicode characters.
 
+.. include:: unicode-to-wl-conversion-table.rst
 
-.. csv-table:: Unicode to WL conversions
-   :file: ../../resources/unicode-to-wl-conversion.csv
-   :widths: 40, 15, 15, 30
-   :header-rows: 1
