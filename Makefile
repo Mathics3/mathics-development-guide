@@ -22,4 +22,4 @@ rebuild:
 
 #: Wipe derivable files
 clean:
-	$(MAKE) -C docs clean
+	$(MAKE) -C docs $<

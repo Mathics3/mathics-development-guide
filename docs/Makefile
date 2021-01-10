@@ -35,5 +35,5 @@ clean:
 %:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-docs/translation-tables/full-unicode-conversion-table.rst:
+$(TABLES):
 	$(PYTHON) ../admin-tools/generate-tables.py
