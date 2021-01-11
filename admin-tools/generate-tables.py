@@ -52,7 +52,8 @@ class TableWriter:
 
         if widths:
             self._o.write(
-                    "   :widths: " + ", ".join(str(w) for w in widths) + "\n")
+                "   :widths: " + ", ".join(str(w) for w in widths) + "\n"
+            )
 
         self._o.write("   :header-rows: 1\n")
         self._o.write("\n\n\n")
@@ -61,7 +62,9 @@ class TableWriter:
 
     def writerow(self, row: list):
         if type(row) != list or len(row) != self._n_rows:
-            raise ValueError
+            raise ValueError(
+                f"{repr(row)} is not a {self._n_rows} element list"
+            )
 
         row_formated = ["   * - " + str(row[0])] + [str(c) for c in row[1:]]
         self._o.write("\n     - ".join(row_formated) + "\n")
@@ -73,8 +76,7 @@ with open("resources/named-characters-data.csv", "r") as i, open("docs/translati
     next(reader) # Skip the header
 
     header = ["Named character", "Unicode", "WL", "ESC sequence alias"]
-    writer = TableWriter(o, "Named characters data", header,
-                        [25, 35, 35, 15])
+    writer = TableWriter(o, "Named characters data", header, [25, 35, 35, 15])
 
     for row in reader:
         named_char, _, _, uni, wl, esc = row
