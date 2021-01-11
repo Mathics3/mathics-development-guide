@@ -32,7 +32,7 @@ def format_named_char(n: str) -> str:
     return f"`\\{n} <{url}>`_"
 
 def format_esc_sequence(seq: str) -> str:
-    return "".join("\\" + c for c in seq.replace(" ", "␣").replace("||", "|"))
+    return "".join("\\" + c for c in seq.replace(" ", "␣"))
 
 class TableWriter:
     def __init__(self, output, title, header, widths=None):
@@ -69,8 +69,7 @@ class TableWriter:
 
 # Generate the complete table
 with open("resources/named-characters-data.csv", "r") as i, open("docs/translation-tables/full-unicode-conversion-table.rst", "w") as o:
-    reader = csv.reader(i, delimiter=",", quotechar="|",
-                        quoting=csv.QUOTE_MINIMAL)
+    reader = csv.reader(i, delimiter=",", escapechar="|")
     next(reader) # Skip the header
 
     header = ["Named character", "Unicode", "WL", "ESC sequence alias"]
@@ -88,9 +87,7 @@ with open("resources/named-characters-data.csv", "r") as i, open("docs/translati
 
 # Generate the Unicode to WL table
 with open("resources/unicode-to-wl-conversion.csv", "r") as i, open("docs/translation-tables/unicode-to-wl-conversion-table.rst", "w") as o:
-    reader = csv.reader(i, delimiter=",", quotechar="|",
-                        quoting=csv.QUOTE_MINIMAL)
-
+    reader = csv.reader(i, delimiter=",", escapechar="|")
     writer = TableWriter(o, "Unicode to WL conversions", next(reader),
                         [15, 35, 35, 25])
 
@@ -104,9 +101,7 @@ with open("resources/unicode-to-wl-conversion.csv", "r") as i, open("docs/transl
 
 # Generate the WL to Unicode table
 with open("resources/wl-to-unicode-conversion.csv", "r") as i, open("docs/translation-tables/wl-to-unicode-conversion-table.rst", "w") as o:
-    reader = csv.reader(i, delimiter=",", quotechar="|",
-                        quoting=csv.QUOTE_MINIMAL)
-
+    reader = csv.reader(i, delimiter=",", escapechar="|")
     writer = TableWriter(o, "WL to Unicode conversion", next(reader),
                         [25, 35, 35, 15])
 

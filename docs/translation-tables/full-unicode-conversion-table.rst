@@ -555,7 +555,7 @@
    * - `\\[CloseCurlyDoubleQuote] <https://reference.wolfram.com/language/ref/character/CloseCurlyDoubleQuote.html>`_
      - `U+0201D <https://www.compart.com/en/unicode/U+201D>`_ \”
      - `U+0201D <https://www.compart.com/en/unicode/U+201D>`_
-     - \]
+     - \]\"
    * - `\\[CloseCurlyQuote] <https://reference.wolfram.com/language/ref/character/CloseCurlyQuote.html>`_
      - `U+02019 <https://www.compart.com/en/unicode/U+2019>`_ \’
      - `U+02019 <https://www.compart.com/en/unicode/U+2019>`_
@@ -681,9 +681,9 @@
      - `U+000B0 <https://www.compart.com/en/unicode/U+00B0>`_
      - \d\e\g
    * - `\\[DeleteKey] <https://reference.wolfram.com/language/ref/character/DeleteKey.html>`_
-     - `U+0F7D0 <https://www.compart.com/en/unicode/U+F7D0>`_ \
+     - 
      - `U+0F7D0 <https://www.compart.com/en/unicode/U+F7D0>`_
-     - \d\e\l
+     - \␣\d\e\l
    * - `\\[Del] <https://reference.wolfram.com/language/ref/character/Del.html>`_
      - `U+02207 <https://www.compart.com/en/unicode/U+2207>`_ \∇
      - `U+02207 <https://www.compart.com/en/unicode/U+2207>`_
@@ -811,7 +811,7 @@
    * - `\\[DoubleLeftArrow] <https://reference.wolfram.com/language/ref/character/DoubleLeftArrow.html>`_
      - `U+021D0 <https://www.compart.com/en/unicode/U+21D0>`_ \⇐
      - `U+021D0 <https://www.compart.com/en/unicode/U+21D0>`_
-     - \<\=
+     - \␣\<\=
    * - `\\[DoubleLeftRightArrow] <https://reference.wolfram.com/language/ref/character/DoubleLeftRightArrow.html>`_
      - `U+021D4 <https://www.compart.com/en/unicode/U+21D4>`_ \⇔
      - `U+021D4 <https://www.compart.com/en/unicode/U+21D4>`_
@@ -839,7 +839,7 @@
    * - `\\[DoubleRightArrow] <https://reference.wolfram.com/language/ref/character/DoubleRightArrow.html>`_
      - `U+021D2 <https://www.compart.com/en/unicode/U+21D2>`_ \⇒
      - `U+021D2 <https://www.compart.com/en/unicode/U+21D2>`_
-     - \=\>
+     - \␣\=\>
    * - `\\[DoubleRightTee] <https://reference.wolfram.com/language/ref/character/DoubleRightTee.html>`_
      - `U+022A8 <https://www.compart.com/en/unicode/U+22A8>`_ \⊨
      - `U+022A8 <https://www.compart.com/en/unicode/U+22A8>`_
@@ -1103,7 +1103,7 @@
    * - `\\[DoubleVerticalBar] <https://reference.wolfram.com/language/ref/character/DoubleVerticalBar.html>`_
      - `U+02225 <https://www.compart.com/en/unicode/U+2225>`_ \∥
      - `U+02225 <https://www.compart.com/en/unicode/U+2225>`_
-     - \|
+     - \␣\|\|
    * - `\\[DownArrowBar] <https://reference.wolfram.com/language/ref/character/DownArrowBar.html>`_
      - `U+02913 <https://www.compart.com/en/unicode/U+2913>`_ \⤓
      - `U+02913 <https://www.compart.com/en/unicode/U+2913>`_
@@ -1291,7 +1291,7 @@
    * - `\\[EscapeKey] <https://reference.wolfram.com/language/ref/character/EscapeKey.html>`_
      - 
      - `U+0F769 <https://www.compart.com/en/unicode/U+F769>`_
-     - \e\s\c
+     - \␣\e\s\c
    * - `\\[Eta] <https://reference.wolfram.com/language/ref/character/Eta.html>`_
      - `U+003B7 <https://www.compart.com/en/unicode/U+03B7>`_ \η
      - `U+003B7 <https://www.compart.com/en/unicode/U+03B7>`_
@@ -1859,7 +1859,7 @@
    * - `\\[Function] <https://reference.wolfram.com/language/ref/character/Function.html>`_
      - `U+021A6 <https://www.compart.com/en/unicode/U+21A6>`_ \↦
      - `U+0F4A1 <https://www.compart.com/en/unicode/U+F4A1>`_
-     - \-\>
+     - \|\-\>
    * - `\\[Gamma] <https://reference.wolfram.com/language/ref/character/Gamma.html>`_
      - `U+003B3 <https://www.compart.com/en/unicode/U+03B3>`_ \γ
      - `U+003B3 <https://www.compart.com/en/unicode/U+03B3>`_
@@ -2851,7 +2851,7 @@
    * - `\\[OpenCurlyDoubleQuote] <https://reference.wolfram.com/language/ref/character/OpenCurlyDoubleQuote.html>`_
      - `U+0201C <https://www.compart.com/en/unicode/U+201C>`_ \“
      - `U+0201C <https://www.compart.com/en/unicode/U+201C>`_
-     - \[
+     - \[\"
    * - `\\[OpenCurlyQuote] <https://reference.wolfram.com/language/ref/character/OpenCurlyQuote.html>`_
      - `U+02018 <https://www.compart.com/en/unicode/U+2018>`_ \‘
      - `U+02018 <https://www.compart.com/en/unicode/U+2018>`_
@@ -2863,7 +2863,7 @@
    * - `\\[Or] <https://reference.wolfram.com/language/ref/character/Or.html>`_
      - `U+02228 <https://www.compart.com/en/unicode/U+2228>`_ \∨
      - `U+02228 <https://www.compart.com/en/unicode/U+2228>`_
-     - \|
+     - \|\|
    * - `\\[OSlash] <https://reference.wolfram.com/language/ref/character/OSlash.html>`_
      - `U+000F8 <https://www.compart.com/en/unicode/U+00F8>`_ \ø
      - `U+000F8 <https://www.compart.com/en/unicode/U+00F8>`_
@@ -3117,9 +3117,9 @@
      - `U+021B5 <https://www.compart.com/en/unicode/U+21B5>`_
      - \r\e\t
    * - `\\[ReturnKey] <https://reference.wolfram.com/language/ref/character/ReturnKey.html>`_
-     - `U+0F766 <https://www.compart.com/en/unicode/U+F766>`_ \
+     - 
      - `U+0F766 <https://www.compart.com/en/unicode/U+F766>`_
-     - \r\e\t
+     - \␣\r\e\t
    * - `\\[ReverseDoublePrime] <https://reference.wolfram.com/language/ref/character/ReverseDoublePrime.html>`_
      - `U+02036 <https://www.compart.com/en/unicode/U+2036>`_ \‶
      - `U+02036 <https://www.compart.com/en/unicode/U+2036>`_
@@ -3159,7 +3159,7 @@
    * - `\\[RightArrow] <https://reference.wolfram.com/language/ref/character/RightArrow.html>`_
      - `U+02192 <https://www.compart.com/en/unicode/U+2192>`_ \→
      - `U+02192 <https://www.compart.com/en/unicode/U+2192>`_
-     - \-\>
+     - \␣\-\>
    * - `\\[RightArrowBar] <https://reference.wolfram.com/language/ref/character/RightArrowBar.html>`_
      - `U+021E5 <https://www.compart.com/en/unicode/U+21E5>`_ \⇥
      - `U+021E5 <https://www.compart.com/en/unicode/U+21E5>`_
@@ -3171,7 +3171,7 @@
    * - `\\[RightAssociation] <https://reference.wolfram.com/language/ref/character/RightAssociation.html>`_
      - 
      - `U+0F114 <https://www.compart.com/en/unicode/U+F114>`_
-     - \>
+     - \|\>
    * - `\\[RightBracketingBar] <https://reference.wolfram.com/language/ref/character/RightBracketingBar.html>`_
      - `U+0007C <https://www.compart.com/en/unicode/U+007C>`_ \|
      - `U+0F604 <https://www.compart.com/en/unicode/U+F604>`_
@@ -3915,7 +3915,7 @@
    * - `\\[VerticalBar] <https://reference.wolfram.com/language/ref/character/VerticalBar.html>`_
      - `U+0007C <https://www.compart.com/en/unicode/U+007C>`_ \|
      - `U+0F3D0 <https://www.compart.com/en/unicode/U+F3D0>`_
-     - 
+     - \␣\|
    * - `\\[VerticalEllipsis] <https://reference.wolfram.com/language/ref/character/VerticalEllipsis.html>`_
      - `U+022EE <https://www.compart.com/en/unicode/U+22EE>`_ \⋮
      - `U+022EE <https://www.compart.com/en/unicode/U+22EE>`_
@@ -3927,7 +3927,7 @@
    * - `\\[VerticalSeparator] <https://reference.wolfram.com/language/ref/character/VerticalSeparator.html>`_
      - 
      - `U+0F432 <https://www.compart.com/en/unicode/U+F432>`_
-     - 
+     - \|
    * - `\\[VerticalTilde] <https://reference.wolfram.com/language/ref/character/VerticalTilde.html>`_
      - `U+02240 <https://www.compart.com/en/unicode/U+2240>`_ \≀
      - `U+02240 <https://www.compart.com/en/unicode/U+2240>`_
