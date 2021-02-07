@@ -4,10 +4,11 @@ RM  ?= rm
 #: Default target - same as "develop"
 all: developer-docs
 
-.PHONY: developer-docs
+.PHONY: developer-docs clean
 
 #: Build developer guide
 developer-docs:
+	admin-tools/generate-tables.py
 	$(MAKE) -C docs html
 
 
@@ -17,4 +18,8 @@ setup:
 
 #: Rebuild docs from scratch
 rebuild:
-	$(MAKE) -C rebuild
+	$(MAKE) -C docs $<
+
+#: Wipe derivable files
+clean:
+	$(MAKE) -C docs $<

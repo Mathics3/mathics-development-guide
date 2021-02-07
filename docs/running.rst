@@ -225,3 +225,15 @@ are a good reference.
 
 .. |Packaging status| image:: https://repology.org/badge/vertical-allrepos/mathics.svg
    :target: https://repology.org/project/mathics/versions
+
+Input/Output Unicode Tables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For reference, here are some characters conversion tables that we use:
+
+.. toctree::
+   :maxdepth: 2
+
+   translation-tables/unicode-to-wl-conversion
+   translation-tables/wl-to-unicode-conversion
+   translation-tables/full-unicode-conversion

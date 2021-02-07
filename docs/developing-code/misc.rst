@@ -58,7 +58,7 @@ You can also run the tests for individual built-in symbols using
 This will not re-create the corresponding documentation results,
 however. You have to run a complete test to do that.
 
-Requirements
+Dependencies
 ++++++++++++
 
 The following packages are required to build the PDF documentation:
