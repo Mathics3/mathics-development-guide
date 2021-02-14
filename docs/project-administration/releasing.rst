@@ -74,7 +74,6 @@ TODO: turn this into a script in ``admin-tools``
     $ pip install -e git://github.com/mathics/Mathics.git#egg=mathics
     $ mathics --version # see that new version appears
     $ mathics -e "1+2"
-    $ mathicsserver
     $ pip uninstall mathics3
     $ popd
 
@@ -107,7 +106,6 @@ TODO: turn this into a script in ``admin-tools``
     $ pip install -e git://github.com/mathics/Mathics.git@${__version__}#egg=mathics
     $ mathics --version
     $ mathics -e "1+2"
-    $ mathicsserver
     $ pip uninstall mathics3
     $ popd
 
