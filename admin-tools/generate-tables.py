@@ -9,20 +9,26 @@ def get_srcdir():
 
 os.chdir(get_srcdir() + "/../")
 
-def format_code_points(codes: str, show_gliphs=False) -> str:
+def format_code_points(codes: str, show_glyphs=False) -> str:
     codes = codes.strip()
 
     if not codes:
         return ""
 
     def unicode_url_from_code(c: str) -> str:
-        return "https://www.compart.com/en/unicode/U+" + f"{int(c[2:], 16):X}".zfill(4)
+        try:
+            return "https://www.compart.com/en/unicode/U+" + f"{int(c[2:], 16):X}".zfill(4)
+        except:
+            return "???"
 
     cs = codes.split(" ")
     output = " ".join(f"`{c} <{unicode_url_from_code(c)}>`_" for c in cs)
 
-    if show_gliphs:
-        output += " \\" + "".join(chr(int(c[2:], 16)) for c in cs)
+    try:
+        if show_glyphs:
+            output += " \\" + "".join(chr(int(c[2:], 16)) for c in cs)
+    except:
+        pass
 
     return output
 
@@ -79,10 +85,13 @@ with open("resources/named-characters-data.csv", "r") as i, open("docs/translati
     writer = TableWriter(o, "Named characters data", header, [25, 35, 35, 15])
 
     for row in reader:
-        named_char, _, _, uni, wl, esc = row
+        if len(row) < 6:
+            continue
+
+        named_char, _, _, uni, wl, esc = row[:6]
 
         writer.writerow([format_named_char(named_char),
-                        format_code_points(uni, show_gliphs=True),
+                        format_code_points(uni, show_glyphs=True),
                         format_code_points(wl),
                         format_esc_sequence(esc)])
 
@@ -97,7 +106,7 @@ with open("resources/unicode-to-wl-conversion.csv", "r") as i, open("docs/transl
         uni_name, uni, wl, named_char = row
 
         writer.writerow([uni_name,
-                        format_code_points(uni, show_gliphs=True),
+                        format_code_points(uni, show_glyphs=True),
                         format_code_points(wl),
                         format_named_char(named_char)])
 
@@ -112,5 +121,5 @@ with open("resources/wl-to-unicode-conversion.csv", "r") as i, open("docs/transl
 
         writer.writerow([format_named_char(named_char),
                         format_code_points(wl),
-                        format_code_points(uni, show_gliphs=True),
+                        format_code_points(uni, show_glyphs=True),
                         uni_name])

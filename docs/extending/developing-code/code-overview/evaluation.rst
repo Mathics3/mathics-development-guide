@@ -98,6 +98,8 @@ used in the ``apply`` method's docstring , see `Functions and Programs
 and `Patterns
 <https://reference.wolfram.com/language/tutorial/Patterns.html>`_.
 
+One useful Mathics function that is useful in debugging pattern matching is  `Cases <https://reference.wolfram.com/language/ref/Cases.html>`_.
+
 Function Name Descriptions
 --------------------------
 

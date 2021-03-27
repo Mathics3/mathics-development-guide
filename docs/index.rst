@@ -12,7 +12,7 @@ Mathics's Developer Reference
 
    installing
    running
-   developing-code
+   extending
    project-administration
 
 
