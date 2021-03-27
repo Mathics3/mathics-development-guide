@@ -4,7 +4,7 @@
 Extending Mathics
 =================
 
-While Mathics has a lot to offer, it iis always in need of extension, and there are two broad ways to do so: using additional Mathics code, or additional Python code.
+While Mathics has a lot to offer, it is always in need of extension, and there are two broad ways to do so: using additional Mathics code, or additional Python code.
 
 
 These are described in the sections below

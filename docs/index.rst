@@ -12,6 +12,7 @@ Mathics's Developer Reference
 
    installing
    running
+   tables
    extending
    project-administration
 

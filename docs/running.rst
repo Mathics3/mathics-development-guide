@@ -127,16 +127,27 @@ to 8001:
 Running via docker
 ~~~~~~~~~~~~~~~~~~
 
-Another way to run ``mathics`` is via
-`docker <https://www.docker.com>`__ using the \`Mathics docker image
-https://hub.docker.com/repository/docker/mathicsorg/mathics on
+Another way to run ``mathics`` is via `docker
+<https://www.docker.com>`__ using the `Mathics docker image
+<https://hub.docker.com/repository/docker/mathicsorg/mathics>`_ on
 dockerhub.
 
-To run the command-line interface using docker image:
+If you do a PyPI install of the package `Mathics omnibus <https://pypi.org/project/Mathics-omnibus/>`_,
+you will get simpler access to the docker images and a simpler way to run the various parts.
+
+To run the command-line interface using docker image without using the Mathics omnibus helper script:
 
 ::
 
     $ docker run --rm -it --name mathics-cli -v /tmp:/usr/src/app/data mathicsorg/mathics --mode cli
+
+However if Mathics omibus is installed:
+
+::
+
+   $ dmathicsscript
+
+does the same thing.
 
 If you want to add options add them at then end preceded with ``--``:
 for example:
@@ -148,11 +159,19 @@ for example:
 In the above you are running ``mathicsscript`` (the enhanced CLI), not
 ``mathics``.
 
-To run the Django 3.1-web interface using docker image run:
+To run the Django 3.1-web interface using docker image without using the Mathics omnibus helper script, run :
 
 ::
 
     $ docker run --rm -it --name mathics-web -p 8000:8000 -v /tmp:/usr/src/app/data mathicsorg/mathics --mode ui
+
+However the Mathics-omnibus-installed script for this simplifies this as well. So with that installed:
+
+::
+
+    $ dmathicsserver
+
+does the same thing.
 
 Consult the `docker-run
 command <https://docs.docker.com/engine/reference/run/>`__ for
@@ -160,10 +179,6 @@ information about changing external port number and other for other
 ``docker run`` options.
 
 Also see the previous section on security limitations.
-
-This dockerization was modified from
-```sealemar/mathics-dockerized`` <https://github.com/sealemar/mathics-dockerized>`__.
-See that for more details on how this works.
 
 Running Mathics on your server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -225,15 +240,3 @@ are a good reference.
 
 .. |Packaging status| image:: https://repology.org/badge/vertical-allrepos/mathics.svg
    :target: https://repology.org/project/mathics/versions
-
-Input/Output Unicode Tables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For reference, here are some characters conversion tables that we use:
-
-.. toctree::
-   :maxdepth: 2
-
-   translation-tables/unicode-to-wl-conversion
-   translation-tables/wl-to-unicode-conversion
-   translation-tables/full-unicode-conversion
