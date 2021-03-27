@@ -1,8 +1,8 @@
 Mathics from Python
 ===================
 
-Inside a Python program you may want to call Mathics, or
-extend its primitives.
+While Mathics can be extended by writing Mathics packages, since it is largely written in Python
+you can call it from within Python or extend the primitives, (bullt-in functions and variables) that it provides.
 
 
 .. toctree::

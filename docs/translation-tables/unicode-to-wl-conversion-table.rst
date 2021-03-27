@@ -1204,7 +1204,3 @@
      - `U+02194 <https://www.compart.com/en/unicode/U+2194>`_ \↔
      - `U+0F3D4 <https://www.compart.com/en/unicode/U+F3D4>`_
      - `\\[UndirectedEdge] <https://reference.wolfram.com/language/ref/character/UndirectedEdge.html>`_
-   * - ASTRONOMICAL SYMBOL FOR URANUS
-     - `U+026E2 <https://www.compart.com/en/unicode/U+26E2>`_ \⛢
-     - `U+02645 <https://www.compart.com/en/unicode/U+2645>`_
-     - `\\[Uranus] <https://reference.wolfram.com/language/ref/character/Uranus.html>`_
