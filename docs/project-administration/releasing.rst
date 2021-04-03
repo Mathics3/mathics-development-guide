@@ -82,7 +82,7 @@ Make packages and check
 
 ::
 
-    $ (cd ./admin-tools && bash ./make-dist.sh)
+    $ ./admin-tools/make-dist.sh)
     $ twine check dist/Mathics3-$__version__*
 
 Release on Github
@@ -102,7 +102,6 @@ TODO: turn this into a script in ``admin-tools``
 
     $ git pull # to pull down new tag
     $ pushd /tmp/gittest
-    $ pyenv local 3.7.7 # Use a version that is not the most recent
     $ pip install -e git://github.com/mathics/Mathics.git@${__version__}#egg=mathics
     $ mathics --version
     $ mathics -e "1+2"
