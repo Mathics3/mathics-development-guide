@@ -28,3 +28,4 @@ down below.
    code-overview/scanning-and-parsing
    code-overview/ast
    code-overview/evaluation
+   code-overview/object-classes
