@@ -9,6 +9,22 @@ Most of these classes are defined in `mathics.builtin.base
 <https://github.com/mathics/Mathics/tree/master/mathics/builtin/base.py>`_
 or `mathics.core.expression <https://github.com/mathics/Mathics/tree/master/mathics/core/expression.py>`_.
 
+The below are heuristics:
+
+* To define a Mathics constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
+* To define Mathics constants based on a mpmath constant, e.g. ``Glaisure``,
+  use ``MPMathConstant``
+* To define a Mathics constant based on a numpy constant, use ``NumpyConstant``
+* To define a Mathics functions based on a Sympy function, e.g. ``Sqrt``, use ``SympyFunction``
+* To define a Mathics operator use ``UnaryOperator``,
+  ``PrefixOperator``, ``PostfixOperator``, or ``BinaryOperator`` depending on the
+  type of operator that is being defined
+* To define a Mathics function which returns a Boolean value e.g. ``MatchQ`` use ``Test``
+* To define a Mathics function that doesn't fall into a category above, e.g. ``Attributes`` use ``Builtin``
+* To define a Mathics variable e.g. ``$TimeZone`` or Mathics Symbols, e.g. ``True`` use ``Predefined``
+* To define a Mathics atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``
+
+
 .. index:: Atom
 
 Atom Class
@@ -160,5 +176,8 @@ PrefixOperator and PostFixOperator
 BinaryOperator and UnaryOperator
 ================================
 
-SympyFunction and _MPMathFunction
-=================================
+SympyConstant, MPMathConstant, and NumpyConstant
+================================================
+
+SympyFunction and MPMathFunction
+================================
