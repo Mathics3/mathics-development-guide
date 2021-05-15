@@ -9,7 +9,9 @@ Python object of type ``Expression``. In compiler terminology the
 S-expression is also called an *abstract syntax tree* or AST. The
 first leaf of an ``Expression`` is called the "head".
 
-When the ``Expression`` is to be evaluated, the head should a ``Symbol``.
+When the ``Expression`` is to be evaluated, the head should a
+``Symbol`` for a Mathics Function or another ``Expression`` when
+evaluated produces a function symbol.
 
 In Mathics, there are only very few different kinds of
 non-``Expression`` nodes, called "atoms" that can appear:
