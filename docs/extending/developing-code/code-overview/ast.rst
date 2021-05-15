@@ -6,9 +6,15 @@ AST, S-Expression, General List: same thing
 
 The end-result of scanning and parsing is an S-expression, which is a
 Python object of type ``Expression``. In compiler terminology the
-S-expression is also called an *abstract syntax tree* or AST. For
-Mathics, there are only very few different kinds of nodes or atoms in this
-tree or list:
+S-expression is also called an *abstract syntax tree* or AST. The
+first leaf of an ``Expression`` is called the "head".
+
+When the ``Expression`` is to be evaluated, the head should a
+``Symbol`` for a Mathics Function or another ``Expression`` when
+evaluated produces a function symbol.
+
+In Mathics, there are only very few different kinds of
+non-``Expression`` nodes, called "atoms" that can appear:
 
 .. index:: Number, String, Symbol, Filename
 
@@ -38,4 +44,4 @@ So what's the difference? Python specializes AST types for different
 kinds of programming language constructs, such as for loops,
 conditional statements, exception blocks, different kinds of
 expressions, and so on. In WL and Mathics, these are all simply
-functions.
+built-in functions.

@@ -23,8 +23,9 @@ However each of the above steps can be involved, so we break these
 down below.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    code-overview/scanning-and-parsing
    code-overview/ast
    code-overview/evaluation
+   code-overview/object-classes
