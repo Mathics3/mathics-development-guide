@@ -71,10 +71,10 @@ TODO: turn this into a script in ``admin-tools``
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
     $ pyenv local 3.7.7  # Use a version that is not the most recent
-    $ pip install -e git://github.com/mathics/Mathics.git#egg=mathics
+    $ pip install -e git://github.com/mathics/Mathics.git#egg=Mathics3
     $ mathics --version # see that new version appears
     $ mathics -e "1+2"
-    $ pip uninstall mathics3
+    $ pip uninstall Mathics3
     $ popd
 
 Make packages and check
@@ -82,7 +82,7 @@ Make packages and check
 
 ::
 
-    $ ./admin-tools/make-dist.sh)
+    $ ./admin-tools/make-dist.sh
     $ twine check dist/Mathics3-$__version__*
 
 Release on Github
