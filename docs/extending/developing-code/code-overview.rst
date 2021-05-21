@@ -10,10 +10,9 @@ interpreters work. See also `Everything is an Expression
 
 When you enter a string to Mathics there is a 3-step process:
 
-* the string is parsed to FullForm
-* The full form S-expression is interpreted
-* The result, also an S-expression, is formatted to the kind of
-  output desired.
+* the input string is parsed to ``FullForm``
+* The ``FullForm`` S-expression is evaluated giving another S-expression
+* The result is formatted to the kind of output desired. Formatting can cause additional evaluations to occurs
 
 This is mentioned from the user perspective in the Figure `"Steps in
 the operation of Wolfram Language"
@@ -28,4 +27,5 @@ down below.
    code-overview/scanning-and-parsing
    code-overview/ast
    code-overview/evaluation
+   code-overview/boxes-forms-and-formats
    code-overview/object-classes
