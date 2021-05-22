@@ -16,9 +16,10 @@ At the top-level the kind of output you get is dictated by the Form specified ei
 
 Formatting a "Form" often causes some parts of the form to be "boxed" as the S-expression is traversed. You can think of boxing as akin to adding parenthesis to Mathematical expressions written in normal infix notation. The parenthesis service to mark explicitly groupings. Other than that it does not change the meaning.
 
-In formatting an S-expression in Mathics Boxing serves add context to the expression which may dictate or constrain how an expression is formatted.
+In formatting an S-expression in Mathics, Boxing in adding context to the expression may constrain how an expression is formatted.
 For example, if an an image is used inside of a list, we might choose to show the image as a thumbnail rather than a full-size image.
 
 Once a form constained by context boxes provide is determined, we still have the problem of doing the formatting.
 
-In mathics right now, a bit of this is somewhat hardcoded. For example somehthing a ``MathMLForm`` of Graphics may format to SVG, but if the Form is ``TeXForm`` then an Aysmptote format is used.
+Right now, Form constraint on formatting is somewhat hardcoded. For example ``MathMLForm`` boxing Graphics force formatting to SVG.
+But if the Form is ``TeXForm`` then an Aysmptote format is used.
