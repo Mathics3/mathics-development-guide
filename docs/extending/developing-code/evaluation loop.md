@@ -14,7 +14,7 @@ of the `Evaluation` object. This method produces a `Result` object, containing:
 * `line_no`: a counter stating how many calls to the evaluation method where called over the same Definitions object.
 * `last_eval`: the last result of the evaluation (an S-Expression), without formatting.
 
-![](evaluation loop.png)
+![](evaluationloop.svg)
 
 
 Let's focus now on the pass that produces `result` from `last_eval`. In the current implementation, this work is done by
