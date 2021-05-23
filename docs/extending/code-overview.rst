@@ -18,8 +18,7 @@ This is mentioned from the user perspective in the Figure `"Steps in
 the operation of Wolfram Language"
 <https://reference.wolfram.com/language/tutorial/TextualInputAndOutput.html#8971>`_
 
-However each of the above steps can be involved, so we break these
-down below.
+Each of the above steps can be involved, so we break these down below.
 
 .. toctree::
    :maxdepth: 3
