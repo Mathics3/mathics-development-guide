@@ -1,6 +1,8 @@
 .. index:: evaluation
 .. _evaluation:
 
+.. contents::
+
 ===========================
 Evaluation of an Expression
 ===========================
