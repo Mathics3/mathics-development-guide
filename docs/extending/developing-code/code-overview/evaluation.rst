@@ -41,6 +41,33 @@ Mathics and WL are not Object Oriented, so there is no such
 class-hierarchy lookup.  Instead, as mentioned above, pattern matching
 is used to decide which method of the object to call.
 
+Evaluation can leave an S-Expression Unchanged
+==============================================
+
+If you've used Mathics and misspelled a builtin function name or
+called a function with the wrong number of parameters, you might find
+it odd that sometimes you won't get an error message but just the same
+thing back. Or what you might type might be coorect and and complete
+expression ```myvariable`` or ``Pi`` can get the same thing back.
+
+This isn't a bug, but a feature of the design of the language.
+
+In the case of ``myvariable`` the language detects this as a symbol
+and symbols do not need to be declared in advance of their use.
+
+When you type ``Pi`` all by itself, unless a numeric approximation of
+that was requested, ``Pi`` refers to its symbol value. The
+S-Expression entered is exactly the same. A later step may decide to
+materialize a value or convert the representation of ``Pi`` into a
+unicode string.
+
+And when an S-Expression doesn't match a particlar form for a function
+call, the S-Expression *needs* to be left unchanged: the act of not
+matching a particular function in of itself isn't an error because
+there may be some other rule around, maybe even at a different level
+of the Expression Tree which will match.
+
+
 Mathics Function Name to Python method lookup
 =============================================
 

@@ -45,3 +45,7 @@ kinds of programming language constructs, such as for loops,
 conditional statements, exception blocks, different kinds of
 expressions, and so on. In WL and Mathics, these are all simply
 built-in functions.
+
+In the process of Evaluation, described in the next section, more
+kinds of objects over the above the four may get introduced as the
+S-Expression is rewritten and transformed.
