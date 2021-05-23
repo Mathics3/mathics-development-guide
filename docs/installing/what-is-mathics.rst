@@ -16,7 +16,7 @@ Similarly, if you aren't interested in Natural-Language Processing (NLP) you don
 
 On the there other hand, if you do want everything, we have a separate package called `Mathics-omnibus <https://pypi.org/project/Mathics-omnibus/>`_ which pull on all of the Mathics-related packages. As part of the `github project <https://github.com/Mathics3/mathics-omnibus>`_ is a docker setup.
 
-Using this, us can use the full `Mathics suite via dockerhub <`docker <https://hub.docker.com/r/mathicsorg/mathics>`_ without having to build Mathics or have necessary OS libraries (including Python itself) outside of the docker containers.
+Using this, us can use the full `Mathics suite via dockerhub <https://hub.docker.com/r/mathicsorg/mathics>`_ without having to build Mathics or have necessary OS libraries (including Python itself) outside of the docker containers.
 
 The pieces are described next go into the individual Python-packages that make up the Mathics suite.
 
@@ -49,9 +49,26 @@ This is the tokeniser or scanner portion for the Wolfram Language.
 
 As such, it also contains a full set of translation between Wolfram Language named characters, their Unicode/ASCII equivalents and code-points.
 
-The scanner inside Mathics but it can also be used for tokenizing and formatting Wolfram Language code. In fact we intend to write one. This library is also quite useful if you need to work with Wolfram Language named character and convert them to various formats.
+The scanner inside Mathics but it can also be used for tokenizing and
+formatting Wolfram Language code. In fact we intend to write one. This
+library is also quite useful if you need to work with Wolfram Language
+named character and convert them to various formats.
 
-You can install this portion from `PyPI <https://pypi.org/project/Mathics-Scanner/>`_. The github project is `here <https://github.com/Mathics3/mathics-scanner>`_.
+You can install this portion from `PyPI
+<https://pypi.org/project/Mathics-Scanner/>`_. The github project is
+`here <https://github.com/Mathics3/mathics-scanner>`_.
+
+
+Mathics Syntax Highlighting
++++++++++++++++++++++++++++
+
+There is a syntax highlighter called mathics-pygments_ which uses `Pygments <https://pygments.org>`_. It is
+based on rsmenon's `pygments-mathematics
+<https://pypi.org/project/pygments-mathematica/>`_.
+
+The main diffence between the two is that the character tables are
+used here. Possibly over time more parts of the scanner will be used
+as well.
 
 
 mathicsscript
@@ -64,7 +81,7 @@ shell, if you want fancier shell features such as:
    - saving command history between sessions.
    - variable completion, even for symbol names like `\\[Sigma]`
    - limited ESC keyboard input; for example *esc* ``p`` *esc* is π
-* Syntax highlighting using `pygments <https://pygments.org>`_.
+* Syntax highlighting using mathics-pygments_
 * Automatic detection of light or dark `terminal background color <https://pypi.org/project/term-background/>`_.
 * Entering and displaying Unicode symbols such as used for Pi or Rule arrows
 
@@ -130,3 +147,5 @@ Aymptote Python Module Backend Renderer
 
 Currently this is a work in progress and works only in very limited way.
 It provides graphics rendering using the `asymptote <https://asymptote.sourceforge.io/>`_ vector graphics language.
+
+.. _mathics-pygments: https://pypi.org/project/mathics-pygments/

@@ -48,4 +48,4 @@ built-in functions.
 
 In the process of Evaluation, described in the next section, more
 kinds of objects over the above the four may get introduced as the
-S-Expression is rewritten and transformed.
+S-expression is rewritten and transformed.
