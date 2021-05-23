@@ -10,7 +10,6 @@ you can call it from within Python or extend the primitives, (bullt-in functions
 
    developing-code/calling-mathics-library-from-within-python-code
    developing-code/extending
-   developing-code/code-overview
    developing-code/contributing-developing
    developing-code/uml
    developing-code/misc

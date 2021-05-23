@@ -5,3 +5,4 @@
    autoload
    packages
    developing-code
+   code-overview

@@ -24,6 +24,7 @@ down below.
 .. toctree::
    :maxdepth: 3
 
+   code-overview/top-level-eval-print
    code-overview/scanning-and-parsing
    code-overview/ast
    code-overview/evaluation
