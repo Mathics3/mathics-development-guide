@@ -15,47 +15,56 @@ these definitions. Usually more variables are added under the
 a variable containing the syntax-highlighting style to use; it can be altered.
 Also there is a list of all possible syntax styles styles which is not alterable and not
 in the ``Settings`` namespace. For Django, there is a Boolean setting indicating whether or
-not to use a sans-serif font.
+not to use a Sans-Serif font.
 
 Evaluation
 ----------
 
-In order to process input requests, an ``Evaluation`` object needs to be
-created using some set of definitions. (Right now a
-new one is created for each expression, but this might not be needed.)
+In order to process input requests, an ``Evaluation`` object needs to
+be created using some set of definitions. (Right now a new evaluation
+object is created for each to-level expression, but this might not be
+needed, and the prior object might be reused.)
 
 This evaluation object has a scan-and-parse method which is passed some sort of
 I/O handle to read from. The result of that is another S-expression
 described in :ref:`AST <ast>`.
 
-This S-expression result is then passed into to the ``evaluate()``
+This S-expression result is then passed to the ``evaluate()``
 method of the evaluation object. Evaluation may add, delete or change
 definitions, so a front end will want definitions to persist in a
 Mathics session while the Evaluation object may or may not.
 
 The sequence: tokenize input, parse tokens, and evaluate is common. So
-there is a method on the evaluation method call
+there is a method on the evaluation method called
 ``parse_evaluate()`` that does all 3 of these things.
 
 The diagram below indicates this process
 
 .. image:: top-level-eval-print.png
-  :width: 400
+  :width: 800
   :alt: Top-level Eval Print Pipeline
 
 
 The result from a top-level evaluation is a special ``Result`` kind of object containing:
-* ``out``:  a Python list containing all the messages and printed strings produced
-* ``line_no``: the last line number for how far in the input progressed. This is most useful if there was an error.
-* ``result``: a Python object containing the formatted version of the result of the evaluation
-* ``last_eval``: the last result of the evaluation (an S-Expression), without formatting.
+
+*out*:
+   a Python list containing all the messages and printed strings produced
+
+*line_no*:
+    the last line number for how far in the input progressed. This is most useful if there was an error.
+
+*result*:
+    a Python object containing the formatted version of the result of the evaluation
+
+*last_eval*:
+    the last result of the evaluation (an S-Expression), without formatting.
 
 
 Formatting
 ----------
 
 Here we describe the formatting process that produces ``result`` from
-``last_eval``. *Note: In the future this may get removed form Mathics
+``last_eval``. *Note: In the future this may get removed from Mathics
 core and front-ends will do this process outside of the Mathics core.*
 
 In the current implementation, this work is done by the
