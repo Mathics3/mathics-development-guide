@@ -49,3 +49,16 @@ built-in functions.
 In the process of Evaluation, described in the next section, more
 kinds of objects over the above the four may get introduced as the
 S-expression is rewritten and transformed.
+
+Here is an example of the tranformation from an input string to the AST Form (an S-Expression)
+We use the ``--full-form`` option in the ``mathics`` command-line to get this information.
+Note that this shows the *input* before evaluation::
+
+
+    In[1]:= 3 a - b
+    System`Plus[System`Times[3, Global`a], System`Times[-1, Global`b]]
+    Out[1]= 3 a - b
+
+    In[2]:= 3 5 - 6
+    System`Plus[System`Times[3, 5], -6]
+    Out[2]= 9

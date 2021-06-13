@@ -34,9 +34,33 @@ method of the evaluation object. Evaluation may add, delete or change
 definitions, so a front end will want definitions to persist in a
 Mathics session while the Evaluation object may or may not.
 
-The sequence: tokenize input, parse tokens, and evaluate is common. So
-there is a method on the evaluation method called
-``parse_evaluate()`` that does all 3 of these things.
+Here is a some simple example showing steps from parsing to evaluation::
+
+  $ python
+  Python 3.8.10 ..
+  >>> from mathics.session import MathicsSession
+  >>> session = MathicsSession()
+  >>> graph_circle = session.evaluate("Graph3D[Circle[]]")
+  >>> graph_circle
+  <Expression: Global`Graph3D[System`Circle[System`List[0, 0]]]>
+
+In the above example, the input ``Graph3D[Circle[]]`` is not changed, but not that much:
+
+* Namespaces are filled in from the abbreviated variables names. So we have
+  ``Global`Graph3D`` instead of ``Graph3D`` and ``System`Circle`` instead of
+  ``Circle``
+* Rewrite rules have been applied. Here, it it is just to take the empty
+  parameter list for ``Circle``, ``[]``, and expand that into a list,
+  ``System`List[0, 0]``. Note that internally no nice abbreviations like ``{0, 0}``
+  are used for the replaced output list. Expansion here has the effect of filling in
+  the default value for a circle: a point whose center is at 0, 0.
+
+We will come back to this example in the next section on formatting.
+
+The pipeline sequence of operations: *tokenize input*, *parse tokens*,
+and *evaluate* is common, and is done continuously inside a REPL. So there is a method
+on the evaluation method called ``parse_evaluate()`` that does all 3
+of these things.
 
 The diagram below indicates this process
 
@@ -64,34 +88,23 @@ Formatting
 ----------
 
 Here we describe the formatting process that produces ``result`` from
-``last_eval``. *Note: In the future this may get removed from Mathics
-core and front-ends will do this process outside of the Mathics core.*
+the S-Expression in ``last_eval``.
 
-In the current implementation, this work is done by the
-method ``format_output()``. This method receives two arguments: the
-expression and a string, indicating the format.  According to the
-format, the expression first is wrapped as the argument of a Mathics
-``Format`` expression. Then, the method ``format()`` from the
-resulting ``Expression`` object is called, which produces a ``Box``
-expression. This box expression is at the end converted into a string
-by means of the method ``Expression.boxes_to_text``, and is what at
-the end will be processed and shown in the front end.
+Expressions need to be wrapped in some sort of "Form", like
+``TeXForm`` or ``MathMLForm``. This is done using the ``format()``
+method of the expression object. This produces an S-Expression with "Box"ing
+information.
 
-Most of the format is actually performed by the ``Expression.format``
-method. This method does its task in two steps. In a first step, the
-``self.do_format()`` method is called. This method applies all the format
-rules associated to the header and leaves of the expression
-recursively.  The result of this is a new expression, with certain
-subexpressions transformed according the rules.  Then,
-``Expression.format`` applies the ``MakeBoxes`` rules. ``MakeBoxes``
-then produces es formatted expression consisting of ``Box`` symbols,
-lists, strings, and BoxConstruct objects. The last ones are a kind of
-"atoms" that represents the textual representation of a certain
-Expression (``Graphics``, ``Graphics3D``, ``CompìledCode``, ...).  If
-some of the leaves of the expression is wrapped inside a
-``MathMLForm`` (``TeXForm``) expression, the corresponding box
-expression is produced by first applying evaluating
-``MakeBoxes[leaf]``, then converted into a some of Python object like
-a string by calling the ``boxes_to_mathml()`` (or ``boxes_to_tex``)
-method of the resulting Expression, converting it into a ``String`` or
-some other object and then putting this inside a ``RowBox[{}]``.
+Continuing using the example in the last section::
+
+    >>> graph_circle
+    <Expression: Global`Graph3D[System`Circle[System`List[0, 0]]]>
+    >>>  graph_circle.format(session.evaluation, "TeXForm")
+    <Expression: System`RowBox[System`List["\text{Graph3D}\left[\text{Circle}\left[\left\{0,0\right\}\right]\right]"]]>
+    >>> graph_circle.format(session.evaluation, "MathMLForm")
+    <Expression: System`RowBox[System`List["<math display="block"><mrow><mi>Graph3D</mi> <mo>[</mo> <mrow><mi>Circle</mi> <mo>[</mo> <mrow><mo>{</mo> <mrow><mn>0</mn> <mo>,</mo> <mn>0</mn></mrow> <mo>}</mo></mrow> <mo>]</mo></mrow> <mo>]</mo></mrow></math>"]]>
+    >>>
+
+This box expression is at the end converted into a string by means of
+the method ``Expression.boxes_to_text``, and is what at the end will
+be processed and shown in the front end.
