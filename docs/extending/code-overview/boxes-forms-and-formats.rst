@@ -1,7 +1,7 @@
 .. index:: Boxes
 .. index:: Forms
 
-Boxes, Forms, and Formats
+Forms, Boxes, and Formats
 =========================
 
 In the introduction to this section we gave the 3-step process converting the input you type into output produced:
@@ -12,25 +12,35 @@ In the introduction to this section we gave the 3-step process converting the in
 
 Here, we are going to go in more detail over the last step which broadly is formatting.
 
-At the top-level the kind of output you get is dictated by the Form
+Forms
+-----
+
+At the top-level, the kind of output you get is dictated by the Form
 specified either explicitly or implicitly. See `Forms of Input and
 Output
 <https://reference.wolfram.com/language/tutorial/TextualInputAndOutput.html#12368>`_.
 
-Formatting a "Form" causes parts of the expression to be "boxed"
+Formatting a "Form" can cause parts of the expression to be "boxed"
 as the S-expression is traversed. This is sort of like adding
 parenthesis around infix expressions at certain places, but we'll
 explain in more detail below.
 
-Ever since the typesetting system
-TeX was developed, most full-fledged formatters follow a two-level approach
-to formatting output. The current HTML has a box model follows this approach.
+The Box Model
+-------------
+
+Ever since the typesetting system TeX was developed, most full-fledged
+formatters follow a two-level approach to formatting output. The
+current HTML has a box model that follows this approach.
 
 In the Box-Formatting model, groups of items of a similar category are
-"boxed", before final layout.  Boxes have common properties needed in
-formatting such as the boxes dimensions, so this simplifies layout
-while giving layout the ability to move large collections of items
-around by simply positioning the enclosing box.
+"boxed", before final layout.  In "Box"ing, object details which are
+not relevant for formatting are hidden. This is good because the
+objects themself can have wildly different attributes and properties.
+
+On the other hand, common layout formatting properties, such as the
+box dimensions are exposed. Therefore layout is simplified, and
+we have the ability to move large collections of items around by
+simply positioning the enclosing box.
 
 As with S-Expressions, Boxes can be sequenced and nested.
 
@@ -40,7 +50,7 @@ other boxes in the system.
 
 In the Python code then for each distinct kind of entity, like
 ``CompiledCode`` or a ``Graphics3D`` object, there will typically be
-another class with the the same name bug with word ``Box`` added at
+another class with the the same name but with word ``Box`` added at
 the end.  This convention ties to an entity to methods for how to Box
 the entity. For example, the ``CompiledCodeBox`` handles boxing for
 ``CompiledCode`` objects; ``Graphics3DBox`` handles boxing for
@@ -51,9 +61,13 @@ expression appears formatted.  For example, if an an image is used
 inside of a list, we might choose to show the image as a thumbnail
 rather than a full-size image.
 
-We should note that right now, "Form" can severly constrain formatting
-and is somewhat hardcoded. For example ``MathMLForm`` boxing 2D-
-Graphics forces formatting to SVG. Simlarly if the Form is ``TeXForm``
-instead of ``MathMLForm`` then an Aysmptote formatting is performed.
+Output Formats
+--------------
 
-In the future, Forms and formatting will be decoupled better.
+For each Box type, such as a ``CircleBox`` there can be a formatter for
+the kind of output format you want, such as ``SVG`` or ``Asymptote``.
+
+If a Box is not defined for a particular entity, there will be an
+enclosing entity which does define a Boxing routine, and that will
+need to be be to handle all of the objects inside it whether or not
+those objects are boxed.

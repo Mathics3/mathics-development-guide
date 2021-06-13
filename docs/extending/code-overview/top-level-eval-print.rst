@@ -108,5 +108,5 @@ Continuing using the example in the last section::
 Notice in the above that ``format()`` was passed ``session.evaluation``. This gives the formatting the ability not just to query the environment outside of what was passed inside the ``graph_circle`` expression, but it also allows the fomatting to call back Mathics to perform additional calculations. For example, it is concievable that a particular formatter might want to know on what plain a particular polygon lies on, and Mathics might be able to get the answer to that.
 
 This box expression is at the end converted into a string by means of
-the method ``Expression.boxes_to_text``, and is what at the end will
-be processed and shown in the front end.
+the method ``boxes_to_text()`` on the form-boxed-formatted S-expression, and is what
+at the end will be processed and shown in the front end.
