@@ -34,9 +34,12 @@ For Help Text
 | <ol> *list* </ol>                | an ordered list of <li> entries.        |
 +----------------------------------+-----------------------------------------+
 | <li> *item*  `                   | an item of an unordered or ordered      |
-|                                  | list.                                   |
+|                                  | list. Note: no </li>.                   |
 +----------------------------------+-----------------------------------------+
-| ``'`` _code_ ``'``               | inline Mathics code or other code.      |
+| ``'`` *code* ``'``               | inline Mathics code or other code.      |
++----------------------------------+-----------------------------------------+
+| ``$`` *name* ``$``               | Math-mode variable identifier in        |
+|                                  | Mathics code or in text.                |
 +----------------------------------+-----------------------------------------+
 | <console> *text* </console>      | a console (shell/bash/Terminal)         |
 |                                  | transcript in its own paragraph.        |
@@ -100,8 +103,6 @@ The following commands can be used to specify test cases.
 | ``...``                | matches any output; used when output can vary.            |
 +------------------------+-----------------------------------------------------------+
 | ``.``                  | a newline which is expected to appear in test output.     |
-+------------------------+-----------------------------------------------------------+
-| ``$`` *name* ``$``     +  variable identifier in Mathics code or in text.          |
 +------------------------+-----------------------------------------------------------+
 | ``-Graphics-``         | graphics in the test result.                              |
 +------------------------+-----------------------------------------------------------+
