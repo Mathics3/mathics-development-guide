@@ -142,7 +142,7 @@ Matplotlib Python Module Backend Renderer
 Currently this is a work in progress and works only in very limited way.
 It provides graphics rendering using `matplotlib <https://pypi.org/project/matplotlib>`_.
 
-Aymptote Python Module Backend Renderer
+Asymptote Python Module Backend Renderer
 -----------------------------------------
 
 Currently this is a work in progress and works only in very limited way.
