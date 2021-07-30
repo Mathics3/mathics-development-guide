@@ -102,38 +102,27 @@ TODO: turn this into a script in ``admin-tools``
 
     $ git pull # to pull down new tag
     $ pushd /tmp/gittest
-    $ pip install -e git://github.com/mathics/Mathics.git@${__version__}#egg=mathics
+    $ pip install -e git://github.com/mathics/Mathics.git@${__version__}#egg=Mathics3
     $ mathics --version
     $ mathics -e "1+2"
-    $ pip uninstall mathics3
+    $ pip uninstall Mathics3
     $ popd
 
 Upload the release to PyPI
 ==========================
 
-Upload it to PyPI with twine
+Upload it to PyPI with ``twine``:
 
 .. code:: bash
 
-    $ twine upload dist/Mathics3-${__version__}*
+    $ twine --verbose upload dist/Mathics3-${__version__}*
 
 Post-Release
 ============
 
-Update mathicsscript
---------------------
-
-Update docker setup
--------------------
-
-::
-
-      $ make docker-image
-      $ docker run --rm -it --name mathics-cli -v /tmp:/usr/src/app/data mathicsorg/mathics --mode cli -- --version
-      $ docker run --rm -it --name mathics-cli -v /tmp:/usr/src/app/data mathicsorg/mathics --mode cli -- -e 1+2
-      $ docker tag mathicsorg/mathics:latest  mathicsorg/mathics:${__version__}
-
-Check https://hub.docker.com/repository/docker/mathicsorg/mathics
+* Update mathicsscript
+* Update Matthics-Django
+* Update mathics-omnibus
 
 Update magic.github.io PDF
 --------------------------

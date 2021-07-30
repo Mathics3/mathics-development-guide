@@ -39,8 +39,12 @@ If you are developing a non-interactive application written in
 Mathics, you may no more than this.
 
 Although we provide documentation `on-line
-<https://mathics.org/docs/mathics-latest.pdf>`_, should you want to
-build your own PDF, you'll need to have various TeX packages installed.
+<https://mathics.org/docs/mathics-latest.pdf>`_, inside the `docker
+image <https://hub.docker.com/r/mathicsorg/mathics>`_ , and
+extractable from the that, should you want to build your own PDF,
+you'll need to have various TeX packages installed.
+
+Front ends Mathics-Django and mathicsscript use mathics core.
 
 Mathics Character Tables and Tokenizer
 ++++++++++++++++++++++++++++++++++++++
@@ -49,15 +53,13 @@ This is the tokeniser or scanner portion for the Wolfram Language.
 
 As such, it also contains a full set of translation between Wolfram Language named characters, their Unicode/ASCII equivalents and code-points.
 
-The scanner inside Mathics but it can also be used for tokenizing and
-formatting Wolfram Language code. In fact we intend to write one. This
-library is also quite useful if you need to work with Wolfram Language
-named character and convert them to various formats.
+The scanner inside Mathics Core, but it can also be used for
+tokenizing and formatting Wolfram Language code. In fact
+mathics-pygments described in the next section uses this.
 
 You can install this portion from `PyPI
 <https://pypi.org/project/Mathics-Scanner/>`_. The github project is
 `here <https://github.com/Mathics3/mathics-scanner>`_.
-
 
 Mathics Syntax Highlighting
 +++++++++++++++++++++++++++
@@ -70,6 +72,9 @@ The main diffence between the two is that the character tables are
 used here. Possibly over time more parts of the scanner will be used
 as well.
 
+Mathicsscript uses this package.
+
+
 
 mathicsscript
 +++++++++++++
@@ -77,7 +82,7 @@ mathicsscript
 The Mathics core comes with a very rudimentary command-line
 shell, if you want fancier shell features such as:
 
-* GNU Readline terminal interaction. This includes
+* Prompt toolkit and GNU Readline terminal interaction. This includes
    - saving command history between sessions.
    - variable completion, even for symbol names like `\\[Sigma]`
    - limited ESC keyboard input; for example *esc* ``p`` *esc* is π
@@ -101,7 +106,7 @@ Some of its features:
 * Integrated graphics and MathML mathematics output via MathJax
 * Notebook-like sessions
 
-To use this, you will need Django 3.12 or later installed, and a
+To use this, you will need Django 3.2.5 or later installed, and a
 browser with JavaScript enabled.
 
 Note: in the future we intend to also proved a Jupyter-like interface.
@@ -111,7 +116,7 @@ PyMathics Modules
 
 A number of the add-ons are not automatically loaded when Mathics starts, instead can be loaded from within Mathics using the `Needs <https://reference.wolfram.com/language/ref/Needs.html>`_ function.
 
-However the Python packages need to have been python installed outside of Mathics first for this to work.
+However the Python packages need to have been Python installed outside of Mathics first for this to work.
 
 Below we describe some of these packages. A full list can be found by looking in the `Mathics3 organization <https://github.com/Mathics3>`_.
 

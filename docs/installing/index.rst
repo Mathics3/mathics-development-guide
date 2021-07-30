@@ -19,17 +19,15 @@ Install from PyPI
 Here is how you can install the full Mathics suites:
 ::
 
-       $ pip install Mathics-omnibus
+       $ pip install Mathics-omnibus[full]
 
 
 This package doesn't have any code in it. Instead it just contains dependencies to other PyPI Mathics packages.of other PyPI package.
-It is more or less equivalent to:
+It is more or less equivalent to::
 
-
-::
        $ pip install Mathics3  # this is the core engine. It is a dependency of some of the below too
-       $ pip install Mathics-Django # web front-end
-       $ pip install mathicsscript  # the command-line interface
+       $ pip install Mathics-Django[full] # web front-end with extras
+       $ pip install mathicsscript[full]  # the command-line interface with extras
        $ pip install pymathics-natlang # the Natural-language Python module
        $ pip install pymathics-graph # the Python module for working with Graphs and Networks
 
@@ -62,7 +60,7 @@ This will pull the latest development release that has a docker
 tagname ``#latest`` if you want a stable release, give the version in
 the pull command. For example
 
-    $ docker pull mathicsorg/mathics#2.0.0
+    $ docker pull mathicsorg/mathics#3.0.0
 
 From an OS-specific Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,65 +87,31 @@ the various Mathics3 github repositories
 Requirements
 ++++++++++++
 
-Mathics runs on Python 3.6 or later. We also support PyPy 3.6 or later.
+The Mathics suite runs on Python 3.6 or later. We also support PyPy
+3.6 or later.
 
-Underneath, Mathics relies on
+Underneath, Mathics core relies on
 `sympy <https://www.sympy.org/en/index.html>`__ which relies on
 `numpy <https://numpy.org>`__. These and the other requirements will be
 installed automatically if you use the standard Python installer
 `pip <https://pip.pypa.io/en/stable/>`_. They are also listed in
 `setup.py <https://github.com/mathics/Mathics/blob/master/setup.py>`__.
 
+`ScyPy <https://SciPy.org/>`_ is optional. It is used for images and
+provides alternative implementations for a number of builtins.
 
-Several additional dependencies over what is described above if you want
-to:
+Buiding the PDF documentation has a number of additional dependencies.
 
--  build the documentation (which needs ``xetex``, etc.)
--  do full testing (which needs pytest, etc.)
--  run the command-line interface
--  run the Django 3.1 webserver (which needs SQLite, etc.) \`
+- ``xetex`` 3.14159265-2.6-0.999991 or greater
+- ``asymptote``, 2.71-37 or greater
+- ``ghostscript`` Version 9.54.0 or greater
 
-Below we give command-line instructions for most of the core packages. We don't
-include the numer
+Pay close attention to the version. Some OS-provided packages have
+bugs in them that will prevent certain images like those involving
+opacity (used in ``Filling``) not to render.
 
-
-There is also GitHub's git
-client for your operating system (`Mac <http://mac.github.com/>`__;
-`Windows <http://windows.github.com/>`__). For that, clone
-mathics/Mathics (there is a button at the top of
-https://github.com/mathics/Mathics that says "Clone in Mac" or "Clone in
-Windows" depending on your platform).
-
-.. code:: bash
-
-    $ git clone https://github.com/Mathics3/mathics-scanner.git
-    $ cd mathics-scanner
-    $ make install
-
-    $ cd ..
-    $ git clone https://github.com/mathics/Mathics.git
-    $ cd Mathics
-    $ make install
-
-    $ cd ..
-    $ git clone https://github.com/Mathics3/mathics-django.git
-    $ cd mathics3-django
-    $ make install
-
-    $ cd ..
-    $ git clone https://github.com/Mathics3/mathicsscript.git
-    $ cd mathicsscript
-    $ make install
-
-The above doesn't include PyMathics modules, but each of those are installed in like fashion.
-
-
-Alternatively use ``make develop`` or ``pip install -e`` to run the code
-installed from where the source-code is checked out. In doing this, code
-changes in the source tree are reflected immediately when you rerun.
-
-Of course, you may not want this, but instead want to run from a copy of
-the last stable code, so that's what ``make install`` does.
+The above dependencies are for Mathics core only. Mathics-Django,
+mathicsscript and PyMathics modules have their own set of dependencies.
 
 OS-dependent packages
 ~~~~~~~~~~~~~~~~~~~~~
@@ -162,6 +126,14 @@ For Debian/Ubuntu based systems:
 
 as super-user, i.e. either after having issued ``su`` or by preceding
 the command with ``sudo``).
+
+Note that to build the PDF, you will need ``asymptote`` and ``.deb``
+package has a couple of bugs that will cause some graphs with opacity
+to fail. Asymptote version 2.71 or later is recommended. I build this
+from the `git source <https://github.com/vectorgraphics/asymptote>`_.
+
+Also ghostscript is needed and 9.50 has bugs in it too that will cause failures in
+rendering Asymptote images. Use 9.54 or later.
 
 On Mac OS X:
 
