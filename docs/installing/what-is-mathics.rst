@@ -90,7 +90,7 @@ shell, if you want fancier shell features such as:
 * Automatic detection of light or dark `terminal background color <https://pypi.org/project/term-background/>`_.
 * Entering and displaying Unicode symbols such as used for Pi or Rule arrows
 
-there is a separately-installable PyPI package called `mathicsscript <https://pypi.org/project/mathicsscript/>`_
+There is a separately-installable PyPI package called `mathicsscript <https://pypi.org/project/mathicsscript/>`_.
 
 Django-based GUI
 ++++++++++++++++
@@ -109,7 +109,7 @@ Some of its features:
 To use this, you will need Django 3.2.5 or later installed, and a
 browser with JavaScript enabled.
 
-Note: in the future we intend to also proved a Jupyter-like interface.
+Note: in the future we intend to also provide a Jupyter-like interface.
 
 PyMathics Modules
 +++++++++++++++++
