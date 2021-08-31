@@ -1,5 +1,10 @@
 
+.. index:: patternmatching
+.. _patternmatching:
 
+.. contents::
+
+=================
 Pattern matching
 =================
 
