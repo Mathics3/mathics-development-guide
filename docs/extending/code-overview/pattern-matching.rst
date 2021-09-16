@@ -8,7 +8,7 @@
 Pattern Matching in Evaluation
 ==============================
 
-Pattern matching is used in evalutation of Mathics Expression and therefore in Function resolution. Because this process is both time consuming and involved, it is important to understand how it works. We describe some of this process here.
+Pattern matching is used in evaluation of Mathics Expression and therefore in Function resolution. Because this process is both time consuming and involved, it is important to understand how it works. We describe some of this process here.
 
 Based on the ``Head`` of a Mathics Expression, the rules stored the ``Definitions`` object for ``Head`` are examined for matches.
 When a rule matches an expression, the rule specifies how sub-expressions get bound to names, and how the expression is transformed. After this happens, the evaluation process is repeated using the replaced expression.
@@ -20,7 +20,7 @@ The power of the WL then relies in the possibility of defining rules by patterns
 Pattern Classes
 ---------------
 
-We now describe the Class heirarchy for ``Pattern`` which is defined in ``mathics.core.pattern``.  This is the base class that represents the pattern for an expression.
+We now describe the Class hierarchy for ``Pattern`` which is defined in ``mathics.core.pattern``.  This is the base class that represents the pattern for an expression.
 
 Two of its subclasses are:
 
