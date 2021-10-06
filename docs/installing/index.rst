@@ -21,8 +21,19 @@ Here is how you can install the full Mathics suites:
 
        $ pip install Mathics-omnibus[full]
 
+This install these suite of independent Mathics3 packages:
 
-This package doesn't have any code in it. Instead it just contains dependencies to other PyPI Mathics packages.of other PyPI package.
+* ``mathicsscript``
+* ``mathics-django``
+* ``pymathics-graph``, ``pymathics-natlang``
+
+These in turn pull in two other Mathics3 packages:
+
+* ``mathics-scanner``
+* ``mathics-core``
+
+
+In other words, this package doesn't have any code in it. Instead it just contains dependencies to other PyPI Mathics packages.of other PyPI package.
 It is more or less equivalent to::
 
        $ pip install Mathics3  # this is the core engine. It is a dependency of some of the below too
@@ -34,8 +45,12 @@ It is more or less equivalent to::
 Note the name is "Mathics3" for the most recent release. "Mathics" has
 pre-Python 3 code.
 
-See the previous sections for descriptions of the various pieces, what
+Other sections fhave descriptions of the various pieces, what
 features they add and what dependencies are needed to run them.
+
+If you want ``mathics-core`` to include modules that have been run through Cython, then install Cython separately::
+
+     $ pip install cython
 
 Install from Conda-Forge
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,13 +75,13 @@ This will pull the latest development release that has a docker
 tagname ``#latest`` if you want a stable release, give the version in
 the pull command. For example
 
-    $ docker pull mathicsorg/mathics#3.0.0
+    $ docker pull mathicsorg/mathics#4.0.0
 
 From an OS-specific Repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Click on the link below from `Repology.org <https://repology.org>`__ for
-details for a specific OS and distribution:
+details for a specific OS and distribution.
 
 |Packaging status|
 
@@ -97,7 +112,7 @@ installed automatically if you use the standard Python installer
 `pip <https://pip.pypa.io/en/stable/>`_. They are also listed in
 `setup.py <https://github.com/mathics/Mathics/blob/master/setup.py>`__.
 
-`ScyPy <https://SciPy.org/>`_ is optional. It is used for images and
+`SciPy <https://SciPy.org/>`_ is optional. It is used for images and
 provides alternative implementations for a number of builtins.
 
 Buiding the PDF documentation has a number of additional dependencies.
