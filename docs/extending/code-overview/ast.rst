@@ -14,9 +14,10 @@ When the ``Expression`` is to be evaluated, the head should a
 evaluated produces a function symbol.
 
 In Mathics, there are only very few different kinds of
-non-``Expression`` nodes, called "atoms" that can appear:
+non-``Expression`` nodes, called "atoms" that can appear in the tree
+initially from the parser:
 
-.. index:: Number, String, Symbol, Filename
+.. index:: Number, String, Symbol, LiteralSymbol, Filename
 
 * ``Number``
 * ``String``
@@ -28,9 +29,19 @@ almost the same atoms described in `Basic Internal Architecture
 <https://reference.wolfram.com/language/tutorial/TheInternalsOfTheWolframSystem.html#6608>`_
 for WL.
 
-Not listed above but found in the link is "general expressions": the
-thing that glues everything together. In Mathics, I imagine this
-corresponds to ``Expression``.
+We should note that ``Symbol`` really has two distinct meanings. After
+a parse, a ``Symbol`` is just its name and this name is unique in the
+same way that the integer 5 is unique or the string "foo".
+
+In a programming language you might think of a Symbol as it is born
+from the parser as akin to a variable identifier.
+
+Later on in the evaluation process, symbols often have values bound to
+them. When this happens they more like variables in a programming
+language. There is not just the name but a value bound to that for
+some particular scope. Again, think about the difference between an
+identifier name in a programming language and the variable it
+represents.
 
 The class definitions for these are given in `mathics.core.parser.ast
 <https://github.com/mathics/Mathics/tree/master/mathics/core/parser.ast>`_.
@@ -52,8 +63,9 @@ S-expression is rewritten and transformed.
 
 Here is an example of the tranformation from an input string to the AST Form (an S-Expression)
 We use the ``--full-form`` option in the ``mathics`` command-line to get this information.
-Note that this shows the *input* before evaluation::
+Note that this shows the *input* before evaluation:
 
+.. code-block:: mathematica
 
     In[1]:= 3 a - b
     System`Plus[System`Times[3, Global`a], System`Times[-1, Global`b]]

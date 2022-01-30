@@ -1,5 +1,4 @@
 .. index:: evaluation
-.. _evaluation:
 
 .. contents::
 
@@ -11,37 +10,42 @@ In contrast to the simplicity and regularity for representing the data
 for ``Expression``, *evaluation* of this data or expression is more involved
 than conventional programming languages. I suppose this is to be expected.
 
-Part of the complexity involves the way function method lookup works
-by pattern matching the expression. Also, there can be rule-based
-term-rewriting which goes on in conjunction with method lookup.
+Part of the complexity in evaluating an expression involves:
 
-If you have programmed in WL, aside from the Python-syntax and
-conventions used here, a lot of this should seem familiar,
+* how Python methods and values are bound to symbol literals
+* how the expression is pattern matched and rewritten based on symbol
+  values and rules that can be dynamically changing; term rewriting
+  can take into account the current types of variables or bound
+  symbols
+* how to select the method to dispatch for a Mathics function call and how
+  parameter values are assigned after term rewriting and symbol binding is done
+* how we determine when the evaluation of an expression is complete
 
-If however you are not familiar with WL, but very familiar with Python
-or similar languages, a lot of this can seem very mysterious at first:
-functions don't get called using a traditional way where you create an
-object like ``Number()`` and then instantiate a method on that, like
-``+``, ``__plus__()``, or even ``Times()``.
+If you have programmed in WL and have an understanding of the
+complexities involved in WL evaluation, aside from the Python-syntax
+and conventions used here, the evaluation process of this may seem
+familiar. The conventions that this program uses will be new.
+This part is custom to this program.
 
-Of course, since the underlying interpreter language *is* Python,
-Python object creation and method lookup on that does happen. But it
-happens in a much more roundabout way using methods off of an object
-such as an *evaluate()* method or the various *apply()* methods in
-conjuction with the apply method's doc string. More on this is
-described later.
+If however you are instead not familiar with WL, but very familiar
+with Python or similar languages, a lot of this may seem
+mysterious. Functions don't get called using a traditional way where
+you create an object like ``Number()`` and then instantiate a method
+on that, like ``+``, ``__plus__()``, or even ``Times()``.
 
-For Python and Object-Oriented programmers, as an analogy for the
-complexity and indirectness, an Object-Oriented "method dispatch" is
-analogous. In Python or any Object-Oriented programming language, when
-you write ``a.b()``: there is a method lookup in the ``a`` object, so
-*at runtime* the type of ``a`` has to be inspected. And after having
-that, the method handle ``b`` needs to be computed. And this comes
-from a class heirarchy.
+Instead all Function calls are triggered through an evaluation method
+which involves the concept of `rewriting
+<https://en.wikipedia.org/wiki/Rewriting>`_. This alone can obscure
+what gets called. There Mathics function ``TraceEvaluation[]`` can
+help in understanding the subexpressions that are computed in evaluation.
 
-Mathics and WL are not Object Oriented, so there is no such
-class-hierarchy lookup.  Instead, as mentioned above, pattern matching
-is used to decide which method of the object to call.
+And as mentioned above, aside from this, the behavior is encoded in
+Mathics' Python code using conventions uniquely defined in this
+system. Built-in Functions are special methods in classes derived from
+a Bulltin class.  Furthermore they must have names that start out
+``apply`` and must have docstrings that contain WL patterns that
+indicate when the method matches. More on this is described later.
+
 
 Evaluation can leave an S-Expression Unchanged
 ==============================================
@@ -85,7 +89,7 @@ Mathics function-like classes are described in later sections.
 However before invoking that Mathics function, we need to check if
 there is a rewrite rule that applies to the Mathics function call.  A
 function-like class like ``Plus`` can have a class ``rules`` variable.
-When given, the ``rules`` class varaible specifies rewrite rules that
+When given, the ``rules`` class variable specifies rewrite rules that
 are to be considered before invoking the function. If one of these
 rewrite rules matches against the Mathics function call, the
 expression is rewritten into another expression and another trip is
@@ -98,7 +102,7 @@ describe how this is done elsewhere.
 
 Here, we will just say that is done using each ``apply`` method's
 docsstring. And this apply-method determination is kicked off through
-Expression's ``evaluate``. Ignoring the detailis of how this is
+Expression's ``evaluate`` method. Ignoring the details of how this is
 done, one of the ``apply`` methods is found to match, and the
 remaining leaves of the ``Expression`` indicate parameters to be given
 to the found ``apply`` function. In addition, an instance of an
@@ -112,7 +116,7 @@ happens when a constant or variable name is used; here the variable
 name is prefaced with a ``$``. Examples are ``$VersionNumber`` or
 ``$MachineName``.
 
-When a function takes parameters it method's Object class is derived
+When a function takes parameters, the method's Object class is derived
 either directly indirectly from the ``Builtin`` class rather than the
 ``Predefine`` class.
 
