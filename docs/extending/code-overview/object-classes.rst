@@ -47,8 +47,9 @@ However there are a few other kinds of Atoms or fundamental objects
 that can appear in an Evaluation list.  In the evaluation process,
 other kinds of Atoms can get created. These include things like:
 
+* ``ByteArray``
 * ``CompiledCode``
-* ``DateTime``
+* ``Dispatch``
 * ``Image``
 
 In other words, things that might have an underlying internal representation of an object.
