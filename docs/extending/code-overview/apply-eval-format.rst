@@ -1,5 +1,5 @@
-Top-level Eval and Display
-==========================
+Apply/Evaluate, and then Format
+===============================
 
 .. contents::
 
@@ -17,8 +17,8 @@ Also there is a list of all possible syntax styles styles which is not alterable
 in the ``Settings`` namespace. For Django, there is a Boolean setting indicating whether or
 not to use a Sans-Serif font.
 
-Evaluation
-----------
+Apply/Evaluate
+--------------
 
 In order to process input requests, an ``Evaluation`` object needs to
 be created using some set of definitions. (Right now a new evaluation
@@ -29,12 +29,15 @@ This evaluation object has a scan-and-parse method which is passed some sort of
 I/O handle to read from. The result of that is another S-expression
 described in :ref:`AST <ast>`.
 
-This S-expression result is then passed to the ``evaluate()``
-method of the evaluation object. Evaluation may add, delete or change
-definitions, so a front end will want definitions to persist in a
-Mathics session while the Evaluation object may or may not.
+This S-expression result is then passed to the ``evaluate()`` method
+of the evaluation object. This is really an apply and evaluate process
+where the "apply" aspect includes term rewriting as well as symbol binding.
 
-Here is a some simple example showing steps from parsing to evaluation::
+In this we may add, delete or change definitions. A front end will
+want definitions to persist in a Mathics session while the Evaluation
+object may or may not.
+
+Here is a some simple example showing steps in parsing and apply/evaluate::
 
   $ python
   Python 3.8.10 ..
@@ -64,9 +67,9 @@ of these things.
 
 The diagram below indicates this process
 
-.. image:: top-level-eval-print.png
+.. image:: apply-evaluate-format.png
   :width: 800
-  :alt: Top-level Eval Print Pipeline
+  :alt: Apply/Evaluate and then Format Pipeline
 
 
 The result from a top-level evaluation is a special ``Result`` kind of object containing:
@@ -84,8 +87,8 @@ The result from a top-level evaluation is a special ``Result`` kind of object co
     the last result of the evaluation (an S-Expression), without formatting.
 
 
-Formatting
-----------
+Format
+------
 
 Here we describe the formatting process that produces ``result`` from
 the S-Expression in ``last_eval``.
