@@ -25,7 +25,7 @@ The below are heuristics:
 * To define a Mathics atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``
 
 
-.. index:: Atom
+.. index:: Atom, AtomQ
 
 Atom Class
 ==========
@@ -52,9 +52,9 @@ other kinds of Atoms can get created. These include things like:
 * ``Dispatch``
 * ``Image``
 
-In other words, things that might have an underlying internal representation of an object.
+In other words, things that might have an underlying internal representation of an object with no subparts that can be pulled out using ``Part[]``.
 
-In Mathics, the function ``AtomQ[]`` will tell you if something is an Atom, or can't be subdivided into subexpressions
+In Mathics, the function ``AtomQ[]`` will tell you if something is an Atom, or can't be subdivided into subexpressions.
 
 Some examples:
 
@@ -76,9 +76,13 @@ Some examples:
     >> AtomQ[x]
      = True
 
-    (* On the other hand, expressions, with more than one Part after evaluation, even those resulting in numeric values, aren't atoms: *)
+    (* On the other hand, expressions with more than one 'Part' after evaluation, even those resulting in numeric values, aren't atoms: *)
     >> AtomQ[2 + Pi]
      = False
+
+    (* Similarly any compound 'Expression', even lists of literals, aren't atoms: *)
+    >> Map[AtomQ, {{}, {1}, {2, 3, 4}}]
+     = {False, False, False}
 
     (* Note that evaluation or the binding of "x" to an expression is taken into account: *)
     >> x = 2 + Pi; AtomQ[x]
@@ -87,6 +91,7 @@ Some examples:
     (* Again, note that the expression evaluation to a number occurs before 'AtomQ' evaluated: *)
     >> AtomQ[2 + 3.1415]
      = True
+
 
 
 .. index:: Symbol

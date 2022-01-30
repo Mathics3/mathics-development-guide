@@ -119,7 +119,7 @@ This substeps here are:
 * Sort leaves if the ``Orderless`` attribute was found in ``Head``
 
 Compute evaluation timestamp
----------------------------
+----------------------------
 
 Compute timestamp in a expression cache. This may lead to invalidation and rebuild the expression cache elsewhere.
 
