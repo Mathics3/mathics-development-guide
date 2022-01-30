@@ -35,12 +35,54 @@ called and ``ExpressionList``, where each list item is either itself
 an ``ExpressionList`` or an object in a class derived from ``Atom``.
 
 The ``Atom`` class we encountered earlier when describing the nodes
-that get created intially from a parse. However there are a few other
-kinds of Atoms or fundamention objects that can appear in an
-Evaluation list. These are
+that get created intially from a parse. Those were:
+
+* ``Number``
+* ``String``
+* ``Symbol``
+* ``Filename``
+
+
+However there are a few other kinds of Atoms or fundamental objects
+that can appear in an Evaluation list.  In the evaluation process,
+other kinds of Atoms can get created. These include things like:
 
 * ``CompiledCode``
+* ``DateTime``
 * ``Image``
+
+In other words, things that might have an underlying internal representation of an object.
+
+In Mathics, the function ``AtomQ[]`` will tell you if something is an Atom, or can't be subdivided into subexpressions
+
+Some examples:
+
+.. code-block:: mathematica
+
+    (* Numbers are atoms: *)
+    >> AtomQ[1.2]
+     = True
+
+    (* So are symbolic constants: *)
+    >> AtomQ[2 + I]
+     = True
+
+    (* A 'Symbol' not bound to a value is an atom too: *)
+    >> AtomQ[x]
+     = True
+
+    (* On the other hand, expressions aren't atoms: *)
+    >> AtomQ[2 + Pi]
+     = False
+
+    (* Note that evaluation or the binding of "x" to an expression is taken into account: *)
+    >> x = 2 + Pi; AtomQ[x]
+     = False
+
+    (* Again, note that the expression evaluation to a number occurs before 'AtomQ' evaluated: *)
+    >> AtomQ[2 + 3.1415]
+     = True
+
 
 .. index:: Symbol
 
@@ -51,7 +93,14 @@ Symbol Class
 Just above the ``Atom`` class is the ``Symbol`` which is an atomic element of an ``Expression``.
 See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guide/AtomicElementsOfExpressions.html>`_.
 
-Symbols are like Lisp symbols: you can think of them as starting out as a string name. But in contrast to a string, once set the symbol is set, it is immutable and indivisable.
+As born from the parser, Symbols start off like Lisp
+Symbols. Following WL, Mathics has about a thousand named characters,
+some common ones like "+", "-", and some pretty obscure ones. After
+parsing, each of these can be incorporated into a Symbol object. But in the
+evaluation process these symbols get bound to values in a scope, and
+then they act more like a programming language variable. The Symbol
+class described here has fields and properties that you of the kind
+that you'd expect a variable in a programming language to have.
 
 Builtin class
 =============
