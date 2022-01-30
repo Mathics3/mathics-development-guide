@@ -84,7 +84,9 @@ Apply/Evaluate Process
 Expression evaluation is an iterative and recursive tranformation process where we apply transformation rules and function application
 until the resulting expression that comes back doesn't change, or we are told to stop, e.g. an error or limit was encountered.
 
-Here we give in broad outline a single apply/evaluate step of this process.
+Here we give in broad outline a single apply/evaluate step of this
+process. See also `The Standard Evaluation Sequence
+<https://reference.wolfram.com/language/tutorial/Evaluation.html>`_.
 
 
 Gather information from ``Head`` and gather its leaves
@@ -116,10 +118,10 @@ This substeps here are:
 * Flatten extpressions involving nested functions if the ``Flat`` attribute was found in ``Head``
 * Sort leaves if the ``Orderless`` attribute was found in ``Head``
 
-Update evaluation timestamp
+Compute evaluation timestamp
 ---------------------------
 
-update timestamp in a expression cache. This may invalidate and rebuild the expression cache.
+Compute timestamp in a expression cache. This may lead to invalidation and rebuild the expression cache elsewhere.
 
 Search for a Rule in ``Head`` to apply
 --------------------------------------
