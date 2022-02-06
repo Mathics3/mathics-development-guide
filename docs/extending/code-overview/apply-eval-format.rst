@@ -17,8 +17,8 @@ Also there is a list of all possible syntax styles styles which is not alterable
 in the ``Settings`` namespace. For Django, there is a Boolean setting indicating whether or
 not to use a Sans-Serif font.
 
-Rewrite/Apply/Eval
-------------------
+Evaluate (Rewrite/Apply/Eval)
+-----------------------------
 
 In order to process input requests, an ``Evaluation`` object needs to
 be created using some set of definitions. (Right now a new evaluation
@@ -30,15 +30,17 @@ I/O handle to read from. The result of that is an S-expression
 described in :ref:`AST <ast>`.
 
 This S-expression result is then passed to the ``evaluate()`` method
-of the evaluation object. This an apply/eval process in functional
-lanugaes where the "apply" covers term-rewriting application and
-function-symbol application.
+of the evaluation object. ``evaluate()`` is an apply/eval process that is
+typically found functional languages; the "apply" phase here covers
+term-rewriting application and function-symbol application.
 
-In this process rule, symbol and and function definition can get
-altered. A front end will want the changed definitions to persist in a Mathics
-session while the Evaluation object may or may not.
+In the rewrite/apply/eval process, rules, symbols and function
+definitions can get altered. A front end will want the changed
+definitions to persist in a Mathics session while the Evaluation
+object may or may not.
 
-The result of rewrite/apply/eval is a Mathics Expression for the result.
+The direct or return result of rewrite/apply/eval is a Mathics
+Expression for the input.
 
 For example if the input expression was parsed to the S-expression
 ``Plus[1, 2]`` the output Expression would be ``3``. Recall that
@@ -66,7 +68,7 @@ Here is a simple example showing how to do evaluation
   >>> graph_circle
   <Expression: Global`Graph3D[System`Circle[System`List[0, 0]]]>
 
-In the above example, the input ``Graph3D[Circle[]]`` is not changed, but not that much:
+In the above example, the input ``Graph3D[Circle[]]`` is changed, but not that much:
 
 * Namespaces are filled in from the abbreviated variables names. So we have
   ``Global`Graph3D`` instead of ``Graph3D`` and ``System`Circle`` instead of
@@ -84,7 +86,7 @@ and *evaluate* is common, and is done continuously inside a REPL. So there is a 
 on the evaluation method called ``parse_evaluate()`` that does all 3
 of these things.
 
-The result from a top-level evaluation is a special ``Result`` kind of object containing:
+The result from a top-level ``parse_evaluate()`` is a special ``Result`` kind of object containing:
 
 *out*:
    a Python list containing all the messages and printed strings produced
@@ -119,9 +121,9 @@ the Expression in ``last_eval``.
 Expressions need to be wrapped in some sort of "Form", like
 ``TeXForm`` or ``MathMLForm``. This is done using the ``format()``
 method of the expression object. This goes through the
-rewrite/apply/eval procuess produces a Mathics Expression where
-"Box"ing rules have been applied to the expression at various points
-where boxing functions are associated with different kinds of objects.
+rewrite/apply/eval process producing a Mathics Expression where
+"Box"ing rules have been applied at various points in the expression;
+boxing functions associated with expression objects, direct the boxing process.
 
 Continuing using the example in the last section::
 
@@ -138,7 +140,7 @@ Notice in the above that ``format()`` was passed
 to query the environment outside of what was passed inside the
 ``graph_circle`` expression, but it also allows the fomatting to call
 back Mathics to perform additional calculations. For example, it is
-concievable that a particular formatter might want to know on what
+conceivable that a particular formatter might want to know on what
 plain a particular polygon lies on, and Mathics might be able to get
 the answer to that.
 

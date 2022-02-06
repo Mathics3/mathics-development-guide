@@ -50,41 +50,51 @@ a Bulltin class.  Furthermore they must have names that start out
 indicate when the method matches. More on this is described later.
 
 
-Evaluation can leave an S-Expression Unchanged
-==============================================
+Evaluation can leave an Expression Seemingly Unchanged
+======================================================
 
 If you've used Mathics and misspelled a builtin function name or
 called a function with the wrong number of parameters, you might find
 it odd that sometimes you won't get an error message but just the same
 thing back. Or what you might type might be coorect and and complete
-expression ```myvariable`` or ``Pi`` can get the same thing back.
+expression ``myvariable`` or ``Pi`` can get what looks like the same
+thing back.
 
 This isn't a bug, but a feature of the design of the language.
 
 In the case of ``myvariable`` the language detects this as a symbol
 and symbols do not need to be declared in advance of their use.
+Little noticed though is that the name of the symbol ``myvariable``
+has been noted in case it comes up again.
 
 When you type ``Pi`` all by itself, unless a numeric approximation of
-that was requested, ``Pi`` refers to its symbol value. The
-S-expression entered is exactly the same. A later step may decide to
+that was requested, ``Pi`` refers to its symbol value. The expression
+return is again the same, with the exception of properties of the
+expression that may not be visible. A later step may decide to
 materialize a value or convert the representation of ``Pi`` into a
 unicode string.
 
-And when an S-expression doesn't match a particlar form for a function
-call, the S-expression *needs* to be left unchanged: the act of not
-matching a particular function in of itself isn't an error because
+And when an S-expression or an Expression doesn't match a particlar
+form for a function call, it *needs* to be left unchanged: the act of
+not matching a particular function in of itself isn't an error because
 there may be some other rule around, maybe even at a different level
 of the Expression Tree which will match.
 
 
 
-Apply/Evaluate Process
-======================
+Rewrite/Apply/Eval Process
+==========================
 
-Expression evaluation is an iterative and recursive tranformation process where we apply transformation rules and function application
-until the resulting expression that comes back doesn't change, or we are told to stop, e.g. an error or limit was encountered.
+Expression evaluation is an iterative and recursive tranformation
+process where we apply transformation rules, apply functions
+encountered and in the evaluation of a function it may recursively go
+through a rewrite/apply/eval step for one of its subcomputations.
 
-Here we give in broad outline a single apply/evaluate step of this
+The entire process is iterated resulting expression that comes back
+doesn't change, or we are told to stop, e.g. an error or limit was
+encountered.
+
+Here we give in broad outline a single rewrite/apply/eval step of this
 process. See also `The Standard Evaluation Sequence
 <https://reference.wolfram.com/language/tutorial/Evaluation.html>`_.
 
