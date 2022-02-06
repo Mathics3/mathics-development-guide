@@ -67,9 +67,9 @@ of these things.
 
 The diagram below indicates this process
 
-.. image:: apply-evaluate-format.png
+.. image:: evaluate-format-pipeline.png
   :width: 800
-  :alt: Apply/Evaluate and then Format Pipeline
+  :alt: Evaluate and then Format Pipeline
 
 
 The result from a top-level evaluation is a special ``Result`` kind of object containing:
