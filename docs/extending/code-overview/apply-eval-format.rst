@@ -1,5 +1,5 @@
-Apply/Evaluate, and then Format
-===============================
+Evaluate and Format
+===================
 
 .. contents::
 
@@ -17,8 +17,8 @@ Also there is a list of all possible syntax styles styles which is not alterable
 in the ``Settings`` namespace. For Django, there is a Boolean setting indicating whether or
 not to use a Sans-Serif font.
 
-Apply/Evaluate
---------------
+Rewrite/Apply/Eval
+------------------
 
 In order to process input requests, an ``Evaluation`` object needs to
 be created using some set of definitions. (Right now a new evaluation
@@ -26,18 +26,37 @@ object is created for each to-level expression, but this might not be
 needed, and the prior object might be reused.)
 
 This evaluation object has a scan-and-parse method which is passed some sort of
-I/O handle to read from. The result of that is another S-expression
+I/O handle to read from. The result of that is an S-expression
 described in :ref:`AST <ast>`.
 
 This S-expression result is then passed to the ``evaluate()`` method
-of the evaluation object. This is really an apply and evaluate process
-where the "apply" aspect includes term rewriting as well as symbol binding.
+of the evaluation object. This an apply/eval process in functional
+lanugaes where the "apply" covers term-rewriting application and
+function-symbol application.
 
-In this we may add, delete or change definitions. A front end will
-want definitions to persist in a Mathics session while the Evaluation
-object may or may not.
+In this process rule, symbol and and function definition can get
+altered. A front end will want the changed definitions to persist in a Mathics
+session while the Evaluation object may or may not.
 
-Here is a some simple example showing steps in parsing and apply/evaluate::
+The result of rewrite/apply/eval is a Mathics Expression for the result.
+
+For example if the input expression was parsed to the S-expression
+``Plus[1, 2]`` the output Expression would be ``3``. Recall that
+numbers and symbols are expressions too.
+
+This result type, Mathics Expression, differs from the input
+S-Expression in that symbols found in the Expression may be bound and
+various properties may be attached to the expression and its
+subexpressions. For example we may tag that resulting expression with
+a property that it is numeric such as in the example above where the
+result Expression was 3.
+
+In those cases where nothing can be filled in, the result may be an
+S-Expression. And here it can often is *same* S-Expression that was
+input.
+
+Here is a simple example showing how to do evaluation
+(with its rewrite/apply/eval substeps) in Python using ``session.evaluate()``::
 
   $ python
   Python 3.8.10 ..
@@ -65,13 +84,6 @@ and *evaluate* is common, and is done continuously inside a REPL. So there is a 
 on the evaluation method called ``parse_evaluate()`` that does all 3
 of these things.
 
-The diagram below indicates this process
-
-.. image:: evaluate-format-pipeline.png
-  :width: 800
-  :alt: Evaluate and then Format Pipeline
-
-
 The result from a top-level evaluation is a special ``Result`` kind of object containing:
 
 *out*:
@@ -86,17 +98,30 @@ The result from a top-level evaluation is a special ``Result`` kind of object co
 *last_eval*:
     the last result of the evaluation (an S-Expression), without formatting.
 
+After reading in an expression, parsing it and
+evaluating it, a front end will typically will want to show the results.
+
+The format step is described in the next section in detail. The
+diagram below shows the parse, evaluate, and format process.
+
+.. image:: evaluate-format-pipeline.png
+  :width: 800
+  :alt: Evaluate and then Format Pipeline
+
+
 
 Format
 ------
 
 Here we describe the formatting process that produces ``result`` from
-the S-Expression in ``last_eval``.
+the Expression in ``last_eval``.
 
 Expressions need to be wrapped in some sort of "Form", like
 ``TeXForm`` or ``MathMLForm``. This is done using the ``format()``
-method of the expression object. This produces an S-Expression with "Box"ing
-information.
+method of the expression object. This goes through the
+rewrite/apply/eval procuess produces a Mathics Expression where
+"Box"ing rules have been applied to the expression at various points
+where boxing functions are associated with different kinds of objects.
 
 Continuing using the example in the last section::
 
@@ -108,8 +133,15 @@ Continuing using the example in the last section::
     <Expression: System`RowBox[System`List["<math display="block"><mrow><mi>Graph3D</mi> <mo>[</mo> <mrow><mi>Circle</mi> <mo>[</mo> <mrow><mo>{</mo> <mrow><mn>0</mn> <mo>,</mo> <mn>0</mn></mrow> <mo>}</mo></mrow> <mo>]</mo></mrow> <mo>]</mo></mrow></math>"]]>
     >>>
 
-Notice in the above that ``format()`` was passed ``session.evaluation``. This gives the formatting the ability not just to query the environment outside of what was passed inside the ``graph_circle`` expression, but it also allows the fomatting to call back Mathics to perform additional calculations. For example, it is concievable that a particular formatter might want to know on what plain a particular polygon lies on, and Mathics might be able to get the answer to that.
+Notice in the above that ``format()`` was passed
+``session.evaluation``. This gives the formatting the ability not just
+to query the environment outside of what was passed inside the
+``graph_circle`` expression, but it also allows the fomatting to call
+back Mathics to perform additional calculations. For example, it is
+concievable that a particular formatter might want to know on what
+plain a particular polygon lies on, and Mathics might be able to get
+the answer to that.
 
 This box expression is at the end converted into a string by means of
-the method ``boxes_to_text()`` on the form-boxed-formatted S-expression, and is what
+the method ``boxes_to_text()`` on the form-boxed-formatted Expression, and is what
 at the end will be processed and shown in the front end.
