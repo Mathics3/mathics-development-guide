@@ -1,5 +1,4 @@
 .. index:: evaluation
-.. _evaluation:
 
 .. contents::
 
@@ -7,121 +6,188 @@
 Evaluation of an Expression
 ===========================
 
+Overview
+========
+
 In contrast to the simplicity and regularity for representing the data
 for ``Expression``, *evaluation* of this data or expression is more involved
 than conventional programming languages. I suppose this is to be expected.
 
-Part of the complexity involves the way function method lookup works
-by pattern matching the expression. Also, there can be rule-based
-term-rewriting which goes on in conjunction with method lookup.
+Part of the complexity in evaluating an expression involves:
 
-If you have programmed in WL, aside from the Python-syntax and
-conventions used here, a lot of this should seem familiar,
+* how Python methods and values are bound to symbol literals
+* how the expression is pattern matched and rewritten based on symbol
+  values and rules that can be dynamically changing; term rewriting
+  can take into account the current types of variables or bound
+  symbols
+* how to select the method to dispatch for a Mathics function call and how
+  parameter values are assigned after term rewriting and symbol binding is done
+* how we determine when the evaluation of an expression is complete
 
-If however you are not familiar with WL, but very familiar with Python
-or similar languages, a lot of this can seem very mysterious at first:
-functions don't get called using a traditional way where you create an
-object like ``Number()`` and then instantiate a method on that, like
-``+``, ``__plus__()``, or even ``Times()``.
+If you have programmed in WL and have an understanding of the
+complexities involved in WL evaluation, aside from the Python-syntax
+and conventions used here, the evaluation process of this may seem
+familiar. The conventions that this program uses will be new.
+This part is custom to this program.
 
-Of course, since the underlying interpreter language *is* Python,
-Python object creation and method lookup on that does happen. But it
-happens in a much more roundabout way using methods off of an object
-such as an *evaluate()* method or the various *apply()* methods in
-conjuction with the apply method's doc string. More on this is
-described later.
+If however you are instead not familiar with WL, but very familiar
+with Python or similar languages, a lot of this may seem
+mysterious. Functions don't get called using a traditional way where
+you create an object like ``Number()`` and then instantiate a method
+on that, like ``+``, ``__plus__()``, or even ``Times()``.
 
-For Python and Object-Oriented programmers, as an analogy for the
-complexity and indirectness, an Object-Oriented "method dispatch" is
-analogous. In Python or any Object-Oriented programming language, when
-you write ``a.b()``: there is a method lookup in the ``a`` object, so
-*at runtime* the type of ``a`` has to be inspected. And after having
-that, the method handle ``b`` needs to be computed. And this comes
-from a class heirarchy.
+Instead all Function calls are triggered through an evaluation method
+which involves the concept of `rewriting
+<https://en.wikipedia.org/wiki/Rewriting>`_. This alone can obscure
+what gets called. There Mathics function ``TraceEvaluation[]`` can
+help in understanding the subexpressions that are computed in evaluation.
 
-Mathics and WL are not Object Oriented, so there is no such
-class-hierarchy lookup.  Instead, as mentioned above, pattern matching
-is used to decide which method of the object to call.
+And as mentioned above, aside from this, the behavior is encoded in
+Mathics' Python code using conventions uniquely defined in this
+system. Built-in Functions are special methods in classes derived from
+a Bulltin class.  Furthermore they must have names that start out
+``apply`` and must have docstrings that contain WL patterns that
+indicate when the method matches. More on this is described later.
 
-Evaluation can leave an S-Expression Unchanged
-==============================================
+
+Evaluation can leave an Expression Seemingly Unchanged
+======================================================
 
 If you've used Mathics and misspelled a builtin function name or
 called a function with the wrong number of parameters, you might find
 it odd that sometimes you won't get an error message but just the same
 thing back. Or what you might type might be coorect and and complete
-expression ```myvariable`` or ``Pi`` can get the same thing back.
+expression ``myvariable`` or ``Pi`` can get what looks like the same
+thing back.
 
 This isn't a bug, but a feature of the design of the language.
 
 In the case of ``myvariable`` the language detects this as a symbol
 and symbols do not need to be declared in advance of their use.
+Little noticed though is that the name of the symbol ``myvariable``
+has been noted in case it comes up again.
 
 When you type ``Pi`` all by itself, unless a numeric approximation of
-that was requested, ``Pi`` refers to its symbol value. The
-S-expression entered is exactly the same. A later step may decide to
+that was requested, ``Pi`` refers to its symbol value. The expression
+return is again the same, with the exception of properties of the
+expression that may not be visible. A later step may decide to
 materialize a value or convert the representation of ``Pi`` into a
 unicode string.
 
-And when an S-expression doesn't match a particlar form for a function
-call, the S-expression *needs* to be left unchanged: the act of not
-matching a particular function in of itself isn't an error because
+And when an S-expression or an Expression doesn't match a particlar
+form for a function call, it *needs* to be left unchanged: the act of
+not matching a particular function in of itself isn't an error because
 there may be some other rule around, maybe even at a different level
 of the Expression Tree which will match.
 
 
-Mathics Function Name to Python method lookup
-=============================================
+
+Rewrite/Apply/Eval Process
+==========================
+
+Expression evaluation is an iterative and recursive tranformation
+process where we apply transformation rules, apply functions
+encountered and in the evaluation of a function it may recursively go
+through a rewrite/apply/eval step for one of its subcomputations.
+
+The entire process is iterated resulting expression that comes back
+doesn't change, or we are told to stop, e.g. an error or limit was
+encountered.
+
+Here we give in broad outline a single rewrite/apply/eval step of this
+process. See also `The Standard Evaluation Sequence
+<https://reference.wolfram.com/language/tutorial/Evaluation.html>`_.
+
+
+Gather information from ``Head`` and gather its leaves
+------------------------------------------------------
+
+This is done using these attributes in ``Head``:
+
+* ``HoldFirst``,
+* ``HoldAll``,
+* ``HoldRest``
+
+and using the following subexpressions may appear in the expression:
+
+* ``Evaluate[]``
+* ``Unevaluated[]``
+
+At the end of this, variables ``head``, ``attributes`` (of head), and ``leaves`` (of the expression) are set.
+
+Build a new Expression
+-----------------------
+
+Build a new expression with using variables ``head`` and ``leaves`` based
+the attribute settings in variable ``attributes`` from previous step,
+
+This substeps here are:
+
+* Try to flatten sequences in the expression unless the ``SequenceHold`` or ``HoldAllComplete`` attributes are set in ``Head``
+* Change ``Unevaluated[expr]`` to ``expr`` but mark the expression as being unevaluated
+* Flatten extpressions involving nested functions if the ``Flat`` attribute was found in ``Head``
+* Sort leaves if the ``Orderless`` attribute was found in ``Head``
+
+Compute evaluation timestamp
+----------------------------
+
+Compute timestamp in a expression cache. This may lead to invalidation and rebuild the expression cache elsewhere.
+
+Search for a Rule in ``Head`` to apply
+--------------------------------------
+
+Search for a rule in ``Head`` that matches the expression
+
+Apply Rule or restore Expression
+--------------------------------
+
+If a rule was found, apply it getting back an evaluated expression.
+If the expression is unchanged, restore it to its state before building a new expression,
+and reset the evaluation cache to its value before updating.
+
+
+
+Mathics Function Application
+============================
 
 .. index:: Symbol, Predefined, Builtin, Expression
 
-When the first leaf, called the "head" (or ``Head[]``) of an
-``Expression`` is a ``Symbol`` this is assumed to be a Mathics
-function call. The function name comes from the head. If this is a
+The first leaf, called the "head" (or ``Head[]``) of an
+``Expression`` is a ``Symbol``.
+
+When there are other leaves, the head is assumed to be a Mathics
+function call, where  the function name comes from the head. If this is a
 built-in function, like ``Plus``, the Mathics function name is the name
 of a Python class derived ultimately from ``Builtin``. These
 Mathics function-like classes are described in later sections.
 
-However before invoking that Mathics function, we need to check if
-there is a rewrite rule that applies to the Mathics function call.  A
-function-like class like ``Plus`` can have a class ``rules`` variable.
-When given, the ``rules`` class varaible specifies rewrite rules that
-are to be considered before invoking the function. If one of these
-rewrite rules matches against the Mathics function call, the
-expression is rewritten into another expression and another trip is
-made around the evaluation loop. Eventually rewriting stops.
+As described in the previous section, before invoking that Mathics
+function, we need to check for a rewrite rule that applies to
+the Mathics function call. If a rule is found, it will have attached to
+a bound method name starts with ``apply``.
 
-And when rewriting stops, if the head is a Mathics built-in function
-name, like ``Plus``, we still need to figure out which ``apply``
-method to call inside an object created from that class. We will
-describe how this is done elsewhere.
+These rules get created on loading the module containing a subclass of
+``Builtin`` implementing some Mathcs Primative Funtion.  The rules
+come from the docstrings of a methods that start with ``apply``.
 
-Here, we will just say that is done using each ``apply`` method's
-docsstring. And this apply-method determination is kicked off through
-Expression's ``evaluate``. Ignoring the detailis of how this is
-done, one of the ``apply`` methods is found to match, and the
-remaining leaves of the ``Expression`` indicate parameters to be given
-to the found ``apply`` function. In addition, an instance of an
-``Evaluation`` is also supplied as a parameter in the call to the
-``apply`` method. .
+The docsting includes not only a pattern to match on but how the
+parameters should get bound when applying the function.
+instance of an ``Evaluation`` is also supplied as a parameter in the call.
 
-In the simplest case, there is no rule rewriting, or apply methods,
-and the instance method's *evaluate()* method is called. This is used
-when a function has no parameters or arguments. This kind of thing
-happens when a constant or variable name is used; here the variable
-name is prefaced with a ``$``. Examples are ``$VersionNumber`` or
-``$MachineName``.
-
-When a function takes parameters it method's Object class is derived
-either directly indirectly from the ``Builtin`` class rather than the
-``Predefine`` class.
+There is a degenerate situation though where there is no rule
+rewriting, or apply methods involved. Here the instance method's
+*evaluate()* method is called. This is used when a function has no
+parameters or arguments. This kind of thing happens when a constant or
+variable name is used; here the variable name is prefaced with a
+``$``. Examples are ``$VersionNumber`` or ``$MachineName``.
 
 As we go along, we'll describe other conventions that are used that
 are crucial in getting the interpreter work properly. But for now,
-just remember that unless there is an ``evaluate()`` method, there is
-a method name in a Mathics function class that begins with ``apply``,
-and its docstring is used to figure out whether the leaves of the list
-are applicable to that function.
+when writing a new Builtin Function, just remember that unless there
+is an ``evaluate()`` method, there is a method name in a Mathics
+function class that begins with ``apply``, and its docstring is used
+to figure out whether the leaves of the list are applicable to that
+function.
 
 Here is an example for the `Environment
 <https://reference.wolfram.com/language/ref/Environment.html>`_
@@ -148,8 +214,8 @@ and `Patterns
 
 One useful Mathics function that is useful in debugging pattern matching is  `Cases <https://reference.wolfram.com/language/ref/Cases.html>`_.
 
-Function Name Descriptions
-==========================
+Built-in Function Name Descriptions
+===================================
 
 Online and printed documentation for builtin ``Environment`` comes from the docstring for ``class Environment`` if that exists.
 In the example above, it was omitted. Here is what it looks like in the actual code.

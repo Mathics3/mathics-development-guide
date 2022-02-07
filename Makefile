@@ -2,7 +2,7 @@ PIP ?= pip3
 RM  ?= rm
 
 #: Default target - same as "develop"
-all: developer-docs
+all: developer-docs png
 
 .PHONY: developer-docs clean
 
@@ -23,3 +23,6 @@ rebuild:
 #: Wipe derivable files
 clean:
 	$(MAKE) -C docs $<
+
+png:
+	$(MAKE) -C docs/extending/code-overview $@
