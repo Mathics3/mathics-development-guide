@@ -30,19 +30,15 @@ Also there is a list of all possible syntax styles styles which is not alterable
 in the ``Settings`` namespace. For Django, there is a Boolean setting indicating whether or
 not to use a Sans-Serif font.
 
-Evaluation.evaluate() at a High Level
+session.evaluate() at a High Level
 -------------------------------------
-
-Although there is a separate section that goes into the intricate
-steps involved in :ref:`Evaluation.evaluate() <evaluation>`, here we'll
-describe this at a high level in the broader context of a session.
 
 In order to process input requests, an ``Evaluation`` object needs to
 be created using some set of definitions. (Right now a new evaluation
-object is created for each to-level expression, but this might not be
+object is created for each top-level expression, but this might not be
 needed, and the prior object might be reused.)
 
-This evaluation object has a scan-and-parse method which is passed some sort of
+This session evaluation object has a scan-and-parse method which is passed some sort of
 I/O handle to read from. The result of that is an S-expression
 described in :ref:`AST <ast>`.
 
@@ -71,11 +67,11 @@ a property that it is numeric such as in the example above where the
 result Expression was 3.
 
 In those cases where nothing can be filled in, the result may be an
-S-Expression. And here it can often is *same* S-Expression that was
+S-Expression. It can even be the *same* S-Expression that was
 input.
 
-Here is a simple example showing how to do evaluation
-(with its rewrite/apply/eval substeps) in Python using ``session.evaluate()``::
+Here is a simple example showing how to do evaluation from a
+session in Python using ``session.evaluate()``::
 
   $ python
   Python 3.8.10 ..
