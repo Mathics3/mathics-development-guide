@@ -1,7 +1,20 @@
-Evaluate and Format
-===================
+Session
+=======
 
 .. contents::
+
+A Mathics Session consists of a Definitions object and an Evaluation object.
+
+We describe these two components next.
+
+A diagram of a single step in the Read/Eval/Print Loop (REPL) is shown in the diagram below:
+
+.. image:: /images/evaluate-format-pipeline.png
+  :width: 800
+  :alt: Evaluate and then Format Pipeline
+
+
+
 
 
 Definitions
@@ -17,8 +30,12 @@ Also there is a list of all possible syntax styles styles which is not alterable
 in the ``Settings`` namespace. For Django, there is a Boolean setting indicating whether or
 not to use a Sans-Serif font.
 
-Evaluate (Rewrite/Apply/Eval)
------------------------------
+Evaluation.evaluate() at a High Level
+-------------------------------------
+
+Although there is a separate section that goes into the intricate
+steps involved in :ref:`Evaluation.evaluate() <evaluation>`, here we'll
+describe this at a high level in the broader context of a session.
 
 In order to process input requests, an ``Evaluation`` object needs to
 be created using some set of definitions. (Right now a new evaluation
@@ -103,17 +120,8 @@ The result from a top-level ``parse_evaluate()`` is a special ``Result`` kind of
 After reading in an expression, parsing it and
 evaluating it, a front end will typically will want to show the results.
 
-The format step is described in the next section in detail. The
-diagram below shows the parse, evaluate, and format process.
-
-.. image:: /images/evaluate-format-pipeline.png
-  :width: 800
-  :alt: Evaluate and then Format Pipeline
-
-
-
-Format
-------
+Expression.format()
+-------------------
 
 Here we describe the formatting process that produces ``result`` from
 the Expression in ``last_eval``.

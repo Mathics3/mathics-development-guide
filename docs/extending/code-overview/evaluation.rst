@@ -1,4 +1,5 @@
 .. index:: evaluation
+.. _evaluation:
 
 .. contents::
 

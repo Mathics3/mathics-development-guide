@@ -23,7 +23,7 @@ Each of the above steps can be involved, so we break these down below.
 .. toctree::
    :maxdepth: 3
 
-   code-overview/apply-eval-format
+   code-overview/session
    code-overview/scanning-and-parsing
    code-overview/ast
    code-overview/evaluation
