@@ -21,11 +21,11 @@ Expressions
 * ``Atoms``: Literals that should be treated in evaluations as a whole thing. For example, Numbers and strings are ("Raw", according to [WL reference]) atoms,
 but also `Symbol` (which can be evaluated, but do not have parts) or  `Image` and `Dispatch` objects (for which we can ask for a "Part") are.
 
-* ``Symbol``s: is a type of Atom characterized by a name, that can be evaluated. Inside a session, a Symbol has associated with a ``Definition`` that defines how the symbol is going to be evaluated alone or as a part of an Expression.
+* ``Symbol`` s: is a type of Atom characterized by a name, that can be evaluated. Inside a session, a Symbol has associated with a ``Definition`` that defines how the symbol is going to be evaluated alone or as a part of an Expression.
 
-* ``Expression``s: An ``Expression`` has a ``Head`` and "leaves". Both the ``Head`` and all the leaves of the expression are also some kind of literal.  If the ``Head`` of the expression is a ``Symbol``, it represents the "lookup-symbol" of the expression. This symbol controls, through its associated definition, how the expression is going to be evaluated, like which leaves should be evaluated and which basic reformatting procedures should be applied to the expression before the expression as a whole as well as how to do that evaluation. If the Head is also an ``Expression``, the lookup symbol is the lookup symbol of the head.
+* ``Expression`` s: An ``Expression`` has a ``Head`` and "leaves". Both the ``Head`` and all the leaves of the expression are also some kind of literal.  If the ``Head`` of the expression is a ``Symbol``, it represents the "lookup-symbol" of the expression. This symbol controls, through its associated definition, how the expression is going to be evaluated, like which leaves should be evaluated and which basic reformatting procedures should be applied to the expression before the expression as a whole as well as how to do that evaluation. If the Head is also an ``Expression``, the lookup symbol is the lookup symbol of the head.
 
-* ``SubExpression``s: Represents a reference to a part of an ``Expression``. 
+* ``SubExpression`` s: Represents a reference to a part of an ``Expression``. 
 
   
 Rules
@@ -33,14 +33,14 @@ Rules
 
 * ``Pattern``s: A pattern represents an object that can match with an ``Expression`` or a part of the ``Expression``.  For example, ``F[x_Symbol]`` is a pattern.
 
-* (Replacement) ``Rule``s: Consists of a ``Pattern`` and replace. Rules can be **applied** to an ``Expression`` to produce a new ``Expression``. For example ``F[x_Real]-> x^2``
+* (Replacement) ``Rule`` s: Consists of a ``Pattern`` and replace. Rules can be **applied** to an ``Expression`` to produce a new ``Expression``. For example ``F[x_Real]-> x^2``
 is a rule that when applied to the expression ``G[F[1.], F[a]]`` produces the new expression ``G[1.^2, F[a]]``. Certain (internal) rules can also produce changes in the state of the system (writing files, printing a string, changing the definitions of a symbol, or setting a timeout). This happens for internal rules, like the associated to the pattern `Set[a,1.]`, which modifies the definition of `a` adding the rule `a->1.` (seel below).
 
 There are two kinds of rules,
 
-* (WL) `Rule`s and `BuiltinRule`s. In a (WL) Rule, the replace is defined in terms of a new expression. If the `Pattern` contains "named subpatterns" (i.e., the `Pattern` has leaves which are of the form ``Pattern[symbol, pat]``) symbols in the replace expressions that match with the symbol in one subpattern are replaced by the corresponding subexpressions. For example,  in we apply the rule  ``F[x_]->x^2`` to the expression `G[F[1.], F[a]]` we get ``G[1.^2, a^2]``. Applying this kind of rule can not affect the state of the system.
+* (WL) ``Rule`` s and ``BuiltinRule`` s. In a (WL) Rule, the replace is defined in terms of a new expression. If the ``Pattern`` contains "named subpatterns" (i.e., the ``Pattern`` has leaves which are of the form ``Pattern[symbol, pat]``) symbols in the replace expressions that match with the symbol in one subpattern are replaced by the corresponding subexpressions. For example,  in we apply the rule  ``F[x_]->x^2`` to the expression `G[F[1.], F[a]]` we get ``G[1.^2, a^2]``. Applying this kind of rule can not affect the state of the system.
 
-* ``BuiltinRule``s, on the other hand, have associated a Python function. Each time the Pattern matches a part of the expression, the expression is replaced by the result of calling that function, with parameters given by the name of the symbols in the named subpatterns. For example, the symbol ``System`Plus`` has associated a BuiltinRule
+* ``BuiltinRule`` s, on the other hand, have associated a Python function. Each time the Pattern matches a part of the expression, the expression is replaced by the result of calling that function, with parameters given by the name of the symbols in the named subpatterns. For example, the symbol ``System`Plus`` has associated a BuiltinRule
 ``Plus[items___]->mathics.builtin.arithfns.basic.Plus.apply``. When applied to the expression `F[a+a]` the method ``mathics.builtin.arithfns.basic.Plus.apply`` is called
 passing a parameter  `items` with a value `Sequence[a,a]`. The return value of this function is ``Times[2, a]``  (``2*a``), which is replaced in the original expression resulting in ``F[2*a]``. Notice that these kinds of rules can also change the state of the system. For example, the rule ``SetAttributes[a_,b_]->mathics.builtin.attributes.SetAttributes.apply``, when applied to the expression  ``SetAttributes[F, NumericFunction]`` sets the attribute ``NumericFunction`` in the definition of the symbol ``F`` and returns ``SymbolNull``. 
 
@@ -51,7 +51,7 @@ In any case, if the ``Rule`` fails to be applied to the ``Expression``, ``apply`
 Definition
 ----------
 
-A definition is a collection of ``Rule``s and attributes associated to a given `Symbol`. The ``Rule``s are internally organized in terms of the context of application in
+A ``Definition`` is a collection of ``Rule``s and attributes associated to a given `Symbol`. The ``Rule``s are internally organized in terms of the context of application in
 `ownvalues`, `upvalues`,  `downvalues`,  `subvalues`, `nvalues`,  `format`, etc. 
 
 Definitions
