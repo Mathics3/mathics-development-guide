@@ -106,7 +106,7 @@ evaluating it, a front end will typically will want to show the results.
 The format step is described in the next section in detail. The
 diagram below shows the parse, evaluate, and format process.
 
-.. image:: evaluate-format-pipeline.png
+.. image:: /images/evaluate-format-pipeline.png
   :width: 800
   :alt: Evaluate and then Format Pipeline
 
