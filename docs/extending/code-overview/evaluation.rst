@@ -102,7 +102,7 @@ applications: rule application and function application.
 
 The first part of the he Rewrite/Apply/Eval step, is to reorder and/or
 rewrite the expression. This transformation is directed by looking at
-properties of the Head symbols, its associated attributes and
+properties of the Head symbols, its associated Attributes and
 rules. An attribute like ``Orderless`` can cause terms in the
 rest of the tree to be reordered.
 
