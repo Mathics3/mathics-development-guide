@@ -95,7 +95,7 @@ possible.
 
 The Rewrite/Apply/Eval step has an term-rewriting phase followed by a
 function application phase; "term" here refers to a subexpression of
-the expression.[1]_
+the expression. [1]_
 
 The word "apply" in the title really refers to two separate kinds of
 applications: rule application and function application.
@@ -318,8 +318,6 @@ performs the above. So here is an equivalent program:
     str_expression = "1 + 2 / 3"
     result = session.evaluate(str_expression)
 
-[1] Other names for "term" is subexpression or in in Mathics/WL the
-``Rest[]`` function. Oddly in the code though these are called
-``leaves``. Specifically, there is the field name in the Expression
-class is called ``_leaves`` and there are accessor functions
-``get_leaves()`` ``set_leaf()``, ``get_mutable_leaves()``
+    .. rubric: Footnotes
+
+.. [1] Other names for "term": "subexpression" or in in Mathics/WL the ``Rest[]`` function. In the Mathics code though these are called ``leaves``. Specifically, there is the field name in the Expression class is called ``_leaves`` and there are accessor functions ``get_leaves()`` ``set_leaf()``, ``get_mutable_leaves()``
