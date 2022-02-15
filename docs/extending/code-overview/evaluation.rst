@@ -82,7 +82,7 @@ of the Expression Tree which will match.
 
 
 
-Broad description of the Rewrite/Apply/Eval Process
+Broad Description of the Rewrite/Apply/Eval Process
 ===================================================
 
 The top-level evaluation performs time and evaluation process
@@ -116,7 +116,7 @@ terms may be traversed.
 After the expression rewriting phase is complete, function application
 is performed. Function application here finds the Python method of a
 class to call and performs the binding terms to parameters of the
-Python method, along with an additional an evaluation object bound as
+Python method, along with an additional evaluation object bound as
 the ``evaluation`` parameter.
 
 
@@ -126,8 +126,8 @@ Detailed Rewrite/Apply/Eval Process
 As described above, Expression evaluation is an iterative and recursive
 transformation process.
 
-Here we give in a little more detail a single rewrite/apply/eval step of this
-process. See also `The Standard Evaluation Sequence
+Here we give in a little more detail about a single rewrite/apply/eval
+step of this process. See also `The Standard Evaluation Sequence
 <https://reference.wolfram.com/language/tutorial/Evaluation.html>`_.
 
 
