@@ -48,6 +48,14 @@ Glossary
 
      Mathics function ``DownValues`` can be used to query downvalues.
 
+   element
+
+     One of the components of an Expression or S-Expression at a given
+     level. Another word for this is subexpression. In the code there
+     are accessor methods ``get_leaves()`` and attribute ``_leaves``,
+     but this is misleading. An element is not the same thing as an atom,
+     nor does it represent a leaf in the Expression.
+
    eval
 
      A functional compuation. We use this in the functional
@@ -131,14 +139,6 @@ Glossary
 
    subexpression
 
-     See term.
-
-   term
-
-     One of the components of an Expression or S-Expression at a given
-     level. Another word for this is subexpression. In the code there
-     are accessor methods ``get_leaves()`` and attribute ``_leaves``,
-     but this is misleading. A term is not the same thing as an atom,
-     nor does it represent a leaf in the Expression.
+     See element.
 
    upvalue

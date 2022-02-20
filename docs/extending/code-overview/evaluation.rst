@@ -94,7 +94,7 @@ done until that step reports that no further evaluation is needed or
 possible.
 
 The Rewrite/Apply/Eval step has an term-rewriting phase followed by a
-function application phase; "term" here refers to a subexpression of
+function application phase; "term" here refers to a elements of
 the expression. [1]_
 
 The word "apply" in the title really refers to two separate kinds of
@@ -103,7 +103,7 @@ applications: rule application and function application.
 The first part of the he Rewrite/Apply/Eval step, is to reorder and/or
 rewrite the expression. This transformation is directed by looking at
 properties of the Head symbols, its associated Attributes and
-rules. An attribute like ``Orderless`` can cause terms in the
+rules. An attribute like ``Orderless`` can cause elements in the
 rest of the tree to be reordered.
 
 Also, when a rewrite rule of a Head's Symbol is found to match, then
@@ -111,11 +111,11 @@ the replacement substitution is preformed and this can change overall
 expression.
 
 Depending on a Symbol's attributes like ``Hold``, an expression's
-terms may be traversed.
+elements may be traversed.
 
 After the expression rewriting phase is complete, function application
 is performed. Function application here finds the Python method of a
-class to call and performs the binding terms to parameters of the
+class to call and performs the binding elements to parameters of the
 Python method, along with an additional evaluation object bound as
 the ``evaluation`` parameter.
 
@@ -320,4 +320,4 @@ performs the above. So here is an equivalent program:
 
     .. rubric: Footnotes
 
-.. [1] Other names for "term": "subexpression" or in in Mathics/WL the ``Rest[]`` function. In the Mathics code though these are called ``leaves``. Specifically, there is the field name in the Expression class is called ``_leaves`` and there are accessor functions ``get_leaves()`` ``set_leaf()``, ``get_mutable_leaves()``
+.. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function. In the Mathics code though these are called ``leaves``. Specifically, there is the field name in the Expression class is called ``_leaves`` and there are accessor functions ``get_leaves()`` ``set_leaf()``, ``get_mutable_leaves()``
