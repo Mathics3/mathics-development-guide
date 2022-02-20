@@ -49,8 +49,11 @@ other kinds of Atoms can get created. These include things like:
 
 * ``ByteArray``
 * ``CompiledCode``
+* ``Complex``
 * ``Dispatch``
 * ``Image``
+* ``Integer``
+* ``Real``
 
 In other words, things that might have an underlying internal representation of an object with no subparts that can be pulled out using ``Part[]``.
 

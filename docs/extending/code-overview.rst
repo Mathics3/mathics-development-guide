@@ -30,3 +30,4 @@ Each of the above steps can be involved, so we break these down below.
    code-overview/pattern-matching
    code-overview/boxes-forms-and-formats
    code-overview/object-classes
+   code-overview/glossary

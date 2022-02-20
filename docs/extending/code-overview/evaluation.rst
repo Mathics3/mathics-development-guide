@@ -83,20 +83,52 @@ of the Expression Tree which will match.
 
 
 
-Rewrite/Apply/Eval Process
-==========================
+Broad Description of the Rewrite/Apply/Eval Process
+===================================================
 
-Expression evaluation is an iterative and recursive tranformation
-process where we apply transformation rules, apply functions
-encountered and in the evaluation of a function it may recursively go
-through a rewrite/apply/eval step for one of its subcomputations.
+The top-level evaluation performs time and evaluation process
+management for the overall evaluation process.
 
-The entire process is iterated resulting expression that comes back
-doesn't change, or we are told to stop, e.g. an error or limit was
-encountered.
+After setting up the bookkeeping for this, there is a loop performing
+a possibly recursive Rewrite/Apply/Eval step described next.  This is
+done until that step reports that no further evaluation is needed or
+possible.
 
-Here we give in broad outline a single rewrite/apply/eval step of this
-process. See also `The Standard Evaluation Sequence
+The Rewrite/Apply/Eval step has an term-rewriting phase followed by a
+function application phase; "term" here refers to a elements of
+the expression. [1]_
+
+The word "apply" in the title really refers to two separate kinds of
+applications: rule application and function application.
+
+The first part of the he Rewrite/Apply/Eval step, is to reorder and/or
+rewrite the expression. This transformation is directed by looking at
+properties of the Head symbols, its associated Attributes and
+rules. An attribute like ``Orderless`` can cause elements in the
+rest of the tree to be reordered.
+
+Also, when a rewrite rule of a Head's Symbol is found to match, then
+the replacement substitution is preformed and this can change overall
+expression.
+
+Depending on a Symbol's attributes like ``Hold``, an expression's
+elements may be traversed.
+
+After the expression rewriting phase is complete, function application
+is performed. Function application here finds the Python method of a
+class to call and performs the binding elements to parameters of the
+Python method, along with an additional evaluation object bound as
+the ``evaluation`` parameter.
+
+
+Detailed Rewrite/Apply/Eval Process
+===================================
+
+As described above, Expression evaluation is an iterative and recursive
+transformation process.
+
+Here we give in a little more detail about a single rewrite/apply/eval
+step of this process. See also `The Standard Evaluation Sequence
 <https://reference.wolfram.com/language/tutorial/Evaluation.html>`_.
 
 
@@ -286,3 +318,7 @@ performs the above. So here is an equivalent program:
     from mathics.session import session
     str_expression = "1 + 2 / 3"
     result = session.evaluate(str_expression)
+
+    .. rubric: Footnotes
+
+.. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function. In the Mathics code though these are called ``leaves``. Specifically, there is the field name in the Expression class is called ``_leaves`` and there are accessor functions ``get_leaves()`` ``set_leaf()``, ``get_mutable_leaves()``
