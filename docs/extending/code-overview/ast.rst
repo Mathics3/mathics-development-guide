@@ -27,7 +27,8 @@ initially from the parser:
 With the exception of the addition of ``Filename`` these are
 almost the same atoms described in `Basic Internal Architecture
 <https://reference.wolfram.com/language/tutorial/TheInternalsOfTheWolframSystem.html#6608>`_
-for WL.
+for WL. However these are not all of the kinds of Atoms that exist when Mathics starts up.
+There are other atoms like ``Complex`` numbers.
 
 We should note that ``Symbol`` really has two distinct meanings. After
 a parse, a ``Symbol`` is just its name and this name is unique in the
