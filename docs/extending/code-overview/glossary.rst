@@ -6,7 +6,10 @@ Glossary
    atom
 
      The leaves of an S-expression or an expression. It is an object that has no structure below it.
-     See also "Atomic Primitives" in the Mathics documentation for builtin-functions which
+     See also "Atomic Primitives" in the Mathics documentation for builtin-functions.
+
+     Note that the Mathics parser's Atoms are a subset of Mathics Atoms. For example, a Complex number from the
+     parser appears as a multiplication of the constant ``I`` possibly followed by an addition.
 
    apply
 
