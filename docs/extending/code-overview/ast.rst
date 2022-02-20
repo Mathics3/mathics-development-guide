@@ -1,12 +1,12 @@
-.. index:: S-expression, AST
+.. index:: M-expression, AST
 .. _ast:
 
-AST, S-Expression, General List: same thing
+AST, M-Expression, General List: same thing
 ============================================
 
-The end-result of scanning and parsing is an S-expression, which is a
+The end-result of scanning and parsing is an M-expression, which is a
 Python object of type ``Expression``. In compiler terminology the
-S-expression is also called an *abstract syntax tree* or AST. The
+M-expression is also called an *abstract syntax tree* or AST. The
 first leaf of an ``Expression`` is called the "head".
 
 When the ``Expression`` is to be evaluated, the head should a
@@ -60,9 +60,9 @@ built-in functions.
 
 In the process of Evaluation, described in the next section, more
 kinds of objects over the above the four may get introduced as the
-S-expression is rewritten and transformed.
+M-expression is rewritten and transformed.
 
-Here is an example of the tranformation from an input string to the AST Form (an S-Expression)
+Here is an example of the tranformation from an input string to the AST Form (an M-Expression)
 We use the ``--full-form`` option in the ``mathics`` command-line to get this information.
 Note that this shows the *input* before evaluation:
 

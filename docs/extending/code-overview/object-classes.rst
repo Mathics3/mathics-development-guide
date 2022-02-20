@@ -30,7 +30,7 @@ The below are heuristics:
 Atom Class
 ==========
 
-Recall that an Expression to be evaluated is kind of S-expression
+Recall that an Expression to be evaluated is kind of M-expression
 called and ``ExpressionList``, where each list item is either itself
 an ``ExpressionList`` or an object in a class derived from ``Atom``.
 

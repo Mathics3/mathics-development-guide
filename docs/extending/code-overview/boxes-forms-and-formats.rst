@@ -6,8 +6,8 @@ Forms, Boxes, and Formats
 
 In the introduction to this section we gave the 3-step process converting the input you type into output produced:
 
-* the input string is parsed to a ``FullForm`` S-Expression
-* The ``FullForm`` S-expression is evaluated giving another S-expression
+* the input string is parsed to a ``FullForm`` M-Expression
+* The ``FullForm`` M-expression is evaluated giving another M-expression
 * The result is formatted to the kind of output desired. Formatting can cause additional evaluations to occur.
 
 Here, we are going to go in more detail over the last step which broadly is formatting.
@@ -21,7 +21,7 @@ Output
 <https://reference.wolfram.com/language/tutorial/TextualInputAndOutput.html#12368>`_.
 
 Formatting a "Form" can cause parts of the expression to be "boxed"
-as the S-expression is traversed. This is sort of like adding
+as the M-expression is traversed. This is sort of like adding
 parenthesis around infix expressions at certain places, but we'll
 explain in more detail below.
 
@@ -42,7 +42,7 @@ box dimensions are exposed. Therefore layout is simplified, and
 we have the ability to move large collections of items around by
 simply positioning the enclosing box.
 
-As with S-Expressions, Boxes can be sequenced and nested.
+As with M-Expressions, Boxes can be sequenced and nested.
 
 Within a box, once it is given its initial parameters such as the
 dimensions or style attributes, the layout is largely independent of

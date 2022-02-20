@@ -75,7 +75,7 @@ expression that may not be visible. A later step may decide to
 materialize a value or convert the representation of ``Pi`` into a
 unicode string.
 
-And when an S-expression or an Expression doesn't match a particlar
+And when an M-expression or an Expression doesn't match a particlar
 form for a function call, it *needs* to be left unchanged: the act of
 not matching a particular function in of itself isn't an error because
 there may be some other rule around, maybe even at a different level

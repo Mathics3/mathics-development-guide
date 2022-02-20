@@ -5,7 +5,7 @@ Glossary
 
    atom
 
-     The leaves of an S-expression or an expression. It is an object that has no structure below it.
+     The leaves of an M-expression or an expression. It is an object that has no structure below it.
      See also "Atomic Primitives" in the Mathics documentation for builtin-functions.
 
      Note that the Mathics parser's Atoms are a subset of Mathics Atoms. For example, a Complex number from the
@@ -13,7 +13,7 @@ Glossary
 
    apply
 
-     The process by which we take an S-expression and prepare that expression evaluation at the top-level of the expression given.
+     The process by which we take an M-expression and prepare that expression evaluation at the top-level of the expression given.
 
      In Mathics this involves looking at the ``Head`` symbol taking action based on information that symbols binding.
 
@@ -23,7 +23,7 @@ Glossary
 
    binding
 
-     Associating a symbol name with a value. In Mathics, the symbol names an expression or S-expression and the
+     Associating a symbol name with a value. In Mathics, the symbol names an expression or M-expression and the
      values come from an definitions found in an evaluation. See also `Free and bound variables <https://en.wikipedia.org/wiki/Free_variables_and_bound_variables>`_ and
      `Name binding <https://en.wikipedia.org/wiki/Name_binding>`_.
 
@@ -53,7 +53,7 @@ Glossary
 
    element
 
-     One of the components of an Expression or S-Expression at a given
+     One of the components of an Expression or M-Expression at a given
      level. Another word for this is subexpression. In the code there
      are accessor methods ``get_leaves()`` and attribute ``_leaves``,
      but this is misleading. An element is not the same thing as an atom,
@@ -69,7 +69,7 @@ Glossary
 
    evaluate
 
-     The process of taking an Mathics Expression or S-Expression
+     The process of taking an Mathics Expression or M-Expression
      producing a transformation or computation on that.
 
      It involves the distinct phases:
@@ -86,7 +86,7 @@ Glossary
      expressions. However at each level there is a ``Head`` which is expected to be a Symbol.
 
      In Mathics, an Expression can additional information or representations associated with it.
-     This is in contrast to S-Expression.
+     This is in contrast to M-Expression.
 
 
    form
@@ -98,6 +98,16 @@ Glossary
      A binding in an evaluation which is intended to be use across a level of an evaluation.
 
    namespace
+
+   M-expression
+
+     A structure which consists of a sequence atoms, and (nested)
+     expressions. However at each level there is a ``Head`` which is
+     represents some sort of function
+
+     This is the initial input that parser produces which is worked on.
+
+     See `M-expression <https://en.wikipedia.org/wiki/M-expression>`_.
 
    nvalues
 
@@ -127,16 +137,6 @@ Glossary
      attributes and rewrite rules bound to an expression's ``Head`` Symbol.
 
      For the general concept, see `Rewriting <https://en.wikipedia.org/wiki/Rewriting>`_.
-
-   S-expression
-
-     A structure which consists of a sequence atoms, and (nested)
-     expressions. However at each level there is a ``Head`` which is expected to be a Symbol.
-
-     This is the initial input that parser produces which is worked on.
-
-     See `S-expression <https://en.wikipedia.org/wiki/S-expression>`_.
-
 
    scope
 
