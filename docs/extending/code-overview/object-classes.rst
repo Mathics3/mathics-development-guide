@@ -25,6 +25,18 @@ The below are heuristics:
 * To define a Mathics atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``
 
 
+Class Diagram for Some of the Classes
+=====================================
+
+Below is a `UML 2.5 Class diagram
+<https://creately.com/blog/diagrams/class-diagram-tutorial/>`_ for some
+of the classes described below
+
+..index:: Evaluation, Definition, Rule, Pattern,Expression
+
+.. image:: /images/uml-diagram.png
+  :alt: UML 2.5 Class diagram
+
 .. index:: Atom, AtomQ
 
 Atom Class
@@ -115,6 +127,8 @@ then they act more like a programming language variable. The Symbol
 class described here has fields and properties that you of the kind
 that you'd expect a variable in a programming language to have.
 
+..index:: Builtin
+
 Builtin class
 =============
 
@@ -170,7 +184,37 @@ find on all method functions.
 At the end is an *evaluation* parameter and this contains definitions
 and the context if the method needs to evaluate expressions.
 
+.. index:: Definition
 
+Definition Class
+================
+
+A Definition is a collection of ``Rule``s and attributes which are associated to ``Symbol``.
+
+The ``Rule``s are internally organized in terms of the context of application in
+
+* ``Ownvalues``,
+* ``Upvalues``,
+* ``Downvalues``,
+* ``Subvalues``,
+* ``FormatVlaues``,  etc.
+
+.. index:: Definitions
+
+Definitions Class
+=================
+
+The Definitiosn class hold sstate of one instance of the Mathics
+interpreter is stored in this object.
+
+The state is then stored as ``Definition`` object of the different symbols defined during the runtime.
+
+In the current implementation, the ``Definitions`` object stores ``Definition`` s in four dictionaries:
+
+- builtins: stores the defintions of the ``Builtin`` symbols
+- pymathics: stores the definitions of the ``Builtin`` symbols added from pymathics modules.
+- user: stores the definitions created during the runtime.
+- definition_cache: keep definitions obtained by merging builtins, pymathics, and user definitions associated to the same symbol.
 
 .. index:: Predefined
 
