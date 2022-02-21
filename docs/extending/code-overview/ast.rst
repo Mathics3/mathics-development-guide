@@ -4,7 +4,7 @@
 AST, M-Expression, General List: same thing
 ============================================
 
-The end-result of scanning and parsing is an M-expression, which is a
+The end-result of scanning and parsing is an :term:`M-expression`, which is a
 Python object of type ``Expression``. In compiler terminology the
 M-expression is also called an *abstract syntax tree* or AST. The
 first leaf of an ``Expression`` is called the "head".

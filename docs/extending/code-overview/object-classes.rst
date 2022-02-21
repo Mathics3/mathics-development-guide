@@ -9,22 +9,6 @@ Most of these classes are defined in `mathics.builtin.base
 <https://github.com/mathics/Mathics/tree/master/mathics/builtin/base.py>`_
 or `mathics.core.expression <https://github.com/mathics/Mathics/tree/master/mathics/core/expression.py>`_.
 
-The below are heuristics:
-
-* To define a Mathics constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
-* To define Mathics constants based on a mpmath constant, e.g. ``Glaisure``,
-  use ``MPMathConstant``
-* To define a Mathics constant based on a numpy constant, use ``NumpyConstant``
-* To define a Mathics functions based on a Sympy function, e.g. ``Sqrt``, use ``SympyFunction``
-* To define a Mathics operator use ``UnaryOperator``,
-  ``PrefixOperator``, ``PostfixOperator``, or ``BinaryOperator`` depending on the
-  type of operator that is being defined
-* To define a Mathics function which returns a Boolean value e.g. ``MatchQ`` use ``Test``
-* To define a Mathics function that doesn't fall into a category above, e.g. ``Attributes`` use ``Builtin``
-* To define a Mathics variable e.g. ``$TimeZone`` or Mathics Symbols, e.g. ``True`` use ``Predefined``
-* To define a Mathics atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``
-
-
 Class Diagram for Some of the Classes
 =====================================
 
@@ -32,7 +16,6 @@ Below is a `UML 2.5 Class diagram
 <https://creately.com/blog/diagrams/class-diagram-tutorial/>`_ for some
 of the classes described below
 
-..index:: Evaluation, Definition, Rule, Pattern,Expression
 
 .. image:: /images/uml-diagram.png
   :alt: UML 2.5 Class diagram
@@ -42,9 +25,9 @@ of the classes described below
 Atom Class
 ==========
 
-Recall that an Expression to be evaluated is initially a kind of M-expression
-called and ``ExpressionList``, where each list item is either itself
-an ``ExpressionList`` or an object in a class derived from ``Atom``.
+Recall that an Expression to be evaluated is initially a kind of :term:`M-expression`,
+an object in the ``Expression`` class, where each list item is either itself
+an :term:`Expression` or an object in a class derived from :term:`Atom`.
 
 The ``Atom`` class we encountered earlier when describing the nodes
 that get created intially from a parse. Those were:
@@ -67,7 +50,7 @@ Other kinds of Atoms that can get created include things like:
 * ``Dispatch``
 * ``Image``
 
-In general, atoms are objects might have an underlying internal representation with no user-visiable subparts that can be pulled out using ``Part[]``.
+In general, atoms are objects might have an underlying internal representation with no user-visable subparts that can be pulled out using ``Part[]``.
 
 In Mathics, the function ``AtomQ[]`` will tell you if something is an Atom, or can't be subdivided into subexpressions.
 
@@ -121,11 +104,13 @@ See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guid
 As born from the parser, Symbols start off like Lisp
 Symbols. Following WL, Mathics has about a thousand named characters,
 some common ones like "+", "-", and some pretty obscure ones. After
-parsing, each of these can be incorporated into a Symbol object. But in the
-evaluation process these symbols get bound to values in a scope, and
-then they act more like a programming language variable. The Symbol
-class described here has fields and properties that you of the kind
-that you'd expect a variable in a programming language to have.
+parsing, each of these can be incorporated into a Symbol object. But
+in the evaluation process in conjuction with the ``Definitions``
+object that is in the evaluation object, these symbols get bound to
+values in a scope, and then they act more like a programming language
+variable. The Symbol class described here has fields and properties
+that you of the kind that you'd expect a variable in a programming
+language to have.
 
 .. index:: Builtin
 
@@ -193,8 +178,8 @@ A Definition is a collection of Rules and attributes which are associated with a
 
 A ``Rule`` is internally organized in terms of the context of application in
 
-* ``Ownvalues``,
-* ``Upvalues``,
+* ``OwnValues``,
+* ``UpValues``,
 * ``Downvalues``,
 * ``Subvalues``,
 * ``FormatValues``,  etc.
@@ -287,3 +272,19 @@ SympyConstant, MPMathConstant, and NumpyConstant
 
 SympyFunction and MPMathFunction
 ================================
+
+Which Class should be used for a Mathics Object?
+================================================
+
+* To define a Mathics constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
+* To define Mathics constants based on a mpmath constant, e.g. ``Glaisure``,
+  use ``MPMathConstant``
+* To define a Mathics constant based on a numpy constant, use ``NumpyConstant``
+* To define a Mathics functions based on a Sympy function, e.g. ``Sqrt``, use ``SympyFunction``
+* To define a Mathics operator use ``UnaryOperator``,
+  ``PrefixOperator``, ``PostfixOperator``, or ``BinaryOperator`` depending on the
+  type of operator that is being defined
+* To define a Mathics function which returns a Boolean value e.g. ``MatchQ`` use ``Test``
+* To define a Mathics function that doesn't fall into a category above, e.g. ``Attributes`` use ``Builtin``
+* To define a Mathics variable e.g. ``$TimeZone`` or Mathics Symbols, e.g. ``True`` use ``Predefined``
+* To define a Mathics atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``
