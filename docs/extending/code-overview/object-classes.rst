@@ -42,7 +42,7 @@ of the classes described below
 Atom Class
 ==========
 
-Recall that an Expression to be evaluated is kind of M-expression
+Recall that an Expression to be evaluated is initially a kind of M-expression
 called and ``ExpressionList``, where each list item is either itself
 an ``ExpressionList`` or an object in a class derived from ``Atom``.
 
@@ -56,18 +56,18 @@ that get created intially from a parse. Those were:
 
 
 However there are a few other kinds of Atoms or fundamental objects
-that can appear in an Evaluation list.  In the evaluation process,
-other kinds of Atoms can get created. These include things like:
+that can appear in an Evaluation list as the evaluation occurs. In
+particular a ``Number`` may be classified into a more restrictive object like ``Integer`` or ``Real``.
+
+Other kinds of Atoms that can get created include things like:
 
 * ``ByteArray``
 * ``CompiledCode``
 * ``Complex``
 * ``Dispatch``
 * ``Image``
-* ``Integer``
-* ``Real``
 
-In other words, things that might have an underlying internal representation of an object with no subparts that can be pulled out using ``Part[]``.
+In general, atoms are objects might have an underlying internal representation with no user-visiable subparts that can be pulled out using ``Part[]``.
 
 In Mathics, the function ``AtomQ[]`` will tell you if something is an Atom, or can't be subdivided into subexpressions.
 
@@ -127,7 +127,7 @@ then they act more like a programming language variable. The Symbol
 class described here has fields and properties that you of the kind
 that you'd expect a variable in a programming language to have.
 
-..index:: Builtin
+.. index:: Builtin
 
 Builtin class
 =============
@@ -184,27 +184,27 @@ find on all method functions.
 At the end is an *evaluation* parameter and this contains definitions
 and the context if the method needs to evaluate expressions.
 
-.. index:: Definition
-
 Definition Class
 ================
+.. index:: Definition
 
-A Definition is a collection of ``Rule``s and attributes which are associated to ``Symbol``.
 
-The ``Rule``s are internally organized in terms of the context of application in
+A Definition is a collection of Rules and attributes which are associated with a ``Symbol``.
+
+A ``Rule`` is internally organized in terms of the context of application in
 
 * ``Ownvalues``,
 * ``Upvalues``,
 * ``Downvalues``,
 * ``Subvalues``,
-* ``FormatVlaues``,  etc.
+* ``FormatValues``,  etc.
 
 .. index:: Definitions
 
 Definitions Class
 =================
 
-The Definitiosn class hold sstate of one instance of the Mathics
+The Definitions class hold state of one instance of the Mathics
 interpreter is stored in this object.
 
 The state is then stored as ``Definition`` object of the different symbols defined during the runtime.
