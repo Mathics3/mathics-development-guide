@@ -170,7 +170,7 @@ This substeps here are:
 * Try to flatten sequences in the expression unless the ``SequenceHold`` or ``HoldAllComplete`` attributes are set in ``Head``
 * Change ``Unevaluated[expr]`` to ``expr`` but mark the expression as being unevaluated
 * Flatten expressions involving nested functions if the ``Flat`` attribute was found in ``Head``
-* Sort leaves if the ``Orderless`` attribute was found in ``Head``
+* Sort elements if the ``Orderless`` attribute was found in ``Head``
 
 Compute evaluation timestamp
 ----------------------------
@@ -210,7 +210,7 @@ Mathics Function Application
 
 .. index:: Symbol, Predefined, Builtin, Expression
 
-The first leaf, called the "head" (or ``Head[]``) of an
+The first element, called the "head" (or ``Head[]``) of an
 ``Expression`` is a ``Symbol``.
 
 When there are other leaves, the head is assumed to be a Mathics
