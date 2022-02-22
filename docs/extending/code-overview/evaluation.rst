@@ -11,8 +11,9 @@ Overview
 ========
 
 In contrast to the simplicity and regularity for representing the data
-for ``Expression``, *evaluation* of this data or expression is more involved
-than conventional programming languages. I suppose this is to be expected.
+in an ``Expression``, *evaluation* of this data or expression is more
+involved than conventional programming languages. I suppose this is to
+be expected.
 
 Part of the complexity in evaluating an expression involves:
 
@@ -75,7 +76,7 @@ expression that may not be visible. A later step may decide to
 materialize a value or convert the representation of ``Pi`` into a
 unicode string.
 
-And when an M-expression or an Expression doesn't match a particlar
+And when an :term:`M-expression` or an Expression doesn't match a particlar
 form for a function call, it *needs* to be left unchanged: the act of
 not matching a particular function in of itself isn't an error because
 there may be some other rule around, maybe even at a different level
@@ -135,36 +136,61 @@ step of this process. See also `The Standard Evaluation Sequence
 Gather information from ``Head`` and gather its leaves
 ------------------------------------------------------
 
-This is done using these attributes in ``Head``:
+What appears in this section follows largely what was in the section
+A.4.1 "The Standard Evaluation Sequence" of the Mathematica Book for
+version 5.
+
+If the expression is a literal value, e.g. ``Number``, ``String``, ``Image``, etc.) then leave it unchanged and return.
+
+Evalute ``Head`` and get its attributes.
+
+Depending the following attributes
 
 * ``HoldFirst``,
 * ``HoldAll``,
 * ``HoldRest``
+* ``HoldAllComplete``
 
-and using the following subexpressions may appear in the expression:
+various elements are evaluated. However elements of that have the form:
 
 * ``Evaluate[]``
 * ``Unevaluated[]``
 
-At the end of this, variables ``head``, ``attributes`` (of head), and ``leaves`` (of the expression) are set.
+also specify which elements wich are evaluated or not before rewriting and function application.
+
+At the end of this, variables ``head``, ``attributes`` (of head), and ``elements`` (of the expression) are set.
 
 Build a new Expression
 -----------------------
 
-Build a new expression with using variables ``head`` and ``leaves`` based
-the attribute settings in variable ``attributes`` from previous step,
+Build a new expression with using information from ``head`` and the ``elements`` gathered in the previous step.
 
 This substeps here are:
 
 * Try to flatten sequences in the expression unless the ``SequenceHold`` or ``HoldAllComplete`` attributes are set in ``Head``
 * Change ``Unevaluated[expr]`` to ``expr`` but mark the expression as being unevaluated
-* Flatten extpressions involving nested functions if the ``Flat`` attribute was found in ``Head``
+* Flatten expressions involving nested functions if the ``Flat`` attribute was found in ``Head``
 * Sort leaves if the ``Orderless`` attribute was found in ``Head``
 
 Compute evaluation timestamp
 ----------------------------
 
 Compute timestamp in a expression cache. This may lead to invalidation and rebuild the expression cache elsewhere.
+
+Setup Thread rewrite Listable Functions
+---------------------------------------
+
+Threading is needed when head has the ``Listable`` Attribute.
+``Expression.thread`` rewrites the expression: # ``F[{a,b,c,...}]``
+as: ``{F[a], F[b], F[c], ...}``.
+
+Note that treading here is different from Python or OS threads, even
+though the intent of this attribute was to allow for hardware
+threading to make use of more cores.
+
+Right now, we do not make use of Python thread or hardware threading.
+Still, we need to perform this rewrite to maintain correct semantic
+behavior.  Would the operation benefit running in separate threads?
 
 Search for a Rule in ``Head`` to apply
 --------------------------------------
@@ -177,7 +203,6 @@ Apply Rule or restore Expression
 If a rule was found, apply it getting back an evaluated expression.
 If the expression is unchanged, restore it to its state before building a new expression,
 and reset the evaluation cache to its value before updating.
-
 
 
 Mathics Function Application
@@ -321,4 +346,4 @@ performs the above. So here is an equivalent program:
 
     .. rubric: Footnotes
 
-.. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function. In the Mathics code though these are called ``leaves``. Specifically, there is the field name in the Expression class is called ``_leaves`` and there are accessor functions ``get_leaves()`` ``set_leaf()``, ``get_mutable_leaves()``
+.. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function.

@@ -67,11 +67,7 @@ a property that it is numeric such as in the example above where the
 result Expression was 3.
 
 In those cases where nothing can be filled in, the result may be an
-<<<<<<< Updated upstream:docs/extending/code-overview/session.rst
-S-Expression. It can even be the *same* S-Expression that was
-=======
 M-Expression. And here it can often is *same* M-Expression that was
->>>>>>> Stashed changes:docs/extending/code-overview/apply-eval-format.rst
 input.
 
 Here is a simple example showing how to do evaluation from a
