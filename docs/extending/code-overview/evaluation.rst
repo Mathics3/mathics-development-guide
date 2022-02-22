@@ -177,6 +177,21 @@ Compute evaluation timestamp
 
 Compute timestamp in a expression cache. This may lead to invalidation and rebuild the expression cache elsewhere.
 
+Setup Thread rewrite Listable Functions
+---------------------------------------
+
+Threading is needed when head has the ``Listable`` Attribute.
+``Expression.thread`` rewrites the expression: # ``F[{a,b,c,...}]``
+as: ``{F[a], F[b], F[c], ...}``.
+
+Note that treading here is different from Python or OS threads, even
+though the intent of this attribute was to allow for hardware
+threading to make use of more cores.
+
+Right now, we do not make use of Python thread or hardware threading.
+Still, we need to perform this rewrite to maintain correct semantic
+behavior.  Would the operation benefit running in separate threads?
+
 Search for a Rule in ``Head`` to apply
 --------------------------------------
 

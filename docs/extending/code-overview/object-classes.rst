@@ -37,12 +37,13 @@ that get created intially from a parse. Those were:
 * ``Symbol``
 * ``Filename``
 
+Atoms here is from module ``mathics.core.parse.ast``
 
-However there are a few other kinds of Atoms or fundamental objects
-that can appear in an Evaluation list as the evaluation occurs. In
-particular a ``Number`` may be classified into a more restrictive object like ``Integer`` or ``Real``.
+However this is converted in ``mathics.core.parser.convert.Converter.convert()``
+into another kind of expression where ``Number`` is replaced by a more
+specific kind of number like ``Integer``, or ``Real``.
 
-Other kinds of Atoms that can get created include things like:
+There are a few other kinds of Atoms or fundamental objects like:
 
 * ``ByteArray``
 * ``CompiledCode``
