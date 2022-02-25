@@ -14,11 +14,13 @@ Class Diagram for Some of the Classes
 
 Below is a `UML 2.5 Class diagram
 <https://creately.com/blog/diagrams/class-diagram-tutorial/>`_ for some
-of the classes described below
+of the classes described below:
 
 
 .. image:: /images/uml-diagram.png
   :alt: UML 2.5 Class diagram
+
+A Class name that begins with ``Base`` is a `Virtual class <https://en.wikipedia.org/wiki/Virtual_class>`_.
 
 .. index:: Atom, AtomQ
 
@@ -92,28 +94,21 @@ Some examples:
      = True
 
 
+BaseElement Class
+=================
+
+An Mathics Expression is the main data structure which evalution is
+performed on. An expression is in general a tree.  The nodes of this
+tree come from the ``BaseElement`` class. Note that leaf nodes in
+addition to being a ``BaseElement`` also sort of ``Atom`` as well. In other words,
+an ``Atom`` is a subclass of ``BaseElement``.
+
+The other subclass of BaseElement is an ``Expression``.
+
+Note as the prefix ``Base`` implies, a BaseElement is a virtual class.
+
 
 .. index:: Symbol
-
-Symbol Class
-============
-.. index:: Symbol
-
-Just above the ``Atom`` class is the ``Symbol`` which is an atomic element of an ``Expression``.
-See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guide/AtomicElementsOfExpressions.html>`_.
-
-As born from the parser, Symbols start off like Lisp
-Symbols. Following WL, Mathics has about a thousand named characters,
-some common ones like "+", "-", and some pretty obscure ones. After
-parsing, each of these can be incorporated into a Symbol object. But
-in the evaluation process in conjuction with the ``Definitions``
-object that is in the evaluation object, these symbols get bound to
-values in a scope, and then they act more like a programming language
-variable. The Symbol class described here has fields and properties
-that you of the kind that you'd expect a variable in a programming
-language to have.
-
-.. index:: Builtin
 
 Builtin class
 =============
@@ -204,6 +199,18 @@ In the current implementation, the ``Definitions`` object stores ``Definition`` 
 
 .. index:: Predefined
 
+Expression Class
+================
+
+An Expression object the main object that we evaluate over. It
+represents an M-expression formed from input.  In contrast to an
+object of type ``Atom`` which are the leaves of the Expression object,
+an Expression object is some sort of structured node that as in
+Mathics itself, has ``Head`` and a ``Rest`` components where the head
+contains some sort of function designator.
+
+.. index:: Expression
+
 Predefined Class
 ================
 
@@ -254,8 +261,24 @@ class. For example:
 
 The ``evaluate()`` function above is called to get the value of variable ``$ByteOrdering``.
 
-.. index:: Builtin
 
+Symbol Class
+============
+.. index:: Symbol
+
+Just above the ``Atom`` class is the ``Symbol`` which is an atomic element of an ``Expression``.
+See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guide/AtomicElementsOfExpressions.html>`_.
+
+As born from the parser, Symbols start off like Lisp
+Symbols. Following WL, Mathics has about a thousand named characters,
+some common ones like "+", "-", and some pretty obscure ones. After
+parsing, each of these can be incorporated into a Symbol object. But
+in the evaluation process in conjuction with the ``Definitions``
+object that is in the evaluation object, these symbols get bound to
+values in a scope, and then they act more like a programming language
+variable. The Symbol class described here has fields and properties
+that you of the kind that you'd expect a variable in a programming
+language to have.
 
 .. index:: Operator
 
