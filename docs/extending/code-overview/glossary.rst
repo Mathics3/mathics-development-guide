@@ -5,16 +5,17 @@ Glossary
 
    Atom
 
-     The leaves of an :term:`M-expression` or an expression. It is an object that has no structure below it.
+     The leaves of an :term:`S-expression` or an expression. It is an object that has no structure below it.
      See also "Atomic Primitives" in the Mathics documentation for builtin-functions.
 
-     Note that the Mathics parser's Atoms are a subset of Mathics Atoms. For example, a Complex number from the
-     parser appears as a multiplication of the constant ``I`` possibly followed by an addition.
+     In the code there are to kinds of Atoms. Those produced by the
+     parser, which get converted to Atoms used in the interpreter. The
+     main difference between the two is that ``Number`` is converted into something more specific like, ``Real`` or ``Integer``.
 
    apply
    application
 
-     The process by which we take an :term:`M-expression` and prepare that expression evaluation at the top-level of the expression given.
+     The process by which we take an :term:`S-expression` and prepare that expression evaluation at the top-level of the expression given.
 
      In Mathics this involves looking at the head symbol (``Head[]``)
      and taking action based on information that symbols binding.
@@ -25,7 +26,7 @@ Glossary
 
    binding
 
-     Associating a symbol name with a value. In Mathics, the symbol names an expression or :term:`M-expression` and the
+     Associating a symbol name with a value. In Mathics, the symbol names an expression or :term:`S-expression` and the
      values come from an definitions found in an evaluation. See also `Free and bound variables <https://en.wikipedia.org/wiki/Free_variables_and_bound_variables>`_ and
      `Name binding <https://en.wikipedia.org/wiki/Name_binding>`_.
 
@@ -56,11 +57,23 @@ Glossary
    element
    elements
 
-     One of the components of an Expression or :term:`M-expression` at a given
-     level. Another word for this is subexpression. In the code there
-     are accessor methods ``get_elements()`` and attribute ``_elements``.
+     In the singular form, *element* is any node of an Expression or
+     :term:`S-expression`.  The base class :ref:`BaseElement Class`
+     defines properties that an element of the the expression.
 
-     In Mathics, the built-in function ``Rest[]`` retrieves an the elements of an :term:`Expression`.
+     At any given level of the expression tree described in an S-expression, the
+     head element or first element is a little different in that it
+     represents a function or operator. So generally when we refer to
+     this kind of element, we will use the more qualified term "head element".
+
+     In the plural, *elements* when applied to a given level in an
+     expression tree, we generally mean the elements other than the
+     head element. Possibly a better word, might be "arguments" or
+     "function arguments", since that is the role they play in a
+     S-expression.
+
+     In the code there are accessor methods ``get_elements()``,
+     property ``elements`` and attribute ``_elements``.
 
    eval
 
@@ -73,7 +86,7 @@ Glossary
    evaluate
    evaluation
 
-     The process of taking an Mathics Expression or :term:`M-expression`
+     The process of taking an Mathics Expression or :term:`S-expression`
      producing a transformation or computation on that.
 
      It involves the distinct phases:
@@ -93,10 +106,12 @@ Glossary
 
      Conceptually, an object in this class represents a sequence atoms, and (nested)
      Expressions. An expression has two parts, a ``Head`` which is expected be a function reference,
-     and 0 or more :term:`elements` which in Mathics are accesible using the built-in function ``Rest[]``.
+     and 0 or more :term:`elements`.
 
-     In contrast to an :term:`M-expression`, an Expression in Mathics can have additional information or
-     representations associated with it.
+     Atoms like ``String`` or ``Integer`` are degnerate forms of
+     expressions. However when we refer to the class, we are referring
+     to non-degenerate or compound Expressions. In the code, both are
+     forms of :ref:`BaseElement Class`.
 
    form
 
@@ -113,22 +128,6 @@ Glossary
 
      Lists consisting of literal values are also be literal values.
 
-
-   M-expression
-
-     A structure which consists of a sequence atoms, and (nested)
-     expressions. However at each level there is a ``Head`` which
-     represents some sort of function.
-
-     A M-expression is a generalization of an `S-expression
-     <https://en.wikipedia.org/wiki/M-expression>`_ which is commonly
-     used in Lisp and functional languages.
-
-     The ``Expression`` produced by the parser is an M-expression. In
-     evaluation though this pure data structure is transformed and has
-     additional state which can be attached to :term:`elements` of the expression.
-
-     See `M-expression <https://en.wikipedia.org/wiki/M-expression>`_.
 
    namespace
 
@@ -174,6 +173,18 @@ Glossary
      attributes and rewrite rules bound to an expression's ``Head`` Symbol.
 
      For the general concept, see `Rewriting <https://en.wikipedia.org/wiki/Rewriting>`_.
+
+   S-expression
+
+     A structure which consists of a sequence atoms, and (nested)
+     expressions. However at each level there is a ``Head`` which
+     represents an operator or function.
+
+     The ``Expression`` produced by the parser is an S-expression. In
+     evaluation though this pure data structure is transformed and has
+     additional state which can be attached to :term:`elements` of the expression.
+
+     See `S-expression <https://en.wikipedia.org/wiki/S-expression>`_.
 
    scope
 

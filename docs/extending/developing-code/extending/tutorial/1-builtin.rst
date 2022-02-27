@@ -34,7 +34,7 @@ In Python then the *apply()* method looks like this:
 
 .. code-block:: python
 
-  def apply(self, person, evaluation):
+  def apply(self, person: String, evaluation):
     "Hello[person_String]"
         return String(f"Hello, {person.get_string_value()}!")
 

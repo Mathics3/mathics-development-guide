@@ -39,10 +39,10 @@ object is created for each top-level expression, but this might not be
 needed, and the prior object might be reused.)
 
 This session evaluation object has a scan-and-parse method which is passed some sort of
-I/O handle to read from. The result of that is an M-expression
+I/O handle to read from. The result of that is an S-expression
 described in :ref:`AST <ast>`.
 
-This M-expression result is then passed to the ``evaluate()`` method
+This S-expression result is then passed to the ``evaluate()`` method
 of the evaluation object. ``evaluate()`` is an apply/eval process that is
 typically found functional languages; the "apply" phase here covers
 term-rewriting application and function-symbol application.
@@ -55,19 +55,19 @@ object may or may not.
 The direct or return result of rewrite/apply/eval is a Mathics
 Expression for the input.
 
-For example if the input expression was parsed to the M-expression
+For example if the input expression was parsed to the S-expression
 ``Plus[1, 2]`` the output Expression would be ``3``. Recall that
 numbers and symbols are expressions too.
 
 This result type, Mathics Expression, differs from the input
-M-Expression in that symbols found in the Expression may be bound and
+S-Expression in that symbols found in the Expression may be bound and
 various properties may be attached to the expression and its
 subexpressions. For example we may tag that resulting expression with
 a property that it is numeric such as in the example above where the
 result Expression was 3.
 
 In those cases where nothing can be filled in, the result may be an
-M-Expression. And here it can often is *same* M-Expression that was
+S-expression. And here it can often is *same* S-expression that was
 input.
 
 Here is a simple example showing how to do evaluation from a
@@ -111,7 +111,7 @@ The result from a top-level ``parse_evaluate()`` is a special ``Result`` kind of
     a Python object containing the formatted version of the result of the evaluation
 
 *last_eval*:
-    the last result of the evaluation (an M-Expression), without formatting.
+    the last result of the evaluation (an S-expression), without formatting.
 
 After reading in an expression, parsing it and
 evaluating it, a front end will typically will want to show the results.

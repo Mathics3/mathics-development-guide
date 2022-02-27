@@ -37,7 +37,7 @@ definition of a function:
       name = "$Hello"
       attributes = ('Locked',)
 
-      def evaluate(self evaluation) -> String:
+      def evaluate(self, evaluation) -> String:
           return String("Hello, World!")
 
 Here is a session that demonstrates the above code:
