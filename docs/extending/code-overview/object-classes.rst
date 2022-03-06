@@ -27,7 +27,7 @@ A Class name that begins with ``Base`` is a `Virtual class <https://en.wikipedia
 Atom Class
 ==========
 
-Recall that an Expression to be evaluated is initially a kind of :term:`S-expression`,
+Recall that an Expression to be evaluated is initially a kind of :term:`M-expression`,
 an object in the ``Expression`` class, where each list item is either itself
 an :term:`Expression` or an object in a class derived from :term:`Atom`.
 
@@ -97,8 +97,8 @@ Some examples:
 BaseElement Class
 =================
 
-A Mathics S-expression is the main data structure which evalution is
-performed on. An S-expression is, in general, a tree.  The nodes of this
+A Mathics M-expression is the main data structure which evalution is
+performed on. An M-expression is, in general, a tree.  The nodes of this
 tree come from the ``BaseElement`` class. Note that leaf nodes in
 addition to being a ``BaseElement`` are an ``Atom`` as well. In other words,
 an ``Atom`` is a subclass of ``BaseElement``.
@@ -203,7 +203,7 @@ Expression Class
 ================
 
 An Expression object the main object that we evaluate over. It
-represents an S-expression formed from input.
+represents an M-expression formed from input.
 
 Although objects derived from ``Atom``, e.g. symbols and integers, are
 valid expressions, this class describes *compound* expressions, or

@@ -5,17 +5,19 @@ Glossary
 
    Atom
 
-     The leaves of an :term:`S-expression` or an expression. It is an object that has no structure below it.
-     See also "Atomic Primitives" in the Mathics documentation for builtin-functions.
+     The leaves of an :term:`M-expression` or an expression. It is an
+     object that has no structure below it.  See also "Atomic
+     Primitives" in the Mathics documentation for user-facing Mathics
+     builtin-functions that work with Atoms.
 
-     In the code there are to kinds of Atoms. Those produced by the
+     In the code there are two kinds of Atoms. Those produced by the
      parser, which get converted to Atoms used in the interpreter. The
      main difference between the two is that ``Number`` is converted into something more specific like, ``Real`` or ``Integer``.
 
    apply
    application
 
-     The process by which we take an :term:`S-expression` and prepare that expression evaluation at the top-level of the expression given.
+     The process by which we take an :term:`M-expression` and prepare that expression evaluation at the top-level of the expression given.
 
      In Mathics this involves looking at the head symbol (``Head[]``)
      and taking action based on information that symbols binding.
@@ -26,7 +28,7 @@ Glossary
 
    binding
 
-     Associating a symbol name with a value. In Mathics, the symbol names an expression or :term:`S-expression` and the
+     Associating a symbol name with a value. In Mathics, the symbol names an expression or :term:`M-expression` and the
      values come from an definitions found in an evaluation. See also `Free and bound variables <https://en.wikipedia.org/wiki/Free_variables_and_bound_variables>`_ and
      `Name binding <https://en.wikipedia.org/wiki/Name_binding>`_.
 
@@ -44,7 +46,7 @@ Glossary
 
    Definition
 
-    A Python class used which provides for a way for a Symbol get its value, attributes or properties.
+    A Python class used which provides for a way for a :term:`Symbol` to get its value, attributes or properties.
     The mathics builtin function ``Definition`` can be used to get information about a Symbol's definition.
 
    DownValue
@@ -58,7 +60,7 @@ Glossary
    elements
 
      In the singular form, *element* is any node of an Expression or
-     :term:`S-expression`.  The base class :ref:`BaseElement Class`
+     :term:`M-expression`.  The base class :ref:`BaseElement Class`
      defines properties that an element of the the expression.
 
      At any given level of the expression tree described in an S-expression, the
@@ -86,7 +88,7 @@ Glossary
    evaluate
    evaluation
 
-     The process of taking an Mathics Expression or :term:`S-expression`
+     The process of taking an Mathics Expression or :term:`M-expression`
      producing a transformation or computation on that.
 
      It involves the distinct phases:
@@ -99,7 +101,7 @@ Glossary
 
    Expression
 
-     This is both a Symbol defined in Mathics, and a Python class
+     This is both a :term:`Symbol` defined in Mathics, and a Python class
      which implements the idea of a generalized List used in
      :term:`evaluation`. In this document we are usually referring to
      the Python class, not the built-in Symbol.
@@ -129,12 +131,31 @@ Glossary
      Lists consisting of literal values are also be literal values.
 
 
+   M-expression
+
+     A structure which consists of a sequence atoms, and (nested)
+     expressions. However at each level there is a ``Head`` which
+     represents some sort of function.
+
+     A M-expression is a generalization of an `S-expression
+     <https://en.wikipedia.org/wiki/M-expression>`_ which is commonly
+     used in Lisp and functional languages.
+
+     While often the head element is a :term:Symbol` in some cases it can be an expression.
+     For example, in ``Derivative[1][f]`` the head element is ``Derivative[1]``
+
+     The ``Expression`` produced by the parser is an M-expression. In
+     evaluation though this pure data structure is transformed and has
+     additional state which can be attached to :term:`elements` of the expression.
+
+     See `M-expression <https://en.wikipedia.org/wiki/M-expression>`_.
+
    namespace
 
    NValues
 
      Numeric values associated with a symbol.
-     It is one of the kinds of values that can be associated with a Symbol. The others are:
+     It is one of the kinds of values that can be associated with a :term:`Symbol`. The others are:
 
        * ``Attributes``,
        * ``DefaultValues``,
@@ -178,13 +199,25 @@ Glossary
 
      A structure which consists of a sequence atoms, and (nested)
      expressions. However at each level there is a ``Head`` which
-     represents an operator or function.
+     represents an operator or function. In Mathics sometimes this
+     element is instead an expression that acts like a function, so
+     while most expressions that Mathics sees are S-expressions, a few
+     are in the the more general :term:`M-expression` form.
 
-     The ``Expression`` produced by the parser is an S-expression. In
-     evaluation though this pure data structure is transformed and has
-     additional state which can be attached to :term:`elements` of the expression.
+   Symbol
 
-     See `S-expression <https://en.wikipedia.org/wiki/S-expression>`_.
+     A Symbolic variable. These are found in Mathics Expressions. The
+     name of the symbol name at at any point in time and place inside
+     an expression has a deifnition to a value and has other properties which
+     may vary.  Some Symbols like ``True`` are constant and heir value
+     and bindings can't ever change.
+
+     In the Python code the objects in the Symbol class represent
+     Symbols.
+
+     ``Symbol[]`` is also a Mathics builtin-in function. In this
+     document, unless otherwise specified, we are referring to the
+     meaning above.
 
    scope
 
