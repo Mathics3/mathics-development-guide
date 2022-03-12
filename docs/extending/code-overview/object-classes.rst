@@ -97,13 +97,13 @@ Some examples:
 BaseElement Class
 =================
 
-An Mathics Expression is the main data structure which evalution is
-performed on. An expression is in general a tree.  The nodes of this
+A Mathics M-expression is the main data structure which evalution is
+performed on. An M-expression is, in general, a tree.  The nodes of this
 tree come from the ``BaseElement`` class. Note that leaf nodes in
-addition to being a ``BaseElement`` also sort of ``Atom`` as well. In other words,
+addition to being a ``BaseElement`` are an ``Atom`` as well. In other words,
 an ``Atom`` is a subclass of ``BaseElement``.
 
-The other subclass of BaseElement is an ``Expression``.
+The other subclass of ``BaseElement`` is an ``Expression``.
 
 Note as the prefix ``Base`` implies, a BaseElement is a virtual class.
 
@@ -203,11 +203,14 @@ Expression Class
 ================
 
 An Expression object the main object that we evaluate over. It
-represents an M-expression formed from input.  In contrast to an
-object of type ``Atom`` which are the leaves of the Expression object,
-an Expression object is some sort of structured node that as in
-Mathics itself, has ``Head`` and a ``Rest`` components where the head
-contains some sort of function designator.
+represents an M-expression formed from input.
+
+Although objects derived from ``Atom``, e.g. symbols and integers, are
+valid expressions, this class describes *compound* expressions, or
+expressions that are more than a single atom/leaf. So in contrast to an
+object of type ``Atom``, an ``Expression`` object is some sort of
+structured node that as in Mathics itself, has a ``Head`` (function
+designator) and a ``Rest`` (or arguments) component.
 
 .. index:: Expression
 

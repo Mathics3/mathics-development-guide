@@ -5,11 +5,14 @@ Glossary
 
    Atom
 
-     The leaves of an :term:`M-expression` or an expression. It is an object that has no structure below it.
-     See also "Atomic Primitives" in the Mathics documentation for builtin-functions.
+     The leaves of an :term:`M-expression` or an expression. It is an
+     object that has no structure below it.  See also "Atomic
+     Primitives" in the Mathics documentation for user-facing Mathics
+     builtin-functions that work with Atoms.
 
-     Note that the Mathics parser's Atoms are a subset of Mathics Atoms. For example, a Complex number from the
-     parser appears as a multiplication of the constant ``I`` possibly followed by an addition.
+     In the code there are two kinds of Atoms. Those produced by the
+     parser, which get converted to Atoms used in the interpreter. The
+     main difference between the two is that ``Number`` is converted into something more specific like, ``Real`` or ``Integer``.
 
    apply
    application
@@ -43,7 +46,7 @@ Glossary
 
    Definition
 
-    A Python class used which provides for a way for a Symbol get its value, attributes or properties.
+    A Python class used which provides for a way for a :term:`Symbol` to get its value, attributes or properties.
     The mathics builtin function ``Definition`` can be used to get information about a Symbol's definition.
 
    DownValue
@@ -56,11 +59,23 @@ Glossary
    element
    elements
 
-     One of the components of an Expression or :term:`M-expression` at a given
-     level. Another word for this is subexpression. In the code there
-     are accessor methods ``get_elements()`` and attribute ``_elements``.
+     In the singular form, *element* is any node of an Expression or
+     :term:`M-expression`.  The base class :ref:`BaseElement Class`
+     defines properties that an element of the the expression.
 
-     In Mathics, the built-in function ``Rest[]`` retrieves an the elements of an :term:`Expression`.
+     At any given level of the expression tree described in an S-expression, the
+     head element or first element is a little different in that it
+     represents a function or operator. So generally when we refer to
+     this kind of element, we will use the more qualified term "head element".
+
+     In the plural, *elements* when applied to a given level in an
+     expression tree, we generally mean the elements other than the
+     head element. Possibly a better word, might be "arguments" or
+     "function arguments", since that is the role they play in a
+     S-expression.
+
+     In the code there are accessor methods ``get_elements()``,
+     property ``elements`` and attribute ``_elements``.
 
    eval
 
@@ -86,17 +101,19 @@ Glossary
 
    Expression
 
-     This is both a Symbol defined in Mathics, and a Python class
+     This is both a :term:`Symbol` defined in Mathics, and a Python class
      which implements the idea of a generalized List used in
      :term:`evaluation`. In this document we are usually referring to
      the Python class, not the built-in Symbol.
 
      Conceptually, an object in this class represents a sequence atoms, and (nested)
      Expressions. An expression has two parts, a ``Head`` which is expected be a function reference,
-     and 0 or more :term:`elements` which in Mathics are accesible using the built-in function ``Rest[]``.
+     and 0 or more :term:`elements`.
 
-     In contrast to an :term:`M-expression`, an Expression in Mathics can have additional information or
-     representations associated with it.
+     Atoms like ``String`` or ``Integer`` are degnerate forms of
+     expressions. However when we refer to the class, we are referring
+     to non-degenerate or compound Expressions. In the code, both are
+     forms of :ref:`BaseElement Class`.
 
    form
 
@@ -124,6 +141,9 @@ Glossary
      <https://en.wikipedia.org/wiki/M-expression>`_ which is commonly
      used in Lisp and functional languages.
 
+     While often the head element is a :term:Symbol` in some cases it can be an expression.
+     For example, in ``Derivative[1][f]`` the head element is ``Derivative[1]``
+
      The ``Expression`` produced by the parser is an M-expression. In
      evaluation though this pure data structure is transformed and has
      additional state which can be attached to :term:`elements` of the expression.
@@ -135,7 +155,7 @@ Glossary
    NValues
 
      Numeric values associated with a symbol.
-     It is one of the kinds of values that can be associated with a Symbol. The others are:
+     It is one of the kinds of values that can be associated with a :term:`Symbol`. The others are:
 
        * ``Attributes``,
        * ``DefaultValues``,
@@ -174,6 +194,30 @@ Glossary
      attributes and rewrite rules bound to an expression's ``Head`` Symbol.
 
      For the general concept, see `Rewriting <https://en.wikipedia.org/wiki/Rewriting>`_.
+
+   S-expression
+
+     A structure which consists of a sequence atoms, and (nested)
+     expressions. However at each level there is a ``Head`` which
+     represents an operator or function. In Mathics sometimes this
+     element is instead an expression that acts like a function, so
+     while most expressions that Mathics sees are S-expressions, a few
+     are in the the more general :term:`M-expression` form.
+
+   Symbol
+
+     A Symbolic variable. These are found in Mathics Expressions. The
+     name of the symbol name at at any point in time and place inside
+     an expression has a deifnition to a value and has other properties which
+     may vary.  Some Symbols like ``True`` are constant and heir value
+     and bindings can't ever change.
+
+     In the Python code the objects in the Symbol class represent
+     Symbols.
+
+     ``Symbol[]`` is also a Mathics builtin-in function. In this
+     document, unless otherwise specified, we are referring to the
+     meaning above.
 
    scope
 

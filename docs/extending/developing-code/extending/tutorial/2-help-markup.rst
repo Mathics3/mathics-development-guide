@@ -1,16 +1,19 @@
-Adding Help Text
-----------------
+Adding Help (``Information[]``) Text
+------------------------------------
+
+.. index:: Information text, help text
 
 Now let us add some help to the *Hello* function so that World will
-know about it. This is done in the docstring
-for the *Hello* class and the markup is largely XML/HTML.
+know about it. This is done by adding a class variable
+``summary_text`` and by adding XML/HTML markup in the docstring for the *Hello*
+class.
 
 
 .. code-block:: python
 
   from mathics.builtin.base import Builtin, String
 
-  class Hello2(Builtin):
+  class Hello(Builtin):
     """
     <dl>
       <dt>Hello[$person$]
@@ -20,9 +23,32 @@ for the *Hello* class and the markup is largely XML/HTML.
     </dl>
     """
 
-    def apply(person: String, evaluation) -> String:
+    summary_text = 'prints "Hello, <name>"'
+
+    def apply(self, person: String, evaluation) -> String:
       "Hello[person_String]"
-          return String(f"Hello, {person.get_string_value()})!"
+          return String(f"Hello, {person.get_string_value()}!")
+
+The class variable ``summary_text`` provides the text when you type ``?Hello``::
+
+    In[1]:= ?Hello
+    prints "Hello <name>"
+    Out[1]= Null
+
+    In[2]:= ??Hello
+
+        Hello[person]
+            Print a "Hello" message customized for person.
+
+        This is an example of how Python Builtin-Symbol documentation works.
+
+        Attributes[Hello] = {Protected}
+
+    Out[2]= Null
+
+    In[3]:= Hello["Rocky"]
+    Out[3]= "Hello, Rocky!"
+
 
 The XML tagging that gets created from the above renders in the Django
 interface like this:

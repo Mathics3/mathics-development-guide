@@ -28,7 +28,7 @@ string to ``Hello``:
       'nstr': '`1` is not a string',
     }
 
-    def apply(self, person, evaluation):
+    def apply(self, person: String, evaluation):
       "Hello[person_]"
 
       if not person.has_form('String'):
