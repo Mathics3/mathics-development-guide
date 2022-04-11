@@ -7,8 +7,8 @@
 Evaluation of an Expression
 ===========================
 
-Overview
-========
+Evaluation Overview
+===================
 
 In contrast to the simplicity and regularity for representing the data
 in an ``Expression``, *evaluation* of this data or expression is more
