@@ -51,7 +51,7 @@ Update ``CHANGES.rst`` from ``ChangeLog``
     $ git commit --amend .
     $ git push   # get CI testing going early
 
-http://rst.ninjs.org/ can be used for checking the RsT.
+https://livesphinx.herokuapp.com/ can be used for checking the RsT.
 
 Build Docs
 ==========
@@ -70,8 +70,8 @@ TODO: turn this into a script in ``admin-tools``
 ::
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
-    $ pyenv local 3.7.7  # Use a version that is not the most recent
-    $ pip install -e git://github.com/mathics/Mathics.git#egg=Mathics3
+    $ pyenv local pyston-2.3.3 # Use a version that is not the most recent
+    $ pip install -e git+https://github.com/Mathics3/mathics-core.git#egg=Mathics3
     $ mathics --version # see that new version appears
     $ mathics -e "1+2"
     $ pip uninstall Mathics3
@@ -88,7 +88,7 @@ Make packages and check
 Release on Github
 =================
 
-Go to https://github.com/mathics/Mathics/releases/new
+Go to https://github.com/Mathics-3/Mathics-core/releases/new
 
 https://cloudconvert.com/rst-to-md can be used to change the CHANGES.rst
 section to markdown.
@@ -115,7 +115,7 @@ Upload it to PyPI with ``twine``:
 
 .. code:: bash
 
-    $ twine --verbose upload dist/Mathics3-${__version__}*
+    $ twine upload --verbose dist/Mathics3-${__version__}*
 
 Post-Release
 ============

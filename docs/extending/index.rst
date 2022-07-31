@@ -6,3 +6,4 @@
    packages
    developing-code
    code-overview
+   testing

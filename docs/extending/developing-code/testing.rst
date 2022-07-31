@@ -1,9 +1,5 @@
-=========================================
-Misc stuff that hasn't been split off yet
-=========================================
-
-Documentation and tests
-=======================
+Testing
+=======
 
 One of the greatest features of Mathics is its integrated documentation
 and test system. Tests can be included right in the code as Python
@@ -12,16 +8,16 @@ to ensure that changes to the code don't break it. Execute
 
 ::
 
-    $ python test.py
+    $ make test
 
-to run all tests.
+to run all tests. If running from py
 
 During a test run, the results of tests can be stored for the
 documentation, both in MathML and LaTeX form, by executing
 
 ::
 
-    $ python test.py -o
+    $ python mathics/doctest.py -o
 
 or
 
