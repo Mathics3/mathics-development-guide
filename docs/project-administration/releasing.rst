@@ -102,7 +102,7 @@ TODO: turn this into a script in ``admin-tools``
 
     $ git pull # to pull down new tag
     $ pushd /tmp/gittest
-    $ pip install -e git://github.com/mathics/Mathics.git@${__version__}#egg=Mathics3
+    $ pip install -e git+https://github.com/Mathics3/mathics-core.git@${__version__}#egg=Mathics3
     $ mathics --version
     $ mathics -e "1+2"
     $ pip uninstall Mathics3

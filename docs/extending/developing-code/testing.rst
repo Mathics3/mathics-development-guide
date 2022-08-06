@@ -1,5 +1,5 @@
-Testing
-=======
+Runnint Tests
+=============
 
 One of the greatest features of Mathics is its integrated documentation
 and test system. Tests can be included right in the code as Python
@@ -17,7 +17,7 @@ documentation, both in MathML and LaTeX form, by executing
 
 ::
 
-    $ python mathics/doctest.py -o
+    $ python mathics/docpipeline.py -o
 
 or
 
@@ -31,7 +31,7 @@ file, run:
 
 ::
 
-    $ python test.py -t
+    $ python mathics/docpipeline.py -t
 
 You can then create the PDF using LaTeX. All required steps can be
 executed by
@@ -49,7 +49,7 @@ You can also run the tests for individual built-in symbols using
 
 ::
 
-    $ python test.py -s [name]
+    $ python mathics/docpipeline.py -s [name]
 
 This will not re-create the corresponding documentation results,
 however. You have to run a complete test to do that.
