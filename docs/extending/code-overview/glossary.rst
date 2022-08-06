@@ -5,7 +5,7 @@ Glossary
 
    Atom
 
-     The leaves of an :term:`M-expression` or an expression. It is an
+     The elements of an :term:`M-expression` or an expression. It is an
      object that has no structure below it.  See also "Atomic
      Primitives" in the Mathics documentation for user-facing Mathics
      builtin-functions that work with Atoms.

@@ -133,8 +133,8 @@ step of this process. See also `The Standard Evaluation Sequence
 <https://reference.wolfram.com/language/tutorial/Evaluation.html>`_.
 
 
-Gather information from ``Head`` and gather its leaves
-------------------------------------------------------
+Gather information from ``Head`` and gather its elements
+--------------------------------------------------------
 
 What appears in this section follows largely what was in the section
 A.4.1 "The Standard Evaluation Sequence" of the Mathematica Book for
@@ -213,7 +213,7 @@ Mathics Function Application
 The first element, called the "head" (or ``Head[]``) of an
 ``Expression`` is a ``Symbol``.
 
-When there are other leaves, the head is assumed to be a Mathics
+When there are other elements, the head is assumed to be a Mathics
 function call, where  the function name comes from the head. If this is a
 built-in function, like ``Plus``, the Mathics function name is the name
 of a Python class derived ultimately from ``Builtin``. These
@@ -244,7 +244,7 @@ are crucial in getting the interpreter work properly. But for now,
 when writing a new Builtin Function, just remember that unless there
 is an ``evaluate()`` method, there is a method name in a Mathics
 function class that begins with ``apply``, and its docstring is used
-to figure out whether the leaves of the list are applicable to that
+to figure out whether the elements of the list are applicable to that
 function.
 
 Here is an example for the `Environment
@@ -261,8 +261,8 @@ primitive taken from the code
 
 The ``apply()`` function above will get called when finding a
 ``Expression`` whose ``Head`` value is ``Environment`` and it has one
-leaf or parameter which which we will call ``var``.  That leaf or
-parameter should also much be a ``String`` object.
+element or parameter which which we will call ``var``.  That element or
+parameter should also much be a ``Symbol`` object.
 
 For more information describing Mathics function signatures that are
 used in the ``apply`` method's docstring , see `Functions and Programs

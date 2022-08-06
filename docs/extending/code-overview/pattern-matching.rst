@@ -25,7 +25,7 @@ We now describe the Class hierarchy for ``Pattern`` which is defined in ``mathic
 Two of its subclasses are:
 
 * ``AtomPattern`` patterns that match with a given atomic expression,  and
-* ``ExpressionPattern`` patterns matches with non-atomic expressions (i.e., expressions with a head and leaves).
+* ``ExpressionPattern`` patterns matches with non-atomic expressions (i.e., expressions with a head and elements).
 
 There are also have several ``Builtin`` symbols (defined in ``mathics.builtin.patterns``) that
 represent different pattern constructions like ``Pattern_``, ``Blank``, ``PatternTest`` or ``Alternatives``. All of these ``Builtin`` classes are derived from
@@ -45,8 +45,8 @@ The last method, ``match()``, is the most involved. It has the following functio
           vars,
           evaluation,
           head=None,
-          leaf_index=None,
-          leaf_count=None,
+          element_index=None,
+          element_count=None,
           fully=True,
           wrap_oneid=True
 	  )
