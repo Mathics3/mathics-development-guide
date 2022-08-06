@@ -88,7 +88,7 @@ Make packages and check
 Release on Github
 =================
 
-Go to https://github.com/Mathics-3/Mathics-core/releases/new
+Go to https://github.com/Mathics3/Mathics-core/releases/new
 
 https://cloudconvert.com/rst-to-md can be used to change the CHANGES.rst
 section to markdown.
