@@ -220,9 +220,9 @@ of a Python class derived ultimately from ``Builtin``. These
 Mathics function-like classes are described in later sections.
 
 As described in the previous section, before invoking that Mathics
-function, we need to check for a rewrite rule that applies to
-the Mathics function call. If a rule is found, it will have attached to
-a bound method name starts with ``apply``.
+function, we need to check for a rewrite rule that applies to the
+Mathics function call. If a rule is found, it will have attached to a
+bound method name starts with ``apply``. [2]_
 
 These rules get created on loading the module containing a subclass of
 ``Builtin`` implementing some Mathcs Primative Funtion.  The rules
@@ -347,3 +347,4 @@ performs the above. So here is an equivalent program:
     .. rubric: Footnotes
 
 .. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function.
+.. [2] The use of the word ``apply`` is unfortunate. These methods are typically called evaluation or "eval" methods. Possibly sometime in the future, we will correct this mistake.

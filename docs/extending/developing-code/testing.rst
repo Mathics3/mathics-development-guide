@@ -1,19 +1,48 @@
-Runnint Tests
+Running Tests
 =============
 
-One of the greatest features of Mathics is its integrated documentation
-and test system. Tests can be included right in the code as Python
-docstrings. All desired functionality should be covered by these tests
-to ensure that changes to the code don't break it. Execute
+Tests come in the following kinds:
+
+* unit tests via ``pytest``
+* integration tests
+* tests inside examples
+* integration tests
+* benchmark tests
+
+Benchmark testing is a topic in of itself and we don't have things fully automated here.
+
+To run the other tests though run:
 
 ::
 
-    $ make test
+    $ make test  # add option -j3 if you want to run in parallel
 
-to run all tests. If running from py
 
-During a test run, the results of tests can be stored for the
-documentation, both in MathML and LaTeX form, by executing
+Unit tests
+----------
+
+To run unit tests:
+
+::
+
+   $ make pytest
+
+This runs ``pytest``. If you want to run pytest directly and customize options you should do this by running ``pytest`` as a module:
+
+::
+
+   $ python -m pytest test # pytest options
+
+Note if you are using ``pyston`` run this way or set the ``PYTHON`` environment variable to ``pyston`` before running ``make``.
+
+
+Doctests
+--------
+
+Currently we have a homegrown version of `Sphinx autodoc <https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html>`__.
+We hope to replace this someday with Sphinx autodoc. Until then, what we have is a little fragile and alas follows its own conventions.
+
+During a test run, the results of tests can be stored for the documentation, both in MathML and LaTeX form, by executing
 
 ::
 
@@ -25,14 +54,6 @@ or
 
     make doc
 
-The XML version of the documentation, which can be accessed in the Web
-interface, is updated immediately. To produce the LaTeX documentation
-file, run:
-
-::
-
-    $ python mathics/docpipeline.py -t
-
 You can then create the PDF using LaTeX. All required steps can be
 executed by
 
@@ -42,14 +63,21 @@ executed by
 
 in the ``doc/tex`` directory, which uses ``latexmk`` to build the LaTeX
 document. You just have to adjust the ``Makefile`` and ``latexmkrc`` to
-your environment. You need the Asymptote (version 2 at least) to
+your environment. You need the Asymptote to
 generate the graphics in the documentation.
 
-You can also run the tests for individual built-in symbols using
+
+The version of the documentation, that is used by Django is run similarly from the Mathics Django repository.
+interface, is updated immediately. To produce the LaTeX documentation
+file, run:
+
+You can also run the tests for individual built-in sections using
 
 ::
 
     $ python mathics/docpipeline.py -s [name]
+
+The same thing can be done for chapters.
 
 This will not re-create the corresponding documentation results,
 however. You have to run a complete test to do that.

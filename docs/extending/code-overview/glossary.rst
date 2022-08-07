@@ -115,9 +115,16 @@ Glossary
      to non-degenerate or compound Expressions. In the code, both are
      forms of :ref:`BaseElement Class`.
 
-   form
+   Form
+
+     The top-level item in formatting. Forms formatters when
+     evaluating Boxes. Some examples are ``StandardForm``,
+     ``OutputForm`` ``InputForm``, and ``MathMLForm``. However there
+     are many more, and the list will be growing.
 
    format
+
+     The output form of Boxing when given a particular kind of Form.
 
    OwnValue
 
@@ -151,6 +158,8 @@ Glossary
      See `M-expression <https://en.wikipedia.org/wiki/M-expression>`_.
 
    namespace
+
+      A Context.
 
    NValues
 
@@ -220,6 +229,8 @@ Glossary
      meaning above.
 
    scope
+
+     The range of static piece of Mathics code that has the same Context.
 
    subexpression
 
