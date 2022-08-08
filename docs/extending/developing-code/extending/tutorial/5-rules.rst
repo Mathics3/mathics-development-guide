@@ -17,16 +17,17 @@ Here is how this is done.
 .. code-block:: python
 
   from mathics.builtin.base import Builtin, String
+  from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
       rules = {
           "Hello[person_String]": 'Hello[person, "English"]',
       }
 
-      def apply(self, person: String, language: String, evaluation) -> String:
+      def apply(self, person: String, language: String, evaluation: Evaluation) -> String:
           """Hello[person_String, language_]"""
-           greeting = "Bonjour" if language.get_string_value() == "French" else "Hello"
-          return String(f"{greeting}, {person.get_string_value()}!")
+           greeting = "Bonjour" if language.value == "French" else "Hello"
+          return String(f"{greeting}, {person.value}!")
 
 This code does the same thing as in the last section.
 See the session there for an example of how this works.

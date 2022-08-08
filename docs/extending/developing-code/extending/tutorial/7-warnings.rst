@@ -12,7 +12,9 @@ string to ``Hello``:
 
 .. code-block:: python
 
+  from typing import Optional
   from mathics.builtin.base import Builtin, String
+  from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
     """
@@ -28,13 +30,13 @@ string to ``Hello``:
       'nstr': '`1` is not a string',
     }
 
-    def apply(self, person: String, evaluation):
+    def apply(self, person: String, evaluation: Evaluation) -> Optional[String]:
       "Hello[person_]"
 
       if not person.has_form('String'):
         return evaluation.message('Hello', 'nstr', person)
 
-      return String(f"Hello, {person.get_string_value()}!")
+      return String(f"Hello, {person.value}!")
 
 In this case, calling ``Hello[45]`` will emit the warning ``nstr: 45
 is not a string``.

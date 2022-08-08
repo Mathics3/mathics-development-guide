@@ -25,9 +25,9 @@ Here is the docstring from the last section expanded with a couple of tests.
     >> Hello["Rocky"]
      = Hello, Rocky!
     """
-    def apply(self, person: String, evaluation) -> String:
+    def apply(self, person: String, evaluation: Evaluation) -> String:
       "Hello[person_String]"
-          return String(f"Hello, {person.get_string_value()})!"
+          return String(f"Hello, {person.value})!"
 
 Here is how to run the "Hello" tests from the command line:
 
@@ -49,4 +49,4 @@ Here is how this looks in the Django interface
 If you hover to the right of this test an equals sign (``=``) appears and if you click on that, the test copied to the main evaluation window and run.
 
 
-See :ref:`For For Testing <doc_test_markup>` for more a list of test-related markup.
+See :ref:`Markup for Testing <doc_test_markup>` for more a list of test-related markup.

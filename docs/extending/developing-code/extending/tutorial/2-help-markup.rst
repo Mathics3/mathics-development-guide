@@ -12,6 +12,7 @@ class.
 .. code-block:: python
 
   from mathics.builtin.base import Builtin, String
+  from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
     """
@@ -25,9 +26,9 @@ class.
 
     summary_text = 'prints "Hello, <name>"'
 
-    def apply(self, person: String, evaluation) -> String:
+    def apply(self, person: String, evaluation: Evaluation) -> String:
       "Hello[person_String]"
-          return String(f"Hello, {person.get_string_value()}!")
+          return String(f"Hello, {person.value}!")
 
 The class variable ``summary_text`` provides the text when you type ``?Hello``::
 

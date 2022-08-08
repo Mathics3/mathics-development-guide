@@ -1,7 +1,7 @@
 Introducing the Builtin Class
 -----------------------------
 
-..index:: Builtin
+.. index:: Builtin
 
 Most of the time you'll probably need to pass information into the
 Function you want to add. For this, use the ``Builtin`` class.  In WL
@@ -9,8 +9,12 @@ these things functions and variables defined this way are tagged as a
 "Built-in Symbol".
 
 The method that you should define in the Builtin class that should get
-invoked needs to start off with the name ``apply``. As before, this
-method has an ``evaluation`` parameter at the end.
+invoked needs to start off with the name ``apply``. (This is an
+*evaluation* method and starting the name with ``eval`` would have
+been the customary and correct thing to do. In the future we hope to
+fix this.)
+
+As before, this method has an ``evaluation`` parameter at the end.
 
 Other parameters that are appropriate for the function can be
 added. However those parameters must also be listed suffixed with an
@@ -36,22 +40,23 @@ In Python then the *apply()* method looks like this:
 
   def apply(self, person: String, evaluation):
     "Hello[person_String]"
-        return String(f"Hello, {person.get_string_value()}!")
+        return String(f"Hello, {person.value}!")
 
 Here is the complete code:
 
 .. code-block:: python
 
   from mathics.builtin.base import Builtin, String
+  from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
-    def apply(self, person: String, evaluation) -> String:
+    def apply(self, person: String, evaluation: Evaluation) -> String:
       "Hello[person_String]"
-          return String(f"Hello, {person.get_string_value()}!")
+          return String(f"Hello, {person.value}!")
 
 The parameter *person* has type Mathics *String*. Therefore, to use
 that for use in Python, we need to convert it to a Python value. This
-is done with *person.get_string_value()*. And the the return value
+is done with *person.value*. And the the return value
 also needs to be a Mathics *String* so we need to convert the Python
 string in Python back to a Mathics *String*.
 

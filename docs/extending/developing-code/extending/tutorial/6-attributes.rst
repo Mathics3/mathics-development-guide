@@ -1,9 +1,8 @@
-Class Attributes
-----------------
+Class variables and Function Attributes
+----------------------------------------
 
-Class attributes are used a lot in classes that create Mathics
-definitions, such as in the Builtin class that we have mostly been
-using.
+Class variables on the class that implements a Mathics Built-in
+Function are used to set various characteristics of the built-in function.
 
 In fact we already saw one example in the last section where the class
 variable ``rules`` was used to create some Mathics *Rules* in the
@@ -16,7 +15,13 @@ system variables.
 To accomplish this you assign the desired string name to class
 variable ``name``, and that will override the default name.
 
-Similarly, setting a variable's or function's attributes can be done
+All Functions in Mathics have `Attributes
+<https://reference.wolfram.com/language/tutorial/EvaluationOfExpressions.html#9508>`_
+which specify certain properties in evaluation such as whether a
+nested invocations of a function are automatically flattened. (This is
+the `Flat <https://reference.wolfram.com/language/ref/Flat.html>`_ attribute).
+
+Setting a built-in function's attribute is  done
 by setting the class variable name ``attributes``.
 
 Suppose we want to define a variable called ``$Hello`` and don't want
@@ -32,12 +37,14 @@ definition of a function:
 .. code-block:: python
 
   from mathics.builtin.base import Predefined
+  from mathics.core.attributes import locked as A_LOCKED
+  from mathics.core.evaluation import Evaluation
 
   class Hello(Predefined):
+      attributes = A_LOCKED
       name = "$Hello"
-      attributes = ('Locked',)
 
-      def evaluate(self, evaluation) -> String:
+      def evaluate(self, evaluation: Evaluation) -> String:
           return String("Hello, World!")
 
 Here is a session that demonstrates the above code:

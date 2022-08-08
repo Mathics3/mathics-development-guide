@@ -20,12 +20,13 @@ Here is some code for this..
 .. code-block:: python
 
   from mathics.builtin.base import Builtin, String
+  from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
-    def apply(self, person: String, language: String, evaluation) -> String:
+    def apply(self, person: String, language: String, evaluation: Evaluation) -> String:
       """Hello[person_String, language_String]"""
 
-      greeting = "Bonjour" if language.get_string_value() == "French" else "Hello"
+      greeting = "Bonjour" if language.value == "French" else "Hello"
       return String(f"{greeting}, {person.get_string_value()}!")
 
     def apply_english(self, person: String, evaluation) -> String:

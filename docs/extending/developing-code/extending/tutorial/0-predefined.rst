@@ -23,7 +23,7 @@ Now start mathics from the Mathics source tree:
 ::
 
    $ python mathics/main.py
-   Mathics 2.0.0dev
+   Mathics 5.0.3
    ...
    In[1]:= Hello
    Out[1]= Hello, World!
