@@ -111,4 +111,12 @@ The following commands can be used to specify test cases.
 | ``\|`` *print*         | a printed line in the result of the test query.           |
 +------------------------+-----------------------------------------------------------+
 
+*Note:* Please don't use ``#>``, ``X>`` and ``S>``. These are relics of the
+days when people thought it cool to write a homegrown autodoc system,
+and mistakenly felt it was a replacement for unit testing.
+
+We currently have a growing list of pytests, so tests that are not
+intended to explain should be added as pytests, not the kind of
+home-grown testing system described here.
+
 *Todo: give examples of each of these.*
