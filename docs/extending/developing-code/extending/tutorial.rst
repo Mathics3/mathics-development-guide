@@ -3,10 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Extending Mathics Tutorial
-==========================
-In this guide we will show how to Extend Mathics with Python code.
+Tutorial: Adding a new Mathics Function
+=======================================
 
+In this tutorial, we will show how to create a new Mathics Function using Python.
+
+After reading this you may want to go through a detailed example where we :ref:`add ``KroneckerProduct`` <_adding_KroneckerProduct>`
+
+
+.. _adding_a_mathics_function_tutorial:
 
 .. toctree::
    :maxdepth: 2
