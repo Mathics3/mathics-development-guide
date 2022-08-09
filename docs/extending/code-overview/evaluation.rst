@@ -233,7 +233,7 @@ parameters should get bound when applying the function.
 instance of an ``Evaluation`` is also supplied as a parameter in the call.
 
 There is a degenerate situation though where there is no rule
-rewriting, or apply methods involved. Here the instance method's
+rewriting, or evaluation methods involved. Here the instance method's
 *evaluate()* method is called. This is used when a function has no
 parameters or arguments. This kind of thing happens when a constant or
 variable name is used; here the variable name is prefaced with a
@@ -259,13 +259,13 @@ primitive taken from the code
        """Environment[var_?StringQ]"""
    ...
 
-The ``apply()`` function above will get called when finding a
+The evaluation method that starts with ``apply()`` above will get called when finding a
 ``Expression`` whose ``Head`` value is ``Environment`` and it has one
 element or parameter which which we will call ``var``.  That element or
 parameter should also much be a ``Symbol`` object.
 
 For more information describing Mathics function signatures that are
-used in the ``apply`` method's docstring , see `Functions and Programs
+used in the evaluation method's docstring , see `Functions and Programs
 <https://reference.wolfram.com/language/tutorial/FunctionsAndPrograms.html>`_
 and `Patterns
 <https://reference.wolfram.com/language/tutorial/Patterns.html>`_.

@@ -3,7 +3,7 @@
 Documentation Markup
 ====================
 
-There is a lot of special markup syntax you can use in the
+There home-grown special markup syntax you can use in the
 documentation. It is kind of a mixture of XML, LaTeX, Python doctest,
 and custom markup.
 
@@ -11,8 +11,8 @@ and custom markup.
 
 The following commands can be used to markup documentation text:
 
-For Help Text
--------------
+Markup in Documentation
+------------------------
 
 .. _doc_help_markup:
 
@@ -33,7 +33,7 @@ For Help Text
 +----------------------------------+-----------------------------------------+
 | <ol> *list* </ol>                | an ordered list of <li> entries.        |
 +----------------------------------+-----------------------------------------+
-| <li> *item*  `                   | an item of an unordered or ordered      |
+| <li> *item*                      | an item of an unordered or ordered      |
 |                                  | list. Note: no </li>.                   |
 +----------------------------------+-----------------------------------------+
 | ``'`` *code* ``'``               | inline Mathics code or other code.      |
@@ -51,6 +51,8 @@ For Help Text
 | <i> *text* </i>                  | the same as <em>.                       |
 +----------------------------------+-----------------------------------------+
 | <url> *url* </url>               | a URL.                                  |
++----------------------------------+-----------------------------------------+
+| <url> :link text: *url* </url>   | a URL with link text                    |
 +----------------------------------+-----------------------------------------+
 | <img ``src="`` *src* ``"``       | an image.                               |
 | ``title="`` *title* ``"``        |                                         |
@@ -77,8 +79,8 @@ To include images in the documentation, use the ``img`` tag, place an
 EPS file *src* ``.eps`` in `mathics.doc.documentation.images <https://github.com/mathics/Mathics/tree/master/mathics/doc/documentation/images>`_ and run ``images.sh``
 in the `mathics.doc <https://github.com/mathics/Mathics/tree/master/mathics/doc>`_ directory.
 
-For Testing
------------
+Markup for Code Examples
+------------------------
 
 .. _doc_test_markup:
 
@@ -90,13 +92,6 @@ The following commands can be used to specify test cases.
 | Markup                 | Meaning                                                   |
 +========================+===========================================================+
 | ``>>`` *Mathics code*  | Some Mathics code to run and to appear in documentation.  |
-+------------------------+-----------------------------------------------------------+
-| ``#>`` *Mathics code*  | Some Mathics code to run but not appearing documentation. |
-+------------------------+-----------------------------------------------------------+
-| ``X>`` *Mathics code*  | Mathics code shown in the documentation but not run.      |
-+------------------------+-----------------------------------------------------------+
-| ``S>``                 | a test query that is shown in the documentation and run   |
-|                        | if the ``SANDBOX`` environment variable is not set.       |
 +------------------------+-----------------------------------------------------------+
 | ``=`` *output*         | expected output produced by the Mathics code.             |
 +------------------------+-----------------------------------------------------------+
@@ -111,12 +106,26 @@ The following commands can be used to specify test cases.
 | ``\|`` *print*         | a printed line in the result of the test query.           |
 +------------------------+-----------------------------------------------------------+
 
-*Note:* Please don't use ``#>``, ``X>`` and ``S>``. These are relics of the
-days when people thought it cool to write a homegrown autodoc system,
-and mistakenly felt it was a replacement for unit testing.
+It is good to create examples that convey some aspect about the Mathics Function.
 
-We currently have a growing list of pytests, so tests that are not
-intended to explain should be added as pytests, not the kind of
-home-grown testing system described here.
+In the past, the documentation system was abused and ran edge cases
+and prior bugs fixed. For that please write a pytest.
+
+
+We have not purged ourself of this behavior, so will find following
+markup in docstrings. These are deprecated.
+
+However please don't create more examples. Instead please consider
+moving something like this to a pytest unit test which is far more flexibile.
+
++------------------------+-----------------------------------------------------------+
+| Markup                 | Meaning                                                   |
++========================+===========================================================+
+| ``#>`` *Mathics code*  | Some Mathics code to run but not appearing documentation. |
++------------------------+-----------------------------------------------------------+
+| ``X>`` *Mathics code*  | Mathics code shown in the documentation but not run.      |
++------------------------+-----------------------------------------------------------+
+| ``S>``                 | a test query that is shown in the documentation and run   |
++------------------------+-----------------------------------------------------------+
 
 *Todo: give examples of each of these.*

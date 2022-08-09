@@ -5,12 +5,12 @@ Mathics allows Functions to have the same name but different function
 signatures. For example maybe you can call ``Hello`` with a either
 one or two parameters.
 
-Mathics calls the a signature a "Form".
+Mathics calls a signature a "Form".
 
 One way to implement this in Python code is to have two different
 Python methods that start with the name ``apply``, one will
 handle one kind of Form, say of the kind we saw previously,
-a person name is given. The other *apply* method will handle
+a person name is given. The other evaluation method will handle
 another kind of Form, such as one where there is an
 additional parameter, a string language value.
 
@@ -27,7 +27,7 @@ Here is some code for this..
       """Hello[person_String, language_String]"""
 
       greeting = "Bonjour" if language.value == "French" else "Hello"
-      return String(f"{greeting}, {person.get_string_value()}!")
+      return String(f"{greeting}, {person.value}!")
 
     def apply_english(self, person: String, evaluation) -> String:
       """Hello[person_]"""

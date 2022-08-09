@@ -34,11 +34,11 @@ might look like this:
 
   Hello[s_String] := Print["Hello, " <> s <> "!"]
 
-In Python then the *apply()* method looks like this:
+The eavluation method, looks like this:
 
 .. code-block:: python
 
-  def apply(self, person: String, evaluation):
+  def apply(self, person: String, evaluation: Evaluation):
     "Hello[person_String]"
         return String(f"Hello, {person.value}!")
 
