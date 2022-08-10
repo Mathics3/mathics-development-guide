@@ -1,4 +1,4 @@
-Case Example: Adding Mathics Function: KrokneckerProduct
+Case Example: Adding Mathics Function: KroneckerProduct
 ========================================================
 
 .. _adding_KroneckerProduct:
