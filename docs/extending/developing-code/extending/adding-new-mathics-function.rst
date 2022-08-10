@@ -15,7 +15,7 @@ in subsequent section
 
 * Find a Builtin that hasn't been implemented.
 * Decide where in the code/doc to put it.
-* See if it is a SymPy function. And the rest will assume yes. But if not try to SciPy and mpmath. I suppose numpy might be tried too.
+* See if it is a SymPy function. And the rest will assume yes. But if not try to SciPy and mpmath.
 * Copy one of the newer existing Sympy functions and adapt. Newer existing Sympy functions have Wiki, SyPy, and WMA links. Probably in the WMA link, all you will have to do is change the copied WMA name into the new name.
 * Use WMA link to adapt the docstring. It might be consulted to get the summary text too.
 * Go into mathics and see that you can get "info" or "?" on the changed doc.
@@ -34,3 +34,5 @@ in subsequent section
 
    KroneckerProduct/selecting-builtin
    KroneckerProduct/find-where-to-put-builtin
+   KroneckerProduct/match-with-library
+   KroneckerProduct/basic-skeleton
