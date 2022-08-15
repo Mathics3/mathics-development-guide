@@ -5,8 +5,9 @@ Case Example: Adding Mathics Function: KroneckerProduct
 
 A large part of Mathics is simply a list of built-in functions that perform some computation. When possible, w rely on SymPy, SciPy, and mpmath functions.
 
-In :ref:`Tutorial: Adding a new Mathics Function Text <adding_KroneckerProduct>`,
-Here outline the steps taken to add ``KroneckerProduct``.
+In :ref:`Tutorial: Adding a new Mathics Function` we show how to write a new Builtin Function.
+
+Here we take things one step further and show the specific Mathics Builtin function for ``KroneckerProduct``.
 
 The following is an outline of the overall process which we go into more depth
 in subsequent section

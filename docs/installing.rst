@@ -1,5 +1,4 @@
 .. index:: installing
-.. _installing:
 
 Installing Mathics
 ==================
