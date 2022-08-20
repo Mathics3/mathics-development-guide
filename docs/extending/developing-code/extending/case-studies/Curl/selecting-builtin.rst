@@ -1,5 +1,3 @@
-.. _selecting_a_new_builtin:
-
 Selecting Builtin to add
 ========================
 
@@ -11,4 +9,4 @@ label `"New Builtin Function or Variable"
 
 There are also TODO's at the bottom of the newer sections/modules for missing builtin functions for that particular class or function.
 
-Here though we will select `KroneckerProduct <https://reference.wolfram.com/language/ref/KroneckerProduct.html>`_ as an example.
+Here though we will select `Curl <https://reference.wolfram.com/language/ref/Curl.html>`_ as an example.

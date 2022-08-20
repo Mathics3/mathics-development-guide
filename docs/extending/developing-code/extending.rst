@@ -3,4 +3,4 @@
 
    extending/tutorial
    extending/documentation-markup.rst
-   extending/adding-new-mathics-function.rst
+   extending/case-studies/index.rst
