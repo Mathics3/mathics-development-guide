@@ -3,7 +3,7 @@ Case Example: Adding Mathics Function: KroneckerProduct
 
 .. _adding_KroneckerProduct:
 
-A large part of Mathics is simply a list of built-in functions that perform some computation. When possible, w rely on SymPy, SciPy, and mpmath functions.
+A large part of Mathics is simply a list of built-in functions that perform some computation. When possible, rely on SymPy, SciPy, and mpmath functions.
 
 In :ref:`Tutorial: Adding a new Mathics Function` we show how to write a new Builtin Function.
 

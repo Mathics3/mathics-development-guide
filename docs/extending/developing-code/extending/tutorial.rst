@@ -1,8 +1,3 @@
-.. pymathics-hello documentation master file, created by
-   sphinx-quickstart on Sun Nov 29 14:06:02 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Tutorial: Adding a new Mathics Function
 =======================================
 
