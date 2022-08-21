@@ -1,4 +1,4 @@
-``KroneckerProduct`` basic skeleton
+``KroneckerProduct`` Basic Skeleton
 ====================================
 
 .. contents::
@@ -38,7 +38,7 @@ Here is the the beginning of the Python code to implement ``KroneckerProduct``:
 	...
 	"""
 
-We will go over the docustring entry a little more quickly than we did
+We will go over the docstring entry a little more quickly than we did
 in describing ``Undefined``. Consult :ref:`First Skeletal version` for
 a more detailed description of what goes in the docstring. Here we will
 cover aspects that were not covered there.
@@ -48,7 +48,7 @@ In contrast to the class definition in ``Undefined``, which is a subclass of
 ``Builtin``, here we use a ``SympyFunction`` which in turn is a subclass of ``Builtin``.
 ``SympyFunction`` has been customized for built-in Mathics functions that are implemented via SymPy.
 
-Also in contrast the title line for ``Undefined``, the title line here is longer because there is a Wikipedia entry that corresponds to this function, and because there is a correspoding SymPy function as well.
+Also in contrast the title line for ``Undefined``, the title line here is longer because there is a Wikipedia entry that corresponds to this function, and because there is a corresponding SymPy function as well.
 
 
 ``KroneckerProduct`` Function Definition Description
@@ -70,7 +70,7 @@ new markup tag. This is the dollar signs that surround variable names. In partic
 
 The dollar signed around the names indicate that the text inside is a variable or parameter to the function.
 
-Also notice that the word the *entire form* surrounde in quotes the ``<dt>`` tag, that is ``'KroneckerProduct[$m1$, $m2$, ...]'``
+Also notice that the word the *entire form* surrounded in quotes the ``<dt>`` tag, that is ``'KroneckerProduct[$m1$, $m2$, ...]'``
 
 ``KroneckerProduct`` Examples
 -----------------------------

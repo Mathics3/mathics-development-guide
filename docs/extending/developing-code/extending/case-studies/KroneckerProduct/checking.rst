@@ -26,7 +26,7 @@ mathics core.
 
 
 Finally click the "?" at the extreme right and type "Undef". You should
-see the inforamtion that you added in the docstring:
+see the information that you added in the docstring:
 
 .. image:: KroneckerProduct.png
   :width: 400
@@ -40,12 +40,12 @@ You should check the following links shown in blue:
 
 to make sure these all go to the right place.
 
-Asl click on the following entry ``Normalize``. At the time of this
+Now click on the following entry ``Normalize``. At the time of this
 writing there is no preceding entry.
 
 Now let's test. Go into Django and type "Vector Space Operations" in
 the documentation section and you should see ``KroneckerProduct`` appear
-frst beore ``Normalize``.
+first before ``Normalize``.
 
 Click on "KroneckerProduct" in that list and we now see all of the
 information in the docstring we just entered.

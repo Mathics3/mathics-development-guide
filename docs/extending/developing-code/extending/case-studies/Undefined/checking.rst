@@ -27,11 +27,11 @@ mathics core.
 
 
 Finally click the "?" at the extreme right and type "Undef". You should
-see the inforamtion that you added in the docstring:
+see the information that you added in the docstring:
 
 .. image:: Undefined-docstring.png
   :width: 400
-  :alt: Help for the built-in symbol "Undefined" in Mathics Django
+  :alt: Help for the built-in Symbol in Mathics Django
 
 Click on the link WMA in blue and you should see the WMA documentation
 for this.  You can also click on the preceding entry in the
@@ -57,7 +57,7 @@ called ``mathics`` we can also see this builtin
 
 We used the special flag ``--full-form`` which shows the expanded
 *input*. When we typed in "Undefined" note that we got the name space filled out as ``System``.
-Before adding this class it would have appeard in the namespace ``Global``.
+Before adding this class it would have appeared in the namespace ``Global``.
 
 Next:
 

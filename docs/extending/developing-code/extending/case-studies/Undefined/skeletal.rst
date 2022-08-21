@@ -5,7 +5,7 @@ First Skeletal version
    :depth: 1
    :local:
 
-Armed with the information above we are now ready to draft the virst version of this.
+Armed with the information above we are now ready to draft the first version of this.
 
 Mathics built-in symbols are defined by writing a class which is based off of the class ``Builtin``.
 
@@ -14,7 +14,7 @@ The docstring for this class lists
 * The common name for this, if a corresponding match can be found Wikipedia, use that name and link to it
 * links to the WMA reference we found before.
 * If there is a corresponding SymPy, mpmath, or SciPy function, then link to that
-* A HTML "definition list" to enclose the defintion of each form that can appear
+* A HTML "definition list" to enclose the definition of each form that can appear
 * User-Oriented Examples
 
 ``Undefined`` Title Line
@@ -36,9 +36,9 @@ To start out then we have:
 	"""
 
 The slightly unusual way we add a link with text is via the XML ``<url>`` tag.
-Also, due to current limitations in our homegrown documentation system, the title line has to appear as one unbroken line. To accomodate this, We have arrange ``pylint`` to ignore long lines.
+Also, due to current limitations in our homegrown documentation system, the title line has to appear as one unbroken line. To accommodate this, We have arrange ``pylint`` to ignore long lines.
 
-Note: please add the class ``Undefined`` in alphabetic order of class nmae. At the time of writing, ``Undefined`` comes after ``Pi`` and before ``Underflow``.
+Note: please add the class ``Undefined`` in alphabetic order of class name. At the time of writing, ``Undefined`` comes after ``Pi`` and before ``Underflow``.
 
 ``Undefined`` Symbol Definition Description
 --------------------------------------------
@@ -62,10 +62,10 @@ After the title line, we get to the definition list part where we list the forms
 	"""
 
 We use the pseudo XML ``<dt>`` and ``<dl>`` for the definition. Note
-though that we don't use the end tags: ``</dt>`` and ``</dd>`` athough
+though that we don't use the end tags: ``</dt>`` and ``</dd>`` although
 we could if we wanted to.
 
-Notice that the word "Undefined" appers in a single quote: "'Undefined'". This is markup that tags "Undefined" as code.
+Notice that the word ``Undefined`` appears within single quotes: ``'Undefined'``. This is markup that tags ``Undefined`` as code.
 
 User-Oriented Examples
 ----------------------

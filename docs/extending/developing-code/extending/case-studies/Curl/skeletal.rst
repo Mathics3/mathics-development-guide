@@ -68,8 +68,12 @@ Here is the contents of the first cut for that file/module:
           return from_sympy(curl(sympy_mi))
 
 
-Now let's test. Go into Django and type "Vector Space Operations" in the documentation section and you should see KroneckerProducgt appear first beore Normalize. And note that it has the summary text that we added above.
+Now let's test. Go into Django and type "Mathematical Operations" in the documentation section and you should see "Curl" appear first before "Cross". And note that it has the summary text that we added above.
 
-Click on "KroneckerProduct" in that list and we now see all of the information in the docstring we just entered.
+Click on "Curl" in that list and we now see all of the information in the docstring we just entered.
 
-In particular click on "KronckerProduct" and you should go to the wikipedia page. So the same for "Sympy" and "WMA".
+You should check the following links shown in blue:
+
+* Curl,
+* SymPy, and
+* WMA

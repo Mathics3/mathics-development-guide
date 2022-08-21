@@ -1,4 +1,4 @@
-Finding a corresponding Sympy function and Wikipedia name for ``KroneckerProduct``
+Finding a corresponding SymPy function and Wikipedia name for ``KroneckerProduct``
 ==================================================================================
 
 Going to a `SymPy search page

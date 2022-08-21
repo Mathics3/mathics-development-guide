@@ -45,3 +45,22 @@ example. Please don't use them for unit tests.
 
 The full test example for the ``Undefined`` built-in symbol can be found in the code `here
 <https://github.com/Mathics3/mathics-core/blob/master/test/builtin/numbers/test_constants.py>`_.
+
+Here is a command that will run just this test:
+
+
+.. code-block:: bash
+
+    $ cd Mathics3/mathics-core
+    $ python -m pytest test/builtin/numbers/test_constants.py
+    =========================== test session starts ============================
+    platform linux -- Python 3.8.12, pytest-7.1.2, pluggy-1.0.0
+    rootdir: /src/external-vcs/github/Mathics3/mathics-core
+    collected 1 item
+
+    test/builtin/numbers/test_constants.py .                             [100%]
+
+    ============================= warnings summary =============================
+    ...
+    -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+    ======================= 1 passed, 1 warning in 2.14s =======================

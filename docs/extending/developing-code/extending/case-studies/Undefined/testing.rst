@@ -15,7 +15,7 @@ The lines that start with ``>>`` are examples to show and that can be tried. The
 See :ref:`Documentation Markup` for a full list and description of the homegrown markup.
 
 
-Understanding the markup, we can entry that in a mathics session to verify that we get expected results:
+Understanding the markup, we can enter that in a mathics session to verify that we get expected results:
 
 
 .. code-block:: Bash
@@ -33,7 +33,7 @@ Understanding the markup, we can entry that in a mathics session to verify that 
     In[2]:= Attributes[Undefined]
     Out[2]= {Protected}
 
-So far so good. However we can run the all of these example
+So far so good. However we can run all of these example
 automatically without having to retype them as we did above.  Here is
 a command that will do that:
 
@@ -51,7 +51,7 @@ a command that will do that:
 
 The ``-s`` option limits the testing just to this new section we added
 called ``Undefined``.  Another useful option that is often used is
-``-x``. That option modelled after the ``-x`` option in pytest: it
+``-x``. That option modeled after the ``-x`` option in pytest: it
 stops on the first error.
 
 Next:

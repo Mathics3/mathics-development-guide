@@ -13,10 +13,10 @@ Now we fill in the parts of ``KroneckerProduct`` other than the class
 definition line and its docstring.
 
 None of the other built-in Mathics Functions serve as good model to
-copy from so, we'll use a combination ``Transpose`` and
+copy from, so we'll use a combination ``Transpose`` and
 ``PauliMatrix``. The former function is selected because it takes a
 Matrix parameter, and PauliMatrix function because it is a SymPy
-function which was recently created at the time of this wriging.
+function which was recently created at the time of this writing.
 
 Here is the first cut for ``KroneckerProduct``:
 

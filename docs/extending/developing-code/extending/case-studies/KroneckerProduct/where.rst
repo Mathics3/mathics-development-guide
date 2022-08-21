@@ -1,7 +1,7 @@
 ``KroneckerProduct`` placement in Mathics
 ==========================================
 
-To find where to put ``KroneckerProduct`` in Mathics, we look this up the  `WMA docs <https://reference.wolfram.com/language/ref/KroneckerProduct.html>`_  and then looking at the Related Guides dropdown menu we see:
+To find where to put ``KroneckerProduct`` in Mathics, we look this up the  `WMA docs <https://reference.wolfram.com/language/ref/KroneckerProduct.html>`_  and then looking at the Related Guides drop-down menu we see:
 
 * Matrix Operations
 * Operations on Vectors
