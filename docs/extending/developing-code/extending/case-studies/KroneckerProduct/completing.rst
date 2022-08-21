@@ -96,7 +96,7 @@ inside the ``KroneckerProduct`` class should be called.
 
 By convention and to make things simple, we use the name name in the
 pattern, *mi* as we did in the class docstring description. However
-the name(s) that are used in the pattern must, also appear in the
+the name(s) that are used in the pattern must also appear in the
 same order in Python definition.  Since we used ``mi__`` in the pattern in the
 definition docstring, we must use ``mi`` as the first parameter in the
 evaluation method. In Mathics ``__`` indicates a function definition
@@ -132,8 +132,6 @@ Sympy into Mathics. Without other mechanisms like caching computed
 values this can be slow. Even with caching, this can be slow.
 
 A full version of the basic implementation can be found in `this commit <https://github.com/Mathics3/mathics-core/commit/f6dcba5e2639b0fa9bf4c9ee59b2995ec257f7bb>`_.
-
-Next:
 
 Next:
 

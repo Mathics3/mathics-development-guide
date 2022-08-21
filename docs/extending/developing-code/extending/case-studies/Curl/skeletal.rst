@@ -20,7 +20,11 @@ Can this be done in Mathics itself?
 ------------------------------------
 
 Curl is defined as:
-:math:`\partial f_2 / \partial x_1 - \partial f_1 / \partial x_2`
+
+.. math::
+
+    \partial f_2 / \partial x_1 - \partial f_1 / \partial x_2
+
 for two-dimensional vectors and:
 
 .. math::
