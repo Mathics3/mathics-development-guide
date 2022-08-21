@@ -17,7 +17,7 @@ The docstring for this class lists
 * A HTML "definition list" to enclose the defintion of each form that can appear
 * User-Oriented Examples
 
-``Undefined`` Title line
+``Undefined`` Title Line
 -------------------------
 
 Here, there is no Wikipedia common name, so we'll go with the Mathematica-like description "Undefined symbol or value". The WMA link is put in parenthesis after that.
@@ -35,14 +35,17 @@ To start out then we have:
 	...
 	"""
 
-Due to current limitations in our homegrown documentation system, the title line has to appear as one unbroken line. To accomodate this, We have arrange ``pylint`` to ignore long lines.
+The slightly unusual way we add a link with text is via the XML ``<url>`` tag.
+Also, due to current limitations in our homegrown documentation system, the title line has to appear as one unbroken line. To accomodate this, We have arrange ``pylint`` to ignore long lines.
 
-``Undefined`` Symbol Definition
--------------------------------
+Note: please add the class ``Undefined`` in alphabetic order of class nmae. At the time of writing, ``Undefined`` comes after ``Pi`` and before ``Underflow``.
+
+``Undefined`` Symbol Definition Description
+--------------------------------------------
 
 Let us filling out the docstring further, the line above with ``...`` in it.
 
-After the title line, we get to the definition list part where we list the forms that this can appear. Here there is just one form ``Undefined``
+After the title line, we get to the definition list part where we list the forms that this can appear. Here there is just one form ``Undefined``:
 
 .. code-block:: python
 
@@ -51,17 +54,26 @@ After the title line, we get to the definition list part where we list the forms
         Undefined symbol/value (<url>:WMA: https://reference.wolfram.com/language/ref/Undefined.html</url>)
 
         <dl>
-          <dt>'Undefined[]'
+          <dt>'Undefined'
           <dd>a symbol that represents a quantity with no defined value.
         </dl>
 
     	...
 	"""
 
+We use the pseudo XML ``<dt>`` and ``<dl>`` for the definition. Note
+though that we don't use the end tags: ``</dt>`` and ``</dd>`` athough
+we could if we wanted to.
+
+Notice that the word "Undefined" appers in a single quote: "'Undefined'". This is markup that tags "Undefined" as code.
+
 User-Oriented Examples
 ----------------------
 
-Now we get to the example portion of the docstring. We will copy an example found in the WMA documentation for this and add an example that shows the attributes.
+Now we get to the final part of the docstring consists of informative
+examples for the Symbol which is getting defined. We will copy an
+example found in the WMA documentation for this and add an example
+that shows the attributes.
 
 .. code-block:: python
 

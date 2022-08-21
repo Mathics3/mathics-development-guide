@@ -1,7 +1,7 @@
 Adding Builtin ``Undefined``
 ============================
 
-Undefined is one of the easier kinds of Builtin's to add because: it
+``Undefined`` is one of the easier kinds of Builtin's to add because: it
 is simply a Built-in Symbol, not a Function. Builtion Symbols are
 pretty limited in what they do. Basically a built-in Symbol is a name in the ``System``
 namespace with some properties.
@@ -14,7 +14,7 @@ Below are the steps in order that were used to create ``Undefined``:
 .. toctree::
    :maxdepth: 1
 
-   decide
+   where
    whatis
    similar
    skeletal

@@ -1,7 +1,7 @@
 Checking the Skeletal version
 ==============================
 
-Although there is more to do, the above is enough to be able to see that:
+Although there is more to do, the code entered so far is enough to be able to see that:
 
 * we have added a new builtin
 * we can get information about the builtin.
@@ -31,11 +31,14 @@ see the inforamtion that you added in the docstring:
 
 .. image:: Undefined-docstring.png
   :width: 400
-  :alt: help for Undefined Built-i Symbol in Mathics Django
+  :alt: Help for the built-in symbol "Undefined" in Mathics Django
 
-Click on the linke WMA in blue and you should see the WMA documentation for this.
+Click on the link WMA in blue and you should see the WMA documentation
+for this.  You can also click on the preceding entry in the
+documentation ``Pi`` as well as the following entry ``Underflow`` and see that this works.
 
-Inside the stripped-down command-line interface inside mathics core we can also see this builtin
+Inside the stripped-down command-line interface inside mathics core
+called ``mathics`` we can also see this builtin
 
 .. code-block:: Bash
 

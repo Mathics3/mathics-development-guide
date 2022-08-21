@@ -16,7 +16,7 @@ Below are a few examples of actual Mathics Builtins that we have added.
    :maxdepth: 1
 
    Undefined/index
-   KroneckerProduct
+   KroneckerProduct/index
    Curl
 
 

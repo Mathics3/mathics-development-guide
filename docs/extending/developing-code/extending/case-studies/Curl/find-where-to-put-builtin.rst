@@ -1,7 +1,7 @@
 Decide where in the code and document to place Builtin
 ======================================================
 
-In the first step,  :ref:`Selecting Builtin to add <selecting_a_new_builtin>`, there location may already have been suggested. This is usually the case if the name is listed as a "TODO" at the bottom an existing section. Or if in an issue it is listed with other similar function names.
+In the first step,  :ref:`Selecting Builtin to add`, there location may already have been suggested. This is usually the case if the name is listed as a "TODO" at the bottom an existing section. Or if in an issue it is listed with other similar function names.
 
 Using ``Curl`` as an example, Looking that up in the `WMA docs <https://reference.wolfram.com/language/ref/Curl.html>`_  and then looking at the Related Guides dropdown menu we see:
 
