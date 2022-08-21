@@ -4,8 +4,8 @@
 
    what-is-mathics
 
-Installing Mathics
-==================
+Mathics Introduction
+====================
 
 Here we describe the various ways to get Mathics installed.
 
