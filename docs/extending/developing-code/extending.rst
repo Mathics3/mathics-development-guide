@@ -1,5 +1,5 @@
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
 
    extending/tutorial
    extending/documentation-markup.rst

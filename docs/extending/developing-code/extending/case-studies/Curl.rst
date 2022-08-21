@@ -1,5 +1,5 @@
-Adding Builtin Curl
-===================
+Adding Builtin ``Curl``
+=======================
 
 .. toctree::
    :maxdepth: 2
