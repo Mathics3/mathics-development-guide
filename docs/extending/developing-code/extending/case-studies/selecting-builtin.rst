@@ -17,7 +17,7 @@ Below are a few examples of actual Mathics Builtins that we have added.
 
    Undefined/index
    KroneckerProduct/index
-   Curl
+   Curl/index
 
 
 As we added these Builtins, we recorded the steps that were taken. We ordered the list below to go from the simpile to more advanced.

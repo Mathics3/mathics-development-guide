@@ -12,4 +12,4 @@ A large part of Mathics is simply a list of built-in functions that perform some
    selecting-builtin
    Undefined/index
    KroneckerProduct/index
-   Curl
+   Curl/index
