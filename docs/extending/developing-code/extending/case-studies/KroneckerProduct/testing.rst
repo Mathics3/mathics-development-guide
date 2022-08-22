@@ -55,6 +55,7 @@ As we did in ``Undefined``, we can run the doctest test automatically:
 
 
     $ cd Mathics3/mathics-core
+    $ python mathics/docpipeline -s KroneckerProduct
     Testing section(s): KroneckerProduct
     b'   1 ( 0): TEST a = {{a11, a12}, {a21, a22}}; b = {{b11, b12}, {b21, b22}};'
     b'   2 ( 0): TEST KroneckerProduct[a, b]'
