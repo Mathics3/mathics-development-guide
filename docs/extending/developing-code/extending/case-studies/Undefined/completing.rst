@@ -25,7 +25,7 @@ The ``attributes`` class variable sets the kind of properties or
 "Attributes" that this Mathics Symbol has.  See `Attributes
 <https://reference.wolfram.com/language/tutorial/EvaluationOfExpressions.html#9508>`_
 for more information about what an attribute is and what values it
-might have. Here, ``A_Protected`` is a mask value that indicates that
+might have. Here, ``A_PROTECTED`` is a mask value that indicates that
 the Symbol ``Undefined`` starts off not being able to be reassigned
 to. There is an ``Unprotect`` function that can change this though.
 
