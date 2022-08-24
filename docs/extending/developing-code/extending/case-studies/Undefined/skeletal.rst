@@ -43,7 +43,7 @@ Note: please add the class ``Undefined`` in alphabetic order of class name. At t
 ``Undefined`` Symbol Definition Description
 --------------------------------------------
 
-Let us filling out the docstring further, the line above with ``...`` in it.
+Let us fill out the docstring further, the line above with ``...`` in it.
 
 After the title line, we get to the definition list part where we list the forms that this can appear. Here there is just one form ``Undefined``:
 
