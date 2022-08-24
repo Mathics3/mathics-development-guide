@@ -10,7 +10,7 @@ Mathics's Developer Reference
    :maxdepth: 4
    :caption: Contents:
 
-   installing
+   installing/index.rst
    running
    bugs
    tables

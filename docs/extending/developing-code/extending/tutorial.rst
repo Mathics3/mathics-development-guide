@@ -1,12 +1,12 @@
-.. pymathics-hello documentation master file, created by
-   sphinx-quickstart on Sun Nov 29 14:06:02 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Tutorial: Adding a new Mathics Function
+=======================================
 
-Extending Mathics Tutorial
-==========================
-In this guide we will show how to Extend Mathics with Python code.
+In this tutorial, we will show how to create a new Mathics Function using Python.
 
+After reading this you may want to go through the detailed examples in :ref:`Case Studies for Adding Builtins`
+
+
+.. _adding_a_mathics_function_tutorial:
 
 .. toctree::
    :maxdepth: 2
