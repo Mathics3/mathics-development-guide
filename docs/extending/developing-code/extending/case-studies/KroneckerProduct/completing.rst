@@ -1,4 +1,4 @@
-``Completing KroneckerProduct``
+Completing ``KroneckerProduct``
 ===============================
 
 .. contents::
@@ -55,7 +55,8 @@ the way we indicate both attributes is to bit-or, ``|``, the to attribute
 values ``A_PROTECTED`` and ``A_READ_PROTECTED``.
 
 The purpose of the class value ``summary_text`` is described when we
-described adding ``Undefined`` so we won't go over it here.
+described adding ``Undefined`` so we won't go over it here. Again,
+there is a unit test that checks that it exists.
 
 However if you go into Django and type "Vector Space Operations" in
 the documentation section and you should see ``KroneckerProduct`` appear
@@ -77,7 +78,7 @@ needs to start with ``apply``:
 .. code-block:: python
 
         def apply(self, mi: ListExpression, evaluation: Evaluation):
-            "KroneckerProduct[mi__]"
+            "KroneckerProduct[mi__List]"
             sympy_mi = [to_sympy_matrix(m) for m in mi.elements]
             return from_sympy(TensorProduct(*sympy_mi))
 
@@ -130,6 +131,33 @@ thing to notice is that evaluation this way causes a great deal of
 conversions from Mathics into SymPy followed by conversions out of
 Sympy into Mathics. Without other mechanisms like caching computed
 values this can be slow. Even with caching, this can be slow.
+
+``KroneckerProduct[]`` evaluation method, second version
+---------------------------------------------------------
+
+Instead of using pattern matching to ensure we have a list of lists,
+we can generalize the pattern to match anything and then do the check in Python.
+
+.. code-block:: python
+
+        def apply(self, mi: ListExpression, evaluation: Evaluation):
+            "KroneckerProduct[mi__]"
+
+            #  Code in Python mi__List matching
+	    if not all(m.head is for m in mi.elements):
+	       return None
+
+            sympy_mi = [to_sympy_matrix(m) for m in mi.elements]
+
+This might be a little bit faster at the expense, code that might be
+harder to maintain.  Also, while this is faster in the current
+implementation, over time we may improve the interpreter so that
+pattern matching performs the same kind of steps that the Python code
+uses. If or when that is done, the difference would be negligible.
+
+Keep in mind that while these kinds of tricks may add a small boost in
+performance, there are also some downsides; in some cases this kind of
+thing might even have to be undone in the future.
 
 A full version of the basic implementation can be found in `this commit <https://github.com/Mathics3/mathics-core/commit/f6dcba5e2639b0fa9bf4c9ee59b2995ec257f7bb>`_.
 

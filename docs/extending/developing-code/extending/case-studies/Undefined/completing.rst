@@ -39,13 +39,20 @@ Assigning to ``summary_text`` does two things:
 * It adds this text in Mathics Django in the list of functions in the section it appears
 * It supplies text in the command-line for ``?`` or ``Information`` where ``Longform`` option is set to ``False``.
 
-The section head as we noted above is "Mathematical Constants". Here is a screenshot for that section (I searched on the prefix "Mathematical Con"):
+To make sure we have ``summary_text`` assigned a value, there is a
+unit test that checks this.
+
+Now let us look at this in the Django front end. As noted above, the
+section head "Mathematical Constants". Here is a screenshot for that
+section:
 
 .. image:: Mathematical-Constants.png
   :width: 400
   :alt: summary list for Mathematical Constants
 
-To see the effect of ``summary-text`` in the CLI, we will use the stripped down ``mathics`` program that comes with ``mathics-core``:
+I searched on the prefix "Mathematical Con" which is the leading prefix that makes "Mathematical Constants" unique.
+
+To see the effect of ``summary_text`` in the CLI, we will use the stripped down ``mathics`` program that comes with ``mathics-core``:
 
 .. code-block:: Bash
 

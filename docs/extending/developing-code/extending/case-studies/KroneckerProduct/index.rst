@@ -17,4 +17,4 @@ Below are the steps in order that were used to create ``KronkeckerProduct``:
    testing
 
 
-See also :ref:`Adding Builtin ``Undefined`` for the steps to add the simpler built-in symbol ``Undefined``.
+See also :ref:`Adding Builtin ``Undefined``` for the steps to add the simpler built-in symbol ``Undefined``.
