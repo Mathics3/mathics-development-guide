@@ -1,6 +1,11 @@
 What makes up Mathics?
 ~~~~~~~~~~~~~~~~~~~~~~
 
+.. contents::
+   :depth: 1
+   :local:
+
+
 At one time, there was a single Python PyPI installable package that
 made up this open-source version of the Wolfram language. It included for example a Django-based front end.
 
