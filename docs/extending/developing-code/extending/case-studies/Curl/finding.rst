@@ -1,10 +1,17 @@
 Find corresponding Sympy, SciPy, mpmath, or NumPy function
 ===========================================================
 
+In the last section, we wrote ``Curl`` in Mathics and arranged and put
+it in a place where it would get loaded.
 
-Going to a `SymPy search page <https://docs.sympy.org/latest/search.html>`_ and looking for "curl", we find this function is named ```sympy.vector.curl`` <https://docs.sympy.org/latest/modules/vector/api/vectorfunctions.html#sympy.vector.curl`_.
+However we only added forms for the two and three dimensional
+situtations. We could go further and implement the other forms as well
+a SymPy search shows that ``Curl`` is a SymPy function as well:
+`sympy.vector.curl
+<https://docs.sympy.org/latest/modules/vector/api/vectorfunctions.html#sympy.vector.curl>`_.
 
-Here things are simple.
+Furthermore, SymPy understands coordinate systems, which is used in
+the last form.
 
 Next:
 

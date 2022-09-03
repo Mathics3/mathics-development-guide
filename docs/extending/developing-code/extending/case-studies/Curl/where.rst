@@ -41,4 +41,4 @@ Next:
 .. toctree::
    :maxdepth: 1
 
-   skeletal
+   basic
