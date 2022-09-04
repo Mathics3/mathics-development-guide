@@ -3,7 +3,7 @@ Checking the Skeletal version
 
 Although there is more to do, the code entered so far is enough to be able to see that:
 
-* we have added a new builtin
+* we have added a new builtin, and
 * we can get information about the builtin.
 
 So let us try this much. Fire up a a version Django interface that has

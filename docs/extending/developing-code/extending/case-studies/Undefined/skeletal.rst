@@ -9,19 +9,19 @@ Armed with the information above we are now ready to draft the first version of 
 
 Mathics built-in symbols are defined by writing a class which is based off of the class ``Builtin``.
 
-The docstring for this class lists
+The docstring for this class lists:
 
-* The common name for this, if a corresponding match can be found Wikipedia, use that name and link to it
+* The common name for this, if a corresponding match can be found Wikipedia, use that name and link to it.
 * links to the WMA reference we found before.
 * If there is a corresponding SymPy, mpmath, or SciPy function, then link to that
 * A HTML "definition list" to enclose the definition of each form that can appear
-* User-Oriented Examples
+* User-Oriented Examples.
 
 ``Undefined`` Title Line
 -------------------------
 
 Here, there is no Wikipedia common name, so we'll go with the Mathematica-like description "Undefined symbol or value". The WMA link is put in parenthesis after that.
-See the next case study :ref:`Adding Builtin Function ``KroneckerProduct``` for an example where we fill a Wikipedia and SymPy entry.
+See the next case study :ref:`Adding Builtin Function ``KroneckerProduct``` for an example where we have Wikipedia and SymPy entries.
 
 To start out then we have:
 
@@ -65,7 +65,7 @@ We use the pseudo XML ``<dt>`` and ``<dl>`` for the definition. Note
 though that we don't use the end tags: ``</dt>`` and ``</dd>`` although
 we could if we wanted to.
 
-Notice that the word ``Undefined`` appears within single quotes: ``'Undefined'``. This is markup that tags ``Undefined`` as code.
+Notice that the word ``Undefined`` appears within single quotes: ``'Undefined'``. This is markup that tags ``Undefined`` as code. A complete list of homegrown markiup can be found in :ref:`Documentation Markup`.
 
 User-Oriented Examples
 ----------------------

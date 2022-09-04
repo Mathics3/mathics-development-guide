@@ -1,7 +1,7 @@
 Decide where in the code and document to place the code in Mathics
 ------------------------------------------------------------------
 
-To find where to put ``Undefined`` in Mathics, we look this up the in the Mathemeatica documentation.
+To find where to put ``Undefined`` in Mathics, we look this up the in the Mathemetica documentation.
 To do this we add the name ``Undefined`` after ``https://reference.wolfram.com/language/ref/`` which gives `<https://reference.wolfram.com/language/ref/Undefined>`_.
 
 In the drop-down menu called "Related Guides" for that, we find only one entry: "Mathematical Constant".

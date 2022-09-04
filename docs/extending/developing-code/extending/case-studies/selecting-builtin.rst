@@ -20,7 +20,7 @@ Below are a few examples of actual Mathics Builtins that we have added.
    Curl/index
 
 
-As we added these Builtins, we recorded the steps that were taken. We ordered the list below to go from the simpile to more advanced.
+As we added these Builtins, we recorded the steps that were taken. We ordered the list above to go from the simpile to more advanced.
 
 
 See also :ref:`Tutorial: Adding a new Mathics Function`.
