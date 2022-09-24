@@ -48,7 +48,7 @@ For Debian/Ubuntu based systems:
 
 ::
 
-    $ apt-get install python-dev libsqlite3-devp python-setuptools liblapack-dev llvm-dev
+    $ apt-get install python-dev libsqlite3-dev python-setuptools liblapack-dev llvm-dev
 
 as super-user, i.e. either after having issued ``su`` or by preceding
 the command with ``sudo``).
