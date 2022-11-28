@@ -30,7 +30,7 @@ string to ``Hello``:
       'nstr': '`1` is not a string',
     }
 
-    def apply(self, person: String, evaluation: Evaluation) -> Optional[String]:
+    def eval(self, person: String, evaluation: Evaluation) -> Optional[String]:
       "Hello[person_]"
 
       if not person.has_form('String'):

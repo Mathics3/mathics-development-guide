@@ -26,7 +26,7 @@ class.
 
     summary_text = 'prints "Hello, <name>"'
 
-    def apply(self, person: String, evaluation: Evaluation) -> String:
+    def eval(self, person: String, evaluation: Evaluation) -> String:
       "Hello[person_String]"
           return String(f"Hello, {person.value}!")
 

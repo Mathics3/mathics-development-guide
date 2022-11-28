@@ -9,10 +9,7 @@ these things functions and variables defined this way are tagged as a
 "Built-in Symbol".
 
 The method that you should define in the Builtin class that should get
-invoked needs to start off with the name ``apply``. (This is an
-*evaluation* method and starting the name with ``eval`` would have
-been the customary and correct thing to do. In the future we hope to
-fix this.)
+invoked needs to start off with the name ``eval``.
 
 As before, this method has an ``evaluation`` parameter at the end.
 
@@ -34,11 +31,11 @@ might look like this:
 
   Hello[s_String] := Print["Hello, " <> s <> "!"]
 
-The eavluation method, looks like this:
+The evaluation method, looks like this:
 
 .. code-block:: python
 
-  def apply(self, person: String, evaluation: Evaluation):
+  def eval(self, person: String, evaluation: Evaluation):
     "Hello[person_String]"
         return String(f"Hello, {person.value}!")
 
@@ -50,7 +47,7 @@ Here is the complete code:
   from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
-    def apply(self, person: String, evaluation: Evaluation) -> String:
+    def eval(self, person: String, evaluation: Evaluation) -> String:
       "Hello[person_String]"
           return String(f"Hello, {person.value}!")
 
@@ -66,4 +63,4 @@ conversions to Python and from Python were needed.
 See `Patterns
 <https://reference.wolfram.com/language/tutorial/Patterns.html>`_ for
 more information about how to specify expressions with patterns in
-them that you might use in an *apply()* method docstring.
+them that you might use in an *eval()* method docstring.

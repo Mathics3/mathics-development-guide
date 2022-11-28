@@ -143,7 +143,7 @@ Lets look at a simple one:
          = Symbol
         """
 
-        def apply(self, expr, evaluation):
+        def eval(self, expr, evaluation):
             "Head[expr_]"
 
             return expr.get_head()
@@ -153,8 +153,8 @@ explicitly so we get ``Expressions``'s built-in ``evaluation()``
 method.
 
 A feature of the ``Builtin`` class is the convention that its provides
-a convention by which "apply" methods of the class can be matched
-using the method's name which must start with "apply" and a pattern
+a convention by which "eval" methods of the class can be matched
+using the method's name which must start with "eval" and a pattern
 listed in the method's doc string. This is used in the example above.
 
 Here, ``Head`` has one paramater which is called *expr*. Note that in

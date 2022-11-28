@@ -1,5 +1,5 @@
-Installing Mathics
-==================
+Installing Mathics3
+===================
 
 .. contents::
    :depth: 1

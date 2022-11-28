@@ -24,7 +24,7 @@ Here is how this is done.
           "Hello[person_String]": 'Hello[person, "English"]',
       }
 
-      def apply(self, person: String, language: String, evaluation: Evaluation) -> String:
+      def eval(self, person: String, language: String, evaluation: Evaluation) -> String:
           """Hello[person_String, language_]"""
            greeting = "Bonjour" if language.value == "French" else "Hello"
           return String(f"{greeting}, {person.value}!")

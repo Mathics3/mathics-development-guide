@@ -31,7 +31,7 @@ Two-dimensional Mathics Function
 
 Translating the above definition into Mathics:
 
-.. code:: wolfram
+.. code:: mathematica
 
    MCurl[{f1_, f2_}, {x1_, x2_}] :=  D[f2, x1] - D[f1, x2]
 
@@ -72,7 +72,7 @@ Three-dimensional Mathics Function
 
 Translating the above definition into Mathics:
 
-.. code:: wolfram
+.. code:: mathematica
 
     In[5] := MCurl[{f1_, f2_, f3_}, {x1_, x2_, x3_}] := {
              D[f3, x2] - D[f2, x3],
@@ -91,7 +91,7 @@ Adding ``Curl`` as an autoloaded function
 The above code was done in an interactive session.
 Below we extract the function definitions and package this.
 
-.. code:: wolfram
+.. code:: mathematica
 
     (* Two and Three dimensional Curl, taken from the Mathematical definitions *)
 
