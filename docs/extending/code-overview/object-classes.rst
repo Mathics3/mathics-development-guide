@@ -1,6 +1,6 @@
-===============
- Object Classes
-===============
+==============
+Object Classes
+==============
 
 The fundamental classes that functions are built up from are described
 below.
