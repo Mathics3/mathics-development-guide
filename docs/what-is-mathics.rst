@@ -1,5 +1,5 @@
-What makes up Mathics?
-~~~~~~~~~~~~~~~~~~~~~~
+The Components of Mathics3
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. contents::
    :depth: 1
@@ -10,18 +10,20 @@ At one time, there was a single Python PyPI installable package that
 made up this open-source version of the Wolfram language. It included for example a Django-based front end.
 
 However in order to facilitate using the parts of it in other projects
-or the parts you need it has been broken up into separately
-installable packages.
+or the parts you need, the original package and github repositories have has been broken up into separately
+installable packages, and separate github repositories. These reposities are now under the Mathics3 github organization. (The old organization and github repositories are around, but you will find no development there.)
 
-This generally reduces the dependency for most of the pieces. And if
-you only need or want part of Mathics you don't needed to the code or
-dependencies you don't want. For example, if you might now want or need the Django-based front end. If that is the case, then you don't need to install Django or MySQL which Django uses in our implementation to save worksheet data.
+Splitting up into packages reduces the dependencies needed for many of the individual components: when
+you only need part of Mathics you don't needed to the code or
+dependencies for parts you don't want. For example, if you might not need the Django-based front end; perhaps you do everything from a command line interface. If that is the case, then you don't need to install Django or MySQL which Django uses in our implementation to save worksheet data.
 
-Similarly, if you aren't interested in Natural-Language Processing (NLP) you don't need to install NLTK and word lists.
+On the other hand, if you only interested  the Django interface and will never used the command-line interface, then you don't need the the mathicsscript package and the python terminal packages that pulls in.
 
-On the there other hand, if you do want everything, we have a separate package called `Mathics-omnibus <https://pypi.org/project/Mathics-omnibus/>`_ which pull on all of the Mathics-related packages. As part of the `github project <https://github.com/Mathics3/mathics-omnibus>`_ is a docker setup.
+Natural-Language Processing (NLP) is a separate Mathics module; it requires OS package support and word lists that you might not have installed, and might not want to devote disk space for. Various Python interpreters cannot build the Python NLTK package.
 
-Using this, us can use the full `Mathics suite via dockerhub <https://hub.docker.com/r/mathicsorg/mathics>`_ without having to build Mathics or have necessary OS libraries (including Python itself) outside of the docker containers.
+However, if you do want everything, we have a separate package called `Mathics-omnibus <https://pypi.org/project/Mathics-omnibus/>`_ which pulls in all of the Mathics-related packages. As part of the `github project <https://github.com/Mathics3/mathics-omnibus>`_ is a docker setup.
+
+Using this, you can use the full `Mathics suite via dockerhub <https://hub.docker.com/r/mathicsorg/mathics>`_ without having to build Mathics or have necessary OS libraries (including Python itself) outside of the docker containers.
 
 The pieces are described next go into the individual Python-packages that make up the Mathics suite.
 
@@ -32,8 +34,7 @@ Mathics Core
 The Mathics core contains a parser, and evaluator, and
 some formatting routines.
 
-Over time, formatting routines may be
-packaged separately
+Over time, formatting routines may be packaged separately
 
 There is also a very rudimentary command-line shell called ``mathics``.
 

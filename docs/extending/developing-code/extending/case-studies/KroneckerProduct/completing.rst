@@ -31,7 +31,7 @@ Here is the first cut for ``KroneckerProduct``:
         summary_text = "Kronecker product"
         sympy_name = "physics.quantum.TensorProduct"
 
-        def apply(self, mi: ListExpression, evaluation: Evaluation):
+        def eval(self, mi: ListExpression, evaluation: Evaluation):
             "KroneckerProduct[mi__]"
             sympy_mi = [to_sympy_matrix(m) for m in mi.elements]
             return from_sympy(TensorProduct(*sympy_mi))
@@ -73,11 +73,11 @@ function names and SymPy function names.
 ----------------------------------------
 
 Here we will focus on the evaluation method. Confusingly, the name
-needs to start with ``apply``:
+needs to start with ``eval``:
 
 .. code-block:: python
 
-        def apply(self, mi: ListExpression, evaluation: Evaluation):
+        def eval(self, mi: ListExpression, evaluation: Evaluation):
             "KroneckerProduct[mi__List]"
             sympy_mi = [to_sympy_matrix(m) for m in mi.elements]
             return from_sympy(TensorProduct(*sympy_mi))
@@ -140,7 +140,7 @@ we can generalize the pattern to match anything and then do the check in Python.
 
 .. code-block:: python
 
-        def apply(self, mi: ListExpression, evaluation: Evaluation):
+        def eval(self, mi: ListExpression, evaluation: Evaluation):
             "KroneckerProduct[mi__]"
 
             #  Code in Python mi__List matching

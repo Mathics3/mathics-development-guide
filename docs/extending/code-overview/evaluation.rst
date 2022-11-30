@@ -48,7 +48,7 @@ And as mentioned above, aside from this, the behavior is encoded in
 Mathics' Python code using conventions uniquely defined in this
 system. Built-in Functions are special methods in classes derived from
 a Bulltin class.  Furthermore they must have names that start out
-``apply`` and must have docstrings that contain WL patterns that
+``eval`` and must have docstrings that contain WL patterns that
 indicate when the method matches. More on this is described later.
 
 
@@ -222,11 +222,11 @@ Mathics function-like classes are described in later sections.
 As described in the previous section, before invoking that Mathics
 function, we need to check for a rewrite rule that applies to the
 Mathics function call. If a rule is found, it will have attached to a
-bound method name starts with ``apply``. [2]_
+bound method name starts with ``eval``. [2]_
 
 These rules get created on loading the module containing a subclass of
 ``Builtin`` implementing some Mathcs Primative Funtion.  The rules
-come from the docstrings of a methods that start with ``apply``.
+come from the docstrings of methods that start with ``eval``.
 
 The docsting includes not only a pattern to match on but how the
 parameters should get bound when applying the function.
@@ -243,7 +243,7 @@ As we go along, we'll describe other conventions that are used that
 are crucial in getting the interpreter work properly. But for now,
 when writing a new Builtin Function, just remember that unless there
 is an ``evaluate()`` method, there is a method name in a Mathics
-function class that begins with ``apply``, and its docstring is used
+function class that begins with ``eval``, and its docstring is used
 to figure out whether the elements of the list are applicable to that
 function.
 
@@ -255,11 +255,11 @@ primitive taken from the code
 
    class Environment(Builtin):
 
-   def apply(self, var, evaluation):
+   def eval(self, var, evaluation):
        """Environment[var_?StringQ]"""
    ...
 
-The evaluation method that starts with ``apply()`` above will get called when finding a
+The evaluation method that starts with ``eval()`` above will get called when finding a
 ``Expression`` whose ``Head`` value is ``Environment`` and it has one
 element or parameter which which we will call ``var``.  That element or
 parameter should also much be a ``Symbol`` object.
@@ -290,7 +290,7 @@ In the example above, it was omitted. Here is what it looks like in the actual c
          = ...
         """
 
-        def apply(self, var, evaluation):
+        def eval(self, var, evaluation):
         <dl>
           <dt>'Environment[$var$]'
           <dd>gives the value of an operating system environment variable.
@@ -347,4 +347,4 @@ performs the above. So here is an equivalent program:
     .. rubric: Footnotes
 
 .. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function.
-.. [2] The use of the word ``apply`` is unfortunate. These methods are typically called evaluation or "eval" methods. Possibly sometime in the future, we will correct this mistake.
+.. [2] In older code ``apply`` is incorrectly used. These methods will be corrected in the future.

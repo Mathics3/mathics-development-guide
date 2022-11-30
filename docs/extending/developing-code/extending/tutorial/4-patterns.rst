@@ -8,7 +8,7 @@ one or two parameters.
 Mathics calls a signature a "Form".
 
 One way to implement this in Python code is to have two different
-Python methods that start with the name ``apply``, one will
+Python methods that start with the name ``eval``, one will
 handle one kind of Form, say of the kind we saw previously,
 a person name is given. The other evaluation method will handle
 another kind of Form, such as one where there is an
@@ -23,16 +23,16 @@ Here is some code for this..
   from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
-    def apply(self, person: String, language: String, evaluation: Evaluation) -> String:
+    def eval(self, person: String, language: String, evaluation: Evaluation) -> String:
       """Hello[person_String, language_String]"""
 
       greeting = "Bonjour" if language.value == "French" else "Hello"
       return String(f"{greeting}, {person.value}!")
 
-    def apply_english(self, person: String, evaluation) -> String:
+    def eval_english(self, person: String, evaluation) -> String:
       """Hello[person_]"""
 
-      return self.apply(person, Expression("English"), evaluation)
+      return self.eval(person, Expression("English"), evaluation)
 
 Here is a session showing how this works:
 
