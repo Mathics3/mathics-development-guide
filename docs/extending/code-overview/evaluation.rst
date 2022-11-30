@@ -222,7 +222,7 @@ Mathics function-like classes are described in later sections.
 As described in the previous section, before invoking that Mathics
 function, we need to check for a rewrite rule that applies to the
 Mathics function call. If a rule is found, it will have attached to a
-bound method name starts with ``eval``.
+bound method name starts with ``eval``. [2]_
 
 These rules get created on loading the module containing a subclass of
 ``Builtin`` implementing some Mathcs Primative Funtion.  The rules
@@ -347,3 +347,4 @@ performs the above. So here is an equivalent program:
     .. rubric: Footnotes
 
 .. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function.
+.. [2] In older code ``apply`` is incorrectly used. These methods will be corrected in the future.
