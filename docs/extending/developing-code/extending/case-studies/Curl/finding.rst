@@ -1,7 +1,7 @@
 Find corresponding Sympy, SciPy, mpmath, or NumPy function
 ===========================================================
 
-In the last section, we wrote ``Curl`` in Mathics and arranged and put
+In the last section, we wrote ``Curl`` in Mathics3 and arranged and put
 it in a place where it would get loaded.
 
 However we only added forms for the two and three dimensional

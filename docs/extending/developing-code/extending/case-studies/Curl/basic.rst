@@ -5,7 +5,7 @@ Armed with information from the previous sections:
 
 * where the function belongs: "Mathematical Operations", and
 * information from WMA and SymPy on what should be implemented and how it hooks into an existing library function, and
-* an implementation of Curl written in Mathics to guide us
+* an implementation of Curl written in Mathics3 to guide us
 
 we are now ready to being with a skeletal version from which we can fill out later.
 

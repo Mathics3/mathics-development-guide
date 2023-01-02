@@ -31,7 +31,7 @@ see the information that you added in the docstring:
 
 .. image:: Undefined-docstring.png
   :width: 400
-  :alt: Help for the built-in Symbol in Mathics Django
+  :alt: Help for the built-in Symbol in Mathics3 Django
 
 Click on the link WMA in blue and you should see the WMA documentation
 for this.  You can also click on the preceding entry in the
@@ -45,7 +45,7 @@ called ``mathics`` we can also see this builtin
 
     $ mathics --full-form
 
-    Mathics 5.0.3dev0
+xo    Mathics3 5.0.3dev0
     on CPython 3.8.12 (heads/v2.3.4.1_release:4a6b4d3504, Jun  3 2022, 15:46:12)
     ...
 

@@ -48,7 +48,7 @@ for decribing how this works.
 ``mathics.eval``
 ================
 
-Mathics Evaluation Functions
+Mathics3 Evaluation Functions
 
 Routines here are core operations or functions that implement evaluation. If there
 were an instruction interpreter, these would be the instructions.
@@ -65,9 +65,9 @@ language like C, Cython, or Rust.
 ``mathics.builtin``
 ====================
 
-Mathics Builtin Functions and  Variables.
+Mathics3 Builtin Functions and  Variables.
 
-Mathics has over a thousand Built-in Functions and variables, all of
+Mathics3 has over a thousand Built-in Functions and variables, all of
 which are defined here.
 
 Note that there are other modules to collect specific aspects a
@@ -79,7 +79,7 @@ What remains here is then mostly the top-level definition of a Mathics
 Builtin, and attributes that have not been segregated elsewhere such
 as has been done for one of the other modules listed above.
 
-A Mathics Builtin is implemented one of a particular kind of Python
+A Mathics3 Builtin is implemented one of a particular kind of Python
 class.  Within these classes class variables give properties of the
 builtin class such as the Builtin's Attributes, it Information text,
 among other things.
@@ -88,9 +88,9 @@ among other things.
 ``mathics.compile``
 ===================
 
-Mathics ``Compile`` implementation.
+xoMathics3 ``Compile`` implementation.
 
-Here we have routines for compiling Mathics code.
+Here we have routines for compiling Mathics3 code.
 
 At present, we use LLVM for this.
 
@@ -101,6 +101,6 @@ At present, we use LLVM for this.
 Module for handling Mathics-style documentation.
 
 Right now this covers common LaTeX/PDF and routines common to
-Mathics Django. When this code is moved out, perhaps it will
-include the Mathics Django-specific piece.
+Mathics3 Django. When this code is moved out, perhaps it will
+include the Mathics3 Django-specific piece.
 Mathics' home-grown documentation system.

@@ -36,10 +36,10 @@ Markup in Documentation
 | <li> *item*                      | an item of an unordered or ordered      |
 |                                  | list. Note: no </li>.                   |
 +----------------------------------+-----------------------------------------+
-| ``'`` *code* ``'``               | inline Mathics code or other code.      |
+| ``'`` *code* ``'``               | inline Mathics3 code or other code.     |
 +----------------------------------+-----------------------------------------+
 | ``$`` *name* ``$``               | Math-mode variable identifier in        |
-|                                  | Mathics code or in text.                |
+|                                  | Mathics3 code or in text.               |
 +----------------------------------+-----------------------------------------+
 | <console> *text* </console>      | a console (shell/bash/Terminal)         |
 |                                  | transcript in its own paragraph.        |
@@ -91,9 +91,9 @@ The following commands can be used to specify test cases.
 +------------------------+-----------------------------------------------------------+
 | Markup                 | Meaning                                                   |
 +========================+===========================================================+
-| ``>>`` *Mathics code*  | Some Mathics code to run and to appear in documentation.  |
+| ``>>`` *Mathics3 code* | Some Mathics3 code to run and to appear in documentation. |
 +------------------------+-----------------------------------------------------------+
-| ``=`` *output*         | expected output produced by the Mathics code.             |
+| ``=`` *output*         | expected output produced by the Mathics3 code.            |
 +------------------------+-----------------------------------------------------------+
 | ``...``                | matches any output; used when output can vary.            |
 +------------------------+-----------------------------------------------------------+
@@ -106,7 +106,7 @@ The following commands can be used to specify test cases.
 | ``\|`` *print*         | a printed line in the result of the test query.           |
 +------------------------+-----------------------------------------------------------+
 
-It is good to create examples that convey some aspect about the Mathics Function.
+It is good to create examples that convey some aspect about the Mathics3 Function.
 
 In the past, the documentation system was abused and ran edge cases
 and prior bugs fixed. For that please write a pytest.
@@ -121,9 +121,9 @@ moving something like this to a pytest unit test which is far more flexibile.
 +------------------------+-----------------------------------------------------------+
 | Markup                 | Meaning                                                   |
 +========================+===========================================================+
-| ``#>`` *Mathics code*  | Some Mathics code to run but not appearing documentation. |
+| ``#>`` *Mathics3 code* | Some Mathics3 code to run but not appearing documentation.|
 +------------------------+-----------------------------------------------------------+
-| ``X>`` *Mathics code*  | Mathics code shown in the documentation but not run.      |
+| ``X>`` *Mathics3 code* | Mathics3 code shown in the documentation but not run.     |
 +------------------------+-----------------------------------------------------------+
 | ``S>``                 | a test query that is shown in the documentation and run   |
 +------------------------+-----------------------------------------------------------+

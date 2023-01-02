@@ -1,10 +1,10 @@
 .. index:: running
 .. _running:
 
-Running Mathics
-===============
+Running Mathics3
+================
 
-Here we describe the ways Mathics can be run.
+Here we describe the ways Mathics3 can be run.
 
 
 Running natively
@@ -13,7 +13,7 @@ Running natively
 Command-line interface
 ^^^^^^^^^^^^^^^^^^^^^^
 
-If you have installed the Mathics core only you can start the
+If you have installed the Mathics3 core only you can start the
 rudimentary command-line shell with:
 
 .. code:: bash
@@ -68,7 +68,7 @@ will want to run the fancier Django-based web server. This does support
 graphics output currently (although in the future we plan to improve
 that).
 
-To start the server after Mathics has been installed, run:
+To start the server after Mathics3 has been installed, run:
 
 .. code:: bash
 
@@ -89,9 +89,9 @@ You can set the used port by using the option ``-p``, as in:
 
     $ mathicsserver -p 8010
 
-The default port for Mathics is 8000. Make sure you have the necessary
+The default port for Mathics3 is 8000. Make sure you have the necessary
 privileges to start an application that listens to this port. Otherwise,
-you will have to run Mathics as super-user.
+you will have to run Mathics3 as super-user.
 
 By default, the Web server is only reachable from your local machine. To
 be able to access it from another computer, use the option ``-e``.
@@ -128,20 +128,20 @@ Running via docker
 ~~~~~~~~~~~~~~~~~~
 
 Another way to run ``mathics`` is via `docker
-<https://www.docker.com>`__ using the `Mathics docker image
+<https://www.docker.com>`__ using the `Mathics3 docker image
 <https://hub.docker.com/repository/docker/mathicsorg/mathics>`_ on
 dockerhub.
 
-If you do a PyPI install of the package `Mathics omnibus <https://pypi.org/project/Mathics-omnibus/>`_,
+If you do a PyPI install of the package `Mathics3 omnibus <https://pypi.org/project/Mathics-omnibus/>`_,
 you will get simpler access to the docker images and a simpler way to run the various parts.
 
-To run the command-line interface using docker image without using the Mathics omnibus helper script:
+To run the command-line interface using docker image without using the Mathics3 omnibus helper script:
 
 ::
 
     $ docker run --rm -it --name mathics-cli -v /tmp:/usr/src/app/data mathicsorg/mathics --mode cli
 
-However if Mathics omibus is installed:
+However if Mathics3 omibus is installed:
 
 ::
 
@@ -159,7 +159,7 @@ for example:
 In the above you are running ``mathicsscript`` (the enhanced CLI), not
 ``mathics``.
 
-To run the Django 3.1-web interface using docker image without using the Mathics omnibus helper script, run :
+To run the Django 3.1-web interface using docker image without using the Mathics3 omnibus helper script, run :
 
 ::
 
@@ -180,11 +180,11 @@ information about changing external port number and other for other
 
 Also see the previous section on security limitations.
 
-Running Mathics on your server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running Mathics3 on your server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here we describes how to setup Mathics on a local network. There are
-additional (security) considerations for running Mathics on a publicly
+Here we describes how to setup Mathics3 on a local network. There are
+additional (security) considerations for running Mathics3 on a publicly
 facing webserver.
 
 Best practices for a local network
@@ -223,14 +223,14 @@ set an execution timeout in ``mathics/setttings.py``, e.g.
 You probably also want to run the server as a restricted user within a
 jail shell
 
-Running Mathics on a public webserver
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Running Mathics3 on a public webserver
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Warning:** You should be very careful running Mathics publicly, there
+**Warning:** You should be very careful running Mathics3 publicly, there
 are some potentially large security implications to be aware of!
 
 The setup is similar but you can use ngnix to cache the static content.
-Mathics runs as a wsgi app so you can use uwsgi. The `Django
+Mathics3 runs as a wsgi app so you can use uwsgi. The `Django
 docs <https://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html>`__
 are a good reference.
 

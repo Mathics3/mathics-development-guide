@@ -4,9 +4,9 @@ Contributing & Developing
 Contributing
 ------------
 
-Here is the basic workflow for contributions to the Mathics source code:
+Here is the basic workflow for contributions to the Mathics3 source code:
 
-1. Create your own github account and fork the `Mathics github
+1. Create your own github account and fork the `Mathics3 github
    repository <https://github.com/mathics/Mathics>`__ (see `github help
    on forking <https://help.github.com/articles/fork-a-repo>`__ which
    also includes explanations of further steps).
@@ -23,7 +23,7 @@ Here is the basic workflow for contributions to the Mathics source code:
    working on. Your changes will still not be in the main Mathics
    repository (unless you have push access).
 
-4. Test your code! Run ``make test`` to run the whole Mathics test
+4. Test your code! Run ``make test`` to run the whole Mathics3 test
    suite. Use ``python mathics/test.py -s SYMBOL`` regularly to run all
    test cases for a specific ``SYMBOL``. You might also want to `build
    the documentation
@@ -38,9 +38,9 @@ Here is the basic workflow for contributions to the Mathics source code:
    will run on Travis CI. If one of these tests fail click on the
    details link and try to figure out why.
 
-6. Every now and then, a version of Mathics is released, i.e., packaged
+6. Every now and then, a version of Mathics3 is released, i.e., packaged
    and uploaded. This is usually the time when the code running on the
-   Mathics mirrors is updated as well.
+   Mathics3 mirrors is updated as well.
 
 There are various tools for working with git, e.g.,
 `EGit <http://www.eclipse.org/egit/>`__ for

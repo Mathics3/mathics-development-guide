@@ -5,14 +5,14 @@ Writing Curl in Mathics
    :depth: 1
    :local:
 
-Mathics is extensible; it allows creation of new functions, and new builtin functions all using the Mathics language.
+Mathics3 is extensible; it allows creation of new functions, and new builtin functions all using the Mathics3 language.
 
 So before writing this in Python or in SymPy, let us see how to do this
-in Mathics itself.  We are only going to try the first two forms, curl
+in Mathics3 itself.  We are only going to try the first two forms, curl
 in two and three dimensions.
 
 *Note:* by the time you are reading this ``Curl`` has already been
- added to Mathics. So we will instead define a "builtin" function ``MCurl`` (Mathics
+ added to Mathics3. So we will instead define a "builtin" function ``MCurl`` (Mathics
  Curl) so that we don't have function name clashes.
 
 Two-dimensional Mathematical Definition
@@ -26,8 +26,8 @@ Curl is defined as:
 
 for two-dimensional vectors.
 
-Two-dimensional Mathics Function
---------------------------------
+Two-dimensional Mathics3 Function
+---------------------------------
 
 Translating the above definition into Mathics:
 
@@ -35,13 +35,13 @@ Translating the above definition into Mathics:
 
    MCurl[{f1_, f2_}, {x1_, x2_}] :=  D[f2, x1] - D[f1, x2]
 
-Now let's try that inside Mathics using the two-dimensional example that can be found in the `WMA reference for Curl <https://reference.wolfram.com/language/ref/Curl.html>`_
+Now let's try that inside Mathics3 using the two-dimensional example that can be found in the `WMA reference for Curl <https://reference.wolfram.com/language/ref/Curl.html>`_
 
 .. code::
 
     $ mathics
 
-    Mathics 5.0.3dev0
+    Mathics3 5.0.3dev0
     In[1]:= MCurl[{f1_, f2_}, {x1_, x2_}] :=  D[f2, x1] - D[f1, x2]
     Out[1]= None
 
@@ -67,8 +67,8 @@ In three dimensions, things are a little more involved:
       \partial f_1 / \partial x_3 - \partial f_3 / \partial x_1, \ \ %
       \partial f_2 / \partial x_1 - \partial f_1 / \partial x_2 )
 
-Three-dimensional Mathics Function
-----------------------------------
+Three-dimensional Mathics3 Function
+-----------------------------------
 
 Translating the above definition into Mathics:
 
@@ -114,7 +114,7 @@ Below we extract the function definitions and package this.
     End[]
 
 Place the above code in ``mathics-core/mathics/autoload/rules/Curl.m``,
-and when Mathics starts up, this code will be evaluated.
+and when Mathics3 starts up, this code will be evaluated.
 
 Testing autoloaded ``Curl`` function
 ------------------------------------
@@ -125,7 +125,7 @@ Now let us try ``MCurl`` in a mathics session:
 
     $  mathics
 
-    Mathics 5.0.3dev0
+    Mathics3 5.0.0
     on CPython 3.8.12 (heads/v2.3.4.1_release:4a6b4d3504, Jun  3 2022, 15:46:12)
     ...
 

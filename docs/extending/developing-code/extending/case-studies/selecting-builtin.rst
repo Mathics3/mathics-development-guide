@@ -10,7 +10,7 @@ function or symbol. However if not, there are github feature requests with the l
 
 Also look for ``TODO`` at the bottom of the newer sections/modules for missing builtin functions for that particular class or function.
 
-Below are a few examples of actual Mathics Builtins that we have added.
+Below are a few examples of actual Mathics3 Builtins that we have added.
 
 .. toctree::
    :maxdepth: 1
@@ -23,4 +23,4 @@ Below are a few examples of actual Mathics Builtins that we have added.
 As we added these Builtins, we recorded the steps that were taken. We ordered the list above to go from the simpile to more advanced.
 
 
-See also :ref:`Tutorial: Adding a new Mathics Function`.
+See also :ref:`Tutorial: Adding a new Mathics3 Function`.

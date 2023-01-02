@@ -9,7 +9,7 @@ Reporting Bugs and Problems
 
 Reporting bugs in a thoughtful way is helpful.
 
-However any project that attempts to mimic the Wolfram Language is going fall short. It is easy to find in a matter of minutes some built-in function Mathics doesn't implement but is in WL. Or that is implemented but doesn't match WL.
+However any project that attempts to mimic the Wolfram Language is going fall short. It is easy to find in a matter of minutes some built-in function Mathics3 doesn't implement but is in WL. Or that is implemented but doesn't match WL.
 
 
 Issues and Issue Fixers, Priorities
@@ -82,7 +82,7 @@ This kind of thing is too long and complex or us to handle.
 
 # Questions, User Environment and Installation
 
-Many people will use the issue tracker as a means to solicit help for a problem that they have, or to get help on how to set up Mathics. Judgement should be used here.
+Many people will use the issue tracker as a means to solicit help for a problem that they have, or to get help on how to set up Mathics3. Judgement should be used here.
 
 If the problem is of a more general nature consider other channels like `StackOverflow <https://stackoverflow.com/>`_ or `Mathematica & Wolfram Language <https://mathematica.stackexchange.com/>`_ or one of the groups or channels listed in see https://mathics.org/#support.
 
