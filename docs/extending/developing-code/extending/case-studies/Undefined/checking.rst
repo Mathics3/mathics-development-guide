@@ -45,7 +45,7 @@ called ``mathics`` we can also see this builtin
 
     $ mathics --full-form
 
-xo    Mathics3 5.0.3dev0
+    Mathics3 5.0.3dev0
     on CPython 3.8.12 (heads/v2.3.4.1_release:4a6b4d3504, Jun  3 2022, 15:46:12)
     ...
 

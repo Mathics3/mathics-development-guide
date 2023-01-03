@@ -6,19 +6,19 @@ Contributing
 
 Here is the basic workflow for contributions to the Mathics3 source code:
 
-1. Create your own github account and fork the `Mathics3 github
-   repository <https://github.com/mathics/Mathics>`__ (see `github help
-   on forking <https://help.github.com/articles/fork-a-repo>`__ which
+1. Create your own GitHub account and fork the `Mathics3 GitHub
+   core repository <https://GitHub.com/Mathics3/mathics-core>`__ (see `GitHub help
+   on forking <https://help.GitHub.com/articles/fork-a-repo>`__ which
    also includes explanations of further steps).
 
-2. Clone your github repository to your local machine, edit the code,
+2. Clone your GitHub repository to your local machine, edit the code,
    make commits. git is different to other version control systems such
    as SVN in the way that the whole repository (with its whole history)
    is also stored on your local machine. Therefore, commits are not the
    final steps to publish something, but rather atomic steps during
    development.
 
-3. Push your local changes to your upstream github repository. Do this
+3. Push your local changes to your upstream GitHub repository. Do this
    regularly to have backups and to enable others to view what you're
    working on. Your changes will still not be in the main Mathics
    repository (unless you have push access).
@@ -30,7 +30,7 @@ Here is the basic workflow for contributions to the Mathics3 source code:
    PDF <https://github.com/mathics/Mathics/wiki/Building-the-documentation>`__
    to see how it is affected by your changes to documentation.
 
-5. Make a github pull request to have your code integrated in the main
+5. Make a GitHub pull request to have your code integrated in the main
    repository (see the `help on pull
    requests <https://help.github.com/articles/using-pull-requests>`__).
    After your code has been successfully reviewed, it will officially be

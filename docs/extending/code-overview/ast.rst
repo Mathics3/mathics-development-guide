@@ -45,7 +45,7 @@ identifier name in a programming language and the variable it
 represents.
 
 The class definitions for these are given in `mathics.core.parser.ast
-<https://github.com/Mathics3/mathics-core/tree/master/mathics/core/parser.ast>`_.
+<https://github.com/Mathics3/mathics-core/blob/master/mathics/core/parser/ast.py>`_.
 
 If you compare the above four AST types with other languages, you'll
 find this is pretty sparse. For example, `Python's AST

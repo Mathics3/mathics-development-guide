@@ -12,7 +12,7 @@ Here is a simple "Hello, World!" Mathics3 function.
       return String(f"Hello, World!")
 
 Add the above at the end to a file in `mathics.builtin
-<https://github.com/mathics/Mathics/tree/master/mathics/builtin.ast>`_
+<https://github.com/Mathics3/mathics-core/tree/master/mathics/builtin>`_
 like ``system.py``,
 
 Later on, we will show how to add code without modify the Mathics3 core, but

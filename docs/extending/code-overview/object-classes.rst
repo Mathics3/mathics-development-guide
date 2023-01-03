@@ -5,9 +5,9 @@ Object Classes
 The fundamental classes that functions are built up from are described
 below.
 
-Most of these classes are defined in `mathics.builtin.base
-<https://github.com/Mathics3/mathics-core/tree/master/mathics/builtin/base.py>`_
-or `mathics.core.expression <https://github.com/mathics/Mathics3/tree/master/mathics-core/core/expression.py>`_.
+Most of these classes are defined in `mathics.core.element
+<https://github.com/Mathics3/mathics-core/tree/master/mathics/core/element.py>`_
+or `mathics.core.expression <https://github.com/Mathics3/mathics-core/tree/master/mathics/core/expression.py>`_.
 
 Class Diagram for Some of the Classes
 =====================================
@@ -300,7 +300,7 @@ SympyConstant, MPMathConstant, and NumpyConstant
 SympyFunction and MPMathFunction
 ================================
 
-Which Class should be used for a Mathics3 Object?
+Which class should be used for a Mathics3 Object?
 =================================================
 
 * To define a Mathics3 constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
