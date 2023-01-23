@@ -6,9 +6,10 @@ Here is a simple "Hello, World!" Mathics3 function.
 .. code-block:: python
 
   from mathics.builtin.base import Predefined
+  from mathics.core.atom import String
 
   class Hello(Predefined):
-    def evaluate(self, evaluation):
+    def evaluate(self, evaluation: Evaluation) -> String:
       return String(f"Hello, World!")
 
 Add the above at the end to a file in `mathics.builtin
@@ -23,7 +24,7 @@ Now start mathics from the Mathics3 source tree:
 ::
 
    $ python mathics/main.py
-   Mathics3 5.0.2
+   Mathics3 6.0.0
    ...
    In[1]:= Hello
    Out[1]= Hello, World!
@@ -42,4 +43,8 @@ needed to perform the function.
 However here all we do is return a Mathics3 string, so we don't need to
 use what is in evaluation.
 
-The return value of a mathics function should be some sort of superclass of :ref:`BaseElement Class`. A ``String`` is a subclass of the :ref:`Atom Class` which in turn is a subclass of the ``BaseElement``. You can also return the ``None`` value, in which case the expression is unchanged.
+The return value of a mathics function should be some sort of
+superclass of :ref:`BaseElement Class`. A ``String`` is a subclass of
+the :ref:`Atom Class` which in turn is a subclass of the
+``BaseElement``. You can also return the ``None`` value, in which case
+the expression is unchanged.
