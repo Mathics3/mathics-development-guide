@@ -1,4 +1,4 @@
-Tutorial: Adding a new Mat3hics Function
+Tutorial: Adding a new Mathics3 Function
 ========================================
 
 In this tutorial, we will show how to create a new Mathics3 Function using Python.
