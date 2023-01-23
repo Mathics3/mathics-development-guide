@@ -1,11 +1,11 @@
 Working with Multiple Patterns
 ------------------------------
 
-Mathics allows Functions to have the same name but different function
+Mathics3 allows Functions to have the same name but different function
 signatures. For example maybe you can call ``Hello`` with a either
 one or two parameters.
 
-Mathics calls a signature a "Form".
+Mathics3 calls a function signature a "Form".
 
 One way to implement this in Python code is to have two different
 Python methods that start with the name ``eval``, one will
@@ -66,7 +66,7 @@ seen in ``In[4]``; 45 doesn't match the ``String`` type check part of
 
 Similarly in ``In[5]`` three parameters are given rather than one or two.
 
-If a function does not return any value, the Mathics expression is
+If a function does not return any value, the Mathics3 expression is
 left unchanged. Note that you have to explicitly return
 ``Symbol["Null"]`` (which we have a defined for you in ``SymbolNull``)
 if you want that to return *Null*.

@@ -18,8 +18,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Mathics'
-copyright = '2020, 2022 The Mathics Team'
-author = 'The Mathics Team'
+copyright = '2020-2023 The Mathics3 Team'
+author = 'The Mathics3 Team'
 
 # The full version, including alpha/beta/rc tags
 release = '1.1.0'

@@ -4,7 +4,7 @@ Emitting warnings
 Sometimes things go wrong. When things go wrong, we should report an error to
 our users. But how can one emit a warning from inside an evaluator?
 
-Warnings in Mathics can be specified via the ``messages`` class field. The
+Warnings in Mathics3 can be specified via the ``messages`` class field. The
 ``messages`` class field is a dictionary whose keys are the names of possible
 warning messages and whose values are template warning messages. For example,
 we may want to display a warning when our users pass something other than a
@@ -20,7 +20,7 @@ string to ``Hello``:
     """
     <dl>
       <dt>Hello[$person$]
-      <dd>An example function in a Python-importable Mathics module.
+      <dd>An example function in a Python-importable Mathics3 module.
     </dl>
     >> Hello["World"]
      = Hello, World!

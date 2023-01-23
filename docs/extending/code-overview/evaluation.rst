@@ -22,7 +22,7 @@ Part of the complexity in evaluating an expression involves:
   values and rules that can be dynamically changing; term rewriting
   can take into account the current types of variables or bound
   symbols
-* how to select the method to dispatch for a Mathics function call and how
+* how to select the method to dispatch for a Mathics3 function call and how
   parameter values are assigned after term rewriting and symbol binding is done
 * how we determine when the evaluation of an expression is complete
 
@@ -41,11 +41,11 @@ on that, like ``+``, ``__plus__()``, or even ``Times()``.
 Instead all Function calls are triggered through an evaluation method
 which involves the concept of `rewriting
 <https://en.wikipedia.org/wiki/Rewriting>`_. This alone can obscure
-what gets called. There Mathics function ``TraceEvaluation[]`` can
+what gets called. There Mathics3 function ``TraceEvaluation[]`` can
 help in understanding the subexpressions that are computed in evaluation.
 
 And as mentioned above, aside from this, the behavior is encoded in
-Mathics' Python code using conventions uniquely defined in this
+Mathics3's Python code using conventions uniquely defined in this
 system. Built-in Functions are special methods in classes derived from
 a Bulltin class.  Furthermore they must have names that start out
 ``eval`` and must have docstrings that contain WL patterns that
@@ -55,7 +55,7 @@ indicate when the method matches. More on this is described later.
 Evaluation can leave an Expression Seemingly Unchanged
 ======================================================
 
-If you've used Mathics and misspelled a builtin function name or
+If you've used Mathics3 and misspelled a builtin function name or
 called a function with the wrong number of parameters, you might find
 it odd that sometimes you won't get an error message but just the same
 thing back. Or what you might type might be coorect and and complete
@@ -205,23 +205,23 @@ If the expression is unchanged, restore it to its state before building a new ex
 and reset the evaluation cache to its value before updating.
 
 
-Mathics Function Application
-============================
+Mathics3 Function Application
+=============================
 
 .. index:: Symbol, Predefined, Builtin, Expression
 
 The first element, called the "head" (or ``Head[]``) of an
 ``Expression`` is a ``Symbol``.
 
-When there are other elements, the head is assumed to be a Mathics
+When there are other elements, the head is assumed to be a Mathics3
 function call, where  the function name comes from the head. If this is a
-built-in function, like ``Plus``, the Mathics function name is the name
+built-in function, like ``Plus``, the Mathics3 function name is the name
 of a Python class derived ultimately from ``Builtin``. These
-Mathics function-like classes are described in later sections.
+Mathics3 function-like classes are described in later sections.
 
-As described in the previous section, before invoking that Mathics
+As described in the previous section, before invoking that Mathics3
 function, we need to check for a rewrite rule that applies to the
-Mathics function call. If a rule is found, it will have attached to a
+Mathics3 function call. If a rule is found, it will have attached to a
 bound method name starts with ``eval``. [2]_
 
 These rules get created on loading the module containing a subclass of
@@ -264,13 +264,13 @@ The evaluation method that starts with ``eval()`` above will get called when fin
 element or parameter which which we will call ``var``.  That element or
 parameter should also much be a ``Symbol`` object.
 
-For more information describing Mathics function signatures that are
+For more information describing Mathics3 function signatures that are
 used in the evaluation method's docstring , see `Functions and Programs
 <https://reference.wolfram.com/language/tutorial/FunctionsAndPrograms.html>`_
 and `Patterns
 <https://reference.wolfram.com/language/tutorial/Patterns.html>`_.
 
-One useful Mathics function that is useful in debugging pattern matching is  `Cases <https://reference.wolfram.com/language/ref/Cases.html>`_.
+One useful Mathics3 function that is useful in debugging pattern matching is  `Cases <https://reference.wolfram.com/language/ref/Cases.html>`_.
 
 Built-in Function Name Descriptions
 ===================================
@@ -346,5 +346,5 @@ performs the above. So here is an equivalent program:
 
     .. rubric: Footnotes
 
-.. [1] Other names for "element": "subexpression" or in in Mathics/WL the ``Rest[]`` function.
+.. [1] Other names for "element": "subexpression" or in in Mathics3/WL the ``Rest[]`` function.
 .. [2] In older code ``apply`` is incorrectly used. These methods will be corrected in the future.

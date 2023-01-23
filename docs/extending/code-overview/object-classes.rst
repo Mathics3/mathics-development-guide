@@ -5,9 +5,9 @@ Object Classes
 The fundamental classes that functions are built up from are described
 below.
 
-Most of these classes are defined in `mathics.builtin.base
-<https://github.com/mathics/Mathics/tree/master/mathics/builtin/base.py>`_
-or `mathics.core.expression <https://github.com/mathics/Mathics/tree/master/mathics/core/expression.py>`_.
+Most of these classes are defined in `mathics.core.element
+<https://github.com/Mathics3/mathics-core/tree/master/mathics/core/element.py>`_
+or `mathics.core.expression <https://github.com/Mathics3/mathics-core/tree/master/mathics/core/expression.py>`_.
 
 Class Diagram for Some of the Classes
 =====================================
@@ -97,7 +97,7 @@ Some examples:
 BaseElement Class
 =================
 
-A Mathics M-expression is the main data structure which evalution is
+A Mathics3 M-expression is the main data structure which evalution is
 performed on. An M-expression is, in general, a tree.  The nodes of this
 tree come from the ``BaseElement`` class. Note that element in
 addition to being a ``BaseElement`` are an ``Atom`` as well. In other words,
@@ -113,13 +113,13 @@ Note as the prefix ``Base`` implies, a BaseElement is a virtual class.
 Builtin class
 =============
 
-A number of Mathics variables and functions are loaded when Mathics starts up,
-thousands of functions even before any Mathics packages are loaded. As with other Mathics objects
-like ``Atom`` and ``Symbol``, Mathics variables and functions are
+A number of Mathics3 variables and functions are loaded when Mathics3 starts up,
+thousands of functions even before any Mathics3 packages are loaded. As with other Mathics3 objects
+like ``Atom`` and ``Symbol``, Mathics3 variables and functions are
 implemented through Python classes.
 
-The reason that we use a *class* for a Mathics variable or a Mathics
-function is so that we can give those Mathics object properties and
+The reason that we use a *class* for a Mathics3 variable or a Mathics3
+function is so that we can give those Mathics3 object properties and
 attributes.
 
 At the lowest level of the class hierarchy is ``Builtin``.
@@ -209,7 +209,7 @@ Although objects derived from ``Atom``, e.g. symbols and integers, are
 valid expressions, this class describes *compound* expressions, or
 expressions that are more than a single atom/element. So in contrast to an
 object of type ``Atom``, an ``Expression`` object is some sort of
-structured node that as in Mathics itself, has a ``Head`` (function
+structured node that as in Mathics3 itself, has a ``Head`` (function
 designator) and a ``Rest`` (or arguments) component.
 
 .. index:: Expression
@@ -217,10 +217,10 @@ designator) and a ``Rest`` (or arguments) component.
 Predefined Class
 ================
 
-Just above ``Builtin`` in the Mathics object class hierarchy is
+Just above ``Builtin`` in the Mathics3 object class hierarchy is
 ``Predefined``.
 
-Some Mathics values like ``True`` are derived from ``Predefined``. For example:
+Some Mathics3 values like ``True`` are derived from ``Predefined``. For example:
 
 .. code:: python
 
@@ -236,14 +236,14 @@ Some Mathics values like ``True`` are derived from ``Predefined``. For example:
 
 In the above, note that the class name has an underscore (``_``)
 appended it. We do this so as not to conflict with the Python value ``True``. The
-class variable ``name`` is used to associate the Mathics name.
+class variable ``name`` is used to associate the Mathics3 name.
 
-A number of Mathics variables like ``$ByteOrdering`` are also derived
+A number of Mathics3 variables like ``$ByteOrdering`` are also derived
 directly from the ``Predefined`` class. Since Python class names
 cannot start with a dollar sign (``$``), we drop off the leading
 ``$``, in the class name, and that gives us: ``ByteOrdering``.
 
-As with the ``True`` example shown above, the Mathics name is set
+As with the ``True`` example shown above, the Mathics3 name is set
 using class variable ``name`` defined in the ``ByteOrdering``
 class. For example:
 
@@ -273,7 +273,7 @@ Just above the ``Atom`` class is the ``Symbol`` which is an atomic element of an
 See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guide/AtomicElementsOfExpressions.html>`_.
 
 As born from the parser, Symbols start off like Lisp
-Symbols. Following WL, Mathics has about a thousand named characters,
+Symbols. Following WL, Mathics3 has about a thousand named characters,
 some common ones like "+", "-", and some pretty obscure ones. After
 parsing, each of these can be incorporated into a Symbol object. But
 in the evaluation process in conjuction with the ``Definitions``
@@ -300,18 +300,18 @@ SympyConstant, MPMathConstant, and NumpyConstant
 SympyFunction and MPMathFunction
 ================================
 
-Which Class should be used for a Mathics Object?
-================================================
+Which class should be used for a Mathics3 Object?
+=================================================
 
-* To define a Mathics constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
-* To define Mathics constants based on a mpmath constant, e.g. ``Glaisure``,
+* To define a Mathics3 constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
+* To define Mathics3 constants based on a mpmath constant, e.g. ``Glaisure``,
   use ``MPMathConstant``
-* To define a Mathics constant based on a numpy constant, use ``NumpyConstant``
-* To define a Mathics functions based on a Sympy function, e.g. ``Sqrt``, use ``SympyFunction``
-* To define a Mathics operator use ``UnaryOperator``,
+* To define a Mathics3 constant based on a numpy constant, use ``NumpyConstant``
+* To define a Mathics3 functions based on a Sympy function, e.g. ``Sqrt``, use ``SympyFunction``
+* To define a Mathics3 operator use ``UnaryOperator``,
   ``PrefixOperator``, ``PostfixOperator``, or ``BinaryOperator`` depending on the
   type of operator that is being defined
-* To define a Mathics function which returns a Boolean value e.g. ``MatchQ`` use ``Test``
-* To define a Mathics function that doesn't fall into a category above, e.g. ``Attributes`` use ``Builtin``
-* To define a Mathics variable e.g. ``$TimeZone`` or Mathics Symbols, e.g. ``True`` use ``Predefined``
-* To define a Mathics atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``
+* To define a Mathics3 function which returns a Boolean value e.g. ``MatchQ`` use ``Test``
+* To define a Mathics3 function that doesn't fall into a category above, e.g. ``Attributes`` use ``Builtin``
+* To define a Mathics3 variable e.g. ``$TimeZone`` or Mathics3 Symbols, e.g. ``True`` use ``Predefined``
+* To define a Mathics3 atomic expression, e.g. ``ImageAtom`` use ``AtomicBuiltin``

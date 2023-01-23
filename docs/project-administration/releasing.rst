@@ -1,6 +1,6 @@
-========================
-Making a Mathics Release
-========================
+=========================
+Making a Mathics3 Release
+=========================
 
 This information is for Project administrators. It is likely to be of
 little interest for most.
@@ -26,7 +26,7 @@ Get latest sources:
 Change version in mathics/version.py
 ====================================
 
-On mathics/Mathics master branch. For each release candidate:
+On Mathics3/mathics-core master branch. For each release candidate:
 
 update ``__version__`` in ``mathics/version.py``
 

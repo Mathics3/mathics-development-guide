@@ -22,7 +22,7 @@ trying to resolve what Python method to call. The docstring looks
 pretty much the same as it would look if you were defining this in
 WL.
 
-For example, let's add a string parameter. In Mathics the function
+For example, let's add a string parameter. In Mathics3 the function
 might look like this:
 
 
@@ -51,13 +51,13 @@ Here is the complete code:
       "Hello[person_String]"
           return String(f"Hello, {person.value}!")
 
-The parameter *person* has type Mathics *String*. Therefore, to use
+The parameter *person* has type Mathics3 *String*. Therefore, to use
 that for use in Python, we need to convert it to a Python value. This
 is done with *person.value*. And the the return value
-also needs to be a Mathics *String* so we need to convert the Python
-string in Python back to a Mathics *String*.
+also needs to be a Mathics3 *String* so we need to convert the Python
+string in Python back to a Mathics3 *String*.
 
-Previously, since we weren't modifying the Mathics String, no
+Previously, since we weren't modifying the Mathics3 String, no
 conversions to Python and from Python were needed.
 
 See `Patterns

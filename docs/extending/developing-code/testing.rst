@@ -67,7 +67,7 @@ your environment. You need the Asymptote to
 generate the graphics in the documentation.
 
 
-The version of the documentation, that is used by Django is run similarly from the Mathics Django repository.
+The version of the documentation, that is used by Django is run similarly from the Mathics3 Django repository.
 interface, is updated immediately. To produce the LaTeX documentation
 file, run:
 

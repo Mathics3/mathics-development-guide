@@ -30,7 +30,7 @@ see the information that you added in the docstring:
 
 .. image:: KroneckerProduct.png
   :width: 400
-  :alt: help for the built-in function "KroneckerProduct" in Mathics Django
+  :alt: help for the built-in function "KroneckerProduct" in Mathics3 Django
 
 You should check the following links shown in blue:
 

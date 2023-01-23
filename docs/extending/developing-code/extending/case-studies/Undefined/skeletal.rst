@@ -7,7 +7,7 @@ First Skeletal version
 
 Armed with the information above we are now ready to draft the first version of this.
 
-Mathics built-in symbols are defined by writing a class which is based off of the class ``Builtin``.
+Mathics3 built-in symbols are defined by writing a class which is based off of the class ``Builtin``.
 
 The docstring for this class lists:
 

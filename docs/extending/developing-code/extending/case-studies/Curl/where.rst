@@ -1,11 +1,11 @@
-``Curl`` placement in Mathics
-=============================
+``Curl`` placement in Mathics3
+==============================
 
-To find where to put ``Curl`` in Mathics, we look this up the  `WMA docs <https://reference.wolfram.com/language/ref/Curl.html>`_  and then looking at the Related Guides drop-down menu we see:
+To find where to put ``Curl`` in Mathics3, we look this up the  `WMA docs <https://reference.wolfram.com/language/ref/Curl.html>`_  and then looking at the Related Guides drop-down menu we see:
 
 * Vector Analysis
 * Operations on Vectors
-* Partial Differential Equations
+* Partial Differential Equatio=ns
 * Calculus
 
 among other sections.
@@ -29,8 +29,8 @@ which reinforces where this should go.
 
 
 
-When there is no existing section in Mathics already...
--------------------------------------------------------
+When there is no existing section in Mathics3 already...
+--------------------------------------------------------
 
 When an existing section or subsection does not exist, see if there is a another categorization of the function for which we already do have a section or subsection.
 

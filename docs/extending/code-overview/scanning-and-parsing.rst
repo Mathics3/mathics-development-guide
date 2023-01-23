@@ -42,7 +42,7 @@ Here is an example:
 
    $ mathics --full-form
 
-   Mathics 2.0.0dev
+   Mathics3 5.0.2
    ...
    Quit by pressing CONTROL-D
 

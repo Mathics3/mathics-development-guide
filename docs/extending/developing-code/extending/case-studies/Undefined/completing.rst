@@ -1,7 +1,7 @@
 Completing ``Undefined``
 ========================
 
-So far, all we have done is added a Mathics Builtin class for
+So far, all we have done is added a Mathics3 Builtin class for
 ``Undefined`` and filled out the docstring to describe it and give
 some examples. We haven't filled out any implementation.
 
@@ -22,7 +22,7 @@ Here all we need to do is set some class variables:
 
 
 The ``attributes`` class variable sets the kind of properties or
-"Attributes" that this Mathics Symbol has.  See `Attributes
+"Attributes" that this Mathics3 Symbol has.  See `Attributes
 <https://reference.wolfram.com/language/tutorial/EvaluationOfExpressions.html#9508>`_
 for more information about what an attribute is and what values it
 might have. Here, ``A_PROTECTED`` is a mask value that indicates that
@@ -36,7 +36,7 @@ for an example we need to set attributes other than "protected".
 
 Assigning to ``summary_text`` does two things:
 
-* It adds this text in Mathics Django in the list of functions in the section it appears
+* It adds this text in Mathics3 Django in the list of functions in the section it appears
 * It supplies text in the command-line for ``?`` or ``Information`` where ``Longform`` option is set to ``False``.
 
 To make sure we have ``summary_text`` assigned a value, there is a
@@ -59,7 +59,7 @@ To see the effect of ``summary_text`` in the CLI, we will use the stripped down 
 
     $ mathics
 
-    Mathics 5.0.3dev0
+    Mathics3 5.0.3dev0
     on CPython 3.8.12 (heads/v2.3.4.1_release:4a6b4d3504, Jun  3 2022, 15:46:12)
     ...
 

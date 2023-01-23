@@ -10,10 +10,10 @@ M-expression is also called an *abstract syntax tree* or AST. The
 first element of an ``Expression`` is called the "head".
 
 When the ``Expression`` is to be evaluated, the head should a
-``Symbol`` for a Mathics Function or another ``Expression`` when
+``Symbol`` for a Mathics3 Function or another ``Expression`` when
 evaluated produces a function symbol.
 
-In Mathics, there are only very few different kinds of
+In Mathics3, there are only very few different kinds of
 non-``Expression`` nodes, called "atoms" that can appear in the tree
 initially from the parser:
 
@@ -27,7 +27,7 @@ initially from the parser:
 With the exception of the addition of ``Filename`` these are
 almost the same atoms described in `Basic Internal Architecture
 <https://reference.wolfram.com/language/tutorial/TheInternalsOfTheWolframSystem.html#6608>`_
-for WL. However these are not all of the kinds of Atoms that exist when Mathics starts up.
+for WL. However these are not all of the kinds of Atoms that exist when Mathics3 starts up.
 There are other atoms like ``Complex`` numbers.
 
 We should note that ``Symbol`` really has two distinct meanings. After
@@ -45,7 +45,7 @@ identifier name in a programming language and the variable it
 represents.
 
 The class definitions for these are given in `mathics.core.parser.ast
-<https://github.com/mathics/Mathics/tree/master/mathics/core/parser.ast>`_.
+<https://github.com/Mathics3/mathics-core/blob/master/mathics/core/parser/ast.py>`_.
 
 If you compare the above four AST types with other languages, you'll
 find this is pretty sparse. For example, `Python's AST
@@ -55,7 +55,7 @@ different types.
 So what's the difference? Python specializes AST types for different
 kinds of programming language constructs, such as for loops,
 conditional statements, exception blocks, different kinds of
-expressions, and so on. In WL and Mathics, these are all simply
+expressions, and so on. In WL and Mathics3, these are all simply
 built-in functions.
 
 In the process of Evaluation, described in the next section, more

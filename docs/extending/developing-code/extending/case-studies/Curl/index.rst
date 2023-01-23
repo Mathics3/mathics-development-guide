@@ -1,7 +1,7 @@
 Adding Builtin Function ``Curl``
 ================================
 
-Having added the built-in function ``KroneckerProduct``, we move onto another built-in function, ``Curl``. In doing so, we will come across an additional aspects to consider: writing or prototyping this in Mathics first.
+Having added the built-in function ``KroneckerProduct``, we move onto another built-in function, ``Curl``. In doing so, we will come across an additional aspects to consider: writing or prototyping this in Mathics3 first.
 
 Below are the steps in order that were used to create ``Curl``
 
