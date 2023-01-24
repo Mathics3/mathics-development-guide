@@ -43,7 +43,7 @@ needed to perform the function.
 However here all we do is return a Mathics3 string, so we don't need to
 use what is in evaluation.
 
-The return value of a mathics function should be some sort of
+The return value of a Mathics3 function should be some sort of
 superclass of :ref:`BaseElement Class`. A ``String`` is a subclass of
 the :ref:`Atom Class` which in turn is a subclass of the
 ``BaseElement``. You can also return the ``None`` value, in which case
