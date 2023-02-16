@@ -79,6 +79,21 @@ To include images in the documentation, use the ``img`` tag, place an
 EPS file *src* ``.eps`` in `mathics.doc.documentation.images <https://github.com/mathics/Mathics/tree/master/mathics/doc/documentation/images>`_ and run ``images.sh``
 in the `mathics.doc <https://github.com/mathics/Mathics/tree/master/mathics/doc>`_ directory.
 
+For long *url*, it is possible to split the url in several lines. Spaces and line break characters are removed when the documentation is compiled. For example,
+
+
+
+     <url>:NetworkX:
+     https://networkx.org/documentation/networkx-2.8.8/reference/algorithms/\
+      generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html
+     </url>
+
+
+produces, in the online documentation, the following ``<a>`` tag: 
+
+``<a href=https://networkx.org/documentation/networkx-2.8.8/reference/algorithms/generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html>NetworkX</a>``
+
+
 Markup for Code Examples
 ------------------------
 
