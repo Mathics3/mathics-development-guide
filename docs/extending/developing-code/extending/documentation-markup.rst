@@ -85,11 +85,11 @@ For long *url*, it is possible to split the url in several lines. Spaces and lin
 
      <url>:NetworkX:
      https://networkx.org/documentation/networkx-2.8.8/reference/algorithms/\
-      generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html
+     generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html
      </url>
 
 
-produces, in the online documentation, the following ``<a>`` tag: 
+produces, in the online documentation, the following ``<a>`` tag:
 
 ``<a href=https://networkx.org/documentation/networkx-2.8.8/reference/algorithms/generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html>NetworkX</a>``
 
@@ -127,11 +127,11 @@ In the past, the documentation system was abused and ran edge cases
 and prior bugs fixed. For that please write a pytest.
 
 
-We have not purged ourself of this behavior, so will find following
+We have not purged yourself of this behavior, so will find following
 markup in docstrings. These are deprecated.
 
 However please don't create more examples. Instead please consider
-moving something like this to a pytest unit test which is far more flexibile.
+moving something like this to a pytest unit test which is far more flexible.
 
 +------------------------+-----------------------------------------------------------+
 | Markup                 | Meaning                                                   |
@@ -144,3 +144,79 @@ moving something like this to a pytest unit test which is far more flexibile.
 +------------------------+-----------------------------------------------------------+
 
 *Todo: give examples of each of these.*
+
+
+
+Guidelines for writing documentation
+====================================
+
+
+When a new builtin is added, it is expected to follow the following guidelines regarding the format of the docstrings and ``summary_text`` attribute, which are used for building the documentation. Some of these guidelines are reinforced by the CI.
+
+``summary_text`` is used in the online documentation as a brief description of what the symbol represents. For builtins representing the head of expressions, ``summary_text``, starts with an active verb with the word in lowercase, e.g. "retrieve" as opposed to "Retrieve".  If you look at the section that the summary appears it is nice to use the same verb for similar kinds of things. For example we may "list" builtins that end with "List" (``EdgeList``, ``VertexList``) but, "find" builtins with "Index" at the end of the name ``EdgeIndex``, ``VertexIndex``. For variables, and options, do _not_ start with an active verb.
+
+Docstrings contain information about the content of the documentation entry. They must consist on the following parts:
+
+* Title and URL refs.
+* Definition Block
+* Extended description section.
+
+These are described in the next sections.
+
+
+Title
+------
+
+We can use use ``pymathics.graph`` as an example to compare against.
+
+If there is a Wikipedia entry that goes first. See ``AdjacencyList`` for an example.
+
+It may be that only a part of the Wikipedia entry is available. Fill in other text outside of the URL. See ``DirectedEdge`` for an example.
+
+If there is no Wikipedia mention, it is okay to give some free title. EdgeDelete is an example.
+
+Or you can omit the title altogether. ``RandomGraph`` is an example.
+
+In general we go with the Wikipedia name rather than the WMA for the title. And this includes symbolic parameter names. ``CompleteKaryTree`` is an example.
+
+When the only thing we have is a WMA link we add "link" to the title. ``EdgeList`` is an example .
+
+Remember that line breaks are significant. ``\`` can be used to wrap a long line.
+Start the url name on a new line after ``<url>``. For example:
+
+```
+<url>
+:WMA link:
+https://reference.wolfram.com/language/ref/EdgeList.html</url>
+```
+
+Note that there is no line break at the end before or after ``</url>``.
+
+Please don't get too creative in formatting. There are many other areas in the selection of words to describe what is need may require care. But here it shouldn't require much thought for the _formatting_ aspects.
+
+If the URL is too long, of course, you can split it up in a way that the URL tag understands.  Please inspect the URLs in a browser for change.  Ideally you would click the link, but if not or before, look at the URL that appears when the link is hovered over.
+
+
+
+There should be at least one doc example for each function in that is focused on describing what the function does (not how it can be tested).  Examples for tests should be added as pytests.
+
+
+Definition block
+----------------
+
+The title must be followed by a definition list ``<dl>``...``</dl>``, describing the diffferent ways to use the symbol. For example, in the  Builtin class ``LaguerreL``::
+
+     <dl>
+       <dt>'LaguerreL[$n$, $x$]'
+       <dd>returns the Laguerre polynomial L_$n$($x$).
+
+       <dt>'LaguerreL[$n$, $a$, $x$]'
+       <dd>returns the generalised Laguerre polynomial L^$a$_$n$($x$).
+     </dl>
+
+Note the two-space indentation after the ``<dl>`` tag.
+
+Extended Description Section
+----------------------------
+
+After the usage block, it is expected a brief explanation about the context in which the symbol is used, including examples of use, details of the implementations and possible issues. This section must contain at least one doctest example for each entry in the usage block.
