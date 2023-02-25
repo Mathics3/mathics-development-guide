@@ -147,7 +147,7 @@ moving something like this to a pytest unit test which is far more flexible.
 
 
 
-Guidelines for writing documentation
+Guidelines for Writing Documentation
 ====================================
 
 
@@ -201,7 +201,7 @@ If the URL is too long, of course, you can split it up in a way that the URL tag
 There should be at least one doc example for each function in that is focused on describing what the function does (not how it can be tested).  Examples for tests should be added as pytests.
 
 
-Definition block
+Definition Block
 ----------------
 
 The title must be followed by a definition list ``<dl>``...``</dl>``, describing the diffferent ways to use the symbol. For example, in the  Builtin class ``LaguerreL``::
