@@ -35,7 +35,7 @@ The evaluation method, looks like this:
 
 .. code-block:: python
 
-  def eval(self, person: String, evaluation: Evaluation):
+  def eval(self, person: String, evaluation: Evaluation) -> String:
     "Hello[person_String]"
         return String(f"Hello, {person.value}!")
 
@@ -43,7 +43,8 @@ Here is the complete code:
 
 .. code-block:: python
 
-  from mathics.builtin.base import Builtin, String
+  from mathics.builtin.base import Builtin
+  from mathics.core.atom import String
   from mathics.core.evaluation import Evaluation
 
   class Hello(Builtin):
