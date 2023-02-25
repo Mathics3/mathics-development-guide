@@ -9,12 +9,14 @@ To perform these steps, this you'll need a project administrator
 accounts and access on github, PyPI and dockerhub.
 
 
-Announce
-========
+Beforehand
+==========
 
 Let folks know in advance about the release. During the release of
 course, ensure no one is changing master (except the person doing the
 release).
+
+mathics-scanner may need to be released on PyPI first.
 
 Get latest sources:
 ===================
@@ -36,6 +38,12 @@ update ``__version__`` in ``mathics/version.py``
     $ echo $__version__
     $ git commit -m"Get ready for release $__version__" .
 
+Create a new branch
+===================
+
+::
+    git checkout -b release-$__version__
+
 Update Changes
 ==============
 
@@ -50,8 +58,6 @@ Update ``CHANGES.rst`` from ``ChangeLog``
     $ make check
     $ git commit --amend .
     $ git push   # get CI testing going early
-
-https://livesphinx.herokuapp.com/ can be used for checking the RsT.
 
 Build Docs
 ==========
@@ -70,11 +76,12 @@ TODO: turn this into a script in ``admin-tools``
 ::
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
-    $ pyenv local pyston-2.3.3 # Use a version that is not the most recent
+    $ pyenv local pyston-2.3.4 # Use a version that is not the most recent
     $ pip install -e git+https://github.com/Mathics3/mathics-core.git#egg=Mathics3
+    $ (cd src/mathics3 && make)
     $ mathics --version # see that new version appears
     $ mathics -e "1+2"
-    $ pip uninstall Mathics3
+    $ python -m pip uninstall Mathics3
     $ popd
 
 Make packages and check
