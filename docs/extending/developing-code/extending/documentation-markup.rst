@@ -85,11 +85,11 @@ For long *url*, it is possible to split the url in several lines. Spaces and lin
 
      <url>:NetworkX:
      https://networkx.org/documentation/networkx-2.8.8/reference/algorithms/\
-      generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html
+     generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html
      </url>
 
 
-produces, in the online documentation, the following ``<a>`` tag: 
+produces, in the online documentation, the following ``<a>`` tag:
 
 ``<a href=https://networkx.org/documentation/networkx-2.8.8/reference/algorithms/generated/networkx.algorithms.tree.mst.minimum_spanning_edges.html>NetworkX</a>``
 
@@ -127,11 +127,11 @@ In the past, the documentation system was abused and ran edge cases
 and prior bugs fixed. For that please write a pytest.
 
 
-We have not purged ourself of this behavior, so will find following
+We have not purged yourself of this behavior, so will find following
 markup in docstrings. These are deprecated.
 
 However please don't create more examples. Instead please consider
-moving something like this to a pytest unit test which is far more flexibile.
+moving something like this to a pytest unit test which is far more flexible.
 
 +------------------------+-----------------------------------------------------------+
 | Markup                 | Meaning                                                   |
@@ -147,8 +147,8 @@ moving something like this to a pytest unit test which is far more flexibile.
 
 
 
-Guidelines for writting documentation
-=====================================
+Guidelines for writing documentation
+====================================
 
 
 When a new builtin is added, it is expected to follow the following guidelines regarding the format of the docstrings and `summary_text` attribute, which are used for building the documentation. Some of these guidelines are reinforced by the CI.
@@ -166,22 +166,22 @@ Docstrings contain information about the content of the documentation entry. The
 Title
 ------
 
-We can use use pymathics.graph as an example to compare against.
+We can use use ``pymathics.graph`` as an example to compare against.
 
-If there is a wikipedia entry that goes first. See AdjacencyList for an example.
+If there is a Wikipedia entry that goes first. See ``AdjacencyList`` for an example.
 
-It may be that only a part of the Wikipedia entry is available. Fill in other text outside of the URL. See DirectedEdge for an example. 
+It may be that only a part of the Wikipedia entry is available. Fill in other text outside of the URL. See ``DirectedEdge`` for an example.
 
-If there is no wikipedia mention, it is okay to give some free title. EdgeDelete is an example. 
+If there is no Wikipedia mention, it is okay to give some free title. EdgeDelete is an example.
 
-Or you can omit the title altogether. `RandomGraph` is an Example.
+Or you can omit the title altogether. ``RandomGraph`` is an example.
 
-In general we go with the Wikipedia name rather than the WMA for the title. And this includes symbolic parameter names. CompleteKaryTree is an example.
+In general we go with the Wikipedia name rather than the WMA for the title. And this includes symbolic parameter names. ``CompleteKaryTree`` is an example.
 
-When the only thing we have is a WMA link we add "link" to the title. EdgeList is an example .
+When the only thing we have is a WMA link we add "link" to the title. ``EdgeList`` is an example .
 
-Remember that line breaks are significant. `\` can be used to wrap a long line. 
-Start the url name on a new line after `<url>`. For example: 
+Remember that line breaks are significant. ``\`` can be used to wrap a long line.
+Start the url name on a new line after ``<url>``. For example:
 
 ```
 <url>
@@ -189,11 +189,11 @@ Start the url name on a new line after `<url>`. For example:
 https://reference.wolfram.com/language/ref/EdgeList.html</url>
 ```
 
-Note that there is no line break at the end before or after `</url>`. 
+Note that there is no line break at the end before or after ``</url>``.
 
-Please don't get too creative in formatting. There are many other areas in the selection of words to describe what is need may require care. But here it shouldn't require much thought for the _formatting_ aspects. 
+Please don't get too creative in formatting. There are many other areas in the selection of words to describe what is need may require care. But here it shouldn't require much thought for the _formatting_ aspects.
 
-If the URL is too long, of course, you can split it up in a way that the URL tag understands.  Please inspect the URLs in a browser for change.  Ideally you would click the link, but if not or before, look at the URL that appears when the link is hovered over. 
+If the URL is too long, of course, you can split it up in a way that the URL tag understands.  Please inspect the URLs in a browser for change.  Ideally you would click the link, but if not or before, look at the URL that appears when the link is hovered over.
 
 
 
@@ -203,7 +203,7 @@ There should be at least one doc example for each function in that is focused on
 `<dl>...</dl>` usage block
 ----------------------------
 
-The title must be followed by a `<dl>...</dl>`, describing the diffferent ways to use the symbol. For example, in the  `Builtin` class `LaguerreL`:
+The title must be followed by a `<dl>...</dl>`, describing the diffferent ways to use the symbol. For example, in the  Builtin class ``LaguerreL``:
 
     ```
      <dl>
@@ -215,15 +215,9 @@ The title must be followed by a `<dl>...</dl>`, describing the diffferent ways t
      </dl>
     ```
 
-Notice the 2 space indentation regarding `<dl>` tag.
+Notice the 2 space indentation regarding ``<dl>`` tag.
 
 Extended description section
 -----------------------------
 
 After the usage block, it is expected a brief explanation about the context in which the symbol is used, including examples of use, details of the implementations and possible issues. This section must contain at least one doctest example for each entry in the usage block.
-
-
-
-
-
-
