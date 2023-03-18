@@ -3,6 +3,9 @@
 all: png
 	make -C ../..
 
+%:
+	make -C ../.. $<
+
 #: Build PNG graphics
 png: evaluate-format-pipeline.png
 

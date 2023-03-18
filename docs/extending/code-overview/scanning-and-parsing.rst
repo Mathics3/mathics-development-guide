@@ -1,22 +1,22 @@
 Scanning and Parsing
 ====================
 
-All parsing routines are located in `mathics.core.parser <https://github.com/mathics/Mathics/tree/master/mathics/core/parser>`_.
-
-See the ``README.md`` that appears in that directory for detailed information on how scanning and parsing works.
-
 .. index:: tokeniser
+.. index:: scanner
 
-Tokeniser
----------
+Scanner or Tokenizer
+--------------------
 
-You won't find much on the scanner there, so we'll describe a little
-bit here.  There are two passes made in the scanner, a "pre-scan" in
-found in `mathics.core.parser.prescanner
-<https://github.com/mathics/Mathics/blob/master/mathics/core/parser/prescanner.py>`_
+We have split out the scanner into a separate `github repository
+<https://pypi.org/project/Mathics-Scanner/>`_ which has its own `PyPI
+package <https://pypi.org/project/Mathics-Scanner/>`_.
+
+A little bit about the scanner...  There are two passes made in the
+scanner, a "pre-scan" in found in `mathics_scanner.prescanner
+<https://github.com/Mathics3/mathics-scanner/blob/master/mathics_scanner/prescanner.py>`_
 which converts some WL-specific character codes to character or long
-names and the `mathics.core.parser.tokeniser
-<https://github.com/mathics/Mathics/blob/master/mathics/core/parser/tokeniser.py>`_
+names and the `mathics_scanner.tokeniser
+<https://github.com/Mathics3/mathics-scanner/blob/master/mathics_scanner/tokeniser.py>`_
 which runs after that. The tokenizer breaks up a string into *tokens*,
 classifications of a sequence of characters, which is then as the
 atoms on which the parser pattern matches on.
@@ -27,8 +27,11 @@ atoms on which the parser pattern matches on.
 Parser
 ------
 
-There is a bit written in ``README.md`` on parsing, so we won't
-describe that, but the main points are:
+All parsing routines are located in `mathics.core.parser
+<https://github.com/mathics/Mathics/tree/master/mathics/core/parser>`_. See
+:ref:`Precedence-Climbing Parser` for parsing details.
+
+However, here are the main points:
 
 * The parser is recursive descent
 * Because WL has a lot of operators an `Operator-precedence parser <https://en.wikipedia.org/wiki/Operator-precedence_parser#Precedence_climbing_method>`_ is used
@@ -42,7 +45,7 @@ Here is an example:
 
    $ mathics --full-form
 
-   Mathics3 5.0.2
+   Mathics3 6.0.1
    ...
    Quit by pressing CONTROL-D
 

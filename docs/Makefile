@@ -16,6 +16,9 @@ TABLES := $(wildcard docs/translation-tables/*-table.rst)
 all: $(TABLES)
 	$(MAKE) html
 
+#: Build the html documentation without cleaning first
+build:
+	$(MAKE) clean && $(MAKE)
 #: Wipe and rebuild the html documentation
 rebuild:
 	$(MAKE) clean && $(MAKE)
