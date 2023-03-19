@@ -142,7 +142,7 @@ Continuing using the example in the last section::
 Notice in the above that ``format()`` was passed
 ``session.evaluation``. This gives the formatting the ability not just
 to query the environment outside of what was passed inside the
-``graph_circle`` expression, but it also allows the fomatting to call
+``graph_circle`` expression, but it also allows the fomartting to call
 back Mathics3 to perform additional calculations. For example, it is
 conceivable that a particular formatter might want to know on what
 plain a particular polygon lies on, and Mathics3 might be able to get

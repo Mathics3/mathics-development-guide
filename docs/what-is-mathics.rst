@@ -74,7 +74,7 @@ There is a syntax highlighter called mathics-pygments_ which uses `Pygments <htt
 based on rsmenon's `pygments-mathematics
 <https://pypi.org/project/pygments-mathematica/>`_.
 
-The main diffence between the two is that the character tables are
+The main difference between the two is that the character tables are
 used here. Possibly over time more parts of the scanner will be used
 as well.
 

@@ -102,7 +102,7 @@ Install from PyPI
 -----------------
 
 
-If you have the appropriate OS dependant packages installed, and want to install everything in one shot,
+If you have the appropriate OS-dependent packages installed, and want to install everything in one shot,
 try::
 
        $ pip install Mathics-omnibus[full]

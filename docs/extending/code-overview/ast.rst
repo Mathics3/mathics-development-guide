@@ -62,7 +62,7 @@ In the process of Evaluation, described in the next section, more
 kinds of objects over the above the four may get introduced as the
 M-expression is rewritten and transformed.
 
-Here is an example of the tranformation from an input string to the AST Form (an M-Expression)
+Here is an example of the transformation from an input string to the AST Form (an M-Expression)
 We use the ``--full-form`` option in the ``mathics`` command-line to get this information.
 Note that this shows the *input* before evaluation:
 

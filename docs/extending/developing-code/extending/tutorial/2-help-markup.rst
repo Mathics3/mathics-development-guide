@@ -58,9 +58,9 @@ interface like this:
   :width: 400
   :alt: Rendering XML help markup in Django
 
-In the Django interace on the right-hand side, I hit the "?" button and started typing "H E L L" and that was enough for the Django to find it. Django will pick up this change without having to restart it!
+In the Django interface on the right-hand side, I hit the "?" button and started typing "H E L L" and that was enough for the Django to find it. Django will pick up this change without having to restart it!
 
-This is how the text appears geting help via ``?`` in ``mathicsscript``:
+This is how the text appears getting help via ``?`` in ``mathicsscript``:
 
 .. image:: Hello2-mathicsscript.png
   :width: 400

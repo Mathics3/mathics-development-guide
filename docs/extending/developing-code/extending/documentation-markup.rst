@@ -204,7 +204,7 @@ There should be at least one doc example for each function in that is focused on
 Definition Block
 ----------------
 
-The title must be followed by a definition list ``<dl>``...``</dl>``, describing the diffferent ways to use the symbol. For example, in the  Builtin class ``LaguerreL``::
+The title must be followed by a definition list ``<dl>``...``</dl>``, describing the different ways to use the symbol. For example, in the  Builtin class ``LaguerreL``::
 
      <dl>
        <dt>'LaguerreL[$n$, $x$]'

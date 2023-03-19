@@ -216,7 +216,7 @@ You can now run the web server with ``mathicsserver -e`` but you
 probably want to make some changes first. - disable the files module by
 setting ``ENABLE_FILES_MODULE = False`` in ``mathics/settings.py``
 (otherwise remote users will be able to read and write local files). -
-set an execution timeout in ``mathics/setttings.py``, e.g.
+set an execution timeout in ``mathics/settings.py``, e.g.
 ``TIMEOUT = 10`` for a 10s limit. - Various other changes in the
 ``settings.py`` file like email addresses.
 

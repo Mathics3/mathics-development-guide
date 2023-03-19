@@ -79,7 +79,7 @@ Glossary
 
    eval
 
-     A functional compuation. We use this in the functional
+     A functional computation. We use this in the functional
      programming sense; it is distinct from :term:`evaluate` which is more
      complex, but has *eval()* as a component of that.
 
@@ -96,7 +96,7 @@ Glossary
         * rewriting the expression, and
 	* function application which performs eval()
 
-     Note that function appliction can kick off another *evaluate()*,
+     Note that function application can kick off another *evaluate()*,
      so this process is recursive.
 
    Expression
@@ -110,7 +110,7 @@ Glossary
      Expressions. An expression has two parts, a ``Head`` which is expected be a function reference,
      and 0 or more :term:`elements`.
 
-     Atoms like ``String`` or ``Integer`` are degnerate forms of
+     Atoms like ``String`` or ``Integer`` are degenerate forms of
      expressions. However when we refer to the class, we are referring
      to non-degenerate or compound Expressions. In the code, both are
      forms of :ref:`BaseElement Class`.
@@ -186,7 +186,7 @@ Glossary
 
      A replacement rule is a kind of ``Rule`` that consists of a
      ``Pattern`` and a specification for how to transform the
-     expression using the mathing parts. Rules are said to be
+     expression using the matching parts. Rules are said to be
      *applied* to an ``Expression`` to produce a new ``Expression``.
 
      For example ``F[x_Real]-> x^2`` is a rule that when applied to

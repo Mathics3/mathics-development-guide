@@ -32,7 +32,7 @@ an object in the ``Expression`` class, where each list item is either itself
 an :term:`Expression` or an object in a class derived from :term:`Atom`.
 
 The ``Atom`` class we encountered earlier when describing the nodes
-that get created intially from a parse. Those were:
+that get created initially from a parse. Those were:
 
 * ``Number``
 * ``String``
@@ -97,7 +97,7 @@ Some examples:
 BaseElement Class
 =================
 
-A Mathics3 M-expression is the main data structure which evalution is
+A Mathics3 M-expression is the main data structure which evaluation is
 performed on. An M-expression is, in general, a tree.  The nodes of this
 tree come from the ``BaseElement`` class. Note that element in
 addition to being a ``BaseElement`` are an ``Atom`` as well. In other words,
@@ -157,7 +157,7 @@ a convention by which "eval" methods of the class can be matched
 using the method's name which must start with "eval" and a pattern
 listed in the method's doc string. This is used in the example above.
 
-Here, ``Head`` has one paramater which is called *expr*. Note that in
+Here, ``Head`` has one parameter which is called *expr*. Note that in
 the Python method there is also *expr* variable it its method
 signature which is listed right after the usual *self* method that you
 find on all method functions.
@@ -192,7 +192,7 @@ The state is then stored as ``Definition`` object of the different symbols defin
 
 In the current implementation, the ``Definitions`` object stores ``Definition`` s in four dictionaries:
 
-- builtins: stores the defintions of the ``Builtin`` symbols
+- builtins: stores the definitions of the ``Builtin`` symbols
 - pymathics: stores the definitions of the ``Builtin`` symbols added from pymathics modules.
 - user: stores the definitions created during the runtime.
 - definition_cache: keep definitions obtained by merging builtins, pymathics, and user definitions associated to the same symbol.
@@ -276,7 +276,7 @@ As born from the parser, Symbols start off like Lisp
 Symbols. Following WL, Mathics3 has about a thousand named characters,
 some common ones like "+", "-", and some pretty obscure ones. After
 parsing, each of these can be incorporated into a Symbol object. But
-in the evaluation process in conjuction with the ``Definitions``
+in the evaluation process in conjunction with the ``Definitions``
 object that is in the evaluation object, these symbols get bound to
 values in a scope, and then they act more like a programming language
 variable. The Symbol class described here has fields and properties

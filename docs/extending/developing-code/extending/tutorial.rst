@@ -21,4 +21,4 @@ After reading this you may want to go through the detailed examples in :ref:`Cas
    tutorial/7-warnings
 
 .. TODO: Document Operator and SympyFunction
-.. TODO: Document interupts
+.. TODO: Document interrupts

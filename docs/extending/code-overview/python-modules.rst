@@ -29,7 +29,7 @@ here pretty much has to written in Python.
 
 Routines here convert between various internal representations such as
 between ``Expressions``, LLVM functions, SymPy Arguments, MPMath
-datattypes and so on. However this does not include the inital
+datatypes and so on. However this does not include the initial
 conversion a parsed string into one of the internal
 representations. That is done in the parser.
 
@@ -42,7 +42,7 @@ M-Expression as its AST (Abstract Syntax Tree).
 
 There is a separate `README
 <https://github.com/Mathics3/mathics-core/blob/master/mathics/core/parser/README.md>`_
-for decribing how this works.
+for describing how this works.
 
 
 ``mathics.eval``
@@ -53,7 +53,7 @@ Mathics3 Evaluation Functions
 Routines here are core operations or functions that implement evaluation. If there
 were an instruction interpreter, these would be the instructions.
 
-These operatations then should include the most commonly-used Builtin-functions like
+These operations then should include the most commonly-used Builtin-functions like
 ``N[]`` and routines in support of performing those evaluation operations/instructions.
 
 Performance of the operations here can be important for overall interpreter performance.

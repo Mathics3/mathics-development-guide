@@ -1,4 +1,4 @@
-This guide descrbes how to setup Mathics3 on a local network. There are additional (security) considerations for running Mathics3 on a publically facing webserver.
+This guide descrbes how to setup Mathics3 on a local network. There are additional (security) considerations for running Mathics3 on a publicly facing webserver.
 
 Best practises for a local network
 ===================================
@@ -24,7 +24,7 @@ sudo pypy setup.py install
 
 You can now run the web server with `mathicsserver -e` but you probably want to make some changes first.
 - disable the files module by setting `ENABLE_FILES_MODULE = False` in `mathics/settings.py` (otherwise remote users will be able to read and write local files).
-- set an execution timeout in `mathics/setttings.py`, e.g. `TIMEOUT = 10` for a 10s limit.
+- set an execution timeout in `mathics/settings.py`, e.g. `TIMEOUT = 10` for a 10s limit.
 - Various other changes in the `settings.py` file like email addresses.
 
 You probably also want to run the server as a restricted user within a jail shell

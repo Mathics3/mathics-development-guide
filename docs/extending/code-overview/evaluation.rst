@@ -76,7 +76,7 @@ expression that may not be visible. A later step may decide to
 materialize a value or convert the representation of ``Pi`` into a
 unicode string.
 
-And when an :term:`M-expression` or an Expression doesn't match a particlar
+And when an :term:`M-expression` or an Expression doesn't match a particular
 form for a function call, it *needs* to be left unchanged: the act of
 not matching a particular function in of itself isn't an error because
 there may be some other rule around, maybe even at a different level
@@ -109,7 +109,7 @@ rules. An attribute like ``Orderless`` can cause elements in the
 rest of the tree to be reordered.
 
 Also, when a rewrite rule of a Head's Symbol is found to match, then
-the replacement substitution is preformed and this can change overall
+the replacement substitution is performed and this can change overall
 expression.
 
 Depending on a Symbol's attributes like ``Hold``, an expression's
@@ -142,7 +142,7 @@ version 5.
 
 If the expression is a literal value, e.g. ``Number``, ``String``, ``Image``, etc.) then leave it unchanged and return.
 
-Evalute ``Head`` and get its attributes.
+Evaluate ``Head`` and get its attributes.
 
 Depending the following attributes
 
@@ -156,7 +156,7 @@ various elements are evaluated. However elements of that have the form:
 * ``Evaluate[]``
 * ``Unevaluated[]``
 
-also specify which elements wich are evaluated or not before rewriting and function application.
+also specify which elements which are evaluated or not before rewriting and function application.
 
 At the end of this, variables ``head``, ``attributes`` (of head), and ``elements`` (of the expression) are set.
 
@@ -225,7 +225,7 @@ Mathics3 function call. If a rule is found, it will have attached to a
 bound method name starts with ``eval``. [2]_
 
 These rules get created on loading the module containing a subclass of
-``Builtin`` implementing some Mathcs Primative Funtion.  The rules
+``Builtin`` implementing some Mathcs3 Primitive Function.  The rules
 come from the docstrings of methods that start with ``eval``.
 
 The docsting includes not only a pattern to match on but how the

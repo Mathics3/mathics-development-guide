@@ -64,7 +64,7 @@ Using MathicsSession
 
 
 While the above is fine for running an isolated expression or two, it
-is pretty inefficent: Python has to be loaded every time along with
+is pretty inefficient: Python has to be loaded every time along with
 the huge Mathics3 program; all of the built-in functions need to be set
 up, and some of terminal interaction needs set up as well.
 
@@ -129,7 +129,7 @@ doing this by interacting with the Mathics3 classes now.
 
 In this example shown above, we convert from Python's literal 10 to
 Mathics' representation of for 10 using ``Integer(10)``. This value is
-needed as a parameter to the ``Factorial`` function . Stricly speaking
+needed as a parameter to the ``Factorial`` function . Strictly speaking
 the full name of the factorial function is ``System`Factorial``, but
 we can leave off the context name, ``System``, and Mathics3 will look
 that up.
@@ -173,7 +173,7 @@ Here is an example of that:
    # Compute 5 * (6 + 3)
    x = Expression("Plus", Integer(5),
          Expression("Times", Integer(6), Integer(3))
-	 ).evaluate(session.evalutation).to_python()
+	 ).evaluate(session.evaluation).to_python()
    print(x) # 45
 
 Notice that precedence between operations, like *Plus()* and
