@@ -88,7 +88,7 @@ among other things.
 ``mathics.compile``
 ===================
 
-xoMathics3 ``Compile`` implementation.
+Mathics3 ``Compile`` implementation.
 
 Here we have routines for compiling Mathics3 code.
 
