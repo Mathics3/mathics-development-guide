@@ -24,8 +24,13 @@ A Class name that begins with ``Base`` is a `Virtual class <https://en.wikipedia
 
 .. index:: Atom, AtomQ
 
+
+Mathics3 Core Classes
+=====================
+
+
 Atom Class
-==========
+----------
 
 Recall that an Expression to be evaluated is initially a kind of :term:`M-expression`,
 an object in the ``Expression`` class, where each list item is either itself
@@ -95,7 +100,7 @@ Some examples:
 
 
 BaseElement Class
-=================
+-----------------
 
 A Mathics3 M-expression is the main data structure which evaluation is
 performed on. An M-expression is, in general, a tree.  The nodes of this
@@ -107,11 +112,79 @@ The other subclass of ``BaseElement`` is an ``Expression``.
 
 Note as the prefix ``Base`` implies, a BaseElement is a virtual class.
 
+Definition Class
+----------------
+
+.. index:: Definition
+
+
+A Definition is a collection of Rules and attributes which are associated with a ``Symbol``.
+
+A ``Rule`` is internally organized in terms of the context of application in
+
+* ``OwnValues``,
+* ``UpValues``,
+* ``Downvalues``,
+* ``Subvalues``,
+* ``FormatValues``,  etc.
+
+.. index:: Definitions
+
+Definitions Class
+-----------------
+
+The Definitions class hold state of one instance of the Mathics
+interpreter is stored in this object.
+
+The state is then stored as ``Definition`` object of the different symbols defined during the runtime.
+
+In the current implementation, the ``Definitions`` object stores ``Definition`` s in four dictionaries:
+
+- builtins: stores the definitions of the ``Builtin`` symbols
+- pymathics: stores the definitions of the ``Builtin`` symbols added from pymathics modules.
+- user: stores the definitions created during the runtime.
+- definition_cache: keep definitions obtained by merging builtins, pymathics, and user definitions associated to the same symbol.
+
+Expression Class
+----------------
+
+An Expression object the main object that we evaluate over. It
+represents an M-expression formed from input.
+
+Although objects derived from ``Atom``, e.g. symbols and integers, are
+valid expressions, this class describes *compound* expressions, or
+expressions that are more than a single atom/element. So in contrast to an
+object of type ``Atom``, an ``Expression`` object is some sort of
+structured node that as in Mathics3 itself, has a ``Head`` (function
+designator) and a ``Rest`` (or arguments) component.
+
+.. index:: Expression
+
+Symbol Class
+------------
 
 .. index:: Symbol
 
+Just above the ``Atom`` class is the ``Symbol`` which is an atomic element of an ``Expression``.
+See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guide/AtomicElementsOfExpressions.html>`_.
+
+As born from the parser, Symbols start off like Lisp
+Symbols. Following WL, Mathics3 has about a thousand named characters,
+some common ones like "+", "-", and some pretty obscure ones. After
+parsing, each of these can be incorporated into a Symbol object. But
+in the evaluation process in conjunction with the ``Definitions``
+object that is in the evaluation object, these symbols get bound to
+values in a scope, and then they act more like a programming language
+variable. The Symbol class described here has fields and properties
+that you of the kind that you'd expect a variable in a programming
+language to have.
+
+
+Classes for Defining Builtin Functions
+=======================================
+
 Builtin class
-=============
+-------------
 
 A number of Mathics3 variables and functions are loaded when Mathics3 starts up,
 thousands of functions even before any Mathics3 packages are loaded. As with other Mathics3 objects
@@ -165,57 +238,8 @@ find on all method functions.
 At the end is an *evaluation* parameter and this contains definitions
 and the context if the method needs to evaluate expressions.
 
-Definition Class
-================
-.. index:: Definition
-
-
-A Definition is a collection of Rules and attributes which are associated with a ``Symbol``.
-
-A ``Rule`` is internally organized in terms of the context of application in
-
-* ``OwnValues``,
-* ``UpValues``,
-* ``Downvalues``,
-* ``Subvalues``,
-* ``FormatValues``,  etc.
-
-.. index:: Definitions
-
-Definitions Class
-=================
-
-The Definitions class hold state of one instance of the Mathics
-interpreter is stored in this object.
-
-The state is then stored as ``Definition`` object of the different symbols defined during the runtime.
-
-In the current implementation, the ``Definitions`` object stores ``Definition`` s in four dictionaries:
-
-- builtins: stores the definitions of the ``Builtin`` symbols
-- pymathics: stores the definitions of the ``Builtin`` symbols added from pymathics modules.
-- user: stores the definitions created during the runtime.
-- definition_cache: keep definitions obtained by merging builtins, pymathics, and user definitions associated to the same symbol.
-
-.. index:: Predefined
-
-Expression Class
-================
-
-An Expression object the main object that we evaluate over. It
-represents an M-expression formed from input.
-
-Although objects derived from ``Atom``, e.g. symbols and integers, are
-valid expressions, this class describes *compound* expressions, or
-expressions that are more than a single atom/element. So in contrast to an
-object of type ``Atom``, an ``Expression`` object is some sort of
-structured node that as in Mathics3 itself, has a ``Head`` (function
-designator) and a ``Rest`` (or arguments) component.
-
-.. index:: Expression
-
 Predefined Class
-================
+----------------
 
 Just above ``Builtin`` in the Mathics3 object class hierarchy is
 ``Predefined``.
@@ -264,44 +288,56 @@ class. For example:
 
 The ``evaluate()`` function above is called to get the value of variable ``$ByteOrdering``.
 
+.. index:: Predefined
 
-Symbol Class
-============
-.. index:: Symbol
 
-Just above the ``Atom`` class is the ``Symbol`` which is an atomic element of an ``Expression``.
-See `Atomic Elements of Expressions <https://reference.wolfram.com/language/guide/AtomicElementsOfExpressions.html>`_.
+.. index:: Test
 
-As born from the parser, Symbols start off like Lisp
-Symbols. Following WL, Mathics3 has about a thousand named characters,
-some common ones like "+", "-", and some pretty obscure ones. After
-parsing, each of these can be incorporated into a Symbol object. But
-in the evaluation process in conjunction with the ``Definitions``
-object that is in the evaluation object, these symbols get bound to
-values in a scope, and then they act more like a programming language
-variable. The Symbol class described here has fields and properties
-that you of the kind that you'd expect a variable in a programming
-language to have.
+Test Class
+----------
+
+This class is a used for Mathics3 Builtin Expression test functions
+that suffix "Q", ``AtomQ``, ``StringQ``, ``SymbolQ``, and so on.
+
+This class for creating builtin funcitons is a bit different and simpler than many of the others.
+The function you define is called ``test()`` rather than some sort of ``eval()`` function.
+
+Also, this ``test()`` function returns a *Python* boolean value rather than some sort of ``Expression`` type.
+The class takes care of converting this into ``SymbolTrue`` or ``SymbolFalse``.
+
+Here is the abbreviated code for ``AtomQ``:
+
+.. code:: python
+
+    class AtomQ(Test):
+        """
+        Docstring with links, definition, examples, etc.
+	"""
+        summary_text = "test whether an expression is an atom"
+
+        def test(self, expr) -> bool:
+            return isinstance(expr, Atom)
+
 
 .. index:: Operator
 
 Operator
-========
+--------
 
 PrefixOperator and PostFixOperator
-==================================
+----------------------------------
 
 BinaryOperator and UnaryOperator
-================================
+---------------------------------
 
 SympyConstant, MPMathConstant, and NumpyConstant
-================================================
+-------------------------------------------------
 
 SympyFunction and MPMathFunction
-================================
+---------------------------------
 
 Which class should be used for a Mathics3 Object?
-=================================================
+--------------------------------------------------
 
 * To define a Mathics3 constant based on a Sympy constant, e.g. ``Infinity`` use ``SympyConstant``
 * To define Mathics3 constants based on a mpmath constant, e.g. ``Glaisure``,
