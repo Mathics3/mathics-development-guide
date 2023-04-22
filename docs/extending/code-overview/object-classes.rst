@@ -58,7 +58,7 @@ There are a few other kinds of Atoms or fundamental objects like:
 * ``Dispatch``
 * ``Image``
 
-In general, atoms are objects might have an underlying internal representation with no user-visable subparts that can be pulled out using ``Part[]``.
+In general, atoms are objects might have an underlying internal representation with no user-visible subparts that can be pulled out using ``Part[]``.
 
 In Mathics, the function ``AtomQ[]`` will tell you if something is an Atom, or can't be subdivided into subexpressions.
 
@@ -297,12 +297,12 @@ Test Class
 ----------
 
 This class is a used for Mathics3 Builtin Expression test functions
-that suffix "Q", ``AtomQ``, ``StringQ``, ``SymbolQ``, and so on.
+that have a suffix "Q", ``AtomQ``, ``StringQ``, ``SymbolQ``, and so on.
 
-This class for creating builtin funcitons is a bit different and simpler than many of the others.
+This class for creating builtin functions is a bit different and simpler than many of the others.
 The function you define is called ``test()`` rather than some sort of ``eval()`` function.
 
-Also, this ``test()`` function returns a *Python* boolean value rather than some sort of ``Expression`` type.
+Also, this ``test()`` function returns a *Python* Boolean value rather than some sort of ``Expression`` type.
 The class takes care of converting this into ``SymbolTrue`` or ``SymbolFalse``.
 
 Here is the abbreviated code for ``AtomQ``:
