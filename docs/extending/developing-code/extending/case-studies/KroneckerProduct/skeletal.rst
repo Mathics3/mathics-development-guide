@@ -46,7 +46,7 @@ cover aspects that were not covered there.
 
 In contrast to the class definition in ``Undefined``, which is a subclass of
 ``Builtin``, here we use a ``SympyFunction`` which in turn is a subclass of ``Builtin``.
-``SympyFunction`` has been customized for built-in Mathics functions that are implemented via SymPy.
+``SympyFunction`` has been customized for built-in Mathics3 functions that are implemented via SymPy.
 
 Also in contrast the title line for ``Undefined``, the title line here is longer because there is a Wikipedia entry that corresponds to this function, and because there is a corresponding SymPy function as well.
 

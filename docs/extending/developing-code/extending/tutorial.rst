@@ -1,7 +1,7 @@
-Tutorial: Adding a new Mathics Function
-=======================================
+Tutorial: Adding a new Mathics3 Function
+========================================
 
-In this tutorial, we will show how to create a new Mathics Function using Python.
+In this tutorial, we will show how to create a new Mathics3 Function using Python.
 
 After reading this you may want to go through the detailed examples in :ref:`Case Studies for Adding Builtins`
 
@@ -21,4 +21,4 @@ After reading this you may want to go through the detailed examples in :ref:`Cas
    tutorial/7-warnings
 
 .. TODO: Document Operator and SympyFunction
-.. TODO: Document interupts
+.. TODO: Document interrupts

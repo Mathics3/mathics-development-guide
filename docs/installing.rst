@@ -5,16 +5,16 @@ Installing Mathics3
    :depth: 1
    :local:
 
-Here we describe the various ways to get Mathics installed.
+Here we describe the various ways to get Mathics3 installed.
 
 
 Mathics3 (mathics-core) Requirements
 ------------------------------------
 
-The Mathics suite runs on Python 3.6 or later. We also support Pyston
+The Mathics3 suite runs on Python 3.6 or later. We also support Pyston
 and PyPy 3.6 or later.
 
-Underneath, Mathics core relies on
+Underneath, Mathics3 core relies on
 `SymPy <https://www.sympy.org/en/index.html>`__ which relies on
 `NumPy <https://numpy.org>`__. These and the other requirements will be
 installed automatically if you use the standard Python installer
@@ -102,7 +102,7 @@ Install from PyPI
 -----------------
 
 
-If you have the appropriate OS dependant packages installed, and want to install everything in one shot,
+If you have the appropriate OS-dependent packages installed, and want to install everything in one shot,
 try::
 
        $ pip install Mathics-omnibus[full]
@@ -125,7 +125,7 @@ These in turn pull in two other Mathics3 packages:
 * ``mathics-core``
 
 
-In other words, this package doesn't have any code in it. Instead it just contains dependencies to other PyPI Mathics packages.of other PyPI package.
+In other words, this package doesn't have any code in it. Instead it just contains dependencies to other PyPI Mathics3 packages.of other PyPI package.
 It is more or less equivalent to::
 
        $ pip install Mathics3  # this is the core engine. It is a dependency of some of the below too
@@ -179,7 +179,7 @@ Install from git from github
 If you need the most recent fixes, you can install from github.  Note
 that there isn't a single github repository that contains everything.
 
-Also, since Mathics is in constant flux, dependencies can change. The
+Also, since Mathics3 is in constant flux, dependencies can change. The
 development version from might require development version from
 another.
 

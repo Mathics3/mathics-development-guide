@@ -3,7 +3,7 @@ Writing Document Tests
 
 In addition to the help text given before, we can also provide
 examples that are shown in the documentation, can be run interactively
-in the Django interface, and get run automatically durring CI testing.
+in the Django interface, and get run automatically during CI testing.
 
 
 Here is the docstring from the last section expanded with a couple of tests.

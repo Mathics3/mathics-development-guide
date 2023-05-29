@@ -12,7 +12,7 @@ Completing ``KroneckerProduct``
 Now we fill in the parts of ``KroneckerProduct`` other than the class
 definition line and its docstring.
 
-None of the other built-in Mathics Functions serve as good model to
+None of the other built-in Mathics3 Functions serve as good model to
 copy from, so we'll use a combination ``Transpose`` and
 ``PauliMatrix``. The former function is selected because it takes a
 Matrix parameter, and PauliMatrix function because it is a SymPy
@@ -66,7 +66,7 @@ There is a class variable ``sympy_name`` which we set, which here is
 not necessary. If there were no evaluation method, this is the
 function name that would be used by the generic evaluation method of
 the ``SympyFunction`` class. I added it here, because in the future we
-may want to have a way to list correspondences between Mathics builtin
+may want to have a way to list correspondences between Mathics3 builtin
 function names and SymPy function names.
 
 ``KroneckerProduct[]`` evaluation method
@@ -91,7 +91,7 @@ The docstring for the method
             "KroneckerProduct[mi__]"
 
 
-in fact is a Mathics pattern that is matched in the apply phase of
+in fact is a Mathics3 pattern that is matched in the apply phase of
 Evaluation. It is used to determine which, if any, evaluation method
 inside the ``KroneckerProduct`` class should be called.
 
@@ -100,12 +100,12 @@ pattern, *mi* as we did in the class docstring description. However
 the name(s) that are used in the pattern must also appear in the
 same order in Python definition.  Since we used ``mi__`` in the pattern in the
 definition docstring, we must use ``mi`` as the first parameter in the
-evaluation method. In Mathics ``__`` indicates a function definition
+evaluation method. In Mathics3 ``__`` indicates a function definition
 with a nonzero number of arguments.  See the `BlankSequence
 <https://reference.wolfram.com/language/ref/BlankSequence.html>`_ for
 more information.
 
-When we have such a pattern object, the Mathics object when
+When we have such a pattern object, the Mathics3 object when
 represented in Python will be of type ``ListExpression``.
 
 Evaluation methods also have an parameter of type ``Evaluation`` after
@@ -119,17 +119,17 @@ In this simple, first-draft function we don't do any validation of the
 arguments. We should come back later and fill this in.
 
 After we have something that we can pass on to SymPy we call the SymPy
-function that corresponds to the Mathics function. And the return
-value is converted back into Mathics for return.
+function that corresponds to the Mathics3 function. And the return
+value is converted back into Mathics3 for return.
 
 Again we don't do checking on the return value from SymPy or from the
 conversion back to Mathics' internal Element-based object. In a future
 version we should do this.
 
-We have a number of Mathics builtin functions that work like this. One
+We have a number of Mathics3 builtin functions that work like this. One
 thing to notice is that evaluation this way causes a great deal of
-conversions from Mathics into SymPy followed by conversions out of
-Sympy into Mathics. Without other mechanisms like caching computed
+conversions from Mathics3 into SymPy followed by conversions out of
+Sympy into Mathics3. Without other mechanisms like caching computed
 values this can be slow. Even with caching, this can be slow.
 
 ``KroneckerProduct[]`` evaluation method, second version

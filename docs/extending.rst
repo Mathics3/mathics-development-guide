@@ -1,10 +1,10 @@
 .. index:: extending
 .. _extending:
 
-Extending Mathics
-=================
+Extending Mathics3
+==================
 
-While Mathics has a lot to offer, it is always in need of extension, and there are two broad ways to do so: using additional Mathics code, or additional Python code.
+While Mathics3 has a lot to offer, it is always in need of extension, and there are two broad ways to do so: using additional Mathics3 code, or additional Python code.
 
 
 These are described in the sections below

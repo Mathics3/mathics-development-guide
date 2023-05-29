@@ -7,7 +7,7 @@ Glossary
 
      The elements of an :term:`M-expression` or an expression. It is an
      object that has no structure below it.  See also "Atomic
-     Primitives" in the Mathics documentation for user-facing Mathics
+     Primitives" in the Mathics3 documentation for user-facing Mathics
      builtin-functions that work with Atoms.
 
      In the code there are two kinds of Atoms. Those produced by the
@@ -19,7 +19,7 @@ Glossary
 
      The process by which we take an :term:`M-expression` and prepare that expression evaluation at the top-level of the expression given.
 
-     In Mathics this involves looking at the head symbol (``Head[]``)
+     In Mathics3 this involves looking at the head symbol (``Head[]``)
      and taking action based on information that symbols binding.
 
      There are distinct kinds of application: rule application, and function application.
@@ -28,18 +28,18 @@ Glossary
 
    binding
 
-     Associating a symbol name with a value. In Mathics, the symbol names an expression or :term:`M-expression` and the
+     Associating a symbol name with a value. In Mathics3, the symbol names an expression or :term:`M-expression` and the
      values come from an definitions found in an evaluation. See also `Free and bound variables <https://en.wikipedia.org/wiki/Free_variables_and_bound_variables>`_ and
      `Name binding <https://en.wikipedia.org/wiki/Name_binding>`_.
 
    builtin function
 
-     A Mathics function which is predefined when the system starts up. There are thousands of these in Mathics.
+     A Mathics3 function which is predefined when the system starts up. There are thousands of these in Mathics3.
 
    boxing
 
      A special type of evaluation that is kicked off by
-     formatting. Mathics objects can have formatting or boxing rules
+     formatting. Mathics3 objects can have formatting or boxing rules
      associated with them. This process allows objects objects to be
      displayed in flexibile way depending on the context that the
      object appears.  See `Formatted Output <https://reference.wolfram.com/language/tutorial/TextualInputAndOutput.html#6589676>`_.
@@ -54,7 +54,7 @@ Glossary
      A binding in an evaluation which can be used in a subexpression
      should one of the other binding methods, i.e. ownvalue fail.
 
-     Mathics function ``DownValues`` can be used to query downvalues.
+     Mathics3 function ``DownValues`` can be used to query downvalues.
 
    element
    elements
@@ -79,7 +79,7 @@ Glossary
 
    eval
 
-     A functional compuation. We use this in the functional
+     A functional computation. We use this in the functional
      programming sense; it is distinct from :term:`evaluate` which is more
      complex, but has *eval()* as a component of that.
 
@@ -88,7 +88,7 @@ Glossary
    evaluate
    evaluation
 
-     The process of taking an Mathics Expression or :term:`M-expression`
+     The process of taking an Mathics3 Expression or :term:`M-expression`
      producing a transformation or computation on that.
 
      It involves the distinct phases:
@@ -96,12 +96,12 @@ Glossary
         * rewriting the expression, and
 	* function application which performs eval()
 
-     Note that function appliction can kick off another *evaluate()*,
+     Note that function application can kick off another *evaluate()*,
      so this process is recursive.
 
    Expression
 
-     This is both a :term:`Symbol` defined in Mathics, and a Python class
+     This is both a :term:`Symbol` defined in Mathics3, and a Python class
      which implements the idea of a generalized List used in
      :term:`evaluation`. In this document we are usually referring to
      the Python class, not the built-in Symbol.
@@ -110,7 +110,7 @@ Glossary
      Expressions. An expression has two parts, a ``Head`` which is expected be a function reference,
      and 0 or more :term:`elements`.
 
-     Atoms like ``String`` or ``Integer`` are degnerate forms of
+     Atoms like ``String`` or ``Integer`` are degenerate forms of
      expressions. However when we refer to the class, we are referring
      to non-degenerate or compound Expressions. In the code, both are
      forms of :ref:`BaseElement Class`.
@@ -174,19 +174,19 @@ Glossary
        * ``OwnValues``, and
        * ``Upvalues``
 
-     See the documentation for the Mathics builtin function ``NValues``.
+     See the documentation for the Mathics3 builtin function ``NValues``.
 
 
    pattern
 
      A object found in a definition associated with a symbol an ``Expression`` or a part of the ``Expression``.
-     See the documentation for Mathics builtin ``Pattern``.
+     See the documentation for Mathics3 builtin ``Pattern``.
 
    replacement rule
 
      A replacement rule is a kind of ``Rule`` that consists of a
      ``Pattern`` and a specification for how to transform the
-     expression using the mathing parts. Rules are said to be
+     expression using the matching parts. Rules are said to be
      *applied* to an ``Expression`` to produce a new ``Expression``.
 
      For example ``F[x_Real]-> x^2`` is a rule that when applied to
@@ -208,14 +208,14 @@ Glossary
 
      A structure which consists of a sequence atoms, and (nested)
      expressions. However at each level there is a ``Head`` which
-     represents an operator or function. In Mathics sometimes this
+     represents an operator or function. In Mathics3 sometimes this
      element is instead an expression that acts like a function, so
-     while most expressions that Mathics sees are S-expressions, a few
+     while most expressions that Mathics3 sees are S-expressions, a few
      are in the the more general :term:`M-expression` form.
 
    Symbol
 
-     A Symbolic variable. These are found in Mathics Expressions. The
+     A Symbolic variable. These are found in Mathics3 Expressions. The
      name of the symbol name at at any point in time and place inside
      an expression has a deifnition to a value and has other properties which
      may vary.  Some Symbols like ``True`` are constant and heir value
@@ -224,13 +224,13 @@ Glossary
      In the Python code the objects in the Symbol class represent
      Symbols.
 
-     ``Symbol[]`` is also a Mathics builtin-in function. In this
+     ``Symbol[]`` is also a Mathics3 builtin-in function. In this
      document, unless otherwise specified, we are referring to the
      meaning above.
 
    scope
 
-     The range of static piece of Mathics code that has the same Context.
+     The range of static piece of Mathics3 code that has the same Context.
 
    subexpression
 

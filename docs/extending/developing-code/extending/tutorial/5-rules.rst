@@ -6,7 +6,7 @@ one-parameter form of ``Hello`` is really the same thing as a the
 two-parameter version where the the ``language`` value is filled in.
 
 Making use of that observation, we don't actually need to use a
-separate method to handle a parameter with essentially a defalt
+separate method to handle a parameter with essentially a default
 value. Instead we could rewrite the function calls that don't supply a
 language parameter into one that does by filling in the default value.
 

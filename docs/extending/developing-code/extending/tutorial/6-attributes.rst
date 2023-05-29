@@ -1,21 +1,21 @@
 Class variables and Function Attributes
 ----------------------------------------
 
-Class variables on the class that implements a Mathics Built-in
+Class variables on the class that implements a Mathics3 Built-in
 Function are used to set various characteristics of the built-in function.
 
 In fact we already saw one example in the last section where the class
-variable ``rules`` was used to create some Mathics *Rules* in the
+variable ``rules`` was used to create some Mathics3 *Rules* in the
 definition of the *Hello* function.
 
-Suppose you want to create a Mathics variable that starts with a
+Suppose you want to create a Mathics3 variable that starts with a
 dollar sign (``$``) in accordance to the naming convention for many
 system variables.
 
 To accomplish this you assign the desired string name to class
 variable ``name``, and that will override the default name.
 
-All Functions in Mathics have `Attributes
+All Functions in Mathics3 have `Attributes
 <https://reference.wolfram.com/language/tutorial/EvaluationOfExpressions.html#9508>`_
 which specify certain properties in evaluation such as whether a
 nested invocations of a function are automatically flattened. (This is

@@ -3,7 +3,7 @@ Session
 
 .. contents::
 
-A Mathics Session consists of a Definitions object and an Evaluation object.
+A Mathics3 Session consists of a Definitions object and an Evaluation object.
 
 We describe these two components next.
 
@@ -22,7 +22,7 @@ Definitions
 
 Front-ends like (django, mathicsscript, mathics, MathicsSession)
 create a ``Definitions`` object which initially has definitions of the
-thousand or so standard Mathics Builtins.  Front ends can customize
+thousand or so standard Mathics3 Builtins.  Front ends can customize
 these definitions. Usually more variables are added under the
 ``Settings`` name space.  For example, for mathicsscript there is
 a variable containing the syntax-highlighting style to use; it can be altered.
@@ -49,7 +49,7 @@ term-rewriting application and function-symbol application.
 
 In the rewrite/apply/eval process, rules, symbols and function
 definitions can get altered. A front end will want the changed
-definitions to persist in a Mathics session while the Evaluation
+definitions to persist in a Mathics3 session while the Evaluation
 object may or may not.
 
 The direct or return result of rewrite/apply/eval is a Mathics
@@ -59,7 +59,7 @@ For example if the input expression was parsed to the M-expression
 ``Plus[1, 2]`` the output Expression would be ``3``. Recall that
 numbers and symbols are expressions too.
 
-This result type, Mathics Expression, differs from the input
+This result type, Mathics3 Expression, differs from the input
 M-Expression in that symbols found in the Expression may be bound and
 various properties may be attached to the expression and its
 subexpressions. For example we may tag that resulting expression with
@@ -125,7 +125,7 @@ the Expression in ``last_eval``.
 Expressions need to be wrapped in some sort of "Form", like
 ``TeXForm`` or ``MathMLForm``. This is done using the ``format()``
 method of the expression object. This goes through the
-rewrite/apply/eval process producing a Mathics Expression where
+rewrite/apply/eval process producing a Mathics3 Expression where
 "Box"ing rules have been applied at various points in the expression;
 boxing functions associated with expression objects, direct the boxing process.
 
@@ -142,10 +142,10 @@ Continuing using the example in the last section::
 Notice in the above that ``format()`` was passed
 ``session.evaluation``. This gives the formatting the ability not just
 to query the environment outside of what was passed inside the
-``graph_circle`` expression, but it also allows the fomatting to call
-back Mathics to perform additional calculations. For example, it is
+``graph_circle`` expression, but it also allows the fomartting to call
+back Mathics3 to perform additional calculations. For example, it is
 conceivable that a particular formatter might want to know on what
-plain a particular polygon lies on, and Mathics might be able to get
+plain a particular polygon lies on, and Mathics3 might be able to get
 the answer to that.
 
 This box expression is at the end converted into a string by means of

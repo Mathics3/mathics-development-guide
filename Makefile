@@ -17,7 +17,7 @@ setup:
 	pip install -r requirements.txt
 
 #: Rebuild docs from scratch
-rebuild:
+build rebuild:
 	$(MAKE) -C docs $<
 
 #: Wipe derivable files

@@ -3,7 +3,7 @@
 Case Studies for Adding Builtins
 ================================
 
-A large part of Mathics is simply a list of built-in functions that perform some computation. When possible, rely on SymPy, SciPy, and mpmath functions.
+A large part of Mathics3 is simply a list of built-in functions that perform some computation. When possible, rely on SymPy, SciPy, and mpmath functions.
 
 
 .. toctree::

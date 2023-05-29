@@ -1,10 +1,10 @@
-=================================
-Mathics Core Interpreter Overview
-=================================
+==================================
+Mathics3 Core Interpreter Overview
+==================================
 
-.. index:: S-expression
+.. index:: M-expression
 
-At its heart, the Mathics interpreter works over a generalization of
+At its heart, the Mathics3 interpreter works over a generalization of
 an `S-expression <https://en.wikipedia.org/wiki/S-expression>`_,
 called an `M-expresssion
 <https://en.wikipedia.org/wiki/M-expression>`_. An M-expression is a
@@ -14,7 +14,7 @@ than just a simple function name. See also `Everything is an
 Expression
 <https://reference.wolfram.com/language/tutorial/Expressions.html#4715>`_.
 
-When you enter a string to Mathics there is a 3-step process:
+When you enter a string to Mathics3 there is a 3-step process:
 
 * the input string is parsed to ``FullForm``
 * The ``FullForm`` M-expression is evaluated giving another M-expression
@@ -30,7 +30,8 @@ Each of the above steps can be involved, so we break these down below.
    :maxdepth: 3
 
    code-overview/session
-   code-overview/scanning-and-parsing
+   code-overview/scanning
+   code-overview/parsing
    code-overview/ast
    code-overview/evaluation
    code-overview/pattern-matching
