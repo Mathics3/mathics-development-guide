@@ -38,8 +38,8 @@ OS package dependencies
 +++++++++++++++++++++++
 
 Here we will only describe OS package dependencies for Mathics3. For
-the front-ends, Mathics-Django or mathicsscript, see the install
-instructions in the specific github repositories.
+the front-ends, Mathics-Django or ``mathicsscript``, see :ref`Install from the Mathics3 Github Organization`
+for specific github repositories.
 
 Debian/Ubuntu
 ~~~~~~~~~~~~~
@@ -111,21 +111,29 @@ This might work if you don't have the full suite of support OS packages `LLVM <h
 
 You can try a more minimal installation using::
 
-       $ pip install Mathics-omnibus[full]
+       $ pip install Mathics-omnibus
 
 Either of these installs these suite of independent Mathics3 packages:
 
-* ``mathicsscript``
-* ``mathics-django``
-* ``pymathics-graph``, ``pymathics-natlang``
+* `mathicsscript <https://pypi.org/project/mathicsscript/>`_ (``mathicsscript``)
+* `mathics-django <https://pypi.org/project/Mathics-Django/>`_ (``mathics_django``)
+* `pymathics-graph <https://pypi.org/project/pymathics-graph/>`_ (``pymathics.graph``),
+* `pymathics-natlang <https://pypi.org/project/pymathics-natlang/>`_ (``pymathics.natlang``)
 
-These in turn pull in two other Mathics3 packages:
+These packages in turn pull in two other Mathics3 packages:
 
-* ``mathics-scanner``
-* ``mathics-core``
+* `Mathics-Scanner <https://pypi.org/project/Mathics-Scanner/>`_ (``mathics_scanner``)
+* `Mathics3 <https://pypi.org/project/Mathics3/mathics-core>`_ (``mathics``)
+
+and possibly:
+
+* `mathics-pygments <https://pypi.org/project/Mathics3/mathics-pygments>`_ (``mathics_pygments``)
+
+Above, the name in parenthesis is the Python ``import`` module name you would use to import from that package.
 
 
-In other words, this package doesn't have any code in it. Instead it just contains dependencies to other PyPI Mathics3 packages.of other PyPI package.
+The `Mathics-omnibus <https://pypi.org/project/Mathics-omnibus/>`_ Python package doesn't have any code per se in it. Instead, it just contains dependencies to other PyPI Mathics3 packages.of other PyPI package.
+
 It is more or less equivalent to::
 
        $ pip install Mathics3  # this is the core engine. It is a dependency of some of the below too
@@ -160,12 +168,12 @@ image run:
     $ docker pull mathicsorg/mathics
 
 This will pull the latest development release that has a docker
-tagname ``#latest`` if you want a stable release, give the version in
+tag name ``#latest`` if you want a stable release, give the version in
 the pull command. For example
 
-    $ docker pull mathicsorg/mathics#4.0.0
+    $ docker pull mathicsorg/mathics#5.0.0
 
-From an OS-specific Repository
+From an OS-Specific Repository
 ------------------------------
 
 Click on the link below from `Repology.org <https://repology.org>`__ for
@@ -173,8 +181,8 @@ details for a specific OS and distribution.
 
 |Packaging status|
 
-Install from git from github
-----------------------------
+Install from the Mathics3 Github Organization
+----------------------------------------------
 
 If you need the most recent fixes, you can install from github.  Note
 that there isn't a single github repository that contains everything.
@@ -183,5 +191,29 @@ Also, since Mathics3 is in constant flux, dependencies can change. The
 development version from might require development version from
 another.
 
-These instructions then aren't complete and may need to be adapted for
-the various Mathics3 github repositories
+The minimal set of Mathics3 Python packages that need to be installed is:
+
+* `mathics scanner <https://github.com/Mathics3/mathics-scanner/>`_
+* `mathics-core <https://github.com/Mathics3/mathics-core/>`_
+
+When ``Mathics3`` (which depends on ``Mathics-Scanner``) is installed, there is a minimalist command-line utility called ``mathics`` available which allows you to enter Mathics3 statements. For help on this type::
+
+  mathics --help
+
+
+There are more filled-out front ends. ``mathicsscript`` is a more full featured command-line script similar to ``wolframscript``. There is a Django-based front-end called ``mathics-django``.
+
+There are also two Mathics3 modules written in Python
+* ``pymathics-graph``
+* ``pymathics-natlang``
+
+For each of the packages above installing is about the same::
+
+  $ git clone <name-of-repository>
+  $ cd <name-of-repository>
+  $ pip install -e .
+  $ make check # to test code
+
+To run the Django-based front-end type::
+
+  $ make runserver
