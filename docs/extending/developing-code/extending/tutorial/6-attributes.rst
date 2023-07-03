@@ -62,3 +62,10 @@ Here is a session that demonstrates the above code:
 
 
 .. TODO: Document and link to what which attribute does. Make a table somewhere
+
+Next:
+
+.. toctree::
+   :maxdepth: 1
+
+   7-warnings

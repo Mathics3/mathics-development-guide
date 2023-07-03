@@ -31,3 +31,10 @@ Here is how this is done.
 
 This code does the same thing as in the last section.
 See the session there for an example of how this works.
+
+Next:
+
+.. toctree::
+   :maxdepth: 1
+
+   6-attributes

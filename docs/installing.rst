@@ -11,8 +11,8 @@ Here we describe the various ways to get Mathics3 installed.
 Mathics3 (mathics-core) Requirements
 ------------------------------------
 
-The Mathics3 suite runs on Python 3.6 or later. We also support Pyston
-and PyPy 3.6 or later.
+The Mathics3 suite runs on Python 3.7 or later. We also support Pyston
+and PyPy 3.7 or later.
 
 Underneath, Mathics3 core relies on
 `SymPy <https://www.sympy.org/en/index.html>`__ which relies on
@@ -117,8 +117,11 @@ Either of these installs these suite of independent Mathics3 packages:
 
 * `mathicsscript <https://pypi.org/project/mathicsscript/>`_ (``mathicsscript``)
 * `mathics-django <https://pypi.org/project/Mathics-Django/>`_ (``mathics_django``)
-* `pymathics-graph <https://pypi.org/project/pymathics-graph/>`_ (``pymathics.graph``),
-* `pymathics-natlang <https://pypi.org/project/pymathics-natlang/>`_ (``pymathics.natlang``)
+* `pymathics-graph`__ (``pymathics.graph``),
+* pymathics-natlang_ (``pymathics.natlang``)
+
+.. _pymathics-graph: https://github.com/Mathics3/pymathics-graph/
+__ pymathics-graph_
 
 These packages in turn pull in two other Mathics3 packages:
 
@@ -203,9 +206,13 @@ When ``Mathics3`` (which depends on ``Mathics-Scanner``) is installed, there is 
 
 There are more filled-out front ends. ``mathicsscript`` is a more full featured command-line script similar to ``wolframscript``. There is a Django-based front-end called ``mathics-django``.
 
-There are also two Mathics3 modules written in Python
-* ``pymathics-graph``
-* ``pymathics-natlang``
+There are also two Mathics3 modules written in Python:
+
+* `pymathics-graph`__
+* `pymathics-natlang`__
+
+.. _pymathics-graph: https://github.com/Mathics3/pymathics-graph/
+__ pymathics-graph_
 
 For each of the packages above installing is about the same::
 
@@ -217,3 +224,6 @@ For each of the packages above installing is about the same::
 To run the Django-based front-end type::
 
   $ make runserver
+
+.. _pymathics-natlang: https://github.com/Mathics3/pymathics-natlang/
+__ pymathics-natlang_
