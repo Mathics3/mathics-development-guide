@@ -67,3 +67,10 @@ This is how the text appears getting help via ``?`` in ``mathicsscript``:
   :alt: Rendering XML help markup in Django
 
 See :ref:`For Help Text <doc_help_markup>` for more a list of help-related markup.
+
+Next:
+
+.. toctree::
+   :maxdepth: 1
+
+   3-test-markup

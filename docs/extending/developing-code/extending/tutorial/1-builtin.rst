@@ -65,3 +65,10 @@ See `Patterns
 <https://reference.wolfram.com/language/tutorial/Patterns.html>`_ for
 more information about how to specify expressions with patterns in
 them that you might use in an *eval()* method docstring.
+
+Next:
+
+.. toctree::
+   :maxdepth: 1
+
+   2-help-markup

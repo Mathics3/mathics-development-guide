@@ -6,7 +6,7 @@ examples that are shown in the documentation, can be run interactively
 in the Django interface, and get run automatically during CI testing.
 
 
-Here is the docstring from the last section expanded with a couple of tests.
+Here is the docstring from the last section expanded with a test.
 
 .. code-block:: python
 
@@ -50,3 +50,10 @@ If you hover to the right of this test an equals sign (``=``) appears and if you
 
 
 See :ref:`Markup for Testing <doc_test_markup>` for more a list of test-related markup.
+
+Next:
+
+.. toctree::
+   :maxdepth: 1
+
+   4-patterns

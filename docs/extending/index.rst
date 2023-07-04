@@ -4,5 +4,6 @@
 
    autoload
    packages
+   developer-setup
    developing-code
    code-overview

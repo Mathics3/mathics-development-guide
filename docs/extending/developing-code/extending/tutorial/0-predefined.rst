@@ -31,7 +31,7 @@ Now start mathics from the Mathics3 source tree:
 
 
 Now let's go over the code. For a Symbol ``Hello`` we
-define a Python ``Class`` of type ``Predefined``. ``Predifined`` is perhaps the
+define a Python ``Class`` of type ``Predefined``. ``Predefined`` is perhaps the
 most primitive class that is used for adding Mathics3 Symbols.
 
 In that class you define a method *evaluate(self, evaluation)* which
@@ -48,3 +48,10 @@ superclass of :ref:`BaseElement Class`. A ``String`` is a subclass of
 the :ref:`Atom Class` which in turn is a subclass of the
 ``BaseElement``. You can also return the ``None`` value, in which case
 the expression is unchanged.
+
+Next:
+
+.. toctree::
+   :maxdepth: 1
+
+   1-builtin.rst
