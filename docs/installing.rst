@@ -27,8 +27,8 @@ provides alternative implementations for a number of builtins.
 Building the PDF documentation has a number of additional dependencies.
 
 - ``xetex`` 3.14159265-2.6-0.999991 or greater
-- ``asymptote``, 2.71-37 or greater
-- ``ghostscript`` Version 9.54.0 or greater
+- ``asymptote``, 2.83 or greater
+- ``ghostscript`` Version 9.56.1 or greater
 
 Pay close attention to the version. Some OS-provided packages have
 bugs in them that will prevent certain images like those involving
@@ -218,7 +218,7 @@ For each of the packages above installing is about the same::
 
   $ git clone <name-of-repository>
   $ cd <name-of-repository>
-  $ pip install -e .
+  $ pip install -e .   # or pip install -e .[full]
   $ make check # to test code
 
 To run the Django-based front-end type::
