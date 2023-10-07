@@ -107,13 +107,15 @@ try::
 
        $ pip install Mathics-omnibus[full]
 
-This might work if you don't have the full suite of support OS packages `LLVM <https://llvm.org>`_, `xetex <https://en.wikipedia.org/wiki/XeTeX>`_ and numerous others, the above may fail.
+This might not work if you don't have the full suite of support OS packages `LLVM <https://llvm.org>`_, `xetex <https://en.wikipedia.org/wiki/XeTeX>`_ and numerous others, the above may fail.
 
 You can try a more minimal installation using::
 
        $ pip install Mathics-omnibus
 
-Either of these installs these suite of independent Mathics3 packages:
+*Important Note*: when installing the full suite of programs as is done in ``Mathics-omnibus``, all of the components are guarenteed to work either if everything is installed via PyPI or installed using current sources. Mixing current sources with packages from PyPI may not work because as of 2023 and for a little while longer our API keeps changing a bit drastically. At some point in the far future the API will become more stable.
+
+When you install ``Mathics-omnibus`` you are this suite of independent Mathics3 packages:
 
 * `mathicsscript <https://pypi.org/project/mathicsscript/>`_ (``mathicsscript``)
 * `mathics-django <https://pypi.org/project/Mathics-Django/>`_ (``mathics_django``)
@@ -139,6 +141,7 @@ The `Mathics-omnibus <https://pypi.org/project/Mathics-omnibus/>`_ Python packag
 
 It is more or less equivalent to::
 
+       $ pip install Mathics-Scanner # Mathics3 scanner and builtin operator definitions
        $ pip install Mathics3  # this is the core engine. It is a dependency of some of the below too
        $ pip install Mathics-Django[full] # web front-end with extras
        $ pip install mathicsscript[full]  # the command-line interface with extras
