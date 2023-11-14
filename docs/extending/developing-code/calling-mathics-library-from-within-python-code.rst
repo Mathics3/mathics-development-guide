@@ -118,10 +118,12 @@ area to save results, and to lookup previous definitions and results.
 
    # These are Mathics3 classes we are going to use.
    from mathics.core.expression import Expression, Integer
+   from mathics.core.systemsymbols import SymbolFactorial
+   # SymbolFactorial = Symbol("System`Factorial")
 
    # Compute 20!
-   x = Expression("Factorial", Integer(10)
-                 ).evaluate(session.evaluation).to_python()
+   x = Expression(SymbolFactorial, Integer(10)
+                 ).evaluate(session.evaluation).to_python() # SymbolFactorial can be replaced by Symbol("Factorial")
    print(x) # 2432902008176640000
 
 The above code computes the same value as in the last section. However we are
@@ -135,10 +137,10 @@ we can leave off the context name, ``System``, and Mathics3 will look
 that up.
 
 Notice how to evaluate a general Mathics3 expression in Python using
-*Expression()*: the first parameter is the Full-Form name of the
-function to get called. Here that is ``Factorial``. the parameters
-after the first one are the parameters to the function specified in
-the first parameter. Here it is that parameter ``Integer(10)``.
+*Expression()*: the first parameter is an instance of ``Symbol`` constructed 
+with the Full-Form name of the function to get called. Here that is ``Symbol("System`Factorial")``. 
+The parameters after the first one are the parameters to the function 
+specified in the first parameter. Here it is that parameter ``Integer(10)``.
 Each of the parameters should have type Mathics3 Expression.
 
 The returned value of *Expression()* is Python object and data
@@ -169,10 +171,12 @@ Here is an example of that:
 
    # These are Mathics3 classes we are going to use.
    from mathics.core.expression import Expression, Integer
+   from mathics.core.symbols import SymbolPlus, SymbolTimes
+   # SymbolPlus = Symbol("System`Plus"), SymbolTimes = Symbol("System`Times")
 
    # Compute 5 * (6 + 3)
-   x = Expression("Plus", Integer(5),
-         Expression("Times", Integer(6), Integer(3))
+   x = Expression(SymbolTimes, Integer(5),
+         Expression(SymbolPlus, Integer(6), Integer(3))
 	 ).evaluate(session.evaluation).to_python()
    print(x) # 45
 
