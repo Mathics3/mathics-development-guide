@@ -130,7 +130,7 @@ The above code computes the same value as in the last section. However we are
 doing this by interacting with the Mathics3 classes now.
 
 In this example shown above, we convert from Python's literal 10 to
-Mathics' representation of for 10 using ``Integer(10)``. This value is
+Mathics3's representation of for 10 using ``Integer(10)``. This value is
 needed as a parameter to the ``Factorial`` function . Strictly speaking
 the full name of the factorial function is ``System`Factorial``, but
 we can leave off the context name, ``System``, and Mathics3 will look
@@ -184,7 +184,7 @@ Notice that precedence between operations, like *Plus()* and
 *Times()* is handled simply in the order in which these functions are
 called, so no parenthesis is used in the functional way.
 
-To simplify the abevo we have overloaded the standard binary and unary
+To simplify the above, we have overloaded the standard binary and unary
 numeric operators ``+``, ``-``, ``/``, ``*``, ``abs()``, ``//``, and
 ``**`` in the ``Expressions`` and ``Numbers`` classes. With this, the
 above can be written as:
