@@ -1,4 +1,4 @@
-.. pymathics-hello documentation master file, created by
+f.. pymathics-hello documentation master file, created by
    sphinx-quickstart on Sun Nov 29 14:06:02 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -137,9 +137,9 @@ we can leave off the context name, ``System``, and Mathics3 will look
 that up.
 
 Notice how to evaluate a general Mathics3 expression in Python using
-*Expression()*: the first parameter is an instance of ``Symbol`` constructed 
-with the Full-Form name of the function to get called. Here that is ``Symbol("System`Factorial")``. 
-The parameters after the first one are the parameters to the function 
+*Expression()*: the first parameter is an instance of ``Symbol`` constructed
+with the Full-Form name of the function to get called. Here that is ``Symbol("System`Factorial")``.
+The parameters after the first one are the parameters to the function
 specified in the first parameter. Here it is that parameter ``Integer(10)``.
 Each of the parameters should have type Mathics3 Expression.
 
@@ -183,6 +183,29 @@ Here is an example of that:
 Notice that precedence between operations, like *Plus()* and
 *Times()* is handled simply in the order in which these functions are
 called, so no parenthesis is used in the functional way.
+
+To simplify the abevo we have overloaded the standard binary and unary
+numeric operators ``+``, ``-``, ``/``, ``*``, ``abs()``, ``//``, and
+``**`` in the ``Expressions`` and ``Numbers`` classes. With this, the
+above can be written as:
+
+.. code:: py
+
+   # This is the same as before
+   from mathics.session import MathicsSession
+   session = MathicsSession(catch_interrupt=True)
+
+   from mathics.core.expression import Integer
+
+   # Compute 5 * (6 + 3)
+
+   x = (
+	Integer(5) * (Integer(6) + Integer(3))
+        ).evaluate(session.evaluation).to_python()
+   print(x) # 45
+
+Note that when we switch to (overloaded) infix operators now need parenthesis again, since ``*`` binds tigher than ``+``.
+
 
 Conversion to and from Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
