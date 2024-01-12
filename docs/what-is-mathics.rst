@@ -2,7 +2,7 @@ The Components of Mathics3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. contents::
-   :depth: 1
+   :depth: 2
    :local:
 
 
@@ -117,8 +117,8 @@ browser with JavaScript enabled.
 
 Note: in the future we intend to also provide a Jupyter-like interface.
 
-PyMathics3 Modules
-++++++++++++++++++
+Mathics3 Python Modules
++++++++++++++++++++++++
 
 A number of the add-ons are not automatically loaded when Mathics3 starts, instead can be loaded from within Mathics3 using the `Needs <https://reference.wolfram.com/language/ref/Needs.html>`_ function.
 
@@ -126,35 +126,39 @@ However the Python packages need to have been Python installed outside of Mathic
 
 Below we describe some of these packages. A full list can be found by looking in the `Mathics3 organization <https://github.com/Mathics3>`_.
 
-Natural Language Python Module add-on
--------------------------------------
+`"Hello, World" as a Mathics3 Python Module <https://github.com/Mathics3/pymathics-hello>`_
+--------------------------------------------------------------------------------------------
 
-If you want Natural-Language processing, there is an additional PyPI
-package called `pymathics-natlang
-<https://pypi.org/project/pymathics-natlang/>`_.
+This is a minimal Mathics3 Python Module for example or teaching purpose.
+
+In contrast to the Mathics3 Python Modules, this one is not general useful except for showing how to write a Mathics3 Python Module.
+
+
+`Natural Language Mathics3 Module <https://github.com/Mathics3/pymathics-language>`_
+-------------------------------------------------------------------------------------
+
+This Mathics3 Python Module adds Natural-Language Processing (NLP) functions.
 
 To use this, you will need to have `nltk
 <https://pypi.org/project/nltk>`_ and `spacy
 <https://pypi.org/project/spacy>`_ installed.
 
-Graph Python Module add-on
---------------------------
+`Network Graph Mathics3 Python Module <https://github.com/Mathics3/pymathics-graph>`_
+--------------------------------------------------------------------------------------
 
-If you need to do work with Graph Theory or Networks you may want the
-Graph Python module called `pymathics-graph
-<https://pypi.org/project/pymathics-graph/>`_.
+This Mathics3 Python Modules adds Graph Theory or Networks Builtin Functions.
 
 To use this you will need to have `networkx <https://pypi.org/project/networkx>`_ and `matplotlib <https://pypi.org/project/matplotlib>`_ installed.
 
 
-Matplotlib Python Module Backend Renderer
------------------------------------------
+`Matplotlib Python Module Backend Renderer <https://github.com/Mathics3/pymathics-matplotlib>`_
+-----------------------------------------------------------------------------------------------
 
 Currently this is a work in progress and works only in very limited way.
 It provides graphics rendering using `matplotlib <https://pypi.org/project/matplotlib>`_.
 
-Asymptote Python Module Backend Renderer
------------------------------------------
+`Asymptote Python Module Backend Renderer <https://github.com/Mathics3/pymathics-asy>`_
+----------------------------------------------------------------------------------------
 
 Currently this is a work in progress and works only in very limited way.
 It provides graphics rendering using the `asymptote <https://asymptote.sourceforge.io/>`_ vector graphics language.
