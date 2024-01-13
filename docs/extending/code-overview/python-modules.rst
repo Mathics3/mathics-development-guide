@@ -52,9 +52,8 @@ Objects here are fundamental to the system. These include objects like:
 * ``Patterns``,
 * ``Rules``, and others.
 
-While some parts of ``mathics-core`` could conceivably be written in
-Mathics, they are instead written in Python for efficiency, everything
-here pretty much has to written in Python.
+While there maybe some parts of ``mathics-core`` that could conceivably be written in
+Mathics3, for efficiency, everything here is written in Python.
 
 `mathics.core.builtin <https://github.com/Mathics3/mathics-core/tree/master/mathics/core/builtin>`_
 ---------------------------------------------------------------------------------------------------
