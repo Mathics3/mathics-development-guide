@@ -11,8 +11,8 @@ Here we describe the various ways to get Mathics3 installed.
 Mathics3 (mathics-core) Requirements
 ------------------------------------
 
-The Mathics3 suite runs on Python 3.7 or later. We also support Pyston
-and PyPy 3.7 or later.
+The Mathics3 suite runs on Python 3.8 or later. We also support Pyston
+and PyPy 3.8 or later.
 
 Underneath, Mathics3 core relies on
 `SymPy <https://www.sympy.org/en/index.html>`__ which relies on
@@ -87,6 +87,36 @@ On FreeBSD:
 
 .. |Packaging status| image:: https://repology.org/badge/vertical-allrepos/mathics.svg
 			    :target: https://repology.org/project/mathics/versions
+
+MS Windows (msys2)
+~~~~~~~~~~~~~~~~~~
+
+From https://github.com/Mathics3/mathics-core/discussions/1033#discussioncomment-9404617
+::
+
+   pacman -S --needed pactoys
+   pacboy -S --needed python-llvmlite:p \
+   python-mpmath:p \
+   python-numpy:p \
+   python-pillow:p \
+   python-dateutil:p \
+   python-requests:p \
+   python-setuptools:p \
+   python-sympy:p \
+   python-pexpect:p \
+   python-pytest:p \
+   python-click:p \
+   python-ptyprocess:p \
+   python-iniconfig:p \
+   python-packaging:p \
+   python-pluggy:p \
+   python-colorama:p \
+   python-six:p \
+   python-idna:p \
+   python-urllib3:p \
+   python-yaml:p
+   make
+
 
 MS Windows
 ~~~~~~~~~~
@@ -217,7 +247,14 @@ There are also two Mathics3 modules written in Python:
 .. _pymathics-graph: https://github.com/Mathics3/pymathics-graph/
 __ pymathics-graph_
 
-For each of the packages above installing is about the same::
+For ``mathics-core``, ``mathics-django`` and ``mathics-django``:
+
+  $ git clone <name-of-repository>
+  $ cd <name-of-repository>
+  $ make
+  $ make check # to test code
+
+For other repositois, the above may also work, but you can use ``pip install`` as well:
 
   $ git clone <name-of-repository>
   $ cd <name-of-repository>
