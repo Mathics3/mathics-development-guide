@@ -2,6 +2,7 @@
 Making a Mathics Django Release
 ===============================
 
+*Note: This package depends on ``mathics-core``, so if that needs a release too, do that before this.*
 
 .. code::
 
@@ -126,4 +127,4 @@ Move dist files to save
 Post-Release
 ============
 
-    Bump version in ``${package}/version.py``, and add "dev0".
+    Add 1 to release number of version in ``${package}/version.py``; also append "dev0".

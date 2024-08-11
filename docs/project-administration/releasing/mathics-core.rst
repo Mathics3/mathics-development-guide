@@ -2,10 +2,12 @@
 Making a Mathics3 Core Release
 ==============================
 
+*Note: This package depends on ``mathics-scanner``, so if that needs a release too, do that before this.*
+
 .. code::
 
     $ PACKAGE="Mathics3"
-    $ package="mathics-core"
+    $ github_top_dir="mathics-core"
     # Edit mathics/version.py
     $ source mathics/version.py # to set in POSIX shell
     $ echo $__version__
@@ -40,12 +42,12 @@ Update ``CHANGES.rst`` from ``ChangeLog``
     $ git commit --amend .
     $ git push -u origin HEAD # get CI testing going early
 
-Make Python PDF
-======================
+Make Mathics3 PDF
+=================
 
 .. code::
 
-   $ pyenv local 3.11 # or whatever latest Python you want ot build doc is
+   $ pyenv local 3.11 # or whatever latest Python you want to build doc with
    $ make clean # make sure mathics-title.pdf has not been removed
    $ make doc
 
@@ -81,7 +83,7 @@ TODO: turn this into a script in ``admin-tools``
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
     $ pyenv local pyston-2.3.5 # Use a version that is not the most recent
-    $ pip install -e git+https://github.com/Mathics3/${package}.git#egg=${PACKAGE}
+    $ pip install -e git+https://github.com/Mathics3/${github_top_dir}.git#egg=${PACKAGE}
     $ mathics --version # see that new version appears
     $ mathics -e "1+2"
     $ pip uninstall ${PACKAGE}
@@ -114,7 +116,7 @@ TODO: turn this into a script in ``admin-tools``
 
     $ git pull # to pull down new tag
     $ pushd /tmp/gittest
-    $ pip install -e git+https://github.com/Mathics3/${package}.git@${__version__}#egg=${PACKAGE}
+    $ pip install -e git+https://github.com/Mathics3/${github_top_dir}.git@${__version__}#egg=${PACKAGE}
     $ python -c 'import mathics_pygments; print(mathics_pygments.__version__)'
     $ pip uninstall ${PACKAGE}
     $ popd
@@ -128,15 +130,16 @@ Upload it to PyPI with ``twine``:
 
     $ twine upload --verbose dist/$PACKAGE-${__version__}*{whl,gz}
 
-Move dist files to save
-=======================
+Move dist files to ``uploaded``
+===============================
 
 .. code::
 
+    $ [[ ! -d dist/uploaded ]] || mkdir dist/uploaded
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
 Post-Release
 ============
 
-    Bump version in ``${package}/version.py``, and add "dev0".
+    Add 1 to release number of version in ``mathics/version.py``; also append "dev0".

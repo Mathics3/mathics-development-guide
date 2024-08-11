@@ -2,8 +2,10 @@
 Making a Mathic3 Natural-Language Module Release
 ================================================
 
+*Note: This package depends on ``mathics-core``, so if that needs a release too, do that before this.*
 
-.. code:: bash
+
+.. code::
 
     $ PACKAGE="pymathics-natlang"
     $ package="pymathics/natlang"
@@ -14,7 +16,7 @@ Making a Mathic3 Natural-Language Module Release
 Create a new branch
 ===================
 
-.. code:: bash
+.. code::
 
     $ git checkout -b release-$__version__
     $ git commit -m"Get ready for release $__version__" .
@@ -44,7 +46,7 @@ Update ``NEWS.md`` from ``ChangeLog``
 Check Python versions
 ======================
 
-.. code:: bash
+.. code::
 
    $ ./admin-tools/check-versions.sh
 
@@ -54,7 +56,7 @@ Merge release
 Go to github and merge release into master.
 
 Then...
-.. code:: bash
+.. code::
 ::
 
     $ git checkout master
@@ -66,7 +68,7 @@ Check package from github
 
 TODO: turn this into a script in ``admin-tools``
 
-.. code:: bash
+.. code::
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
     $ pyenv local 3.9.18 # Use a version that is not the most recent
@@ -112,18 +114,20 @@ Upload the release to PyPI
 
 Upload it to PyPI with ``twine``:
 
-.. code:: bash
+.. code::
 
     $ twine upload --verbose dist/*-${__version__}*{whl,gz}
 
 Move dist files to save
 ========================
 
-.. code:: bash
+.. code::
+
+    $ [[ ! -d dist/uploaded ]] || mkdir dist/uploaded
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
 Post-Release
 ============
 
-    Bump version in ``${PACKAGE}/version.py``, and add "dev0".
+    Add 1 to release number of version in ``${PACKAGE}/version.py``; also append "dev0".

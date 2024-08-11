@@ -2,6 +2,7 @@
 Making a Mathic3 Graph Module Release
 =====================================
 
+*Note: This package depends on ``mathics-core``, so if that needs a release too, do that before this.*
 
 .. code::
 
@@ -120,10 +121,12 @@ Move dist files to save
 ========================
 
 .. code::
+
+    $ [[ ! -d dist/uploaded ]] || mkdir dist/uploaded
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
 Post-Release
 ============
 
-    Bump version in ``${PACKAGE}/version.py``, and add "dev0".
+    Add 1 to release number of version in ``${PACKAGE}/version.py``; also append "dev0".

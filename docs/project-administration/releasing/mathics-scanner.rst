@@ -2,7 +2,7 @@
 Making a Mathics-Scanner Release
 =================================
 
-.. code:: bash
+.. code::
 
 
     $ package="mathics_scanner"
