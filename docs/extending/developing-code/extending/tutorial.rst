@@ -9,7 +9,7 @@ After reading this you may want to go through the detailed examples in :ref:`Cas
 .. _adding_a_mathics_function_tutorial:
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    tutorial/0-predefined
    tutorial/1-builtin
