@@ -133,19 +133,47 @@ markup in docstrings. These are deprecated.
 However please don't create more examples. Instead please consider
 moving something like this to a pytest unit test which is far more flexible.
 
-+------------------------+-----------------------------------------------------------+
-| Markup                 | Meaning                                                   |
-+========================+===========================================================+
-| ``#>`` *Mathics3 code* | Some Mathics3 code to run but not appearing documentation.|
-+------------------------+-----------------------------------------------------------+
-| ``X>`` *Mathics3 code* | Mathics3 code shown in the documentation but not run.     |
-+------------------------+-----------------------------------------------------------+
-| ``S>``                 | a test query that is shown in the documentation and run   |
-+------------------------+-----------------------------------------------------------+
++------------------------+-----------------------------------------------------------------------------+
+| Markup                 | Meaning                                                                     |
++========================+=============================================================================+
+| ``#>`` *Mathics3 code* | Mathics3 code to run but not appearing documentation.                       |
++------------------------+-----------------------------------------------------------------------------+
+| ``X>`` *Mathics3 code* | Mathics3 code shown in the documentation but not run.                       |
++------------------------+-----------------------------------------------------------------------------+
+| ``S>``                 | Mathics3 code to run, like ``>>``, but only if not in "Sandbox" environment |
++------------------------+-----------------------------------------------------------------------------+
 
-*Todo: give examples of each of these.*
+Example of ``#>``
++++++++++++++++++
+
+.. code-block::
+
+    Strings and expressions that produce strings are atoms:
+    >> Map[AtomQ, {"x", "x" <> "y", StringReverse["live"]}]
+     = {True, True, True}
+    #> Clear[x]
 
 
+Here, we want to give an exmaple of ``Map`` and that sets variable ``x``. We want to
+clear the definition to clean things up, but doing so does not serve any pedagogic purposes.
+So we can hide this from the list of examples, but have the effect of running the function.
+
+
+Examples of ``S>``
+++++++++++++++++++
+
+.. code-block::
+
+    S> $MachineName
+     = ...
+
+In a cloud environment, we do not want to give the actual information about the machine running the server. So for security, we want to hide this example and information from it.
+
+.. code-block::
+
+    S> filename = $TemporaryDirectory <> "/example_file";
+
+In a sandboxed environment or cloud environment, we might not have write access to a filesystem, not even a temporary one.
 
 Guidelines for Writing Documentation
 ====================================
