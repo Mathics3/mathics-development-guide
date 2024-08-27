@@ -8,9 +8,9 @@ Making a Mathic3 Natural-Language Module Release
 .. code::
 
     $ PACKAGE="pymathics-natlang"
-    $ package="pymathics/natlang"
-    # Edit ${package}/version.py
-    $ source ${package}/version.py # to set in POSIX shell
+    $ root_dir="pymathics/natlang"
+    # Edit ${root_dir}/version.py
+    $ source ${root_dir}/version.py # to set in POSIX shell
     $ echo $__version__
 
 Create a new branch

@@ -6,8 +6,8 @@ Making a Mathic3 Graph Module Release
 
 .. code::
 
-    $ PACKAGE="pymathics-graph"
-    $ root_dir="pymathics/graph"
+    $ PACKAGE="pymathics-hello"
+    $ root_dir="pymathics/hello"
     # Edit ${root_dir}/version.py
     $ source ${root_dir}/version.py # to set in POSIX shell
     $ echo $__version__
@@ -58,7 +58,7 @@ Then...
 .. code::
 ::
 
-    $ git checkout master
+    $ git checkout main
     $ git pull
 
 
@@ -71,8 +71,8 @@ TODO: turn this into a script in ``admin-tools``
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
     $ pyenv local 3.9.18 # Use a version that is not the most recent
-    $ pip install -e git+https://github.com/Mathics3/${PACKAGE}.git#egg=${PACKAGE}[full]
-    $ mathics -e 'LoadModule["pymathics.graph"]; g = Pymathics`Graph[{1 -> 2, 2 -> 3, 3 <-> 4}, VertexLabels->True]; Pymathics`WeaklyConnectedComponents[g]'
+    $ pip install -e git+https://github.com/Mathics3/${PACKAGE}.git#egg=${PACKAGE}
+    $ mathics -e 'LoadModule["pymathics.hello"]; Hello["rocky"]'
     $ pip uninstall ${PACKAGE}
     $ popd
 
@@ -89,10 +89,7 @@ Go over what is in dist and remove unnecessary files in ``dist``.
 Release on Github
 =================
 
-Go to https://github.com/Mathics3/pymathics-graph/releases/new
-
-https://cloudconvert.com/rst-to-md can be used to change the CHANGES.rst
-section to markdown.
+Go to https://github.com/Mathics3/pymathics-hello/releases/new
 
 Now check the *tagged* release. (Checking the untagged release was
 previously done).
@@ -104,7 +101,7 @@ TODO: turn this into a script in ``admin-tools``
     $ git pull # to pull down new tag
     $ pushd /tmp/gittest
     $ pip install -e git+https://github.com/Mathics3/${PACKAGE}.git@${__version__}#egg=${PACKAGE}[full]
-    $ mathics -e 'LoadModule["pymathics.graph"]; g = Pymathics`Graph[{1 -> 2, 2 -> 3, 3 <-> 4}, VertexLabels->True]; Pymathics`WeaklyConnectedComponents[g]'
+    $ mathics -e 'LoadModule["pymathics.hello"]; Hello["rocky"]'
     $ pip uninstall ${PACKAGE}
     $ popd
 
