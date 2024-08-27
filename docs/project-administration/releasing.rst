@@ -58,3 +58,4 @@ this document, for changes in the release process.
    releasing/mathics-django.rst
    releasing/pymathics-graph.rst
    releasing/pymathics-natlang.rst
+   releasing/pymathics-hello.rst
