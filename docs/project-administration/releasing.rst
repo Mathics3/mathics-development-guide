@@ -26,14 +26,15 @@ Often due to API changes, we need to release several packages at the same time.
 
 Here is a dependency order in which Python packages can be released:
 
-1. mathics_scanner
-2. mathics-pygments; depends on mathics_scanner
+1. mathics_scanner; no Mathics3 dependencies.
+2. mathics-pygments; depends on mathics_scanner.
 3. mathics-core; depends on mathics_scanner; For the docs the Mathics3 modules need to be available.
-4. Mathics-Django; depends on mathics-core
-5. mathicsscript; depends on mathics-core
-6. pymathics-natlang; depends on mathics-core
-7. pymathics-graph; depends on mathics-core
-8. mathics-omnibus; depends on all of the above.
+4. Mathics-Django; depends on mathics-core.
+5. mathicsscript; depends on mathics-core.
+6. pymathics-natlang; depends on mathics-core.
+7. pymathics-graph; depends on mathics-core.
+8. mathics-hello; depends on mathics-core.
+9. mathics-omnibus; depends on all of the above.
 
 Of course, some packages may not need updating, and the exact order
 can be changed. For example, the order of the Graph and Natural
