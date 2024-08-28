@@ -1,6 +1,6 @@
-===============================
-Making a Mathics Django Release
-===============================
+================================
+Making a Mathics3 Django Release
+================================
 
 *Note: This package depends on ``mathics-core``, so if that needs a release too, do that before this.*
 

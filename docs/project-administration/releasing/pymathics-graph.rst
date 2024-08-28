@@ -1,6 +1,6 @@
-=====================================
-Making a Mathic3 Graph Module Release
-=====================================
+======================================
+Making a Mathics3 Graph Module Release
+======================================
 
 *Note: This package depends on ``mathics-core``, so if that needs a release too, do that before this.*
 
