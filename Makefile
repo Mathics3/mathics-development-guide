@@ -25,4 +25,4 @@ clean:
 	$(MAKE) -C docs $<
 
 png:
-	$(MAKE) -C docs/extending/code-overview $@
+	$(MAKE) -C docs/code-overview $@

@@ -17,6 +17,8 @@ The process repeats until the expression converges and there are no further chan
 
 The power of the WL then relies in the possibility of defining rules by patterns that can match with many different expressions, and building new expressions based on the variable part of the pattern.
 
+See also :ref:`Rules <rules>`.
+
 Pattern Classes
 ---------------
 
