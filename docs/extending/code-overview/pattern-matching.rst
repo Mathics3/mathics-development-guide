@@ -20,20 +20,20 @@ The power of the WL then relies in the possibility of defining rules by patterns
 Pattern Classes
 ---------------
 
-We now describe the Class hierarchy for ``Pattern`` which is defined in ``mathics.core.pattern``.  This is the base class that represents the pattern for an expression.
+We now describe the Class hierarchy for ``Pattern`` which is defined inside ``mathics.core.pattern``.  This is the base class that represents the pattern for an expression.
 
 Two of its subclasses are:
 
 * ``AtomPattern`` patterns that match with a given atomic expression,  and
-* ``ExpressionPattern`` patterns matches with non-atomic expressions (i.e., expressions with a head and elements).
+* ``ExpressionPattern`` patterns match with non-atomic expressions (i.e., expressions with a head and elements).
 
-There are also have several ``Builtin`` symbols (defined in ``mathics.builtin.patterns``) that
+There are also several ``Builtin`` symbols (defined in ``mathics.builtin.patterns``) that
 represent different pattern constructions like ``Pattern_``, ``Blank``, ``PatternTest`` or ``Alternatives``. All of these ``Builtin`` classes are derived from
 the ``PatternObject`` class, which is derived from ``InstanceableBuiltin`` and ``Pattern``.
 
 Every ``Pattern`` object has three important methods: ``does_match()``, ``get_match_candidates()``, and ``match()``:
 
-* ``does_match()`` checks if certain expression matches the pattern
+* ``does_match()`` checks if a given expression matches the pattern
 * ``get_match_candidates()`` finds all the potential matches
 * ``match()`` performs what needs to be done when there is a match
 
