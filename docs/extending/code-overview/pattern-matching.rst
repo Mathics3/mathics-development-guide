@@ -8,9 +8,9 @@
 Pattern Matching in Evaluation
 ==============================
 
-Pattern matching is used in evaluation of Mathics3 Expression and therefore in Function resolution. Because this process is both time consuming and involved, it is important to understand how it works. We describe some of this process here.
+Pattern matching is used in evaluation of Mathics3 Expression and therefore in Function resolution. Because this process is both time-consuming and involved, it is important to understand how it works. We describe some of this process here.
 
-Based on the ``Head`` of a Mathics3 Expression, the rules stored the ``Definitions`` object for ``Head`` are examined for matches.
+In the evaluation loop, the rules stored in the ``Definition`` object associated with each ``Element`` of an ``Expression`` are examined for matching with the Element (`Downvalues`) or the subexpression (`Upvalues`, `Subvalues`) containing the ``Element``.
 When a rule matches an expression, the rule specifies how sub-expressions get bound to names, and how the expression is transformed. After this happens, the evaluation process is repeated using the replaced expression.
 
 The process repeats until the expression converges and there are no further changes.
