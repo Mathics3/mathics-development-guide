@@ -15,6 +15,7 @@ Mathics's Developer Reference
    running
    bugs
    tables
+   code-overview
    extending
    project-administration
 

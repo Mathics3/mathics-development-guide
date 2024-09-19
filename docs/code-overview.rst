@@ -1,6 +1,6 @@
-==================================
-Mathics3 Core Interpreter Overview
-==================================
+=========================
+Mathics3 Core Interpreter
+=========================
 
 .. index:: M-expression
 
@@ -35,6 +35,7 @@ Each of the above steps can be involved, so we break these down below.
    code-overview/ast
    code-overview/evaluation
    code-overview/pattern-matching
+   code-overview/rules
    code-overview/boxes-forms-and-formats
    code-overview/python-modules
    code-overview/object-classes
