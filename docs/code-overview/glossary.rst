@@ -177,7 +177,7 @@ Glossary
      See the documentation for the Mathics3 builtin function ``NValues``.
 
 
-   pattern
+   pattern object
 
      A object found in a definition associated with a symbol an ``Expression`` or a part of the ``Expression``.
      See the documentation for Mathics3 builtin ``Pattern``.
