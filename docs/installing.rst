@@ -143,7 +143,7 @@ You can try a more minimal installation using::
 
        $ pip install Mathics-omnibus
 
-*Important Note*: when installing the full suite of programs as is done in ``Mathics-omnibus``, all of the components are guarenteed to work either if everything is installed via PyPI or installed using current sources. Mixing current sources with packages from PyPI may not work because as of 2023 and for a little while longer our API keeps changing a bit drastically. At some point in the far future the API will become more stable.
+*Important Note*: when installing the full suite of programs as is done in ``Mathics-omnibus``, all of the components are guaranteed to work either if everything is installed via PyPI or installed using current sources. Mixing current sources with packages from PyPI may not work because as of 2023 and for a little while longer our API keeps changing a bit drastically. At some point in the far future the API will become more stable.
 
 When you install ``Mathics-omnibus`` you are this suite of independent Mathics3 packages:
 

@@ -121,6 +121,7 @@ Move dist files to save
 ========================
 
 .. code::
+
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
