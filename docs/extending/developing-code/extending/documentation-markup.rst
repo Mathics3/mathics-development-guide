@@ -133,6 +133,33 @@ markup in docstrings. These are deprecated.
 However please don't create more examples. Instead please consider
 moving something like this to a pytest unit test which is far more flexible.
 
+Example of ``>>``, ``=``, and ``= ...``
++++++++++++++++++++++++++++++++++++++++
+
+.. code-block::
+
+    Strings and expressions that produce strings are atoms:
+    >> Map[AtomQ, {"x", "x" <> "y", StringReverse["live"]}]
+     = {True, True, True}
+
+``Map[AtomQ, {"x", "x" <> "y", StringReverse["live"]}]`` is shown as
+an example in the ``Map`` documentation section.  When this code is
+run, ``{True, True, True}`` is the expected output.
+
+In testing, ``make doctest`` is run, this example code is run and checked
+against the output. If the two do not match, a test failure is
+recorded.
+
+In some cases, output can vary. For example, value one gets when
+evaluationg ``$ProcessID`` is not fixed and can't be recorded. So
+here, use ``...`` and *anything* will be accepted as a match:
+
+.. code-block::
+
+    >> $ProcessID
+     = ...
+
+
 +------------------------+-----------------------------------------------------------------------------+
 | Markup                 | Meaning                                                                     |
 +========================+=============================================================================+
