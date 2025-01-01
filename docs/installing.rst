@@ -224,20 +224,32 @@ If you need the most recent fixes, you can install from github.  Note
 that there isn't a single github repository that contains everything.
 
 Also, since Mathics3 is in constant flux, dependencies can change. The
-development version from might require development version from
-another.
+development version from might require a development version from
+another github repository.
+
+In particular, ``mathics-core`` uses JSON tables created by programs
+and data in ``mathics-scanner``. If we change the organization of
+data, change ``mathics-core`` to use the information differently,
+you'll need to use the development version of ``mathics-scanner`` and
+need to ensure JSON tables are in line with what a ``mathics-core``
+development version uses.
 
 The minimal set of Mathics3 Python packages that need to be installed is:
 
 * `mathics scanner <https://github.com/Mathics3/mathics-scanner/>`_
 * `mathics-core <https://github.com/Mathics3/mathics-core/>`_
 
-When ``Mathics3`` (which depends on ``Mathics-Scanner``) is installed, there is a minimalist command-line utility called ``mathics`` available which allows you to enter Mathics3 statements. For help on this type::
+When ``Mathics3`` (which depends on ``Mathics-Scanner``) is installed,
+there is a minimalist command-line utility called ``mathics``
+available which allows you to enter Mathics3 statements. For help on
+this type::
 
   mathics --help
 
 
-There are more filled-out front ends. ``mathicsscript`` is a more full featured command-line script similar to ``wolframscript``. There is a Django-based front-end called ``mathics-django``.
+There are more filled-out front ends. ``mathicsscript`` is a more full
+featured command-line script similar to ``wolframscript``. There is a
+Django-based front-end called ``mathics-django``.
 
 There are also two Mathics3 modules written in Python:
 
@@ -247,14 +259,14 @@ There are also two Mathics3 modules written in Python:
 .. _pymathics-graph: https://github.com/Mathics3/pymathics-graph/
 __ pymathics-graph_
 
-For ``mathics-core``, ``mathics-django`` and ``mathics-django``:
+For ``mathics-core``, ``mathics-django`` and ``mathics-django``::
 
   $ git clone <name-of-repository>
   $ cd <name-of-repository>
   $ make
   $ make check # to test code
 
-For other repositois, the above may also work, but you can use ``pip install`` as well:
+For other repositois, the above may also work, but you can use ``pip install`` as well::
 
   $ git clone <name-of-repository>
   $ cd <name-of-repository>
