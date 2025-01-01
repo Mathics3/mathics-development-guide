@@ -79,7 +79,7 @@ To include images in the documentation, use the ``img`` tag, place an
 EPS file *src* ``.eps`` in `mathics.doc.documentation.images <https://github.com/mathics/Mathics/tree/master/mathics/doc/documentation/images>`_ and run ``images.sh``
 in the `mathics.doc <https://github.com/mathics/Mathics/tree/master/mathics/doc>`_ directory.
 
-For long *url*, it is possible to split the url in several lines. Spaces and line break characters are removed when the documentation is compiled. For example,
+For a long *URL*, it is possible to split the url in several lines. Spaces and line break characters are removed when the documentation is compiled. For example::
 
 
 
@@ -138,13 +138,13 @@ Example of ``>>``, ``=``, and ``= ...``
 
 .. code-block::
 
-    Strings and expressions that produce strings are atoms:
-    >> Map[AtomQ, {"x", "x" <> "y", StringReverse["live"]}]
-     = {True, True, True}
+     >> 1 + 2
+     = 3
 
-``Map[AtomQ, {"x", "x" <> "y", StringReverse["live"]}]`` is shown as
-an example in the ``Map`` documentation section.  When this code is
-run, ``{True, True, True}`` is the expected output.
+The above is part of the docstring for the ``Plus`` class that implements the builtin-function ``Plus``, or operator ``+``.
+
+``1 + 2`` is shown as an example in the ``Plus`` documentation
+section.  When this code is run, ``3`` is the expected output.
 
 In testing, ``make doctest`` is run, this example code is run and checked
 against the output. If the two do not match, a test failure is
