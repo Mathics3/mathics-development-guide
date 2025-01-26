@@ -4,6 +4,8 @@ Making a Mathics3 Django Release
 
 *Note: This package depends on ``mathics-core``, so if that needs a release too, do that before this.*
 
+Look at `<https://pypi.org/project/Mathics-django/>`_ and
+`<https://github.com/Mathics3/mathics-django>`_ for broken links and corrections to text.
 .. code::
 
     $ PACKAGE="Mathics-Django"

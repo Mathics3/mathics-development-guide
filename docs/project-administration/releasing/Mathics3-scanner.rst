@@ -2,6 +2,9 @@
 Making a Mathics-Scanner Release
 =================================
 
+Look at `<https://pypi.org/project/Mathics-Scanner/>`_ and
+`<https://github.com/Mathics3/mathics-scanner>`_ for broken links and corrections to text.
+
 .. code::
 
 
@@ -41,15 +44,6 @@ Check Mathics3 Scanner Python versions
 
    $ ./admin-tools/check-versions.sh
 
-Build Docs
-==========
-
-.. code::
-
-    $ make doc
-
-See also [[Documentation and tests]].
-
 Merge Mathics3 Scanner Release
 ==============================
 
@@ -62,8 +56,8 @@ Then...
     $ git pull
 
 
-Check package from github
-=========================
+Check Mathics3 Scanner package from github
+==========================================
 
 TODO: turn this into a script in ``admin-tools``
 

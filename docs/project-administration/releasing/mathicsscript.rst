@@ -2,6 +2,9 @@
 Making a MathicsScript Release
 ==============================
 
+Look at `<https://pypi.org/project/mathicsscript/>`_ and
+`<https://github.com/Mathics3/mathicsscript>`_ for broken links and corrections to text.
+
 
 .. code:: bash
 
@@ -18,15 +21,15 @@ Create a new Mathicsscript release branch
     $ git checkout -b release-$__version__
     $ git commit -m"Get ready for release $__version__" .
 
-Workflows update?
-=================
+Mathicsscript Workflows update?
+================================
 
 Check ``.github/workflows/*.yml`` to make see if we are using
 github versions for testing. If so adjust.
 
 
-Update Changes
-==============
+Update Mathicsscript Changes
+============================
 
 .. code:: bash
 
@@ -40,15 +43,15 @@ Update ``NEWS.md`` from ``ChangeLog``
     $ git commit --amend .
     $ git push -u origin HEAD # get CI testing going early
 
-Check Python versions
-======================
+Check Python versions for Mathicsscript
+=======================================
 
 .. code:: bash
 
    $ ./admin-tools/check-versions.sh
 
-Merge release
-=============
+Merge Mathicsscript release
+===========================
 
 Go to github and merge release into master.
 
@@ -60,8 +63,8 @@ Then...
     $ git pull
 
 
-Check package from github
-=========================
+Check Mathicsscript package from github
+=======================================
 
 TODO: turn this into a script in ``admin-tools``
 
@@ -76,8 +79,8 @@ TODO: turn this into a script in ``admin-tools``
     $ pip uninstall ${PACKAGE}
     $ popd
 
-Make packages and check
-=======================
+Make Maticsscript packages and check
+=====================================
 
 ::
 
