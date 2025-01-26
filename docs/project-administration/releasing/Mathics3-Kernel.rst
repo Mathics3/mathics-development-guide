@@ -22,7 +22,7 @@ github versions (of scanner) for testing. If so adjust.
 Create a new Mathics3 Kernel branch
 ===================================
 
-.. code::
+.. code:: bash
 
     $ git checkout -b release-$__version__
     $ git commit -m"Get ready for release $__version__" .
@@ -54,15 +54,15 @@ Make Mathics3 PDF
 
 Look at resulting PDF and colophon
 
-Check Python versions
-======================
+Check Mathics3 Kernel Python versions
+======================================
 
 .. code::
 
    $ ./admin-tools/check-versions.sh
 
-Merge release
-=============
+Merge Mathics3 Kernel Release
+=============================
 
 Go to github and merge release into master.
 
@@ -74,8 +74,8 @@ Then...
     $ git pull
 
 
-Check package from github
-=========================
+Check Mathics3 Kernel package from github
+=========================================
 
 TODO: turn this into a script in ``admin-tools``
 
@@ -89,8 +89,8 @@ TODO: turn this into a script in ``admin-tools``
     $ pip uninstall ${PACKAGE}
     $ popd
 
-Make packages and check
-=======================
+Make Mathics3 Kernel packages and check
+========================================
 
 ::
 
@@ -99,8 +99,8 @@ Make packages and check
 
 Go over what is in dist and remove unnecessary files in ``dist``.
 
-Release on Github
-=================
+Release Mathics3 Kernel on Github
+=================================
 
 Go to https://github.com/Mathics3/mathics-core/releases/new
 
@@ -121,8 +121,8 @@ TODO: turn this into a script in ``admin-tools``
     $ pip uninstall ${PACKAGE}
     $ popd
 
-Upload the release to PyPI
-==========================
+Upload the Mathics3 Kerlen release to PyPI
+==========================================
 
 Upload it to PyPI with ``twine``:
 
@@ -130,8 +130,8 @@ Upload it to PyPI with ``twine``:
 
     $ twine upload --verbose dist/$PACKAGE-${__version__}*{whl,gz}
 
-Move dist files to ``uploaded``
-===============================
+Move Mathics3 Kernel dist files to ``uploaded``
+===============================================
 
 .. code::
 

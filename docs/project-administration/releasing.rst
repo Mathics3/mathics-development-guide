@@ -52,7 +52,7 @@ this document, for changes in the release process.
 .. toctree::
    :maxdepth: 1
 
-   releasing/mathics-scanner.rst
+   releasing/Mathics3-scanner.rst
    releasing/mathics-pygments.rst
    releasing/Mathics3-Kernel.rst
    releasing/mathicsscript.rst
