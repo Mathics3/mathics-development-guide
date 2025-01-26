@@ -1,6 +1,6 @@
-==============================
-Making a Mathics3 Core Release
-==============================
+================================
+Making a Mathics3 Kernel Release
+================================
 
 *Note: This package depends on ``mathics-scanner``, so if that needs a release too, do that before this.*
 
@@ -12,23 +12,23 @@ Making a Mathics3 Core Release
     $ source mathics/version.py # to set in POSIX shell
     $ echo $__version__
 
-Workflows update?
-=================
+Mathics3 Kernel Workflows update?
+=================================
 
 Check ``.github/workflows/*.yml`` to make see if we are using
 github versions (of scanner) for testing. If so adjust.
 
 
-Create a new branch
-===================
+Create a new Mathics3 Kernel branch
+===================================
 
 .. code::
 
     $ git checkout -b release-$__version__
     $ git commit -m"Get ready for release $__version__" .
 
-Update Changes
-==============
+Update Mathics3 Kernel Changes
+==============================
 
 .. code::
 
@@ -139,7 +139,7 @@ Move dist files to ``uploaded``
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
-Post-Release
-============
+Post Mathics3 Kernel Release
+============================
 
     Add 1 to release number of version in ``mathics/version.py``; also append "dev0".
