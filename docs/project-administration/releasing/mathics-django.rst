@@ -7,28 +7,28 @@ Making a Mathics3 Django Release
 .. code::
 
     $ PACKAGE="Mathics-Django"
-    $ package="mathics_django"
+    $ github_top_dir="mathics_django"
     # Edit mathics_django/version.py
-    $ source ${package}/version.py # to set in POSIX shell
+    $ source ${github_top_dir}/version.py # to set in POSIX shell
     $ echo $__version__
 
-Workflows update?
-=================
+Mathics Django Workflows update?
+=================================
 
 Check ``.github/workflows/*.yml`` to make see if we are using
 github versions (of mathics-core) for testing. If so adjust.
 
 
-Create a new branch
-===================
+Create a new Mathics Django release branch
+==========================================
 
 .. code::
 
     $ git checkout -b release-$__version__
     $ git commit -m"Get ready for release $__version__" .
 
-Update Changes
-==============
+Update Changes to Mathics Django
+================================
 
 .. code::
 
@@ -62,8 +62,8 @@ Then...
     $ git pull
 
 
-Check package from github
-=========================
+Check Mathics-Django package from github
+=========================================
 
 TODO: turn this into a script in ``admin-tools``
 
@@ -108,8 +108,8 @@ TODO: turn this into a script in ``admin-tools``
     $ python src/mathics-django/mathics_django/server.py --version # See version
     $ popd
 
-Upload the release to PyPI
-==========================
+Upload the Mathics-Django release to PyPI
+=========================================
 
 Upload it to PyPI with ``twine``:
 
@@ -117,15 +117,15 @@ Upload it to PyPI with ``twine``:
 
     $ twine upload --verbose dist/Mathics{_,-}Django-${__version__}*
 
-Move dist files to save
-========================
+Move Mathics-Django distributed files to uploaded
+=================================================
 
 .. code::
 
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
-Post-Release
-============
+Post Mathics-Django Release
+===========================
 
-    Add 1 to release number of version in ``${package}/version.py``; also append "dev0".
+    Add 1 to release number of version in ``${github_top_dir}/version.py``; also append "dev0".

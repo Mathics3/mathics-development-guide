@@ -1,6 +1,6 @@
-=========================
-Mathics3 Core Interpreter
-=========================
+============================
+Mathics3 Kernel Interpreter
+============================
 
 .. index:: M-expression
 

@@ -10,8 +10,8 @@ Making a MathicsScript Release
     $ source ${PACKAGE}/version.py # to set in POSIX shell
     $ echo $__version__
 
-Create a new branch
-===================
+Create a new Mathicsscript release branch
+=========================================
 
 .. code:: bash
 
@@ -32,7 +32,7 @@ Update Changes
 
     $ make ChangeLog
 
-Update ``CHANGES.rst`` from ``ChangeLog``
+Update ``NEWS.md`` from ``ChangeLog``
 
 ::
 
@@ -86,8 +86,8 @@ Make packages and check
 
 Go over what is in dist and remove unnecessary files in ``dist``.
 
-Release on Github
-=================
+Release on Mathicsscript on Github
+==================================
 
 Go to https://github.com/Mathics3/mathicsscript/releases/new
 
@@ -110,8 +110,8 @@ TODO: turn this into a script in ``admin-tools``
     $ pip uninstall ${PACKAGE}
     $ popd
 
-Upload the release to PyPI
-==========================
+Upload the Mathicsscript release to PyPI
+=========================================
 
 Upload it to PyPI with ``twine``:
 
@@ -119,14 +119,14 @@ Upload it to PyPI with ``twine``:
 
     $ twine upload --verbose dist/$PACKAGE-${__version__}*{whl,gz}
 
-Move dist files to save
-========================
+Move Mathicsscript dist files to uploaded
+=========================================
 
 .. code:: bash
     $ mv -v dist/$PACKAGE*{whl,gz} dist/uploaded/
 
 
-Post-Release
-============
+Post Mathicsscript Release
+==========================
 
     Bump version in ``${PACKAGE}/version.py``, and add "dev0".
