@@ -64,9 +64,9 @@ TODO: turn this into a script in ``admin-tools``
 .. code:: bash
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
-    $ pyenv local pyston-2.3.4 # Use a version that is not the most recent
+    $ pyenv local python-3.12.6 # Use a version that is not the most recent
     $ pip install -e git+https://github.com/Mathics3/${github_top_dir}.git#egg=${package}[full]
-    $ mathics-generate-json-table --version # See new verison appear
+    $ mathics-generate-json-table --version # See new version appear
     $ pip uninstall ${github_top_dir}
     $ popd
 
@@ -75,7 +75,7 @@ Make Mathics3 Scanner packages and check
 
 ::
 
-    $ ./admin-tools/make-dist.sh
+    $ python -m build
     $ twine check dist/Mathics_Scanner-$__version__*
     $ pip install dist/$package-$__version__*.whl
 

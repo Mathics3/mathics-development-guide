@@ -42,8 +42,10 @@ Update ``CHANGES.rst`` from ``ChangeLog``
     $ git commit --amend .
     $ git push -u origin HEAD # get CI testing going early
 
-Make Mathics3 PDF
-=================
+Make Mathics3 PDF (optional)
+==============================
+
+This step can be deferred until Mathics3 Modules are updated
 
 .. code::
 
@@ -82,7 +84,7 @@ TODO: turn this into a script in ``admin-tools``
 .. code::
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
-    $ pyenv local pyston-2.3.5 # Use a version that is not the most recent
+    $ pyenv local 3.12.6 # Use a version that is not the most recent
     $ pip install -e git+https://github.com/Mathics3/${github_top_dir}.git#egg=${PACKAGE}
     $ mathics --version # see that new version appears
     $ mathics -e "1+2"
@@ -94,7 +96,7 @@ Make Mathics3 Kernel packages and check
 
 ::
 
-    $ bash ./admin-tools/make-dist.sh
+    $ python -m build
     $ twine check dist/Mathics3-$__version__*
 
 Go over what is in dist and remove unnecessary files in ``dist``.

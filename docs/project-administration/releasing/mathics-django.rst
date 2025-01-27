@@ -72,7 +72,7 @@ TODO: turn this into a script in ``admin-tools``
 .. code::
 
     $ [[ ! -d /tmp/gittest ]] && mkdir /tmp/gittest; pushd /tmp/gittest
-    $ pyenv local pyston-2.3.5 # Use a version that is not the most recent
+    $ pyenv local 3.12.6 # Use a version that is not the most recent
     $ pip install -e git+https://github.com/Mathics3/mathics-django.git#egg=${PACKAGE}[full]
     $ python src/mathics-django/mathics_django/server.py --version # See version
     $ python src/mathics-django/mathics_django/server.py # Try it
@@ -84,7 +84,7 @@ Make packages and check
 
 ::
 
-    $ bash ./admin-tools/make-dist.sh
+    $ python -m build
     $ twine check dist/Mathics{_,-}Django-$__version__*
 
 Go over what is in dist and remove unnecessary files in ``dist``.
