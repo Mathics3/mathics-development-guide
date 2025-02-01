@@ -37,9 +37,15 @@ Markup in Documentation
 |                                  | list. Note: no </li>.                   |
 +----------------------------------+-----------------------------------------+
 | ``'`` *code* ``'``               | inline Mathics3 code or other code.     |
++                                  | Notice that LaTeX inline equations are  |
+|                                  | taken literally, so are shown as LaTeX  |
+|                                  | code.                                   |
 +----------------------------------+-----------------------------------------+
-| ``$`` *name* ``$``               | Math-mode variable identifier in        |
-|                                  | Mathics3 code or in text.               |
+|  ``$`` *equation* ``$``          | Inline LaTeX equation. Use also for     |
+|                                  | variable identifiers in code.           |
+|  ``$`` *name* ``$``              | For example, ``'F'[$x$,$y$]``           |
+|                                  | is an expression with the symbol 'F'    |
+|                                  | as a head, with two elements.           |
 +----------------------------------+-----------------------------------------+
 | <console> *text* </console>      | a console (shell/bash/Terminal)         |
 |                                  | transcript in its own paragraph.        |
@@ -126,10 +132,6 @@ It is good to create examples that convey some aspect about the Mathics3 Functio
 In the past, the documentation system was abused and ran edge cases
 and prior bugs fixed. For that please write a pytest.
 
-
-We have not purged yourself of this behavior, so will find following
-markup in docstrings. These are deprecated.
-
 However please don't create more examples. Instead please consider
 moving something like this to a pytest unit test which is far more flexible.
 
@@ -150,14 +152,21 @@ In testing, ``make doctest`` is run, this example code is run and checked
 against the output. If the two do not match, a test failure is
 recorded.
 
-In some cases, output can vary. For example, value one gets when
-evaluationg ``$ProcessID`` is not fixed and can't be recorded. So
+In some cases, output can vary. For example, the value one gets when
+evaluating ``$ProcessID`` is not fixed and can't be recorded. So
 here, use ``...`` and *anything* will be accepted as a match:
 
 .. code-block::
 
     >> $ProcessID
      = ...
+
+The main goal of Doctests is to check illustrative cases that make sense to appear in
+the documentation. However, in some cases, we want to include some code needed to 
+clean up variables or delete files created in the example. Also, there are some test cases
+that only work in a sandbox environment. On the other hand, we could desire to include 
+some code in the *Doctest* format, but we do not want to run it during the tests. For this reason,
+the following syntax was included:
 
 
 +------------------------+-----------------------------------------------------------------------------+
@@ -170,6 +179,10 @@ here, use ``...`` and *anything* will be accepted as a match:
 | ``S>``                 | Mathics3 code to run, like ``>>``, but only if not in "Sandbox" environment |
 +------------------------+-----------------------------------------------------------------------------+
 
+In any case, as far as possible, please avoid to include as doctests any marginal case that does not
+contribute to the understanding of the final user. Very specific test cases must be included as tests
+in the *pytest* system.
+
 Example of ``#>``
 +++++++++++++++++
 
@@ -181,7 +194,7 @@ Example of ``#>``
     #> Clear[x]
 
 
-Here, we want to give an exmaple of ``Map`` and that sets variable ``x``. We want to
+Here, we want to give an example of ``Map`` and that sets variable ``x``. We want to
 clear the definition to clean things up, but doing so does not serve any pedagogic purposes.
 So we can hide this from the list of examples, but have the effect of running the function.
 
@@ -222,19 +235,19 @@ These are described in the next sections.
 Title
 ------
 
-We can use use ``pymathics.graph`` as an example to compare against.
+We can use ``pymathics.graph`` as an example to compare against.
 
-If there is a Wikipedia entry that goes first. See ``AdjacencyList`` for an example.
+When there is a Wikipedia entry, it goes first. See ``AdjacencyList`` for an example.
 
-It may be that only a part of the Wikipedia entry is available. Fill in other text outside of the URL. See ``DirectedEdge`` for an example.
+It may be that just a part of the Wikipedia entry is available. Fill in other text outside of the URL. See ``DirectedEdge`` for an example.
 
-If there is no Wikipedia mention, it is okay to give some free title. EdgeDelete is an example.
+If there is no Wikipedia mention, it is okay to give some free titles. EdgeDelete is an example.
 
 Or you can omit the title altogether. ``RandomGraph`` is an example.
 
-In general we go with the Wikipedia name rather than the WMA for the title. And this includes symbolic parameter names. ``CompleteKaryTree`` is an example.
+In general, we go with the Wikipedia name rather than the WMA for the title, including symbolic parameter names. ``CompleteKaryTree`` is an example.
 
-When the only thing we have is a WMA link we add "link" to the title. ``EdgeList`` is an example .
+When the only thing available is a WMA link we add "link" to the title. ``EdgeList`` is an example.
 
 Remember that line breaks are significant. ``\`` can be used to wrap a long line.
 Start the url name on a new line after ``<url>``. For example:
@@ -249,11 +262,11 @@ Note that there is no line break at the end before or after ``</url>``.
 
 Please don't get too creative in formatting. There are many other areas in the selection of words to describe what is need may require care. But here it shouldn't require much thought for the _formatting_ aspects.
 
-If the URL is too long, of course, you can split it up in a way that the URL tag understands.  Please inspect the URLs in a browser for change.  Ideally you would click the link, but if not or before, look at the URL that appears when the link is hovered over.
+If the URL is too long, of course, you can split it up in a way that the URL tag understands.  Please inspect the URLs in a browser for change.  Ideally, you would click the link, but if not, or before, look at the URL that appears when the link is hovered over.
 
 
 
-There should be at least one doc example for each function in that is focused on describing what the function does (not how it can be tested).  Examples for tests should be added as pytests.
+There should be at least one doc example for each function that is focused on describing what the function does (not how it can be tested).  Examples for tests should be added as pytests.
 
 
 Definition Block
@@ -262,16 +275,24 @@ Definition Block
 The title must be followed by a definition list ``<dl>``...``</dl>``, describing the different ways to use the symbol. For example, in the  Builtin class ``LaguerreL``::
 
      <dl>
-       <dt>'LaguerreL[$n$, $x$]'
-       <dd>returns the Laguerre polynomial L_$n$($x$).
+       <dt>'LaguerreL'[$n$, $x$]
+       <dd>returns the Laguerre polynomial of order $n$, $L_n(x)$.
 
-       <dt>'LaguerreL[$n$, $a$, $x$]'
-       <dd>returns the generalised Laguerre polynomial L^$a$_$n$($x$).
+       <dt>'LaguerreL'[$n$, $a$, $x$]
+       <dd>returns the generalised Laguerre polynomial of order $n$ and index $a$, $L^a_n(x)$.
      </dl>
 
-Note the two-space indentation after the ``<dl>`` tag.
+Note the two-space indentation after the ``<dl>`` tag. 
+
+The ``<dt>`` fields show the form of using the symbol. The Mathics3 identifiers
+must be enclosed in simple quotes (``'``), while parameters are written as inline LaTeX math-mode expressions.
+The description field (``<dd>``) uses the same notation: parameter names enclosed by ``$`` and identifiers
+by ``'``. Notice also that the description can include some inline LaTeX math-mode expressions.
+If an identifier uses the special character `$`, it must be preceded by the escape character `\`. So, for instance,
+to refer to the Symbol `$Failed` it must be written as `\\$Failed`. 
+
 
 Extended Description Section
 ----------------------------
 
-After the usage block, it is expected a brief explanation about the context in which the symbol is used, including examples of use, details of the implementations and possible issues. This section must contain at least one doctest example for each entry in the usage block.
+After the usage block, a brief explanation about the context in which the symbol is used is expected, including examples of use, details of the implementations, and possible issues. This section must contain at least one *Doctest* example for each entry in the usage block.
