@@ -81,7 +81,7 @@ Make packages and check
 
 ::
 
-    $ bash ./admin-tools/make-dist.sh
+    $ python -m build
     $ twine check dist/*-$__version__*
 
 Go over what is in dist and remove unnecessary files in ``dist``.
