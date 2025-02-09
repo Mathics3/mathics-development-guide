@@ -91,7 +91,7 @@ Adding ``Curl`` as an autoloaded function
 The above code was done in an interactive session.
 Below we extract the function definitions and package this.
 
-.. code:: wolfram
+.. code:: mathematica
 
     (* Two and Three dimensional Curl, taken from the Mathematical definitions *)
 

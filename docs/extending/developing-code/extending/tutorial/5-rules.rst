@@ -29,8 +29,25 @@ Here is how this is done.
            greeting = "Bonjour" if language.value == "French" else "Hello"
           return String(f"{greeting}, {person.value}!")
 
-This code does the same thing as in the last section.
-See the session there for an example of how this works.
+Better though is to use a more complicated pattern using a default argument:
+
+.. code-block:: python
+
+  from mathics.builtin.base import Builtin, String
+  from mathics.core.evaluation import Evaluation
+
+  class Hello(Builtin):
+      def eval(self, person: String, language: String, evaluation: Evaluation) -> String:
+          """Hello[person_String, language_:"English"]"""
+          return String(f"{greeting}, {person.value}!")
+
+
+This code does the same thing as in the last section. See the session
+there for an example of how this works.
+
+`TraceEvaluation[]`` will rewrite rules as they occur in evaluation.
+
+Although using rewrite rule can reduce the amount of Python code needed to implement a function, rewrite rules have a few drawbacks. The main drawback is that you make it harder to error check parameters.
 
 Next:
 
