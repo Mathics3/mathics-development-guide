@@ -104,7 +104,7 @@ Again, `MatchQ[]
 helpful in testing the pattern used in the docstring.
 
 When deciding what pattern to use in a the docstring for an ``eval``
-function, you should give some thought to error checking. If someone writes ``Hello[5.0]``, do you want to treat this as an error or do nothing and possibly allow some other pattern to be allowed to match this?
+method, you should give some thought to error checking. If someone writes ``Hello[5.0]``, do you want to treat this as an error or do nothing and possibly allow some other pattern to be allowed to match this?
 
 If you want to provide an error, then the code with drop the ``_String`` pattern and check inside the code:
 
