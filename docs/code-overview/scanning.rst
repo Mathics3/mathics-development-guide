@@ -12,36 +12,39 @@ package <https://pypi.org/project/Mathics-Scanner/>`_.
 Deciding what is goes into Scanning and what goes into Parsing
 ==============================================================
 
-Compilers and human language often have work on at least
-two-levels. In human speech, there is the concept of *phonemes* which
-are the smallest unit of sound, and those are joined together to form
-the higher-level words, sentences, paragraphs, etc.
+The way computer and human languages are generally understood can be
+generally are divided into at least two-levels. In human speech, there
+is the concept of *phonemes* which are the smallest unit of sound, and
+those are joined together to form the higher-level words, sentences,
+paragraphs, etc.
 
-In human written, *phonemes* are often broken replaced by the concept
+In written human language, *phonemes* are generally replaced by the concept
 of a syllable.
 
 In computer languages, the equivalent of a phoneme or syllable is
-called a *token*, and the process that makes the initial determination
+called a *token*; the process that makes the initial determination
 is called a *scanner*.
 
-But in computer languages, things are a little different. The breakout
-between the phases is biased by the technology used.
+Where to make a level split between what should be recognized in the
+scanner and what should be recognized by a parser, is dictacted by the
+technology that compilers typically use. (Something analgous in
+biological construction and evolution probably is the reason for the
+the levels in human languages, as well.)
 
-Conventionally, the language of strings that can be recognized by
-*regular expressions* forms what constitutes scanning, and the
-language of strings that can be produced by context-free grammars
-constitutes what goes into parsing.
+Conventionally, the set of strings that can be recognized by *regular
+expressions* constitutes the lower-level scanning phase. The
+language of strings and tokens that can be produced by context-free
+grammars constitutes what goes into the higher-level parsing phase.
 
 Strictly speaking, the set of strings recognized by context-free
 grammars is a superset of what can be recognized by regular expressions.
 
-The difference, is that context free grammars can handle nesting while
-regular expression cannot.  For example, making sure a List literal
-like ``[1 2 [3 4]]`` or an output format expression like ``\( a \%
-b\)`` nests properly is typically and more naturally must be done in
-parsing, not scanning.  Parsing can match nesting as part of its
-grammar, while in regular expressions in of themselves can't capture
-nesting.
+However, context free grammars can handle nesting while regular
+expression cannot.  For example, checking the nesting of a ``List``
+literal like ``[1 2 [3 4]]`` or an output format expression like ``\(
+a \% b\)`` is typically and more naturally must be done in parsing,
+not scanning.  Parsing can match nesting as part of its grammar, while
+in regular expressions in of themselves can't capture nesting.
 
 That said, there are perhaps hacky ways of adding code counts in
 object variables that can work around this. Mathics3 code doesn't do
