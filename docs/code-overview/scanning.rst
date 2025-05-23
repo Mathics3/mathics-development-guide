@@ -129,3 +129,13 @@ The way a string is matched is determined by its leading character. Depending on
 
 Failing having a custom routine, matching is determined by Python
 regular expression matching that starts with the string prefix.
+
+================
+Scanner Testing
+================
+
+The command-line utility ``mathics3-tokens`` from the `Mathics-Scanner <https://pypi.org/project/Mathics-Scanner/>`_ package can be used to show tokenization.
+
+For WMA, the `CodeTokenize <https://reference.wolfram.com/language/CodeParser/ref/CodeTokenize.html>`_ function of the ``CodeParser`` package will show tokenization.
+
+Over time Mathics3 will align its token names to better match the names produced by ``CodeTokenize``.
