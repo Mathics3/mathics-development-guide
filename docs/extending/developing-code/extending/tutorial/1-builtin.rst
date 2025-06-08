@@ -1,5 +1,5 @@
-Introducing the Builtin Class
------------------------------
+Introducing the Builtin Class and Pattern-based Parameter Specification
+-----------------------------------------------------------------------
 
 .. index:: Builtin
 
@@ -14,24 +14,26 @@ invoked needs to start off with the name ``eval``.
 
 As before, this method has an ``evaluation`` parameter at the end.
 
-Other parameters that are appropriate for the function can be
-added. However those parameters must also be listed suffixed with an
-underscore (``_``) in the Python method's docstring in a special way
-that uses Mathics3 pattern matching.
+Other parameters that are appropriate for the function are specified
+using the docstring of the ``eval`` method. The ``eval`` method
+docstring looks pretty much the same as it would look if you were
+defining this in WL.
 
-The docstring is used by Builtin's default *evaluate()* method when
-trying to resolve what Python method to call. The docstring looks
-pretty much the same as it would look if you were defining this in
-WL.
-
-For example, let's add a string parameter. In Mathics3 the function
+For example, let's add a string parameter, named *person*. In Mathics3, the function
 might look like this:
 
 
 .. code-block:: mathematica
 
 
-  Hello[s_String] := Print["Hello, " <> s <> "!"]
+  Hello[person_String] := Print["Hello, " <> person <> "!"]
+
+See `Defining Functions
+<https://reference.wolfram.com/language/tutorial/FunctionsAndPrograms.html#13037>`_
+and `Introduction to Patterns
+<https://reference.wolfram.com/language/tutorial/Patterns.html#139>`_
+for more information on specifying function signatures, and the pattern
+language that is used inside the function signature.
 
 The evaluation method, looks like this:
 
