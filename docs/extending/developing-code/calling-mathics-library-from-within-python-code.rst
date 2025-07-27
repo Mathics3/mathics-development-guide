@@ -1,8 +1,3 @@
-f.. pymathics-hello documentation master file, created by
-   sphinx-quickstart on Sun Nov 29 14:06:02 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -10,14 +5,13 @@ f.. pymathics-hello documentation master file, created by
 Using Mathics3 from your code
 =============================
 
-There a various ways you make use of Mathics3 ability to
+There are various ways you can make use of Mathics3's ability to
 solve equations, or run code which we describe here.
 
 From a shell
 ------------
 
-Perhaps the least-tightly coupled way is to just call the command-line
-interpreter in a shell and process its output.
+Perhaps the least-tightly coupled way is to just call the command-line interpreter in a shell and process its output.
 
 Here is some POSIX shell code that does this:
 
@@ -37,10 +31,10 @@ Here is some POSIX shell code that does this:
    9
 
 The above code runs the Mathics3 interpreter in a subshell and then uses the
-number returned in a call another command, ``seq`` which uses that number.
+number returned in a call to another command, ``seq``, which uses that number.
 
 
-To call Mathics3 as a subshell this inside Python, the `subprocess
+To call Mathics3 as a subshell inside Python, the `subprocess
 module <https://docs.python.org/3/library/subprocess.html>`_ might be
 used like this:
 
@@ -55,22 +49,18 @@ used like this:
         print(int(result.stdout) + 5)
 
 This code runs the Mathics3 interpreter as a subprocess, capturing the
-output and if the execution was successful converts the result
-from its string output to an Python ``int`` and adds 5.
+output and if the execution was successful, converts the result
+from its string output to a Python ``int`` and adds 5.
 
 Using MathicsSession
 --------------------
 
 
 
-While the above is fine for running an isolated expression or two, it
-is pretty inefficient: Python has to be loaded every time along with
-the huge Mathics3 program; all of the built-in functions need to be set
-up, and some of terminal interaction needs set up as well.
+While the above is fine for running an isolated expression or two, it is pretty inefficient: Python has to be loaded every time, along with the huge Mathics3 program; all of the built-in functions need to be set up, and some terminal interaction needs to be set up as well.
 
-If you have a sequence of Mathics3 expressions, or need to get results
-from Mathics3 a number of times inside your Python code, it is faster
-to just import `mathics` and set up and environment for running code
+If you have a sequence of Mathics3 expressions, or need to get results from Mathics3 several times inside your Python code, it is faster
+to just import `mathics` and set up an environment for running code
 once.
 
 Here is an example of that:
@@ -85,29 +75,28 @@ Here is an example of that:
     print(result)
 
 In the above code, ``session`` is the scratchpad area that contains
-results of the evaluations. Creating this stores all of the builtin
-deinitions. We explicitly set the parameter ``add_builtin=True`` to
-include things like ``Factorial`` which is used later.
+the result of the evaluations. Creating this stores all of the built-in definitions. We explicitly set the parameter ``add_builtin=True`` to
+include things like ``Factorial``, which is used later.
 
 Although we set ``add_builtin`` explicitly for pedagodical purpose,
-``True`` is the default, adding this paraemter wasn't necessary. We'll
+``True`` is the default; adding this parameter wasn't necessary. We'll
 leave it off in future examples.
 
 
 Mathics3 Results as Python Objects
 ----------------------------------
 
-In the last section we passed a string to *session.evaluate()* we
-passed a string. That string was scanned and parsed, before it was
+In the last section, we passed a string to *session.evaluate()* we
+passed a string. That string was scanned and parsed before it was
 evaluated. (See the section below for what goes on in scanning and
 parsing.)
 
 A more flexible way to use Mathics3 is to skip the scanning and
-parsing and call the same functions that Mathics3 calls underneath to
-evaluation expressions. In this section we will do just that.
+parsing and call the same functions that Mathics3 calls underneath to evaluate expressions. 
+In this section, we will do just that.
 
 As before, we need a ``MathicsSession`` session object as a scratchpad
-area to save results, and to lookup previous definitions and results.
+area to save results, and to look up previous definitions and results.
 
 
 .. code:: py
@@ -181,13 +170,11 @@ Here is an example of that:
    print(x) # 45
 
 Notice that precedence between operations, like *Plus()* and
-*Times()* is handled simply in the order in which these functions are
-called, so no parenthesis is used in the functional way.
+*Times()* is handled simply in the order in which these functions are called, so no parenthesis is used in the functional way.
 
 To simplify the above, we have overloaded the standard binary and unary
 numeric operators ``+``, ``-``, ``/``, ``*``, ``abs()``, ``//``, and
-``**`` in the ``Expressions`` and ``Numbers`` classes. With this, the
-above can be written as:
+``**`` in the ``Expressions`` and ``Numbers`` classes. With this, the above can be written as:
 
 .. code:: py
 
@@ -204,7 +191,7 @@ above can be written as:
         ).evaluate(session.evaluation).to_python()
    print(x) # 45
 
-Note that when we switch to (overloaded) infix operators now need parenthesis again, since ``*`` binds tigher than ``+``.
+Note that when we switch to (overloaded) infix operators now need parentheses again, since ``*`` binds tighter than ``+``.
 
 
 Conversion to and from Python
@@ -213,4 +200,4 @@ Conversion to and from Python
 
 
 
-.. TODO: Break out evaluate example to show scanning and parsing
+.. TODO: Break out the evaluate example to show scanning and parsing
