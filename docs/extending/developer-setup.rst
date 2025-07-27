@@ -1,9 +1,9 @@
 Setup for Developing Mathics3 Python Code
 =========================================
 
-We encourage people to work with the Python source code, modifiy it in ``git`` and put in Pull Requests when there is something you want to share with other Mathics3 users.
+We encourage people to work with the Python source code, modify it in ``git`` and put in Pull Requests when there is something you want to share with other Mathics3 users.
 
-For this you'll need to have ``git`` installed as well as a ``github`` account to submit a pull request (PR) when done.
+For this, you'll need to have ``git`` installed as well as a GitHub account to submit a pull request (PR) when done.
 
 Github repositories are listed in :ref:`Install from the Mathics3 Github Organization`.
 
@@ -14,7 +14,7 @@ There are a number of additional Python-related packages you will probably want 
 
 
 * `isort <https://pypi.org/project/isort/>`_: sorts Python imports
-* `black <https://pypi.org/project/black/>`_: formats Python code according to standard Python-formatting convertions.
+* `black <https://pypi.org/project/black/>`_: formats Python code according to standard Python-formatting conversions.
 
 When you commit code, you can arrange to have these tools run automatically and fix up mistakes using a package called `pre-commit <https://pypi.org/project/pre-commit/>`_.
 
@@ -25,7 +25,8 @@ Optional but Useful Developer Python Packages
 
 Other Python packages that are nice to have but are not strictly necessary are:
 
-* `flake8 <https://pypi.org/project/flake8/>`_: code checker
-* `pylint <https://pypi.org/project/pylint/>`_:  code analyzer
+* `mypy <https://mypy.readthedocs.io/en/stable/>`_:  static type checker for Python
+* `flake8 <https://pypi.org/project/flake8/>`_: code checker for Python
+* `pylint <https://pypi.org/project/pylint/>`_:  code analyzer for Python
 
 .. TODO: add section about putting in PRs
