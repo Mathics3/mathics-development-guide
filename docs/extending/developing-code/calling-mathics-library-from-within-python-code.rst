@@ -5,8 +5,8 @@
 Using Mathics3 from your code
 =============================
 
-There are various ways you can make use of Mathics3's ability to
-solve equations, or run code which we describe here.
+There are various ways, which we describe here, that you can make use of
+Mathics3's ability to solve equations, or run Mathics3 code.
 
 From a shell
 ------------
@@ -17,9 +17,9 @@ Here is some POSIX shell code that does this:
 
 .. code:: bash
 
-   $ mathicsscript -e '3! + E^(Pi I)'
+   $ mathicsscript -code '3!'
    5
-   $ seq $(mathicsscript -e 'Integrate[x^2, {x, 0, 3}])'
+   $ seq $(mathicsscript -code 'Integrate[x^2, {x, 0, 3}])'
    1
    2
    3
@@ -30,8 +30,8 @@ Here is some POSIX shell code that does this:
    8
    9
 
-The above code runs the Mathics3 interpreter in a subshell and then uses the
-number returned in a call to another command, ``seq``, which uses that number.
+The above code runs the Mathics3 interpreter. The second example runs Mathics3 code a subshell and then uses the printed output in a call
+to another POSX shell command, ``seq``, which uses that number.
 
 
 To call Mathics3 as a subshell inside Python, the `subprocess
@@ -56,12 +56,10 @@ Using MathicsSession
 --------------------
 
 
-
 While the above is fine for running an isolated expression or two, it is pretty inefficient: Python has to be loaded every time, along with the huge Mathics3 program; all of the built-in functions need to be set up, and some terminal interaction needs to be set up as well.
 
 If you have a sequence of Mathics3 expressions, or need to get results from Mathics3 several times inside your Python code, it is faster
-to just import `mathics` and set up an environment for running code
-once.
+to just import ``mathics`` and set up an environment for running code once.
 
 Here is an example of that:
 
@@ -92,7 +90,7 @@ evaluated. (See the section below for what goes on in scanning and
 parsing.)
 
 A more flexible way to use Mathics3 is to skip the scanning and
-parsing and call the same functions that Mathics3 calls underneath to evaluate expressions. 
+parsing and call the same functions that Mathics3 calls underneath to evaluate expressions.
 In this section, we will do just that.
 
 As before, we need a ``MathicsSession`` session object as a scratchpad
@@ -120,7 +118,7 @@ doing this by interacting with the Mathics3 classes now.
 
 In this example shown above, we convert from Python's literal 10 to
 Mathics3's representation of for 10 using ``Integer(10)``. This value is
-needed as a parameter to the ``Factorial`` function . Strictly speaking
+needed as a parameter to the ``Factorial`` function . Strictly speaking,
 the full name of the factorial function is ``System`Factorial``, but
 we can leave off the context name, ``System``, and Mathics3 will look
 that up.
