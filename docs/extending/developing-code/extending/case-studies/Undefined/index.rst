@@ -1,7 +1,7 @@
 Adding Builtin ``Undefined``
 ============================
 
-``Undefined`` is one of the easier kinds of Builtin's to add because: it
+``Undefined``, like ``$MachineName`` is one of the easier kinds of Builtin's to add because: it
 is simply a Built-in Symbol, not a Function. Builtin Symbols are
 pretty limited in what they do. Basically a built-in Symbol is a name in the ``System``
 namespace with some properties.
