@@ -9,6 +9,7 @@ A large part of Mathics3 is simply a list of built-in functions that perform som
 .. toctree::
    :maxdepth: 1
 
+   MachineName/index
    selecting-builtin
    Undefined/index
    KroneckerProduct/index

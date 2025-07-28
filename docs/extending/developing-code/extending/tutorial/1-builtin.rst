@@ -1,5 +1,5 @@
-Introducing the Builtin Class and Pattern-based Parameter Specification
------------------------------------------------------------------------
+Introducing the ``Builtin`` Class and Pattern-based Parameter Specification
+---------------------------------------------------------------------------
 
 .. index:: Builtin
 

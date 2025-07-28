@@ -192,10 +192,18 @@ numeric operators ``+``, ``-``, ``/``, ``*``, ``abs()``, ``//``, and
 Note that when we switch to (overloaded) infix operators now need parentheses again, since ``*`` binds tighter than ``+``.
 
 
-Conversion to and from Python
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Conversion to and from Python, and SymPy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+As we saw in the last section, if you have a Mathics3 ``Element`` of
+some sor, an Atomic value like an Integer or Real number, or a
+compound Expression, you can get the Python equivalent for that using
+the ``to_python()`` method on that object if that exists.  If the
+method doesn't exist, probably there is no conversion possible into Python.
 
+Similarly the top-level function ``from_python()`` can convert from a
+Python literal value into its corresponding Mathics3 representation.
 
+We also have a ``from_sympy()`` method and a top-level ``to_sympy()`` method.
 
 .. TODO: Break out the evaluate example to show scanning and parsing

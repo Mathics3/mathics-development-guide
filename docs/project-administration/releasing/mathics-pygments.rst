@@ -114,6 +114,7 @@ Move dist files to save
 ========================
 
 .. code:: bash
+
     $ mv -v dist/$package*{whl,gz,egg} dist/uploaded/
 
 

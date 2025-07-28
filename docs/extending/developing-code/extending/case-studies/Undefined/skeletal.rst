@@ -12,7 +12,7 @@ Mathics3 built-in symbols are defined by writing a class which is based off of t
 The docstring for this class lists:
 
 * The common name for this, if a corresponding match can be found Wikipedia, use that name and link to it.
-* links to the WMA reference we found before.
+* A link to the WMA reference we found before.
 * If there is a corresponding SymPy, mpmath, or SciPy function, then link to that
 * A HTML "definition list" to enclose the definition of each form that can appear
 * User-Oriented Examples.
