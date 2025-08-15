@@ -265,7 +265,7 @@ For ``mathics-core``, ``mathics-django`` and ``mathics-django``::
   $ make
   $ make check # to test code
 
-For other repositois, the above may also work, but you can use ``pip install`` as well::
+For other repositories, the above may also work, but you can use ``pip install`` as well::
 
   $ git clone <name-of-repository>
   $ cd <name-of-repository>
