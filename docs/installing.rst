@@ -11,8 +11,7 @@ Here we describe the various ways to get Mathics3 installed.
 Mathics3 (mathics-core) Requirements
 ------------------------------------
 
-The Mathics3 suite runs on Python 3.8 or later. We also support Pyston
-and PyPy 3.8 or later.
+The Mathics3 suite runs on Python 3.10 or later.
 
 Underneath, Mathics3 core relies on
 `SymPy <https://www.sympy.org/en/index.html>`__ which relies on
